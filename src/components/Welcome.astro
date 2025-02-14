@@ -1747,18 +1747,6 @@ import { Image } from "astro:assets";
 		ease: "power3.out",
 	});
 
-	// gsap.from("#servicios-cards > div", {
-	// 	scrollTrigger: {
-	// 		trigger: "#servicios-cards",
-	// 		start: "top 80%",
-	// 	},
-	// 	opacity: 0,
-	// 	y: 50,
-	// 	duration: 0.8,
-	// 	stagger: 0.2,
-	// 	ease: "power3.out",
-	// });
-
 	// Portfolio animations
 	gsap.to("#portfolio-titulo", {
 		scrollTrigger: {
@@ -1770,18 +1758,6 @@ import { Image } from "astro:assets";
 		duration: 1,
 		ease: "power3.out",
 	});
-
-	// gsap.from("#portfolio-grid > div", {
-	// 	scrollTrigger: {
-	// 		trigger: "#portfolio-grid",
-	// 		start: "top 80%",
-	// 	},
-	// 	opacity: 0,
-	// 	y: 50,
-	// 	duration: 0.8,
-	// 	stagger: 0.2,
-	// 	ease: "power3.out",
-	// });
 
 	// Proceso animations
 	gsap.to("#proceso-titulo", {
@@ -1795,18 +1771,6 @@ import { Image } from "astro:assets";
 		ease: "power3.out",
 	});
 
-	// gsap.from("#proceso-timeline > div", {
-	// 	scrollTrigger: {
-	// 		trigger: "#proceso-timeline",
-	// 		start: "top 80%",
-	// 	},
-	// 	opacity: 0,
-	// 	x: (index) => (index % 2 === 0 ? -50 : 50),
-	// 	duration: 0.8,
-	// 	stagger: 0.2,
-	// 	ease: "power3.out",
-	// });
-
 	// Testimonios animations
 	gsap.to("#testimonios-titulo", {
 		scrollTrigger: {
@@ -1818,18 +1782,6 @@ import { Image } from "astro:assets";
 		duration: 1,
 		ease: "power3.out",
 	});
-
-	//   gsap.from("#testimonios-grid > div", {
-	//     scrollTrigger: {
-	//       trigger: "#testimonios-grid",
-	//       start: "top 80%",
-	//     },
-	//     opacity: 0,
-	//     y: 30,
-	//     duration: 0.8,
-	//     stagger: 0.2,
-	//     ease: "power3.out",
-	//   });
 
 	// Contacto animations
 	gsap.to("#contacto-titulo", {
@@ -1853,28 +1805,4 @@ import { Image } from "astro:assets";
 		duration: 0.8,
 		ease: "power3.out",
 	});
-
-	// Form handling
-	document
-		.getElementById("contacto-form")
-		.addEventListener("submit", async (e) => {
-			e.preventDefault();
-
-			// Aquí puedes agregar la lógica para enviar el formulario
-			// Por ejemplo, usando fetch para enviar a tu backend:
-			const formData = new FormData(e.target);
-			const data = Object.fromEntries(formData.entries());
-
-			try {
-				// Simular envío (reemplazar con tu endpoint real)
-				console.log("Datos del formulario:", data);
-				alert("Mensaje enviado con éxito. Te contactaremos pronto.");
-				e.target.reset();
-			} catch (error) {
-				console.error("Error:", error);
-				alert(
-					"Hubo un error al enviar el mensaje. Por favor, intenta nuevamente.",
-				);
-			}
-		});
 </script>
