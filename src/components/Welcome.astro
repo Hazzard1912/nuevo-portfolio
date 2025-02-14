@@ -381,7 +381,7 @@ import { Image } from "astro:assets";
 								></path>
 							</svg>
 						</span>
-						<div class="absolute inset-0 rounded-full bg-gradient-to-r from-blue-600/20 to-purple-600/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+						<div class="absolute inset-0 rounded-full bg-gradient-to-r from-blue-600/20 to-purple-600/20 blur-xl group-hover:opacity-100 transition-opacity duration-300"></div>
 					</a>
 
 					<a
@@ -898,7 +898,7 @@ import { Image } from "astro:assets";
 
 	<div class="container mx-auto px-4 relative">
 		<!-- Enhanced header with metrics -->
-		<div class="text-center mb-20 opacity-0" id="portfolio-titulo">
+		<div class="text-center mb-20">
 			<div
 				class="inline-flex items-center gap-4 px-6 py-2 rounded-full bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 mb-8"
 			>
@@ -934,7 +934,6 @@ import { Image } from "astro:assets";
 					<span class="text-gray-300">2025</span>
 				</span>
 			</div>
-
 			<h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
 				E-commerce de Alto Rendimiento
 			</h2>
@@ -1192,7 +1191,7 @@ import { Image } from "astro:assets";
 
 	<div class="container mx-auto px-4 relative">
 		<!-- Section header -->
-		<div class="text-center mb-20 opacity-0" id="testimonios-titulo">
+		<div class="text-center mb-20" id="testimonios-titulo">
 			<h2 class="text-4xl md:text-5xl font-bold text-white mb-4">
 				Experiencias de Nuestros Clientes
 			</h2>
@@ -1333,7 +1332,7 @@ import { Image } from "astro:assets";
 
 	<div class="container mx-auto px-4 relative">
 		<div class="max-w-5xl mx-auto">
-			<div class="text-center mb-16 opacity-0" id="contacto-titulo">
+			<div class="text-center mb-16" id="contacto-titulo">
 				<span
 					class="text-blue-400 font-semibold tracking-wider text-sm uppercase mb-2 block"
 					>Contacto</span
@@ -1719,90 +1718,3 @@ import { Image } from "astro:assets";
 		</div>
 	</div>
 </footer>
-
-<script>
-	import { gsap } from "gsap";
-	import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-	gsap.registerPlugin(ScrollTrigger);
-
-	// Hero animations
-	gsap.to("#hero-content", {
-		opacity: 1,
-		y: 0,
-		duration: 1,
-		ease: "power3.out",
-		delay: 0.5,
-	});
-
-	// Servicios animations
-	gsap.to("#servicios-titulo", {
-		scrollTrigger: {
-			trigger: "#servicios-titulo",
-			start: "top 80%",
-		},
-		opacity: 1,
-		y: 0,
-		duration: 1,
-		ease: "power3.out",
-	});
-
-	// Portfolio animations
-	gsap.to("#portfolio-titulo", {
-		scrollTrigger: {
-			trigger: "#portfolio-titulo",
-			start: "top 80%",
-		},
-		opacity: 1,
-		y: 0,
-		duration: 1,
-		ease: "power3.out",
-	});
-
-	// Proceso animations
-	gsap.to("#proceso-titulo", {
-		scrollTrigger: {
-			trigger: "#proceso-titulo",
-			start: "top 80%",
-		},
-		opacity: 1,
-		y: 0,
-		duration: 1,
-		ease: "power3.out",
-	});
-
-	// Testimonios animations
-	gsap.to("#testimonios-titulo", {
-		scrollTrigger: {
-			trigger: "#testimonios-titulo",
-			start: "top 80%",
-		},
-		opacity: 1,
-		y: 0,
-		duration: 1,
-		ease: "power3.out",
-	});
-
-	// Contacto animations
-	gsap.to("#contacto-titulo", {
-		scrollTrigger: {
-			trigger: "#contacto-titulo",
-			start: "top 80%",
-		},
-		opacity: 1,
-		y: 0,
-		duration: 1,
-		ease: "power3.out",
-	});
-
-	gsap.from("#contacto-form", {
-		scrollTrigger: {
-			trigger: "#contacto-form",
-			start: "top 80%",
-		},
-		opacity: 0,
-		y: 30,
-		duration: 0.8,
-		ease: "power3.out",
-	});
-</script>
