@@ -1,0 +1,97 @@
+---
+const processSteps = [
+    {
+        number: "01",
+        title: "Análisis y Planificación",
+        description: "Definimos los requisitos técnicos y funcionales para crear una solución que se ajuste perfectamente a tus necesidades.",
+        features: ["Especificaciones técnicas detalladas", "Arquitectura y stack tecnológico"],
+        gradient: "from-blue-400 to-purple-400",
+        align: "left"
+    },
+    {
+        number: "02",
+        title: "Diseño UX/UI",
+        description: "Diseñamos interfaces intuitivas y experiencias de usuario que maximizan la usabilidad y la conversión.",
+        features: ["Wireframes y prototipos interactivos", "Diseño responsivo multiplataforma"],
+        gradient: "from-purple-400 to-pink-400",
+        align: "right"
+    },
+    {
+        number: "03",
+        title: "Desarrollo",
+        description: "Implementamos tu solución usando las últimas tecnologías y mejores prácticas de desarrollo.",
+        features: ["Desarrollo frontend y backend", "Integración de APIs y servicios"],
+        gradient: "from-blue-400 to-purple-400",
+        align: "left"
+    },
+    {
+        number: "04",
+        title: "Testing y Despliegue",
+        description: "Aseguramos la calidad y realizamos un despliegue optimizado de tu aplicación.",
+        features: ["Testing exhaustivo y QA", "Despliegue y monitorización"],
+        gradient: "from-purple-400 to-pink-400",
+        align: "right"
+    }
+];
+---
+
+<section id="proceso" class="bg-gradient-to-b from-slate-950 via-slate-900/30 to-slate-950 py-20 relative">
+    <div class="container mx-auto px-4 relative">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+                Proceso de Desarrollo
+            </h2>
+            <p class="text-slate-300 max-w-2xl mx-auto">
+                Metodología ágil y moderna para entregar <span class="text-white font-medium">soluciones digitales</span> de alta calidad
+            </p>
+        </div>
+
+        <div class="relative max-w-4xl mx-auto">
+            <!-- Simplified Timeline Line -->
+            <div class="absolute left-[50%] top-0 bottom-0 w-px hidden md:block bg-slate-800"></div>
+
+            <!-- Timeline Steps -->
+            <div class="space-y-16">
+                {processSteps.map(step => (
+                    <div class={`relative flex items-center md:justify-between flex-col ${
+                        step.align === 'right' ? 'md:flex-row-reverse' : 'md:flex-row'
+                    }`}>
+						<div class="w-full md:w-5/12 bg-slate-900/50 p-6 rounded-xl border border-slate-800 
+							transition-all duration-300 hover:bg-slate-800/50 hover:border-slate-700 
+							hover:shadow-lg hover:shadow-slate-900/50 hover:transform hover:-translate-y-1">
+							<div class="flex items-start gap-4 mb-4">
+								<div class="h-12 w-12 rounded-lg flex items-center justify-center border border-slate-700
+									transition-colors duration-300 hover:border-slate-600 p-4">
+									<span class={`text-xl font-bold bg-gradient-to-r ${step.gradient} text-transparent bg-clip-text`}>
+										{step.number}
+									</span>
+								</div>
+								<div>
+									<h3 class="text-2xl font-bold text-white mb-2 
+										transition-colors duration-300 hover:text-blue-400">{step.title}</h3>
+									<p class="text-slate-300 text-lg">{step.description}</p>
+								</div>
+							</div>
+							<ul class="space-y-2">
+								{step.features.map(feature => (
+									<li class="flex items-center gap-2 text-slate-300 text-md 
+										transition-colors duration-300 hover:text-white group">
+										<svg class="w-4 h-4 text-blue-400 transition-transform duration-300 group-hover:scale-110" 
+											viewBox="0 0 24 24" fill="none" stroke="currentColor">
+											<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+										</svg>
+										{feature}
+									</li>
+								))}
+							</ul>
+						</div>
+						
+						<!-- Timeline Dot with pulse effect -->
+						<div class="hidden md:flex h-4 w-4 rounded-full bg-blue-400 absolute left-1/2 -translate-x-1/2
+							animate-pulse shadow-lg shadow-blue-400/50"></div>
+					</div>
+                ))}
+            </div>
+        </div>
+    </div>
+</section>

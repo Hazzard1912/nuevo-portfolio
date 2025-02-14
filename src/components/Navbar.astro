@@ -1,0 +1,165 @@
+<nav
+	class="fixed w-full z-50 bg-slate-900/80 backdrop-blur-xl border-b border-slate-800/50"
+>
+	<div class="container mx-auto px-4">
+		<div class="flex items-center justify-between h-20">
+			<!-- Logo with enhanced animation -->
+			<a
+				href="#"
+				class="group flex items-center space-x-2 text-3xl font-bold"
+				aria-label="EstusCode"
+			>
+				<span
+					class="bg-gradient-to-r from-blue-400 via-purple-400 to-blue-400 bg-clip-text text-transparent"
+				>
+					EstusCode
+				</span>
+			</a>
+
+			<!-- Desktop Navigation -->
+			<div class="hidden md:flex items-center space-x-8">
+				<a
+					href="#"
+					class="group relative text-gray-300 hover:text-white transition-all duration-300"
+				>
+					<span class="relative z-10">Inicio</span>
+					<span
+						class="absolute inset-x-0 -bottom-1 h-0.5 bg-gradient-to-r from-blue-400 to-purple-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"
+					></span>
+				</a>
+				<a
+					href="#servicios"
+					class="group relative text-gray-300 hover:text-white transition-all duration-300"
+				>
+					<span class="relative z-10">Servicios</span>
+					<span
+						class="absolute inset-x-0 -bottom-1 h-0.5 bg-gradient-to-r from-blue-400 to-purple-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"
+					></span>
+				</a>
+				<a
+					href="#portfolio"
+					class="group relative text-gray-300 hover:text-white transition-all duration-300"
+				>
+					<span class="relative z-10">Portfolio</span>
+					<span
+						class="absolute inset-x-0 -bottom-1 h-0.5 bg-gradient-to-r from-blue-400 to-purple-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"
+					></span>
+				</a>
+				<a
+					href="#testimonios"
+					class="group relative text-gray-300 hover:text-white transition-all duration-300"
+				>
+					<span class="relative z-10">Testimonios</span>
+					<span
+						class="absolute inset-x-0 -bottom-1 h-0.5 bg-gradient-to-r from-blue-400 to-purple-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"
+					></span>
+				<a
+					href="#contacto"
+					class="group inline-flex items-center gap-2 bg-gradient-to-r from-blue-500 to-purple-500 text-white font-medium py-2.5 px-6 rounded-full hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300 transform hover:-translate-y-0.5"
+				>
+					Contactar
+					<svg
+						class="w-4 h-4 group-hover:translate-x-1 transition-transform"
+						fill="none"
+						stroke="currentColor"
+						viewBox="0 0 24 24"
+					>
+						<path
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							stroke-width="2"
+							d="M9 5l7 7-7 7"></path>
+					</svg>
+				</a>
+			</div>
+
+			<!-- Mobile menu button -->
+			<button
+				id="mobile-menu-button"
+				class="md:hidden inline-flex items-center justify-center p-2 rounded-lg text-gray-400 hover:text-white hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500"
+			>
+				<span class="sr-only">Abrir menú principal</span>
+				<svg
+					class="h-6 w-6"
+					fill="none"
+					viewBox="0 0 24 24"
+					stroke="currentColor"
+				>
+					<path
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						stroke-width="2"
+						d="M4 6h16M4 12h16M4 18h16"></path>
+				</svg>
+			</button>
+		</div>
+
+		<!-- Mobile menu -->
+		<div
+			id="mobile-menu"
+			class="hidden md:hidden border-t border-slate-800/50 py-4"
+		>
+			<div class="flex flex-col space-y-4">
+				<a
+					href="#"
+					class="text-gray-300 hover:text-white hover:bg-slate-800/50 px-4 py-2 rounded-lg transition-all duration-300"
+					>Inicio</a
+				>
+				<a
+					href="#servicios"
+					class="text-gray-300 hover:text-white hover:bg-slate-800/50 px-4 py-2 rounded-lg transition-all duration-300"
+					>Servicios</a
+				>
+				<a
+					href="#portfolio"
+					class="text-gray-300 hover:text-white hover:bg-slate-800/50 px-4 py-2 rounded-lg transition-all duration-300"
+					>Portfolio</a
+				>
+				<a
+					href="#contacto"
+					class="inline-flex items-center gap-2 bg-gradient-to-r from-blue-500 to-purple-500 text-white font-medium py-2.5 px-6 rounded-lg hover:opacity-90 transition-all duration-300"
+				>
+					Contactar
+					<svg
+						class="w-4 h-4"
+						fill="none"
+						stroke="currentColor"
+						viewBox="0 0 24 24"
+					>
+						<path
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							stroke-width="2"
+							d="M9 5l7 7-7 7"></path>
+					</svg>
+				</a>
+			</div>
+		</div>
+	</div>
+</nav>
+
+<script>
+	// Mobile menu toggle
+	const mobileMenuButton = document.getElementById("mobile-menu-button");
+	const mobileMenu = document.getElementById("mobile-menu");
+
+	mobileMenuButton?.addEventListener("click", () => {
+		mobileMenu?.classList.toggle("hidden");
+	});
+
+	// Close mobile menu when clicking on a link
+	const mobileLinks = mobileMenu?.querySelectorAll("a");
+	mobileLinks?.forEach((link) => {
+		link.addEventListener("click", () => {
+			mobileMenu?.classList.add("hidden");
+		});
+	});
+
+	// Close mobile menu when resizing to desktop
+	window.addEventListener("resize", () => {
+		if (window.innerWidth >= 768) {
+			// md breakpoint
+			mobileMenu?.classList.add("hidden");
+		}
+	});
+</script>

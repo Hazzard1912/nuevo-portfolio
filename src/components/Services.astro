@@ -1,0 +1,96 @@
+---
+const services = [
+    {
+        title: "Desarrollo Web",
+        description: "Creamos sitios web y aplicaciones web personalizadas que destacan tu marca y aumentan tus conversiones.",
+        icon: "code",
+        features: ["Landing Pages", "Aplicaciones Web"]
+    },
+    {
+        title: "Aplicaciones Móviles",
+        description: "Desarrollo de apps nativas y multiplataforma que conectan con tus usuarios donde estén.",
+        icon: "mobile",
+        features: ["Apps iOS y Android", "Apps Multiplataforma"]
+    },
+    {
+        title: "Software Empresarial",
+        description: "Soluciones a medida para optimizar y automatizar los procesos de tu empresa.",
+        icon: "building",
+        features: ["ERPs y CRMs", "Automatización"]
+    }
+];
+
+// Simplified icons object with optimized SVG paths
+const icons = {
+    code: '<path d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" stroke-width="2"/>',
+    mobile: '<path d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" stroke-width="2"/>',
+    building: '<path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" stroke-width="2"/>'
+};
+---
+
+<section id="servicios" class="bg-gradient-to-b from-slate-900 to-slate-950 py-20 relative min-h-screen">
+    <div class="container mx-auto px-4 max-w-6xl">
+        <div class="text-center mb-20">
+            <h2 class="text-2xl sm:text-5xl font-bold text-white mb-3">
+                Potencia tu Presencia Digital
+            </h2>
+            <p class="text-base sm:text-xl text-slate-300 max-w-3xl mx-auto">
+                Creamos soluciones web que transforman visitantes en clientes y potencian tu marca en el mundo digital.
+            </p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+            {services.map(service => (
+                <div class="bg-slate-800/50 p-6 rounded-lg border border-slate-700/50 
+                    backdrop-blur-sm transition-all duration-300 hover:bg-slate-800/70 
+                    hover:border-blue-500/30 hover:shadow-lg hover:shadow-blue-500/10 
+                    hover:-translate-y-1">
+                    <div class="w-12 h-12 mb-5 rounded-xl flex items-center justify-center 
+                        bg-blue-500/10 transition-colors duration-300 
+                        group-hover:bg-blue-500/20">
+                        <svg
+                            class="w-6 h-6 text-blue-400 transition-transform duration-300 
+                            hover:scale-110"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                            set:html={icons[service.icon]}
+                        />
+                    </div>
+
+                    <h3 class="text-xl font-bold text-white mb-3 transition-colors 
+                        duration-300 hover:text-blue-400">
+                        {service.title}
+                    </h3>
+                    <p class="text-slate-300 text-base mb-5 leading-relaxed">
+                        {service.description}
+                    </p>
+
+                    <ul class="space-y-2">
+                        {service.features.map(feature => (
+                            <li class="flex items-center text-slate-300 text-sm 
+                                transition-colors duration-300 hover:text-white">
+                                <svg class="w-4 h-4 mr-2 text-blue-400" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
+                                </svg>
+                                {feature}
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+            ))}
+        </div>
+
+        <div class="mt-12 text-center">
+            <a href="#contacto"
+                class="inline-flex items-center px-6 py-3 bg-blue-600 text-base 
+                font-semibold rounded-full text-white transition-all duration-200
+                hover:bg-blue-500 hover:-translate-y-0.5">
+                Impulsa tu Negocio
+                <svg class="w-5 h-5 ml-2" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path stroke-width="2" d="M9 5l7 7-7 7"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,71 @@
+---
+const testimonials = [
+    {
+        text: "El proceso fue excepcional desde el inicio. Entendieron perfectamente nuestras necesidades y entregaron resultados sorprendentes.",
+        author: "María Andrade",
+        role: "Gerente de Marketing, TechCali",
+        initials: "MA",
+        color: "blue"
+    },
+    {
+        text: "Nuestra tienda en línea ha superado todas las expectativas. Las ventas se duplicaron en los primeros meses.",
+        author: "Juan Ramírez",
+        role: "Propietario, Moda Express",
+        initials: "JR",
+        color: "purple"
+    },
+    {
+        text: "La optimización SEO fue excepcional. Aumentamos nuestro tráfico orgánico en un 200%.",
+        author: "Carolina Valencia",
+        role: "CEO, Innovación Digital",
+        initials: "CV",
+        color: "pink"
+    }
+];
+
+const quoteIcon = `<path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>`;
+---
+
+<section id="testimonios" class="bg-gradient-to-b from-slate-900 to-slate-950 py-20 relative">
+
+    <div class="container mx-auto px-4 relative">
+        <div class="text-center mb-12">
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-3">
+                Experiencias de Nuestros Clientes
+            </h2>
+            <p class="text-slate-300 max-w-2xl mx-auto text-xl">
+                Descubre por qué las empresas confían en nosotros para sus proyectos digitales
+            </p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            {testimonials.map(({ text, author, role, initials, color }) => (
+				<div class="bg-slate-900/50 backdrop-blur-sm p-6 rounded-xl border border-slate-800/50 transition-all duration-300 hover:bg-slate-900/70 hover:border-slate-700/50 hover:transform hover:-translate-y-1 hover:shadow-lg hover:shadow-slate-900/50">
+					<div class="mb-6">
+						<svg
+							class={`w-6 h-6 text-${color}-400 mb-4 transition-transform duration-300 hover:scale-110`}
+							fill="currentColor"
+							viewBox="0 0 24 24"
+							set:html={quoteIcon}
+						/>
+						<p class="text-slate-300 text-md leading-relaxed transition-colors duration-300 group-hover:text-white">
+							{text}
+						</p>
+					</div>
+
+					<div class="flex items-center gap-3">
+						<div class={`h-10 w-10 rounded-full bg-${color}-500/10 border border-${color}-500/20 flex items-center justify-center transition-colors duration-300 hover:bg-${color}-500/20`}>
+							<span class={`text-md font-medium text-${color}-400`}>
+								{initials}
+							</span>
+						</div>
+						<div>
+							<h3 class="text-white text-md font-medium">{author}</h3>
+							<p class="text-slate-400 text-sm transition-colors duration-300 hover:text-slate-300">{role}</p>
+						</div>
+					</div>
+				</div>
+            ))}
+        </div>
+    </div>
+</section>

@@ -1,0 +1,123 @@
+---
+const contactInfo = [
+    {
+        icon: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>',
+        title: 'Email',
+        value: 'estuscode@proton.me',
+        type: 'email',
+        color: 'blue'
+    },
+    {
+        icon: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>',
+        title: 'Ubicación',
+        value: 'Cali, Colombia',
+        type: 'text',
+        color: 'purple'
+    }
+];
+
+const formFields = [
+    { id: 'nombre', label: 'Nombre', type: 'text', placeholder: 'Tu nombre' },
+    { id: 'email', label: 'Email', type: 'email', placeholder: 'tu@email.com' },
+    { id: 'asunto', label: 'Asunto', type: 'text', placeholder: '¿Sobre qué quieres hablar?' }
+];
+---
+
+<section id="contacto" class="py-20 bg-gradient-to-br from-slate-950 relative min-h-screen">
+	<div class="container mx-auto px-4 relative">
+		<div class="max-w-5xl mx-auto">
+			<div class="text-center mb-12">
+				<span class="text-blue-400 text-sm font-medium uppercase tracking-wider">Contacto</span>
+				<h2 class="text-3xl md:text-5xl font-bold text-white mt-2 mb-4">
+					Hagamos realidad tu <span class="bg-gradient-to-r from-blue-400 to-purple-400 text-transparent bg-clip-text">próximo proyecto</span>
+				</h2>
+				<p class="text-slate-300 max-w-2xl mx-auto text-xl">
+					Estamos listos para convertir tus ideas en experiencias digitales excepcionales
+				</p>
+			</div>
+
+			<div class="grid lg:grid-cols-3 gap-8">
+				<!-- Contact Info -->
+				<div class="lg:col-span-1 space-y-4">
+					{contactInfo.map(info => (
+						<div class="bg-slate-950/80 p-4 rounded-xl border border-slate-700 backdrop-blur-sm hover:border-slate-600 transition-colors">
+							<div class="flex items-center gap-4">
+								<div class={`h-10 w-10 rounded-lg bg-${info.color}-500/20 border border-${info.color}-500/30 flex items-center justify-center shrink-0`}>
+									<svg
+										class={`w-5 h-5 text-${info.color}-400`}
+										fill="none"
+										stroke="currentColor"
+										viewBox="0 0 24 24"
+										set:html={info.icon}
+									/>
+								</div>
+								<div>
+									<h3 class="text-white font-medium">{info.title}</h3>
+									{info.type === 'email' ? (
+										<a href={`mailto:${info.value}`} class="text-slate-300 hover:text-blue-400 transition-colors">
+											{info.value}
+										</a>
+									) : (
+										<p class="text-slate-300">{info.value}</p>
+									)}
+								</div>
+							</div>
+						</div>
+					))}
+				</div>
+
+				<!-- Contact Form -->
+				<form
+					class="lg:col-span-2 bg-slate-950/80 p-8 rounded-xl border border-slate-700 backdrop-blur-sm space-y-6 hover:border-slate-600 transition-colors"
+					action="https://formspree.io/f/mqaeyajz"
+					method="POST"
+				>
+					<div class="grid sm:grid-cols-2 gap-6">
+						{formFields.map(field => (
+							<div class={field.id === 'asunto' ? 'sm:col-span-2' : ''}>
+								<label
+									for={field.id}
+									class="block text-sm font-medium text-slate-300 mb-2"
+								>
+									{field.label}
+								</label>
+								<input
+									type={field.type}
+									id={field.id}
+									name={field.id}
+									class="w-full px-4 py-3 bg-slate-800/50 border border-slate-600/50 rounded-lg 
+										text-white placeholder-slate-400 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500/50 transition-colors"
+									placeholder={field.placeholder}
+									required
+								/>
+							</div>
+						))}
+					</div>
+
+					<div>
+						<label for="mensaje" class="block text-sm font-medium text-slate-300 mb-2">
+							Mensaje
+						</label>
+						<textarea
+							id="mensaje"
+							name="mensaje"
+							rows="4"
+							class="w-full px-4 py-3 bg-slate-800/50 border border-slate-600/50 rounded-lg 
+								text-white placeholder-slate-400 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500/50 transition-colors"
+							placeholder="Cuéntanos los detalles de tu proyecto"
+							required
+						></textarea>
+					</div>
+
+					<button
+						type="submit"
+						class="w-full px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 
+							text-white font-medium rounded-full transition-all duration-200 transform hover:scale-[0.99] active:scale-[0.97]"
+					>
+						Enviar mensaje
+					</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</section>
