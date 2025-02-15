@@ -1,7 +1,4 @@
 ---
-import { Image } from "astro:assets";
-import logo from "../assets/logo.svg";
-
 const navigationLinks = [
     { href: "#", label: "Inicio" },
     { href: "#servicios", label: "Servicios" },
@@ -31,8 +28,8 @@ const contactInfo = [
                 <a 
                     href="#"
                     class="group flex items-center space-x-2 text-2xl font-bold">
-                    <Image
-                        src={logo}
+                    <img
+                        src="/logo.svg"
                         alt="EstusCode Logo"
                         class="w-12 h-12"
                     />
