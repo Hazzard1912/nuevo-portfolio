@@ -6,7 +6,7 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://estuscode.com',
+  site: 'https://www.estuscode.com',
   integrations: [
     tailwind(),
     sitemap()
