@@ -1,5 +1,6 @@
 ---
-import { ClientRouter } from "astro:transitions";
+import 'aos';
+import 'aos/dist/aos.css';
 import FAQ from "../components/FAQ.astro";
 import Footer from "../components/Footer.astro";
 import Navbar from "../components/Navbar.astro";
@@ -11,7 +12,6 @@ import Navbar from "../components/Navbar.astro";
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 		<meta name="generator" content={Astro.generator} />
 		<title>EstusCode | Servicios de Desarrollo Web</title>
 		<meta name="author" content="EstusCode" />
@@ -68,16 +68,18 @@ import Navbar from "../components/Navbar.astro";
 		<slot />
 		<FAQ />
 		<Footer />
-		<script is:inline src="https://unpkg.com/aos@next/dist/aos.js"></script>
-		<script is:inline>
-			AOS.init({
-				duration: 800,
-				once: true,
-				mirror: true,
-			});
+		<script>
+			document.addEventListener('DOMContentLoaded', async function() {
+				const AOS = await import('aos');
+				AOS.init({
+					duration: 800,
+					once: true,
+					mirror: true,
+				});
 
-			document.addEventListener("astro:page-load", () => {
-				AOS.refresh();
+				document.addEventListener("astro:page-load", () => {
+					AOS.refresh();
+				});
 			});
 		</script>
 	</body>

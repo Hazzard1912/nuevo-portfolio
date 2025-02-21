@@ -2,54 +2,60 @@
 import Button from "../ui/Button.astro";
 ---
 
-<section class="min-h-screen w-full flex items-center justify-center bg-white">
+<section
+    class="min-h-screen w-full flex items-center justify-center bg-white"
+    id="inicio"
+>
     <div class="container mx-auto px-4 py-16 relative">
         <div class="max-w-4xl mx-auto text-center space-y-12 relative z-10">
             <!-- Enhanced heading with animation -->
-            <h1 
-                class="text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900" 
+            <h1
+                class="text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900"
                 data-aos="fade-up"
                 data-aos-duration="1000"
             >
-                Elevamos tu 
-                <span class="py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-transparent bg-clip-text animate-gradient">
+                Elevamos tu
+                <span
+                    class="py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-transparent bg-clip-text animate-gradient"
+                >
                     Presencia Digital
                 </span>
             </h1>
 
             <!-- Enhanced description with better typography -->
-            <p 
+            <p
                 class="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed"
                 data-aos="fade-up"
                 data-aos-duration="1000"
                 data-aos-delay="200"
             >
-                Desarrollamos sitios web de alto rendimiento utilizando las últimas tecnologías.
+                Desarrollamos sitios web de alto rendimiento utilizando las
+                últimas tecnologías.
                 <span class="block mt-2 font-semibold">
                     Más rápidos. Más modernos. Más efectivos.
                 </span>
             </p>
 
             <!-- Enhanced CTAs with improved styling -->
-            <div 
+            <div
                 class="flex flex-col sm:flex-row justify-center gap-6"
                 data-aos="fade-up"
                 data-aos-duration="1000"
                 data-aos-delay="400"
             >
-                <Button 
-                    text="Iniciar Proyecto" 
-                    href="#contacto" 
+                <Button
+                    text="Iniciar Proyecto"
+                    href="#contacto"
                     hasIcon
                     ariaLabel="Iniciar un nuevo proyecto"
-                    className="hover:scale-105 transition-transform" 
+                    className="hover:scale-105 transition-transform"
                 />
-                <Button 
-                    text="Explorar Servicios" 
-                    href="/servicios" 
+                <Button
+                    text="Explorar Servicios"
+                    href="/servicios"
                     isPrimary={false}
                     ariaLabel="Ver nuestros servicios"
-                    className="hover:scale-105 transition-transform" 
+                    className="hover:scale-105 transition-transform"
                 />
             </div>
         </div>

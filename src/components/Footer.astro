@@ -1,4 +1,6 @@
 ---
+import { Image } from "astro:assets";
+
 const navigationSections = [
     {
         title: "Servicios",
@@ -14,7 +16,7 @@ const navigationSections = [
             { href: "/#proceso", label: "Proceso", ariaLabel: "Conoce nuestro proceso" },
             { href: "/#portfolio", label: "Portfolio", ariaLabel: "Ver nuestro portfolio" },
             { href: "/#testimonios", label: "Testimonios", ariaLabel: "Ver testimonios de clientes" },
-            { href: "/#faq", label: "FAQ", ariaLabel: "Ver preguntas frecuentes" }
+            { href: "#faq", label: "FAQ", ariaLabel: "Ver preguntas frecuentes" }
         ]
     }
 ];
@@ -53,10 +55,10 @@ const socialLinks = [
             <!-- Brand Section -->
             <div class="space-y-6">
                 <a 
-                    href="/#"
+                    href="/#inicio"
                     class="group inline-flex items-center space-x-2 text-2xl font-bold"
                     aria-label="EstusCode - Inicio">
-                    <img
+                    <Image
                         src="/logo.svg"
                         alt="EstusCode Logo"
                         class="w-12 h-12"

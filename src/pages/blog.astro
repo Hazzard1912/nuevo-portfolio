@@ -1,6 +1,6 @@
 ---
+import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
-import Button from "../ui/Button.astro";
 
 interface BlogPost {
     id: string;
@@ -19,129 +19,162 @@ const blogPosts: BlogPost[] = [
     {
         id: "tendencias-desarrollo-web-2024",
         title: "Tendencias en Desarrollo Web para 2024",
-        description: "Descubre las tecnologías y metodologías que están definiendo el futuro del desarrollo web. Desde Astro hasta la IA en el desarrollo.",
+        description:
+            "Descubre las tecnologías y metodologías que están definiendo el futuro del desarrollo web. Desde Astro hasta la IA en el desarrollo.",
         publishDate: "2024-01-15",
         image: {
             src: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&q=80",
-            alt: "Tecnologías modernas de desarrollo web representadas en una pantalla"
+            alt: "Tecnologías modernas de desarrollo web representadas en una pantalla",
         },
         tags: ["Desarrollo Web", "Tendencias", "2024", "Tecnología"],
-        readTime: "5 min"
+        readTime: "5 min",
     },
     {
         id: "optimizacion-seo-colombia",
         title: "Guía Completa de SEO para Empresas Colombianas",
-        description: "Estrategias probadas para mejorar el posicionamiento de tu sitio web en Colombia. Aprende técnicas locales de SEO que funcionan.",
+        description:
+            "Estrategias probadas para mejorar el posicionamiento de tu sitio web en Colombia. Aprende técnicas locales de SEO que funcionan.",
         publishDate: "2024-01-10",
         image: {
             src: "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?auto=format&fit=crop&q=80",
-            alt: "Análisis de datos SEO en pantalla"
+            alt: "Análisis de datos SEO en pantalla",
         },
         tags: ["SEO", "Marketing Digital", "Colombia", "Posicionamiento"],
-        readTime: "7 min"
+        readTime: "7 min",
     },
     {
         id: "desarrollo-web-pymes",
         title: "Soluciones Web Efectivas para PyMEs",
-        description: "Cómo implementar soluciones web económicas pero poderosas para pequeñas y medianas empresas. Casos de éxito en el Valle del Cauca.",
+        description:
+            "Cómo implementar soluciones web económicas pero poderosas para pequeñas y medianas empresas. Casos de éxito en el Valle del Cauca.",
         publishDate: "2024-01-05",
         image: {
             src: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80",
-            alt: "Empresario revisando sitio web en laptop"
+            alt: "Empresario revisando sitio web en laptop",
         },
         tags: ["PyMEs", "Desarrollo Web", "Empresas", "Economía"],
-        readTime: "6 min"
+        readTime: "6 min",
     },
     {
         id: "astro-react-desarrollo",
         title: "Astro + React: La Combinación Perfecta",
-        description: "Aprende a crear sitios web ultra rápidos combinando la potencia de Astro con la flexibilidad de React. Tutorial paso a paso.",
+        description:
+            "Aprende a crear sitios web ultra rápidos combinando la potencia de Astro con la flexibilidad de React. Tutorial paso a paso.",
         publishDate: "2024-01-01",
         image: {
             src: "https://images.unsplash.com/photo-1627398242454-45a1465c2479?auto=format&fit=crop&q=80",
-            alt: "Código de desarrollo web moderno"
+            alt: "Código de desarrollo web moderno",
         },
         tags: ["Astro", "React", "JavaScript", "Desarrollo"],
-        readTime: "8 min"
-    }
+        readTime: "8 min",
+    },
 ];
 ---
+
 <Layout>
     <section class="py-24 bg-white">
         <div class="container mx-auto px-4">
             <div class="max-w-7xl mx-auto">
                 <!-- Header Section -->
                 <div class="text-center mb-16" data-aos="fade-up">
-                    <span class="text-blue-600 font-medium mb-4 block tracking-wider uppercase text-sm">
+                    <span
+                        class="text-blue-600 font-medium mb-4 block tracking-wider uppercase text-sm"
+                    >
                         BLOG TECNOLÓGICO
                     </span>
-                    <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                        Conocimiento y 
-                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
+                    <h1
+                        class="text-4xl md:text-5xl font-bold text-gray-900 mb-6"
+                    >
+                        Conocimiento y
+                        <span
+                            class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600"
+                        >
                             Tendencias
                         </span>
                     </h1>
-                    <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                        Explorando las últimas novedades en desarrollo web y tecnología
+                    <p
+                        class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed"
+                    >
+                        Explorando las últimas novedades en desarrollo web y
+                        tecnología
                     </p>
                 </div>
 
                 <!-- Blog Grid -->
                 <div class="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
-                    {blogPosts.map((post, index) => (
-                        <article 
-                            class="group bg-white rounded-2xl overflow-hidden border border-gray-100
+                    {
+                        blogPosts.map((post, index) => (
+                            <article
+                                class="group bg-white rounded-2xl overflow-hidden border border-gray-100
                                 transition-all duration-500 hover:-translate-y-2 hover:shadow-xl 
                                 hover:shadow-blue-500/10"
-                            data-aos="fade-up"
-                            data-aos-delay={index * 100}
-                        >
-                            <a href={`/blog/${post.id}`} class="block">
-                                <div class="aspect-video overflow-hidden">
-                                    <img
-                                        src={post.image.src}
-                                        alt={post.image.alt}
-                                        class="w-full h-full object-cover transition-transform duration-500
-                                            group-hover:scale-110"
-                                        width="800"
-                                        height="400"
-                                    />
-                                </div>
-
-                                <div class="p-8">
-                                    <div class="flex items-center gap-4 mb-4">
-                                        <time datetime={post.publishDate} class="text-sm text-gray-500">
-                                            {new Date(post.publishDate).toLocaleDateString('es-ES', {
-                                                year: 'numeric',
-                                                month: 'long',
-                                                day: 'numeric'
-                                            })}
-                                        </time>
-                                        <span class="text-sm text-gray-500">·</span>
-                                        <span class="text-sm text-gray-500">{post.readTime} lectura</span>
+                                data-aos="fade-up"
+                                data-aos-delay={index * 100}
+                            >
+                                <a href={`/blog/${post.id}`} class="block">
+                                    <div class="aspect-video overflow-hidden">
+                                        <Image
+                                            src={post.image.src}
+                                            alt={post.image.alt}
+                                            loading="lazy"
+                                            decoding="async"
+                                            quality={80}
+                                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                            width="800"
+                                            height="400"
+                                        />
                                     </div>
 
-                                    <h2 class="text-2xl font-bold text-gray-900 mb-4 
-                                        transition-colors duration-300 group-hover:text-blue-600">
-                                        {post.title}
-                                    </h2>
-                                    
-                                    <p class="text-gray-600 mb-6 line-clamp-3">
-                                        {post.description}
-                                    </p>
-
-                                    <div class="flex flex-wrap gap-2">
-                                        {post.tags.slice(0, 3).map(tag => (
-                                            <span class="text-sm px-3 py-1 rounded-full bg-gray-50 
-                                                text-gray-600 border border-gray-100">
-                                                {tag}
+                                    <div class="p-8">
+                                        <div class="flex items-center gap-4 mb-4">
+                                            <time
+                                                datetime={post.publishDate}
+                                                class="text-sm text-gray-500"
+                                            >
+                                                {new Date(
+                                                    post.publishDate,
+                                                ).toLocaleDateString("es-ES", {
+                                                    year: "numeric",
+                                                    month: "long",
+                                                    day: "numeric",
+                                                })}
+                                            </time>
+                                            <span class="text-sm text-gray-500">
+                                                ·
                                             </span>
-                                        ))}
+                                            <span class="text-sm text-gray-500">
+                                                {post.readTime} lectura
+                                            </span>
+                                        </div>
+
+                                        <h2
+                                            class="text-2xl font-bold text-gray-900 mb-4 
+                                        transition-colors duration-300 group-hover:text-blue-600"
+                                        >
+                                            {post.title}
+                                        </h2>
+
+                                        <p class="text-gray-600 mb-6 line-clamp-3">
+                                            {post.description}
+                                        </p>
+
+                                        <div class="flex flex-wrap gap-2">
+                                            {post.tags
+                                                .slice(0, 3)
+                                                .map((tag) => (
+                                                    <span
+                                                        class="text-sm px-3 py-1 rounded-full bg-gray-50 
+                                                text-gray-600 border border-gray-100"
+                                                    >
+                                                        {tag}
+                                                    </span>
+                                                ))}
+                                        </div>
                                     </div>
-                                </div>
-                            </a>
-                        </article>
-                    ))}
+                                </a>
+                            </article>
+                        ))
+                    }
                 </div>
             </div>
         </div>

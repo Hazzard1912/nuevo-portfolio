@@ -65,6 +65,8 @@ const blogPost = {
                 src={blogPost.image}
                 width={800}
                 height={400}
+                loading="eager"
+                decoding="async"
                 alt="Tendencias en desarrollo web 2024"
                 class="rounded-xl object-cover mx-auto"
             />
@@ -143,7 +145,5 @@ const blogPost = {
                 </div>
             </div>
         </main>
-
-        <CTA />
     </article>
 </Layout>

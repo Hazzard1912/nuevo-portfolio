@@ -1,6 +1,5 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import Button from "../../ui/Button.astro";
 import CTA from "../../components/CTA.astro";
 import Image from "astro/components/Image.astro";
 
@@ -73,13 +72,14 @@ const serviceDetails = {
 <Layout>
     <article class="bg-white">
         <div class="py-24">
-            
             <Image
                 src={serviceDetails.image}
                 width={800}
                 height={400}
+                loading="eager"
+                decoding="async"
                 alt="Desarrollo web profesional"
-                class="rounded-xl object-cover mx-auto" 
+                class="rounded-xl object-cover mx-auto"
             />
         </div>
 
@@ -170,7 +170,5 @@ const serviceDetails = {
                 </section>
             </div>
         </main>
-
-        <CTA />
     </article>
 </Layout>

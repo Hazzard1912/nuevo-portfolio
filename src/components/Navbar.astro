@@ -1,16 +1,18 @@
 ---
+import { Image } from "astro:assets";
 import Button from "../ui/Button.astro";
 
 const menuItems = [
     {
         label: "Inicio",
-        href: "/#",
+        href: "/#inicio",
         ariaLabel: "Ir al inicio",
     },
     {
         label: "Servicios",
-        href: "/#servicios",
+        href: "/servicios",
         ariaLabel: "Ver nuestros servicios",
+        onmouseenter: "prefetchPage('/servicios')",
     },
     {
         label: "Proceso",
@@ -32,11 +34,11 @@ const menuItems = [
         href: "#faq",
         ariaLabel: "Ver preguntas frecuentes",
     },
-	{
-		label: "Blog",
-		href: "/blog",
-		ariaLabel: "Visitar el blog de EstusCode",
-	}
+    {
+        label: "Blog",
+        href: "/blog",
+        ariaLabel: "Visitar el blog de EstusCode",
+    },
 ];
 
 const brand = {
@@ -47,7 +49,7 @@ const brand = {
 ---
 
 <nav
-    class="fixed w-full z-50 bg-white/90 backdrop-blur-xl border-b border-gray-100 
+    class="fixed w-full z-50 bg-white/90 backdrop-blur-xl border-b border-gray-100
         shadow-sm transition-all duration-300"
     id="navbar"
 >
@@ -56,19 +58,19 @@ const brand = {
             <!-- Logo -->
             <a
                 href="/#"
-                class="group inline-flex items-center gap-3 transition-all duration-300 
+                class="group inline-flex items-center gap-3 transition-all duration-300
                     hover:opacity-80"
                 aria-label={brand.name}
             >
-                <img 
-                    src={brand.logo} 
-                    alt={brand.alt} 
+                <Image
+                    src={brand.logo}
+                    alt={brand.alt}
                     class="w-10 h-10"
                     width="40"
                     height="40"
                 />
                 <span
-                    class="text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 
+                    class="text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600
                         bg-clip-text text-transparent"
                 >
                     {brand.name}
@@ -77,24 +79,26 @@ const brand = {
 
             <!-- Desktop Navigation -->
             <div class="hidden md:flex items-center gap-8">
-                {menuItems.map(({ href, label, ariaLabel }) => (
-                    <a
-                        href={href}
-                        class="group relative px-2 py-1 text-gray-600 transition-all duration-300 
+                {
+                    menuItems.map(({ href, label, ariaLabel }) => (
+                        <a
+                            href={href}
+                            class="group relative px-2 py-1 text-gray-600 transition-all duration-300 
                             hover:text-gray-900"
-                        aria-label={ariaLabel}
-                    >
-                        <span class="relative z-10">{label}</span>
-                        <span
-                            class="absolute inset-x-0 bottom-0 h-0.5 bg-blue-600 scale-x-0 
+                            aria-label={ariaLabel}
+                        >
+                            <span class="relative z-10">{label}</span>
+                            <span
+                                class="absolute inset-x-0 bottom-0 h-0.5 bg-blue-600 scale-x-0 
                                 group-hover:scale-x-100 transition-transform duration-300 
                                 ease-out origin-left"
-                        ></span>
-                    </a>
-                ))}
+                            />
+                        </a>
+                    ))
+                }
 
                 <Button
-                    href="#contacto"
+                    href="/#contacto"
                     text="Contactar"
                     hasIcon
                     ariaLabel="Contactar con EstusCode"
@@ -105,8 +109,8 @@ const brand = {
             <!-- Mobile Menu Button -->
             <button
                 id="mobile-menu-button"
-                class="md:hidden inline-flex items-center justify-center p-2 rounded-lg 
-                    text-gray-500 hover:text-gray-900 hover:bg-gray-100 
+                class="md:hidden inline-flex items-center justify-center p-2 rounded-lg
+                    text-gray-500 hover:text-gray-900 hover:bg-gray-100
                     focus:outline-none focus:ring-2 focus:ring-blue-500"
                 aria-label="Abrir menú principal"
             >
@@ -120,8 +124,7 @@ const brand = {
                         stroke-linecap="round"
                         stroke-linejoin="round"
                         stroke-width="2"
-                        d="M4 6h16M4 12h16M4 18h16"
-                    />
+                        d="M4 6h16M4 12h16M4 18h16"></path>
                 </svg>
             </button>
         </div>
@@ -131,16 +134,18 @@ const brand = {
             id="mobile-menu"
             class="hidden md:hidden border-t border-gray-100 py-4 space-y-4"
         >
-            {menuItems.map(({ href, label, ariaLabel }) => (
-                <a
-                    href={href}
-                    class="block px-4 py-2 text-gray-600 rounded-lg transition-all 
+            {
+                menuItems.map(({ href, label, ariaLabel }) => (
+                    <a
+                        href={href}
+                        class="block px-4 py-2 text-gray-600 rounded-lg transition-all 
                         duration-300 hover:text-gray-900 hover:bg-gray-50"
-                    aria-label={ariaLabel}
-                >
-                    {label}
-                </a>
-            ))}
+                        aria-label={ariaLabel}
+                    >
+                        {label}
+                    </a>
+                ))
+            }
             <div class="px-4 pt-2">
                 <Button
                     href="#contacto"
@@ -184,14 +189,14 @@ const brand = {
     let lastScroll = 0;
     window.addEventListener("scroll", () => {
         const currentScroll = window.pageYOffset;
-        
+
         if (currentScroll <= 0) {
             navbar?.classList.remove("nav-hidden");
             navbar?.classList.remove("bg-white/90");
             navbar?.classList.add("bg-white");
             return;
         }
-        
+
         if (currentScroll > lastScroll && currentScroll > 80) {
             // Scrolling down
             navbar?.classList.add("nav-hidden");
@@ -201,7 +206,7 @@ const brand = {
             navbar?.classList.add("bg-white/90");
             navbar?.classList.remove("bg-white");
         }
-        
+
         lastScroll = currentScroll;
     });
 </script>
