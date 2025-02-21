@@ -1,41 +1,85 @@
+---
+import { ClientRouter } from "astro:transitions";
+import FAQ from "../components/FAQ.astro";
+import Footer from "../components/Footer.astro";
+import Navbar from "../components/Navbar.astro";
+---
+
 <!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 		<meta name="generator" content={Astro.generator} />
 		<title>EstusCode | Servicios de Desarrollo Web</title>
 		<meta name="author" content="EstusCode" />
-		
+
 		<!-- SEO -->
 		<meta name="robots" content="index, follow" />
 		<meta name="googlebot" content="index, follow" />
-		
+
 		<!-- Primary Meta Tags -->
-		<meta name="title" content="EstusCode | Servicios Profesionales de Desarrollo Web" />
-		<meta name="description" content="Servicios profesionales de desarrollo. Sitios web personalizados, aplicaciones web, soluciones e-commerce y diseño responsive." />
-		<meta name="keywords" content="EstusCode, desarrollo web profesional, diseño web responsive, desarrollo de aplicaciones web, servicios web Colombia, desarrollo ecommerce, optimización SEO, landing pages, sitios web corporativos, diseño UI/UX, desarrollo frontend, desarrollo backend, aplicaciones web personalizadas, tecnologías web modernas, soluciones digitales" />
-		
+		<meta
+			name="title"
+			content="EstusCode | Servicios Profesionales de Desarrollo Web"
+		/>
+		<meta
+			name="description"
+			content="Servicios profesionales de desarrollo. Sitios web personalizados, aplicaciones web, soluciones e-commerce y diseño responsive."
+		/>
+		<meta
+			name="keywords"
+			content="EstusCode, desarrollo web Colombia, diseño web Cali, programación web Cali, desarrollo web Valle del Cauca, diseño web Bogotá, programación web personalizada, desarrollo web freelance, diseño responsivo, desarrollo full stack, landing pages efectivas, páginas web para negocios, diseño web profesional, desarrollo web económico, servicios web pymes, creación sitios web, desarrollo JavaScript, desarrollo React, desarrollo Astro, optimización web, portafolio digital, soluciones web pequeñas empresas, desarrollo web escalable, servicios SEO Colombia, diseño UX/UI accesible, programación frontend, desarrollo backend Node.js, aplicaciones web modernas, tecnologías web 2024, desarrollo web rápido, mantenimiento web, consultoría desarrollo web, agencia desarrollo web Cali"
+		/>
+
 		<!-- Open Graph / Facebook -->
 		<meta property="og:type" content="website" />
 		<meta property="og:url" content="https://www.estuscode.com" />
-		<meta property="og:title" content="EstusCode | Servicios Profesionales de Desarrollo Web" />
-		<meta property="og:description" content="Servicios profesionales de desarrollo web. Sitios web personalizados, aplicaciones web, soluciones e-commerce y diseño responsive." />
+		<meta
+			property="og:title"
+			content="EstusCode | Servicios Profesionales de Desarrollo Web"
+		/>
+		<meta
+			property="og:description"
+			content="Servicios profesionales de desarrollo web. Sitios web personalizados, aplicaciones web, soluciones e-commerce y diseño responsive."
+		/>
 		<meta property="og:image" content="/og-image.jpg" />
-		
+
 		<!-- Twitter -->
 		<meta property="twitter:card" content="summary_large_image" />
 		<meta property="twitter:url" content="https://www.estuscode.com" />
-		<meta property="twitter:title" content="EstusCode | Servicios Profesionales de Desarrollo Web" />
-		<meta property="twitter:description" content="Servicios profesionales de desarrollo web. Sitios web personalizados, aplicaciones web, soluciones e-commerce y diseño responsive." />
+		<meta
+			property="twitter:title"
+			content="EstusCode | Servicios Profesionales de Desarrollo Web"
+		/>
+		<meta
+			property="twitter:description"
+			content="Servicios profesionales de desarrollo web. Sitios web personalizados, aplicaciones web, soluciones e-commerce y diseño responsive."
+		/>
 		<meta property="twitter:image" content="/og-image.jpg" />
 
 		<!-- Canonical URL -->
 		<link rel="canonical" href="https://www.estuscode.com" />
 	</head>
-	<body class="antialiased bg-slate-950">
+	<body class="antialiased bg-gray-50">
+		<Navbar />
 		<slot />
+		<FAQ />
+		<Footer />
+		<script is:inline src="https://unpkg.com/aos@next/dist/aos.js"></script>
+		<script is:inline>
+			AOS.init({
+				duration: 800,
+				once: true,
+				mirror: true,
+			});
+
+			document.addEventListener("astro:page-load", () => {
+				AOS.refresh();
+			});
+		</script>
 	</body>
 </html>
 

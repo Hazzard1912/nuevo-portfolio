@@ -2,94 +2,117 @@
 const processSteps = [
     {
         number: "01",
-        title: "Análisis y Planificación",
-        description: "Definimos los requisitos técnicos y funcionales para crear una solución que se ajuste perfectamente a tus necesidades.",
-        features: ["Especificaciones técnicas detalladas", "Arquitectura y stack tecnológico"],
-        gradient: "from-blue-400 to-purple-400",
-        align: "left"
+        title: "Análisis y Estrategia",
+        description: "Analizamos tus necesidades y definimos la mejor estrategia para tu proyecto digital.",
+        features: [
+            "Investigación y análisis de mercado",
+            "Definición de objetivos y KPIs",
+            "Planificación técnica detallada"
+        ],
+        gradient: "from-blue-500 to-cyan-400",
+        delay: "0"
     },
     {
         number: "02",
         title: "Diseño UX/UI",
-        description: "Diseñamos interfaces intuitivas y experiencias de usuario que maximizan la usabilidad y la conversión.",
-        features: ["Wireframes y prototipos interactivos", "Diseño responsivo multiplataforma"],
-        gradient: "from-purple-400 to-pink-400",
-        align: "right"
+        description: "Creamos experiencias digitales intuitivas y atractivas centradas en el usuario.",
+        features: [
+            "Arquitectura de información",
+            "Diseño de interfaces moderno",
+            "Prototipos interactivos"
+        ],
+        gradient: "from-purple-500 to-blue-500",
+        delay: "150"
     },
     {
         number: "03",
         title: "Desarrollo",
-        description: "Implementamos tu solución usando las últimas tecnologías y mejores prácticas de desarrollo.",
-        features: ["Desarrollo frontend y backend", "Integración de APIs y servicios"],
-        gradient: "from-blue-400 to-purple-400",
-        align: "left"
+        description: "Implementamos tu solución con las últimas tecnologías y mejores prácticas.",
+        features: [
+            "Desarrollo frontend y backend",
+            "Optimización de rendimiento",
+            "Integración de servicios"
+        ],
+        gradient: "from-fuchsia-500 to-purple-500",
+        delay: "300"
     },
     {
         number: "04",
-        title: "Testing y Despliegue",
-        description: "Aseguramos la calidad y realizamos un despliegue optimizado de tu aplicación.",
-        features: ["Testing exhaustivo y QA", "Despliegue y monitorización"],
-        gradient: "from-purple-400 to-pink-400",
-        align: "right"
+        title: "Lanzamiento",
+        description: "Desplegamos tu proyecto asegurando calidad y rendimiento óptimo.",
+        features: [
+            "Testing y control de calidad",
+            "Optimización SEO",
+            "Monitorización continua"
+        ],
+        gradient: "from-rose-500 to-fuchsia-500",
+        delay: "450"
     }
 ];
 ---
 
-<section id="proceso" class="bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 py-20 relative">
+<section id="proceso" class="relative py-24 bg-slate-900/50 ">
+    <div class="absolute inset-0 bg-gradient-to-b from-slate-950 to-slate-900/90 opacity-90"></div>
+    
     <div class="container mx-auto px-4 relative">
-        <div class="text-center mb-16">
-            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
-                Proceso de Desarrollo
+        <div class="text-center mb-20" data-aos="fade-up">
+            <span class="text-blue-400 font-medium mb-4 block tracking-wider text-sm">METODOLOGÍA</span>
+            <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
+                Proceso de <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">Desarrollo</span>
             </h2>
-            <p class="text-slate-300 max-w-2xl mx-auto">
-                Metodología ágil y moderna para entregar <span class="text-white font-medium">soluciones digitales</span> de alta calidad
+            <p class="text-lg md:text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed">
+                Un enfoque estructurado y ágil para transformar tu visión en realidad digital
             </p>
         </div>
 
-        <div class="relative max-w-4xl mx-auto">
-            <!-- Simplified Timeline Line -->
-            <div class="absolute left-[50%] top-0 bottom-0 w-px hidden md:block bg-slate-800"></div>
-
-            <!-- Timeline Steps -->
-            <div class="space-y-16">
-                {processSteps.map(step => (
-                    <div class={`relative flex items-center md:justify-between flex-col ${
-                        step.align === 'right' ? 'md:flex-row-reverse' : 'md:flex-row'
-                    }`}>
-						<div class="w-full md:w-5/12 bg-slate-900/50 p-6 rounded-xl border border-slate-800 
-							transition-all duration-300 hover:bg-slate-800/50 hover:border-slate-700 
-							hover:shadow-lg hover:shadow-slate-900/50 hover:transform hover:-translate-y-1">
-							<div class="flex items-start gap-4 mb-4">
-								<div class="h-12 w-12 rounded-lg flex items-center justify-center border border-slate-700
-									transition-colors duration-300 hover:border-slate-600 p-4">
-									<span class={`text-xl font-bold bg-gradient-to-r ${step.gradient} text-transparent bg-clip-text`}>
-										{step.number}
-									</span>
-								</div>
-								<div>
-									<h3 class="text-2xl font-bold text-white mb-2 
-										transition-colors duration-300 hover:text-blue-400">{step.title}</h3>
-									<p class="text-slate-300 text-lg">{step.description}</p>
-								</div>
-							</div>
-							<ul class="space-y-2">
-								{step.features.map(feature => (
-									<li class="flex items-center gap-2 text-slate-300 text-md 
-										transition-colors duration-300 hover:text-white group">
-										<svg class="w-4 h-4 text-blue-400 transition-transform duration-300 group-hover:scale-110" 
-											viewBox="0 0 24 24" fill="none" stroke="currentColor">
-											<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-										</svg>
-										{feature}
-									</li>
-								))}
-							</ul>
-						</div>
-						
-						<!-- Timeline Dot with pulse effect -->
-						<div class="hidden md:flex h-4 w-4 rounded-full bg-blue-400 absolute left-1/2 -translate-x-1/2
-							animate-pulse shadow-lg shadow-blue-400/50"></div>
-					</div>
+        <div class="max-w-6xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-8">
+                {processSteps.map((step) => (
+                    <div 
+                        class="relative group"
+                        data-aos="fade-up"
+                        data-aos-delay={step.delay}
+                    >
+                        <div class="bg-slate-800/50 rounded-2xl p-8 border border-slate-700/50 
+                            transition-all duration-500 h-full
+                            hover:bg-slate-800/70 hover:border-blue-500/30 
+                            hover:shadow-2xl hover:shadow-blue-500/10 
+                            hover:-translate-y-2">
+                            
+                            <div class="flex items-start gap-6">
+                                <div class={`flex items-center justify-center w-14 h-14 rounded-xl 
+                                    bg-gradient-to-br ${step.gradient} bg-opacity-10 
+                                    transition-transform duration-500 group-hover:scale-110`}>
+                                    <span class="text-2xl font-bold text-white">
+                                        {step.number}
+                                    </span>
+                                </div>
+                                
+                                <div class="flex-1">
+                                    <h3 class="text-2xl font-bold text-white mb-3 
+                                        transition-colors duration-300 group-hover:text-blue-400">
+                                        {step.title}
+                                    </h3>
+                                    <p class="text-slate-300 text-lg mb-6 leading-relaxed">
+                                        {step.description}
+                                    </p>
+                                    
+                                    <ul class="space-y-3">
+                                        {step.features.map((feature) => (
+                                            <li class="flex items-center gap-3 text-slate-300 
+                                                transition-colors duration-300 group-hover:text-white">
+                                                <svg class="w-5 h-5 text-blue-400" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                                                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                                </svg>
+                                                <span>{feature}</span>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 ))}
             </div>
         </div>

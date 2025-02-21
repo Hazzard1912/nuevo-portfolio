@@ -1,0 +1,68 @@
+---
+interface Props {
+    text: string;
+    href?: string;
+    isPrimary?: boolean;
+    hasIcon?: boolean;
+    className?: string;
+    ariaLabel?: string;
+}
+
+const {
+    text,
+    href,
+    isPrimary = true,
+    hasIcon = false,
+    className = "",
+    ariaLabel,
+} = Astro.props;
+
+const baseStyles = "inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-full font-medium text-sm transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-offset-2";
+
+const variants = {
+    primary: "bg-blue-600 text-white hover:bg-blue-700 focus:ring-blue-400",
+    secondary: "border-2 border-gray-300 text-gray-700 hover:bg-gray-50 hover:text-gray-900 focus:ring-gray-300"
+};
+
+const buttonClass = `${baseStyles} ${isPrimary ? variants.primary : variants.secondary} ${className}`;
+---
+
+{
+    href ? (
+        <a href={href} class={buttonClass} aria-label={ariaLabel}>
+            {text}
+            {hasIcon && (
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="w-4 h-4"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                >
+                    <path
+                        fill-rule="evenodd"
+                        d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                        clip-rule="evenodd"
+                    />
+                </svg>
+            )}
+        </a>
+    ) : (
+        <button class={buttonClass} aria-label={ariaLabel}>
+            {text}
+            {hasIcon && (
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="w-4 h-4"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                >
+                    <path
+                        fill-rule="evenodd"
+                        d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                        clip-rule="evenodd"
+                    />
+                </svg>
+            )}
+        </button>
+    )
+}

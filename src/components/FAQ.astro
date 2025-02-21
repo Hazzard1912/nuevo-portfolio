@@ -1,0 +1,154 @@
+---
+const faqs = [
+    {
+        category: "Servicios Web",
+        questions: [
+            {
+                q: "¿Qué tipos de servicios web ofrecen?",
+                a: "Ofrecemos desarrollo web full stack, landing pages, aplicaciones web, e-commerce, y sitios web corporativos. Utilizamos tecnologías modernas como React, Astro, y Node.js para crear soluciones web escalables y de alto rendimiento.",
+                keywords: ["desarrollo full stack", "landing pages efectivas", "aplicaciones web modernas"]
+            },
+            {
+                q: "¿Cuál es su proceso de desarrollo web?",
+                a: "Seguimos una metodología ágil que incluye análisis inicial, diseño UX/UI, desarrollo frontend y backend, optimización SEO, y mantenimiento continuo. Nos enfocamos en crear soluciones personalizadas que se ajusten a las necesidades específicas de cada cliente.",
+                keywords: ["desarrollo web personalizado", "diseño UX/UI accesible", "optimización SEO"]
+            }
+        ]
+    },
+    {
+        category: "Tecnología y Soluciones",
+        questions: [
+            {
+                q: "¿Qué tecnologías utilizan para el desarrollo?",
+                a: "Trabajamos con las últimas tecnologías web como JavaScript moderno, React, Astro, Node.js, y herramientas de optimización web. Esto nos permite crear aplicaciones rápidas, seguras y escalables.",
+                keywords: ["desarrollo JavaScript", "desarrollo React", "desarrollo Astro"]
+            },
+            {
+                q: "¿Ofrecen servicios de mantenimiento web?",
+                a: "Sí, proporcionamos servicios de mantenimiento web continuo, actualizaciones de seguridad, optimización de rendimiento y soporte técnico para garantizar que su sitio web funcione de manera óptima.",
+                keywords: ["mantenimiento web", "optimización web"]
+            }
+        ]
+    },
+    {
+        category: "Precios y Plazos",
+        questions: [
+            {
+                q: "¿Cuál es el costo de desarrollo de un sitio web?",
+                a: "Ofrecemos soluciones adaptadas a diferentes presupuestos, desde sitios web económicos para PyMEs hasta desarrollos empresariales completos. El costo varía según los requerimientos específicos del proyecto.",
+                keywords: ["desarrollo web económico", "servicios web pymes"]
+            },
+            {
+                q: "¿Cuánto tiempo toma desarrollar un proyecto web?",
+                a: "Los plazos varían según la complejidad del proyecto. Una landing page puede estar lista en 2-3 semanas, mientras que un e-commerce completo puede tomar 2-3 meses. Nos enfocamos en el desarrollo web rápido sin comprometer la calidad.",
+                keywords: ["desarrollo web rápido", "creación sitios web"]
+            }
+        ]
+    }
+];
+---
+
+<section id="faq" class="py-24 bg-white relative">
+    <div class="container mx-auto px-4">
+        <div class="max-w-7xl mx-auto">
+            <!-- Header -->
+            <div class="text-center mb-16" data-aos="fade-up">
+                <span class="text-blue-600 font-medium mb-4 block tracking-wider uppercase text-sm">
+                    PREGUNTAS FRECUENTES
+                </span>
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+                    Todo lo que Necesitas 
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
+                        Saber
+                    </span>
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                    Resolvemos tus dudas sobre nuestros servicios de desarrollo web en Colombia
+                </p>
+            </div>
+
+            <!-- FAQ Categories -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {faqs.map((category, categoryIndex) => (
+                    <div class="space-y-6" data-aos="fade-up" data-aos-delay={categoryIndex * 100}>
+                        <h3 class="text-2xl font-bold text-gray-900 pb-4 border-b border-gray-100">
+                            {category.category}
+                        </h3>
+                        
+                        <div class="space-y-6">
+                            {category.questions.map((item, index) => (
+                                <details
+                                    class="group rounded-2xl bg-gray-50 border border-gray-100 [&_summary::-webkit-details-marker]:hidden"
+                                    open={index === 0}
+                                >
+                                    <summary 
+                                        class="flex items-center justify-between gap-4 p-6 cursor-pointer 
+                                            rounded-2xl transition-colors duration-300
+                                            hover:bg-gray-100"
+                                    >
+                                        <h4 class="text-lg font-medium text-gray-900">
+                                            {item.q}
+                                        </h4>
+
+                                        <svg
+                                            class="w-5 h-5 text-gray-500 transition duration-300 group-open:rotate-180"
+                                            fill="none"
+                                            viewBox="0 0 24 24"
+                                            stroke="currentColor"
+                                        >
+                                            <path
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                stroke-width="2"
+                                                d="M19 9l-7 7-7-7"
+                                            />
+                                        </svg>
+                                    </summary>
+
+                                    <div class="px-6 pb-6">
+                                        <p class="text-gray-600 leading-relaxed">
+                                            {item.a}
+                                        </p>
+                                        
+                                        <div class="flex flex-wrap gap-2 mt-4">
+                                            {item.keywords.map(keyword => (
+                                                <span class="text-sm px-3 py-1 rounded-full bg-blue-50 
+                                                    text-blue-600 border border-blue-100">
+                                                    {keyword}
+                                                </span>
+                                            ))}
+                                        </div>
+                                    </div>
+                                </details>
+                            ))}
+                        </div>
+                    </div>
+                ))}
+            </div>
+
+            <!-- Contact CTA -->
+            <div class="mt-16 text-center p-8 rounded-2xl bg-gradient-to-r from-blue-50 to-purple-50 
+                border border-blue-100" data-aos="fade-up">
+                <h3 class="text-2xl font-bold text-gray-900 mb-4">
+                    ¿No encuentras la respuesta que buscas?
+                </h3>
+                <p class="text-gray-600 mb-8">
+                    Contáctanos directamente y te ayudaremos con cualquier duda sobre nuestros servicios de desarrollo web
+                </p>
+                <a
+                    href="/#contacto"
+                    class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full
+                        bg-blue-600 text-white font-medium transition-all duration-300
+                        hover:bg-blue-700 hover:scale-105 focus:outline-none focus:ring-2 
+                        focus:ring-blue-400 focus:ring-offset-2"
+                >
+                    Contáctanos
+                    <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                            d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>

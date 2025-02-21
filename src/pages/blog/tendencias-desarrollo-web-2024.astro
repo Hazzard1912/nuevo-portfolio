@@ -1,0 +1,149 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import CTA from "../../components/CTA.astro";
+import Image from "astro/components/Image.astro";
+
+const blogPost = {
+    title: "Tendencias en Desarrollo Web para 2024",
+    publishDate: "2024-01-15",
+    author: "Equipo de Desarrollo",
+    readTime: "5 min",
+    image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&q=80",
+    mainTrends: [
+        {
+            title: "Desarrollo Web con IA",
+            content: "La integración de Inteligencia Artificial en el desarrollo web está revolucionando la forma en que creamos y mantenemos sitios web. Desde la generación de código hasta la optimización automática del rendimiento.",
+            examples: ["GitHub Copilot", "AI-driven Testing", "Optimización Automatizada"]
+        },
+        {
+            title: "Arquitecturas sin Servidor (Serverless)",
+            content: "Las arquitecturas serverless están ganando más adopción por su escalabilidad y eficiencia en costos. Veremos más aplicaciones construidas con servicios como Vercel, Netlify y AWS Lambda.",
+            examples: ["Edge Functions", "Servicios Serverless", "API Dinámicas"]
+        },
+        {
+            title: "Meta-Frameworks y Rendimiento",
+            content: "Astro, Next.js y otros meta-frameworks están liderando la revolución del rendimiento web, ofreciendo experiencias ultra rápidas con menos JavaScript.",
+            examples: ["Astro 4.0", "Next.js 14", "Qwik"]
+        }
+    ],
+    technologies: [
+        {
+            name: "Web Components",
+            description: "Mayor adopción de componentes web nativos para crear interfaces reutilizables y mantenibles."
+        },
+        {
+            name: "WebAssembly",
+            description: "Expandiendo las capacidades de las aplicaciones web con rendimiento cercano al nativo."
+        },
+        {
+            name: "Edge Computing",
+            description: "Llevando el procesamiento más cerca del usuario final para mejor rendimiento."
+        }
+    ],
+    impact: [
+        {
+            title: "Mejora en UX",
+            description: "Experiencias más fluidas y personalizadas gracias a la IA y análisis en tiempo real"
+        },
+        {
+            title: "Sostenibilidad",
+            description: "Mayor énfasis en la eficiencia energética y el impacto ambiental del desarrollo web"
+        },
+        {
+            title: "Accesibilidad",
+            description: "Diseño inclusivo como estándar, no como una característica adicional"
+        }
+    ]
+};
+---
+
+<Layout title={blogPost.title} description="Descubre las últimas tendencias en desarrollo web para 2024. Desde IA hasta arquitecturas serverless, explora el futuro del desarrollo web.">
+    <article class="bg-white">
+        <!-- Hero Section -->
+        <div class="py-24">
+            <Image
+                src={blogPost.image}
+                width={800}
+                height={400}
+                alt="Tendencias en desarrollo web 2024"
+                class="rounded-xl object-cover mx-auto"
+            />
+        </div>
+
+        <!-- Content -->
+        <main class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="prose prose-lg max-w-none">
+                    <!-- Introducción -->
+                    <p class="lead text-xl md:text-2xl text-gray-600 mb-16 mt-8">
+                        El desarrollo web está evolucionando rápidamente, y 2024 promete ser un año 
+                        transformador para la industria. Desde la integración de IA hasta nuevas 
+                        arquitecturas de desarrollo, estas son las tendencias que definirán el futuro 
+                        del desarrollo web.
+                    </p>
+
+                    <!-- Principales Tendencias -->
+                    {blogPost.mainTrends.map((trend, index) => (
+                        <section class="mb-20" data-aos="fade-up" data-aos-delay={index * 100}>
+                            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
+                                {trend.title}
+                            </h2>
+                            <p class="text-gray-600 mb-8 text-lg leading-relaxed">
+                                {trend.content}
+                            </p>
+                            <ul class="grid sm:grid-cols-3 gap-6 mt-6">
+                                {trend.examples.map(example => (
+                                    <li class="bg-gray-50 p-6 rounded-xl text-gray-700 shadow-sm hover:shadow-md transition-all duration-300">
+                                        {example}
+                                    </li>
+                                ))}
+                            </ul>
+                        </section>
+                    ))}
+
+                    <!-- Tecnologías Emergentes -->
+                    <section class="mb-20" data-aos="fade-up">
+                        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-10">
+                            Tecnologías Emergentes
+                        </h2>
+                        <div class="grid sm:grid-cols-3 gap-8">
+                            {blogPost.technologies.map(tech => (
+                                <div class="p-8 rounded-xl bg-gray-50 hover:bg-gray-100 
+                                    transition-all duration-300 shadow-sm hover:shadow-md">
+                                    <h3 class="font-semibold text-xl md:text-2xl text-gray-900 mb-4">
+                                        {tech.name}
+                                    </h3>
+                                    <p class="text-gray-600 leading-relaxed">
+                                        {tech.description}
+                                    </p>
+                                </div>
+                            ))}
+                        </div>
+                    </section>
+
+                    <!-- Impacto en la Industria -->
+                    <section class="mb-20" data-aos="fade-up">
+                        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-10">
+                            Impacto en la Industria
+                        </h2>
+                        <div class="grid sm:grid-cols-3 gap-8">
+                            {blogPost.impact.map(item => (
+                                <div class="p-8 rounded-xl bg-white border border-gray-200 
+                                    hover:shadow-xl hover:shadow-blue-500/10 transition-all duration-300">
+                                    <h3 class="font-semibold text-xl md:text-2xl text-gray-900 mb-4">
+                                        {item.title}
+                                    </h3>
+                                    <p class="text-gray-600 leading-relaxed">
+                                        {item.description}
+                                    </p>
+                                </div>
+                            ))}
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </main>
+
+        <CTA />
+    </article>
+</Layout>

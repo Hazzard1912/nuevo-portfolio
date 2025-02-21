@@ -1,47 +1,56 @@
-<section class="min-h-screen w-full flex items-center justify-center bg-gradient-to-b from-slate-950 to-slate-900">
+---
+import Button from "../ui/Button.astro";
+---
+
+<section class="min-h-screen w-full flex items-center justify-center bg-white">
     <div class="container mx-auto px-4 py-16 relative">
-        <div class="max-w-4xl mx-auto text-center space-y-12">
-            <!-- Simplified heading -->
-            <h1 class="text-3xl md:text-6xl lg:text-7xl font-bold text-white">
-                Creamos Soluciones
-                <span class="py-3 bg-gradient-to-r from-blue-400 to-purple-600 text-transparent bg-clip-text">
-                    Digitales Innovadoras
+        <div class="max-w-4xl mx-auto text-center space-y-12 relative z-10">
+            <!-- Enhanced heading with animation -->
+            <h1 
+                class="text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900" 
+                data-aos="fade-up"
+                data-aos-duration="1000"
+            >
+                Elevamos tu 
+                <span class="py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-transparent bg-clip-text animate-gradient">
+                    Presencia Digital
                 </span>
             </h1>
 
-            <!-- Simplified description -->
-            <p class="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto">
-                Especializados en desarrollo web avanzado, aplicaciones móviles y software empresarial. 
-                Transformamos ideas en soluciones tecnológicas.
+            <!-- Enhanced description with better typography -->
+            <p 
+                class="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed"
+                data-aos="fade-up"
+                data-aos-duration="1000"
+                data-aos-delay="200"
+            >
+                Desarrollamos sitios web de alto rendimiento utilizando las últimas tecnologías.
+                <span class="block mt-2 font-semibold">
+                    Más rápidos. Más modernos. Más efectivos.
+                </span>
             </p>
 
-            <!-- Simplified CTAs -->
-            <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a
-                    href="#contacto"
-                    class="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 
-                    bg-blue-600 text-base font-semibold rounded-full text-white 
-                    transition-all duration-300 ease-in-out
-                    hover:bg-blue-500 hover:scale-105
-                    focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2
-                    shadow-lg shadow-blue-500/25"
-                >
-                    <span>Consulta Gratuita</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
-                        <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
-                    </svg>
-                </a>
-                <a
-                    href="#servicios"
-                    class="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 
-                    bg-transparent text-white font-semibold rounded-full
-                    border-2 border-blue-500 
-                    transition-all duration-300 ease-in-out
-                    hover:bg-blue-600 hover:border-blue-600 hover:scale-105
-                    focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
-                >
-                    Ver Servicios
-                </a>
+            <!-- Enhanced CTAs with improved styling -->
+            <div 
+                class="flex flex-col sm:flex-row justify-center gap-6"
+                data-aos="fade-up"
+                data-aos-duration="1000"
+                data-aos-delay="400"
+            >
+                <Button 
+                    text="Iniciar Proyecto" 
+                    href="#contacto" 
+                    hasIcon
+                    ariaLabel="Iniciar un nuevo proyecto"
+                    className="hover:scale-105 transition-transform" 
+                />
+                <Button 
+                    text="Explorar Servicios" 
+                    href="/servicios" 
+                    isPrimary={false}
+                    ariaLabel="Ver nuestros servicios"
+                    className="hover:scale-105 transition-transform" 
+                />
             </div>
         </div>
     </div>
