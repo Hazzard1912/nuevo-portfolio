@@ -1,6 +1,6 @@
 ---
-import 'aos';
-import 'aos/dist/aos.css';
+import "aos";
+import "aos/dist/aos.css";
 import FAQ from "../components/FAQ.astro";
 import Footer from "../components/Footer.astro";
 import Navbar from "../components/Navbar.astro";
@@ -9,6 +9,21 @@ import Navbar from "../components/Navbar.astro";
 <!doctype html>
 <html lang="en">
 	<head>
+		<!-- Google tag (gtag.js) -->
+		<script
+			async
+			src="https://www.googletagmanager.com/gtag/js?id=G-REBSYB0JMZ"
+		></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag() {
+				dataLayer.push(arguments);
+			}
+			gtag("js", new Date());
+
+			gtag("config", "G-REBSYB0JMZ");
+		</script>
+		
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -69,8 +84,8 @@ import Navbar from "../components/Navbar.astro";
 		<FAQ />
 		<Footer />
 		<script>
-			document.addEventListener('DOMContentLoaded', async function() {
-				const AOS = await import('aos');
+			document.addEventListener("DOMContentLoaded", async function () {
+				const AOS = await import("aos");
 				AOS.init({
 					duration: 800,
 					once: true,
