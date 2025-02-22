@@ -69,9 +69,26 @@ const blogPosts: BlogPost[] = [
         readTime: "8 min",
     },
 ];
+
+const title = "Blog Tecnológico | EstusCode";
+const metaTitle = "Blog Tecnológico | EstusCode";
+const description =
+    "Explora las últimas tendencias y novedades en desarrollo web y tecnología. Artículos sobre Astro, React, SEO, PyMEs y más.";
+const url = "https://www.estuscode.com/blog";
+const canonical = "https://www.estuscode.com/blog";
+const keywords = [
+    "Blog Tecnológico",
+    "Desarrollo Web",
+    "Tendencias",
+    "Astro",
+    "React",
+    "SEO",
+    "PyMEs",
+    "Desarrollo",
+];
 ---
 
-<Layout>
+<Layout title={title} metaTitle={metaTitle} description={description} url={url} canonical={canonical} keywords={keywords}>
     <section class="py-24 bg-white">
         <div class="container mx-auto px-4">
             <div class="max-w-7xl mx-auto">

@@ -1,10 +1,10 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import CTA from "../../components/CTA.astro";
 import Image from "astro/components/Image.astro";
 
 const blogPost = {
     title: "Tendencias en Desarrollo Web para 2024",
+    description: "Descubre las tecnologías y metodologías que están definiendo el futuro del desarrollo web. Desde Astro hasta la IA en el desarrollo.",
     publishDate: "2024-01-15",
     author: "Equipo de Desarrollo",
     readTime: "5 min",
@@ -55,9 +55,16 @@ const blogPost = {
         }
     ]
 };
+
+const title = blogPost.title;
+const metaTitle = "EstusCode | " + blogPost.title;
+const description = blogPost.description;
+const url = "https://www.estuscode.com/blog/tendencias-desarrollo-web-2024";
+const canonical = "https://www.estuscode.com/blog/tendencias-desarrollo-web-2024";
+const keywords = ["Tenencias Desarrollo Web", "Desarrollo Web 2024", "Tecnologías Web", "Astro", "IA", "Serverless", "Web Components", "WebAssembly", "Edge Computing"];
 ---
 
-<Layout title={blogPost.title} description="Descubre las últimas tendencias en desarrollo web para 2024. Desde IA hasta arquitecturas serverless, explora el futuro del desarrollo web.">
+<Layout title={title} metaTitle={metaTitle} description={description} url={url} canonical={canonical} keywords={keywords}>
     <article class="bg-white">
         <!-- Hero Section -->
         <div class="py-24">

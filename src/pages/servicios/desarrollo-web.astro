@@ -1,6 +1,5 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import CTA from "../../components/CTA.astro";
 import Image from "astro/components/Image.astro";
 
 const serviceDetails = {
@@ -67,9 +66,27 @@ const serviceDetails = {
         },
     ],
 };
+
+const title = serviceDetails.title;
+const metaTitle = "EstusCode | " + serviceDetails.title;
+const description = serviceDetails.description;
+const url = "https://www.estuscode.com/servicios/desarrollo-web";
+const canonical = "https://www.estuscode.com/servicios/desarrollo-web";
+const keywords = [
+    "Desarrollo Web Profesional",
+    "Diseño Web Personalizado",
+    "Sitios Web Corporativos",
+    "Aplicaciones Web",
+    "Tecnologías Web",
+    "React",
+    "Next.js",
+    "Astro",
+    "Node.js",
+    "TypeScript",
+];
 ---
 
-<Layout>
+<Layout title={title} metaTitle={metaTitle} description={description} url={url} canonical={canonical} keywords={keywords}>
     <article class="bg-white">
         <div class="py-24">
             <Image
