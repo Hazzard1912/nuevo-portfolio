@@ -3,91 +3,122 @@ import Layout from "../../layouts/Layout.astro";
 import Image from "astro/components/Image.astro";
 
 const serviceDetails = {
-    title: "Desarrollo Web Profesional",
+    title: "Aplicaciones Móviles",
     description:
-        "Creamos soluciones web personalizadas que impulsan el crecimiento de tu negocio",
-    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80",
+        "Desarrollamos aplicaciones móviles nativas y multiplataforma que conectan con tus usuarios donde estén.",
+    image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&q=80",
     sections: [
         {
-            title: "Soluciones Web a Medida",
+            title: "Desarrollo Móvil Profesional",
             content:
-                "Desarrollamos sitios web únicos que reflejan la identidad de tu marca y cumplen objetivos específicos de negocio. Utilizamos las últimas tecnologías para garantizar rendimiento, seguridad y escalabilidad.",
+                "Creamos aplicaciones móviles intuitivas y potentes que transforman tu visión en realidad. Utilizamos tecnologías modernas para garantizar el mejor rendimiento y experiencia de usuario.",
             features: [
-                "Diseño web responsive",
-                "Optimización SEO",
-                "Integración con APIs",
-                "Gestión de contenidos",
+                "Apps iOS nativas",
+                "Apps Android nativas",
+                "Aplicaciones híbridas",
+                "PWAs",
             ],
         },
         {
-            title: "Tecnologías Que Utilizamos",
+            title: "Stack Tecnológico",
             content:
-                "Trabajamos con un stack tecnológico moderno y probado que garantiza el mejor rendimiento y mantenibilidad:",
+                "Utilizamos las mejores tecnologías del mercado para desarrollar aplicaciones móviles de alta calidad:",
             technologies: [
                 {
-                    name: "React & Next.js",
+                    name: "React Native",
                     description:
-                        "Para interfaces dinámicas y aplicaciones web modernas",
+                        "Desarrollo multiplataforma eficiente con rendimiento nativo",
                 },
                 {
-                    name: "Astro",
+                    name: "Flutter",
                     description:
-                        "Rendimiento óptimo y velocidad de carga excepcional",
+                        "Interfaces fluidas y consistentes en todas las plataformas",
                 },
                 {
-                    name: "Node.js",
-                    description: "Backend robusto y escalable",
+                    name: "Swift",
+                    description: "Desarrollo nativo iOS de alto rendimiento",
                 },
                 {
-                    name: "TypeScript",
-                    description: "Código más seguro y mantenible",
+                    name: "Kotlin",
+                    description: "Apps Android robustas y modernas",
                 },
             ],
         },
     ],
     benefits: [
         {
-            title: "Alto Rendimiento",
+            title: "Rendimiento Nativo",
             description:
-                "Sitios web optimizados para cargar en menos de 3 segundos",
+                "Aplicaciones optimizadas que aprovechan al máximo el hardware del dispositivo",
         },
         {
-            title: "SEO Optimizado",
+            title: "Experiencia Fluida",
             description:
-                "Mejor posicionamiento en buscadores desde el primer día",
+                "Interfaces intuitivas y animaciones suaves para mejor engagement",
         },
         {
-            title: "Diseño Responsivo",
-            description: "Experiencia perfecta en todos los dispositivos",
+            title: "Multiplataforma",
+            description:
+                "Alcanza a usuarios de iOS y Android con una única base de código",
         },
         {
-            title: "Seguridad Avanzada",
-            description: "Protección contra vulnerabilidades y amenazas web",
+            title: "Actualizaciones OTA",
+            description:
+                "Implementa mejoras y correcciones sin pasar por las tiendas de apps",
+        },
+    ],
+    features: [
+        {
+            title: "Integración con APIs",
+            description:
+                "Conexión perfecta con servicios backend y APIs de terceros",
+        },
+        {
+            title: "Modo Offline",
+            description: "Funcionalidad básica sin conexión a internet",
+        },
+        {
+            title: "Notificaciones Push",
+            description:
+                "Mantén a tus usuarios enganchados con notificaciones relevantes",
+        },
+        {
+            title: "Analytics Integrado",
+            description: "Métricas detalladas del comportamiento de usuarios",
         },
     ],
 };
 
 const title = "EstusCode | " + serviceDetails.title;
-const metaTitle = "EstusCode | " + serviceDetails.title;
+const metaTitle =
+    "EstusCode | Desarrollo de Aplicaciones Móviles Profesionales";
 const description = serviceDetails.description;
-const url = "https://www.estuscode.com/servicios/desarrollo-web";
-const canonical = "https://www.estuscode.com/servicios/desarrollo-web";
+const url = "https://www.estuscode.com/servicios/aplicaciones-moviles";
+const canonical = "https://www.estuscode.com/servicios/aplicaciones-moviles";
 const keywords = [
-    "Desarrollo Web Profesional",
-    "Diseño Web Personalizado",
-    "Sitios Web Corporativos",
-    "Aplicaciones Web",
-    "Tecnologías Web",
-    "React",
-    "Next.js",
-    "Astro",
-    "Node.js",
-    "TypeScript",
+    "Desarrollo Apps Móviles",
+    "Aplicaciones iOS",
+    "Aplicaciones Android",
+    "React Native",
+    "Flutter",
+    "Swift",
+    "Kotlin",
+    "PWA",
+    "Desarrollo Multiplataforma",
+    "Apps Empresariales",
 ];
 ---
 
-<Layout title={title} metaTitle={metaTitle} description={description} url={url} canonical={canonical} keywords={keywords}>
+<Layout
+    title={title}
+    metaTitle={metaTitle}
+    description={description}
+    url={url}
+    canonical={canonical}
+    keywords={keywords}
+>
     <article class="bg-white">
+        <!-- Hero Section -->
         <div class="py-24">
             <Image
                 src={serviceDetails.image}
@@ -95,11 +126,12 @@ const keywords = [
                 height={400}
                 loading="eager"
                 decoding="async"
-                alt="Desarrollo web profesional"
+                alt="Desarrollo de aplicaciones móviles profesionales"
                 class="rounded-xl object-cover mx-auto"
             />
         </div>
 
+        <!-- Content -->
         <main class="container mx-auto px-4">
             <div class="max-w-4xl mx-auto">
                 {
@@ -163,9 +195,34 @@ const keywords = [
                     ))
                 }
 
+                <!-- Características Destacadas -->
                 <section class="mb-16" data-aos="fade-up">
                     <h2 class="text-3xl font-bold text-gray-900 mb-8">
-                        Beneficios del Desarrollo Web Profesional
+                        Características Destacadas
+                    </h2>
+                    <div class="grid sm:grid-cols-2 gap-6">
+                        {
+                            serviceDetails.features.map((feature) => (
+                                <div
+                                    class="p-6 rounded-xl bg-white border border-gray-100 
+                                hover:shadow-xl hover:shadow-blue-500/10 transition-all duration-300"
+                                >
+                                    <h3 class="font-semibold text-xl text-gray-900 mb-3">
+                                        {feature.title}
+                                    </h3>
+                                    <p class="text-gray-600">
+                                        {feature.description}
+                                    </p>
+                                </div>
+                            ))
+                        }
+                    </div>
+                </section>
+
+                <!-- Beneficios -->
+                <section class="mb-16" data-aos="fade-up">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-8">
+                        Beneficios de Nuestras Aplicaciones Móviles
                     </h2>
                     <div class="grid sm:grid-cols-2 gap-6">
                         {

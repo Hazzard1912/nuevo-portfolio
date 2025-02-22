@@ -1,0 +1,212 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Image from "astro/components/Image.astro";
+
+const blogPost = {
+    title: "Soluciones Web Efectivas para PyMEs",
+    description:
+        "Cómo implementar soluciones web económicas pero poderosas para pequeñas y medianas empresas. Casos de éxito en el Valle del Cauca.",
+    publishDate: "2024-01-05",
+    author: "Equipo de EstusCode",
+    readTime: "6 min",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80",
+    mainSolutions: [
+        {
+            title: "Sitios Web Optimizados para PyMEs",
+            content:
+                "Desarrollamos soluciones web que equilibran costos y funcionalidad, perfectas para empresas en crecimiento. Nos enfocamos en lo esencial sin sacrificar calidad ni rendimiento.",
+            examples: [
+                "Landing Pages",
+                "Catálogos Digitales",
+                "Portales Corporativos",
+            ],
+        },
+        {
+            title: "E-commerce Accesible",
+            content:
+                "Implementamos soluciones de comercio electrónico escalables que permiten a las PyMEs competir en el mercado digital sin grandes inversiones iniciales.",
+            examples: [
+                "Tiendas Online",
+                "Pasarelas de Pago",
+                "Gestión de Inventario",
+            ],
+        },
+        {
+            title: "Marketing Digital Integrado",
+            content:
+                "Estrategias de marketing digital diseñadas específicamente para el presupuesto y necesidades de las PyMEs colombianas.",
+            examples: ["SEO Local", "Redes Sociales", "Email Marketing"],
+        },
+    ],
+    benefits: [
+        {
+            name: "Costos Controlados",
+            description:
+                "Planes de desarrollo y mantenimiento ajustados a presupuestos PyME",
+        },
+        {
+            name: "Escalabilidad",
+            description:
+                "Soluciones que crecen con tu negocio sin necesidad de grandes cambios",
+        },
+        {
+            name: "Soporte Local",
+            description:
+                "Atención personalizada y soporte técnico en el Valle del Cauca",
+        },
+    ],
+    successCases: [
+        {
+            title: "Comercio Local",
+            description:
+                "PyME del sector retail aumentó sus ventas en 150% tras implementar e-commerce",
+        },
+        {
+            title: "Servicios Profesionales",
+            description:
+                "Firma consultora duplicó sus leads mensuales con landing page optimizada",
+        },
+        {
+            title: "Manufactura",
+            description:
+                "Empresa industrial mejoró su presencia digital y expandió mercado nacional",
+        },
+    ],
+};
+
+const title = "EstusCode | " + blogPost.title;
+const metaTitle = "EstusCode | " + blogPost.title;
+const description = blogPost.description;
+const url = "https://www.estuscode.com/blog/desarrollo-web-pymes";
+const canonical = "https://www.estuscode.com/blog/desarrollo-web-pymes";
+const keywords = [
+    "Desarrollo Web PyMEs",
+    "Sitios Web Económicos",
+    "E-commerce PyMEs",
+    "Marketing Digital Colombia",
+    "Desarrollo Web Valle del Cauca",
+    "Soluciones Web Empresariales",
+    "Landing Pages PyMEs",
+    "SEO Local Colombia",
+    "Diseño Web Empresas",
+];
+---
+
+<Layout
+    title={title}
+    metaTitle={metaTitle}
+    description={description}
+    url={url}
+    canonical={canonical}
+    keywords={keywords}
+>
+    <article class="bg-white">
+        <!-- Hero Section -->
+        <div class="py-24">
+            <Image
+                src={blogPost.image}
+                width={800}
+                height={400}
+                loading="eager"
+                decoding="async"
+                alt={blogPost.title}
+                class="rounded-xl object-cover mx-auto"
+            />
+        </div>
+
+        <!-- Content -->
+        <main class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="prose prose-lg max-w-none">
+                    <!-- Introducción -->
+                    <p
+                        class="lead text-xl md:text-2xl text-gray-600 mb-16 mt-8"
+                    >
+                        En el actual panorama digital, las PyMEs colombianas
+                        necesitan soluciones web que sean tanto efectivas como
+                        accesibles. Descubre cómo implementar estrategias
+                        digitales que impulsen tu negocio sin comprometer tu
+                        presupuesto.
+                    </p>
+
+                    <!-- Soluciones Principales -->
+                    {
+                        blogPost.mainSolutions.map((solution, index) => (
+                            <section
+                                class="mb-20"
+                                data-aos="fade-up"
+                                data-aos-delay={index * 100}
+                            >
+                                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
+                                    {solution.title}
+                                </h2>
+                                <p class="text-gray-600 mb-8 text-lg leading-relaxed">
+                                    {solution.content}
+                                </p>
+                                <ul class="grid sm:grid-cols-3 gap-6 mt-6">
+                                    {solution.examples.map((example) => (
+                                        <li class="bg-gray-50 p-6 rounded-xl text-gray-700 shadow-sm hover:shadow-md transition-all duration-300">
+                                            {example}
+                                        </li>
+                                    ))}
+                                </ul>
+                            </section>
+                        ))
+                    }
+
+                    <!-- Beneficios -->
+                    <section class="mb-20" data-aos="fade-up">
+                        <h2
+                            class="text-3xl md:text-4xl font-bold text-gray-900 mb-10"
+                        >
+                            Beneficios para tu PyME
+                        </h2>
+                        <div class="grid sm:grid-cols-3 gap-8">
+                            {
+                                blogPost.benefits.map((benefit) => (
+                                    <div
+                                        class="p-8 rounded-xl bg-gray-50 hover:bg-gray-100 
+                                    transition-all duration-300 shadow-sm hover:shadow-md"
+                                    >
+                                        <h3 class="font-semibold text-xl md:text-2xl text-gray-900 mb-4">
+                                            {benefit.name}
+                                        </h3>
+                                        <p class="text-gray-600 leading-relaxed">
+                                            {benefit.description}
+                                        </p>
+                                    </div>
+                                ))
+                            }
+                        </div>
+                    </section>
+
+                    <!-- Casos de Éxito -->
+                    <section class="mb-20" data-aos="fade-up">
+                        <h2
+                            class="text-3xl md:text-4xl font-bold text-gray-900 mb-10"
+                        >
+                            Casos de Éxito en el Valle del Cauca
+                        </h2>
+                        <div class="grid sm:grid-cols-3 gap-8">
+                            {
+                                blogPost.successCases.map((case_) => (
+                                    <div
+                                        class="p-8 rounded-xl bg-white border border-gray-200 
+                                    hover:shadow-xl hover:shadow-blue-500/10 transition-all duration-300"
+                                    >
+                                        <h3 class="font-semibold text-xl md:text-2xl text-gray-900 mb-4">
+                                            {case_.title}
+                                        </h3>
+                                        <p class="text-gray-600 leading-relaxed">
+                                            {case_.description}
+                                        </p>
+                                    </div>
+                                ))
+                            }
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </main>
+    </article>
+</Layout>

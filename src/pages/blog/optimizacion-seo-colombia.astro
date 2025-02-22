@@ -1,0 +1,209 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Image from "astro/components/Image.astro";
+
+const blogPost = {
+    title: "Guía Completa de SEO para Empresas Colombianas",
+    description:
+        "Estrategias probadas para mejorar el posicionamiento de tu sitio web en Colombia. Aprende técnicas locales de SEO que funcionan.",
+    publishDate: "2024-01-10",
+    author: "Equipo de EstusCode",
+    readTime: "7 min",
+    image: "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?auto=format&fit=crop&q=80",
+    mainStrategies: [
+        {
+            title: "SEO Local para Colombia",
+            content:
+                "Optimización específica para el mercado colombiano, incluyendo palabras clave regionales y configuración de Google My Business para aumentar la visibilidad en búsquedas locales.",
+            examples: [
+                "Google My Business",
+                "Keywords Regionales",
+                "NAP Consistency",
+            ],
+        },
+        {
+            title: "Optimización Técnica",
+            content:
+                "Mejoras fundamentales en el rendimiento del sitio web, velocidad de carga y estructura técnica para mejor posicionamiento en buscadores colombianos.",
+            examples: ["Core Web Vitals", "Mobile-First", "HTTPS Security"],
+        },
+        {
+            title: "Contenido Localizado",
+            content:
+                "Estrategias de contenido adaptadas al público colombiano, considerando el lenguaje local, tendencias y necesidades específicas del mercado.",
+            examples: ["Blog Local", "Landing Pages", "Casos de Éxito"],
+        },
+    ],
+    bestPractices: [
+        {
+            name: "Investigación de Keywords",
+            description:
+                "Análisis detallado de palabras clave relevantes para el mercado colombiano y tu industria específica.",
+        },
+        {
+            name: "Link Building Local",
+            description:
+                "Construcción de enlaces con medios y directorios colombianos de alta autoridad.",
+        },
+        {
+            name: "Optimización Mobile",
+            description:
+                "Enfoque en la experiencia móvil, crucial para el mercado colombiano donde predomina el tráfico móvil.",
+        },
+    ],
+    metrics: [
+        {
+            title: "Analytics & Medición",
+            description:
+                "Seguimiento de KPIs relevantes para el mercado colombiano y análisis de comportamiento local",
+        },
+        {
+            title: "Conversiones Locales",
+            description:
+                "Optimización de tasas de conversión considerando el comportamiento del usuario colombiano",
+        },
+        {
+            title: "ROI del SEO",
+            description:
+                "Medición y mejora del retorno de inversión en estrategias SEO locales",
+        },
+    ],
+};
+
+const title = "EstusCode | " + blogPost.title;
+const metaTitle = "EstusCode | " + blogPost.title;
+const description = blogPost.description;
+const url = "https://www.estuscode.com/blog/optimizacion-seo-colombia";
+const canonical = "https://www.estuscode.com/blog/optimizacion-seo-colombia";
+const keywords = [
+    "SEO Colombia",
+    "Posicionamiento web",
+    "Marketing Digital Colombia",
+    "SEO Local",
+    "Optimización web",
+    "Google My Business",
+    "SEO para empresas",
+    "Estrategias SEO",
+    "Palabras clave Colombia",
+    "Analytics",
+];
+---
+
+<Layout
+    title={title}
+    metaTitle={metaTitle}
+    description={description}
+    url={url}
+    canonical={canonical}
+    keywords={keywords}
+>
+    <article class="bg-white">
+        <!-- Hero Section -->
+        <div class="py-24">
+            <Image
+                src={blogPost.image}
+                width={800}
+                height={400}
+                loading="eager"
+                decoding="async"
+                alt="Estrategias SEO para empresas colombianas"
+                class="rounded-xl object-cover mx-auto"
+            />
+        </div>
+
+        <!-- Content -->
+        <main class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="prose prose-lg max-w-none">
+                    <!-- Introducción -->
+                    <p
+                        class="lead text-xl md:text-2xl text-gray-600 mb-16 mt-8"
+                    >
+                        En el competitivo mercado digital colombiano, una
+                        estrategia SEO bien implementada puede marcar la
+                        diferencia entre el éxito y el fracaso de tu presencia
+                        online. Descubre las técnicas y estrategias que
+                        realmente funcionan en nuestro contexto local.
+                    </p>
+
+                    <!-- Estrategias Principales -->
+                    {
+                        blogPost.mainStrategies.map((strategy, index) => (
+                            <section
+                                class="mb-20"
+                                data-aos="fade-up"
+                                data-aos-delay={index * 100}
+                            >
+                                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
+                                    {strategy.title}
+                                </h2>
+                                <p class="text-gray-600 mb-8 text-lg leading-relaxed">
+                                    {strategy.content}
+                                </p>
+                                <ul class="grid sm:grid-cols-3 gap-6 mt-6">
+                                    {strategy.examples.map((example) => (
+                                        <li class="bg-gray-50 p-6 rounded-xl text-gray-700 shadow-sm hover:shadow-md transition-all duration-300">
+                                            {example}
+                                        </li>
+                                    ))}
+                                </ul>
+                            </section>
+                        ))
+                    }
+
+                    <!-- Mejores Prácticas -->
+                    <section class="mb-20" data-aos="fade-up">
+                        <h2
+                            class="text-3xl md:text-4xl font-bold text-gray-900 mb-10"
+                        >
+                            Mejores Prácticas SEO
+                        </h2>
+                        <div class="grid sm:grid-cols-3 gap-8">
+                            {
+                                blogPost.bestPractices.map((practice) => (
+                                    <div
+                                        class="p-8 rounded-xl bg-gray-50 hover:bg-gray-100 
+                                    transition-all duration-300 shadow-sm hover:shadow-md"
+                                    >
+                                        <h3 class="font-semibold text-xl md:text-2xl text-gray-900 mb-4">
+                                            {practice.name}
+                                        </h3>
+                                        <p class="text-gray-600 leading-relaxed">
+                                            {practice.description}
+                                        </p>
+                                    </div>
+                                ))
+                            }
+                        </div>
+                    </section>
+
+                    <!-- Métricas y Resultados -->
+                    <section class="mb-20" data-aos="fade-up">
+                        <h2
+                            class="text-3xl md:text-4xl font-bold text-gray-900 mb-10"
+                        >
+                            Métricas y Resultados
+                        </h2>
+                        <div class="grid sm:grid-cols-3 gap-8">
+                            {
+                                blogPost.metrics.map((metric) => (
+                                    <div
+                                        class="p-8 rounded-xl bg-white border border-gray-200 
+                                    hover:shadow-xl hover:shadow-blue-500/10 transition-all duration-300"
+                                    >
+                                        <h3 class="font-semibold text-xl md:text-2xl text-gray-900 mb-4">
+                                            {metric.title}
+                                        </h3>
+                                        <p class="text-gray-600 leading-relaxed">
+                                            {metric.description}
+                                        </p>
+                                    </div>
+                                ))
+                            }
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </main>
+    </article>
+</Layout>

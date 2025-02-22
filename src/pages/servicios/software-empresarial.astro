@@ -3,91 +3,126 @@ import Layout from "../../layouts/Layout.astro";
 import Image from "astro/components/Image.astro";
 
 const serviceDetails = {
-    title: "Desarrollo Web Profesional",
+    title: "Software Empresarial",
     description:
-        "Creamos soluciones web personalizadas que impulsan el crecimiento de tu negocio",
-    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80",
+        "Automatizamos y optimizamos los procesos de tu empresa con soluciones de software a medida.",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80",
     sections: [
         {
-            title: "Soluciones Web a Medida",
+            title: "Soluciones Empresariales a Medida",
             content:
-                "Desarrollamos sitios web únicos que reflejan la identidad de tu marca y cumplen objetivos específicos de negocio. Utilizamos las últimas tecnologías para garantizar rendimiento, seguridad y escalabilidad.",
+                "Desarrollamos soluciones empresariales personalizadas que mejoran la eficiencia operativa y impulsan el crecimiento de tu negocio. Nuestro enfoque se centra en crear software que se adapte perfectamente a tus procesos específicos.",
             features: [
-                "Diseño web responsive",
-                "Optimización SEO",
-                "Integración con APIs",
-                "Gestión de contenidos",
+                "ERPs personalizados",
+                "CRMs a medida",
+                "Business Intelligence",
+                "Automatización de procesos",
             ],
         },
         {
-            title: "Tecnologías Que Utilizamos",
+            title: "Stack Tecnológico Empresarial",
             content:
-                "Trabajamos con un stack tecnológico moderno y probado que garantiza el mejor rendimiento y mantenibilidad:",
+                "Utilizamos tecnologías robustas y probadas en el mercado empresarial:",
             technologies: [
                 {
-                    name: "React & Next.js",
+                    name: "Python & Django",
                     description:
-                        "Para interfaces dinámicas y aplicaciones web modernas",
+                        "Desarrollo rápido y seguro de aplicaciones empresariales",
                 },
                 {
-                    name: "Astro",
+                    name: "Java & Spring",
                     description:
-                        "Rendimiento óptimo y velocidad de carga excepcional",
+                        "Soluciones empresariales robustas y escalables",
                 },
                 {
-                    name: "Node.js",
-                    description: "Backend robusto y escalable",
+                    name: "Docker & Kubernetes",
+                    description:
+                        "Contenedorización y orquestación de servicios",
                 },
                 {
-                    name: "TypeScript",
-                    description: "Código más seguro y mantenible",
+                    name: "AWS & Cloud",
+                    description:
+                        "Infraestructura escalable y servicios en la nube",
                 },
             ],
         },
     ],
     benefits: [
         {
-            title: "Alto Rendimiento",
+            title: "Escalabilidad",
             description:
-                "Sitios web optimizados para cargar en menos de 3 segundos",
+                "Soluciones que crecen junto con tu empresa sin comprometer el rendimiento",
         },
         {
-            title: "SEO Optimizado",
+            title: "Integración",
             description:
-                "Mejor posicionamiento en buscadores desde el primer día",
+                "Conectividad perfecta con tus sistemas y herramientas existentes",
         },
         {
-            title: "Diseño Responsivo",
-            description: "Experiencia perfecta en todos los dispositivos",
+            title: "Análisis en Tiempo Real",
+            description:
+                "Dashboards y reportes actualizados para mejor toma de decisiones",
         },
         {
-            title: "Seguridad Avanzada",
-            description: "Protección contra vulnerabilidades y amenazas web",
+            title: "Soporte 24/7",
+            description:
+                "Asistencia técnica continua y mantenimiento proactivo",
+        },
+    ],
+    features: [
+        {
+            title: "Automatización de Procesos",
+            description:
+                "Reduce errores y optimiza el tiempo de tu equipo con flujos de trabajo automatizados",
+        },
+        {
+            title: "Gestión de Datos",
+            description:
+                "Centraliza y organiza la información crítica de tu empresa",
+        },
+        {
+            title: "Reportes Personalizados",
+            description:
+                "Visualiza los KPIs importantes para tu negocio en tiempo real",
+        },
+        {
+            title: "Seguridad Empresarial",
+            description:
+                "Protección avanzada de datos y cumplimiento normativo",
         },
     ],
 };
 
 const title = "EstusCode | " + serviceDetails.title;
-const metaTitle = "EstusCode | " + serviceDetails.title;
+const metaTitle = "EstusCode | Software Empresarial y Soluciones a Medida";
 const description = serviceDetails.description;
-const url = "https://www.estuscode.com/servicios/desarrollo-web";
-const canonical = "https://www.estuscode.com/servicios/desarrollo-web";
+const url = "https://www.estuscode.com/servicios/software-empresarial";
+const canonical = "https://www.estuscode.com/servicios/software-empresarial";
 const keywords = [
-    "Desarrollo Web Profesional",
-    "Diseño Web Personalizado",
-    "Sitios Web Corporativos",
-    "Aplicaciones Web",
-    "Tecnologías Web",
-    "React",
-    "Next.js",
-    "Astro",
-    "Node.js",
-    "TypeScript",
+    "Software Empresarial",
+    "ERP Personalizado",
+    "CRM a Medida",
+    "Business Intelligence",
+    "Automatización Procesos",
+    "Python",
+    "Java",
+    "Docker",
+    "AWS",
+    "Desarrollo Software Empresarial",
+    "Soluciones Empresariales",
 ];
 ---
 
-<Layout title={title} metaTitle={metaTitle} description={description} url={url} canonical={canonical} keywords={keywords}>
+<Layout
+    title={title}
+    metaTitle={metaTitle}
+    description={description}
+    url={url}
+    canonical={canonical}
+    keywords={keywords}
+>
     <article class="bg-white">
+        <!-- Hero Section -->
         <div class="py-24">
             <Image
                 src={serviceDetails.image}
@@ -95,11 +130,12 @@ const keywords = [
                 height={400}
                 loading="eager"
                 decoding="async"
-                alt="Desarrollo web profesional"
+                alt="Software empresarial profesional"
                 class="rounded-xl object-cover mx-auto"
             />
         </div>
 
+        <!-- Content -->
         <main class="container mx-auto px-4">
             <div class="max-w-4xl mx-auto">
                 {
@@ -163,9 +199,34 @@ const keywords = [
                     ))
                 }
 
+                <!-- Características Destacadas -->
                 <section class="mb-16" data-aos="fade-up">
                     <h2 class="text-3xl font-bold text-gray-900 mb-8">
-                        Beneficios del Desarrollo Web Profesional
+                        Características del Software Empresarial
+                    </h2>
+                    <div class="grid sm:grid-cols-2 gap-6">
+                        {
+                            serviceDetails.features.map((feature) => (
+                                <div
+                                    class="p-6 rounded-xl bg-white border border-gray-100 
+                                hover:shadow-xl hover:shadow-blue-500/10 transition-all duration-300"
+                                >
+                                    <h3 class="font-semibold text-xl text-gray-900 mb-3">
+                                        {feature.title}
+                                    </h3>
+                                    <p class="text-gray-600">
+                                        {feature.description}
+                                    </p>
+                                </div>
+                            ))
+                        }
+                    </div>
+                </section>
+
+                <!-- Beneficios -->
+                <section class="mb-16" data-aos="fade-up">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-8">
+                        Beneficios del Software Empresarial
                     </h2>
                     <div class="grid sm:grid-cols-2 gap-6">
                         {
