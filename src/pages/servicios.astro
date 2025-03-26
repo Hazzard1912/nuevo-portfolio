@@ -104,35 +104,49 @@ const services: Service[] = [
     }
 ];
 
-const title = "Servicios | Estuscode";
-const metaTitle = "EstusCode | Servicios Profesionales de Desarrollo Web";
-const description = "Desarrollamos soluciones tecnológicas que impulsan el crecimiento de tu negocio. Conoce nuestros servicios de desarrollo web, aplicaciones móviles y software empresarial.";
+const title = "Servicios de Desarrollo Web en Colombia | EstusCode";
+const metaTitle = "Servicios de Desarrollo Web en Colombia | EstusCode";
+const description = "Servicios profesionales de desarrollo web en Cali y toda Colombia. Creamos sitios web personalizados, aplicaciones móviles y software empresarial optimizados para SEO.";
 const url = "https://www.estuscode.com/servicios";
 const canonical = "https://www.estuscode.com/servicios";
-const keywords = ["EstusCode", "desarrollo web Colombia", "diseño web Cali", "programación web Cali", "desarrollo web Valle del Cauca", "diseño web Bogotá", "programación web personalizada", "desarrollo web freelance", "diseño responsivo", "desarrollo full stack", "landing pages efectivas", "páginas web para negocios", "diseño web profesional", "desarrollo web económico", "servicios web pymes", "creación sitios web", "desarrollo JavaScript", "desarrollo React", "desarrollo Astro", "optimización web", "portafolio digital", "soluciones web pequeñas empresas", "desarrollo web escalable", "servicios SEO Colombia", "diseño UX/UI accesible", "programación frontend", "desarrollo backend Node.js", "aplicaciones web modernas", "tecnologías web 2024", "desarrollo web rápido", "mantenimiento web", "consultoría desarrollo web", "agencia desarrollo web Cali"];
+// Keywords optimizadas y reducidas
+const keywords = [
+    "servicios desarrollo web Colombia",
+    "agencia desarrollo web Cali",
+    "diseño web Valle del Cauca",
+    "desarrollo aplicaciones móviles",
+    "software empresarial Colombia"
+];
 ---
 <Layout title={title} metaTitle={metaTitle} description={description} url={url} canonical={canonical} keywords={keywords}>
     <section class="py-24 bg-white relative">
         <div class="container mx-auto px-4">
             <div class="max-w-7xl mx-auto">
-                <!-- Header Section -->
+                <!-- Header Section mejorado con keywords prioritarias -->
                 <div class="text-center mb-16" data-aos="fade-up">
                     <span class="text-blue-600 font-medium mb-4 block tracking-wider uppercase text-sm">
-                        NUESTROS SERVICIOS
+                        SERVICIOS DE DESARROLLO
                     </span>
                     <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                        Soluciones Digitales 
+                        Desarrollo Web y Tecnológico en
                         <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
-                            a tu Medida
+                            Colombia
                         </span>
                     </h1>
                     <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                        Desarrollamos soluciones tecnológicas que impulsan el crecimiento de tu negocio
+                        Soluciones digitales personalizadas para empresas en <strong>Cali</strong> y todo el <strong>Valle del Cauca</strong>. 
+                        Impulsamos tu crecimiento con tecnologías modernas y optimización SEO.
                     </p>
                 </div>
 
-                <!-- Services Grid -->
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Services Grid con microdatos Schema.org -->
+                <div 
+                    class="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+                    itemscope 
+                    itemtype="https://schema.org/ItemList"
+                >
+                    <meta itemprop="numberOfItems" content={services.length.toString()} />
+                    
                     {services.map((service, index) => (
                         <a 
                             href={`/servicios/${service.id}`}
@@ -141,47 +155,100 @@ const keywords = ["EstusCode", "desarrollo web Colombia", "diseño web Cali", "p
                                 hover:shadow-blue-500/10"
                             data-aos="fade-up"
                             data-aos-delay={index * 100}
+                            itemprop="itemListElement"
+                            itemscope
+                            itemtype="https://schema.org/ListItem"
                         >
-                            <div class="aspect-video overflow-hidden">
-                                <Image
-                                    src={service.image.src}
-                                    alt={service.image.alt}
-                                    loading="lazy"
-                                    decoding="async"
-                                    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                                    width="600"
-                                    height="400"
-                                />
-                            </div>
-
-                            <div class="p-8">
-                                <h2 class="text-2xl font-bold text-gray-900 mb-4 
-                                    transition-colors duration-300 group-hover:text-blue-600">
-                                    {service.title}
-                                </h2>
-                                <p class="text-gray-600 mb-6 line-clamp-3">
-                                    {service.shortDescription}
-                                </p>
-
-                                <!-- Features Preview -->
-                                <div class="flex flex-wrap gap-2 mb-6">
-                                    {service.features.slice(0, 3).map(feature => (
-                                        <span class="text-sm px-3 py-1 rounded-full bg-gray-50 
-                                            text-gray-600 border border-gray-100
-                                            transition-colors duration-300 group-hover:bg-blue-50
-                                            group-hover:text-blue-600 group-hover:border-blue-100">
-                                            {feature}
-                                        </span>
-                                    ))}
+                            <meta itemprop="position" content={(index + 1).toString()} />
+                            
+                            <div 
+                                itemscope 
+                                itemtype="https://schema.org/Service"
+                                itemprop="item"
+                            >
+                                <meta itemprop="name" content={service.title} />
+                                <meta itemprop="description" content={service.shortDescription} />
+                                <link itemprop="url" href={`https://www.estuscode.com/servicios/${service.id}`} />
+                                
+                                <div class="aspect-video overflow-hidden">
+                                    <Image
+                                        src={service.image.src}
+                                        alt={service.image.alt}
+                                        loading="lazy"
+                                        decoding="async"
+                                        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                        width="600"
+                                        height="400"
+                                        itemprop="image"
+                                    />
                                 </div>
 
+                                <div class="p-8">
+                                    <h2 class="text-2xl font-bold text-gray-900 mb-4 
+                                        transition-colors duration-300 group-hover:text-blue-600"
+                                        itemprop="headline"
+                                    >
+                                        {service.title}
+                                    </h2>
+                                    <p class="text-gray-600 mb-6 line-clamp-3">
+                                        {service.shortDescription}
+                                    </p>
 
-                                <Button text="Explorar Servicio" isPrimary hasIcon ariaLabel="Explorar Servicio" className="group-hover:bg-blue-600 group-hover:text-white" />
+                                    <!-- Features Preview -->
+                                    <div class="flex flex-wrap gap-2 mb-6">
+                                        {service.features.slice(0, 3).map(feature => (
+                                            <span class="text-sm px-3 py-1 rounded-full bg-gray-50 
+                                                text-gray-600 border border-gray-100
+                                                transition-colors duration-300 group-hover:bg-blue-50
+                                                group-hover:text-blue-600 group-hover:border-blue-100"
+                                                itemprop="serviceType"
+                                            >
+                                                {feature}
+                                            </span>
+                                        ))}
+                                    </div>
+
+                                    <Button text="Explorar Servicio" isPrimary hasIcon ariaLabel={`Explorar servicio de ${service.title}`} className="group-hover:bg-blue-600 group-hover:text-white" />
+                                </div>
                             </div>
                         </a>
                     ))}
                 </div>
             </div>
         </div>
+        
+        <!-- Schema.org completo para la página de servicios -->
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "name": "Servicios de Desarrollo Web en Colombia",
+          "description": "Servicios profesionales de desarrollo web en Cali y toda Colombia. Creamos sitios web personalizados, aplicaciones móviles y software empresarial optimizados para SEO.",
+          "url": "https://www.estuscode.com/servicios",
+          "provider": {
+            "@type": "Organization",
+            "name": "EstusCode",
+            "description": "Agencia de desarrollo web profesional en Colombia",
+            "url": "https://www.estuscode.com",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Cali",
+              "addressRegion": "Valle del Cauca",
+              "addressCountry": "CO"
+            }
+          },
+          "offers": {
+            "@type": "Offer",
+            "areaServed": ["Cali", "Valle del Cauca", "Bogotá", "Colombia"],
+            "availableLanguage": ["Spanish", "English"]
+          },
+          "specialty": [
+            "Desarrollo Web Profesional",
+            "Diseño Web Responsivo",
+            "Aplicaciones Móviles",
+            "Software Empresarial",
+            "SEO Local Colombia"
+          ]
+        }
+        </script>
     </section>
-</Layout>

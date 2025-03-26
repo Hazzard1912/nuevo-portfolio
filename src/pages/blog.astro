@@ -70,21 +70,19 @@ const blogPosts: BlogPost[] = [
     },
 ];
 
-const title = "Blog Tecnológico | EstusCode";
-const metaTitle = "Blog Tecnológico | EstusCode";
+// Metadatos optimizados para SEO
+const title = "Blog de Desarrollo Web en Colombia | EstusCode";
+const metaTitle = "Blog de Desarrollo Web en Colombia | EstusCode";
 const description =
-    "Explora las últimas tendencias y novedades en desarrollo web y tecnología. Artículos sobre Astro, React, SEO, PyMEs y más.";
+    "Artículos y guías sobre desarrollo web, SEO, Astro, React y tendencias tecnológicas para empresas colombianas. Aprende con nuestros expertos en Cali.";
 const url = "https://www.estuscode.com/blog";
 const canonical = "https://www.estuscode.com/blog";
 const keywords = [
-    "Blog Tecnológico",
-    "Desarrollo Web",
-    "Tendencias",
-    "Astro",
-    "React",
-    "SEO",
-    "PyMEs",
-    "Desarrollo",
+    "blog desarrollo web Colombia",
+    "tutoriales web Cali",
+    "tendencias tecnología Colombia",
+    "Astro React desarrollo",
+    "SEO empresas colombianas"
 ];
 ---
 
@@ -92,33 +90,37 @@ const keywords = [
     <section class="py-24 bg-white">
         <div class="container mx-auto px-4">
             <div class="max-w-7xl mx-auto">
-                <!-- Header Section -->
+                <!-- Header optimizado con palabras clave específicas -->
                 <div class="text-center mb-16" data-aos="fade-up">
                     <span
                         class="text-blue-600 font-medium mb-4 block tracking-wider uppercase text-sm"
                     >
-                        BLOG TECNOLÓGICO
+                        RECURSOS Y TUTORIALES
                     </span>
                     <h1
                         class="text-4xl md:text-5xl font-bold text-gray-900 mb-6"
                     >
-                        Conocimiento y
+                        Blog de Desarrollo Web en
                         <span
                             class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600"
                         >
-                            Tendencias
+                            Colombia
                         </span>
                     </h1>
                     <p
                         class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed"
                     >
-                        Explorando las últimas novedades en desarrollo web y
-                        tecnología
+                        Artículos técnicos, tutoriales y mejores prácticas para 
+                        <strong>empresas y desarrolladores colombianos</strong>
                     </p>
                 </div>
 
-                <!-- Blog Grid -->
-                <div class="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
+                <!-- Blog Grid con Schema.org -->
+                <div 
+                    class="grid md:grid-cols-2 lg:grid-cols-2 gap-8"
+                    itemscope 
+                    itemtype="https://schema.org/Blog"
+                >
                     {
                         blogPosts.map((post, index) => (
                             <article
@@ -127,7 +129,19 @@ const keywords = [
                                 hover:shadow-blue-500/10"
                                 data-aos="fade-up"
                                 data-aos-delay={index * 100}
+                                itemscope
+                                itemtype="https://schema.org/BlogPosting"
                             >
+                                <link itemprop="url" href={`https://www.estuscode.com/blog/${post.id}`} />
+                                <meta itemprop="headline" content={post.title} />
+                                <meta itemprop="description" content={post.description} />
+                                <meta itemprop="datePublished" content={post.publishDate} />
+                                <meta itemprop="author" content="EstusCode" />
+                                
+                                {post.tags.map(tag => (
+                                    <meta itemprop="keywords" content={tag} />
+                                ))}
+                                
                                 <a href={`/blog/${post.id}`} class="block">
                                     <div class="aspect-video overflow-hidden">
                                         <Image
@@ -139,6 +153,7 @@ const keywords = [
                                             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                                             width="800"
                                             height="400"
+                                            itemprop="image"
                                         />
                                     </div>
 
@@ -147,6 +162,7 @@ const keywords = [
                                             <time
                                                 datetime={post.publishDate}
                                                 class="text-sm text-gray-500"
+                                                itemprop="datePublished"
                                             >
                                                 {new Date(
                                                     post.publishDate,
@@ -166,12 +182,13 @@ const keywords = [
 
                                         <h2
                                             class="text-2xl font-bold text-gray-900 mb-4 
-                                        transition-colors duration-300 group-hover:text-blue-600"
+                                            transition-colors duration-300 group-hover:text-blue-600"
+                                            itemprop="headline"
                                         >
                                             {post.title}
                                         </h2>
 
-                                        <p class="text-gray-600 mb-6 line-clamp-3">
+                                        <p class="text-gray-600 mb-6 line-clamp-3" itemprop="abstract">
                                             {post.description}
                                         </p>
 
@@ -181,7 +198,7 @@ const keywords = [
                                                 .map((tag) => (
                                                     <span
                                                         class="text-sm px-3 py-1 rounded-full bg-gray-50 
-                                                text-gray-600 border border-gray-100"
+                                                        text-gray-600 border border-gray-100"
                                                     >
                                                         {tag}
                                                     </span>
@@ -195,5 +212,91 @@ const keywords = [
                 </div>
             </div>
         </div>
+        
+        <!-- Schema.org para la página de blog -->
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "Blog",
+          "name": "Blog de Desarrollo Web en Colombia",
+          "url": "https://www.estuscode.com/blog",
+          "description": "Artículos y guías sobre desarrollo web, SEO, Astro, React y tendencias tecnológicas para empresas colombianas.",
+          "publisher": {
+            "@type": "Organization",
+            "name": "EstusCode",
+            "url": "https://www.estuscode.com",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://www.estuscode.com/logo.png"
+            }
+          },
+          "blogPost": [
+            {
+              "@type": "BlogPosting",
+              "headline": "Tendencias en Desarrollo Web para 2024",
+              "description": "Descubre las tecnologías y metodologías que están definiendo el futuro del desarrollo web. Desde Astro hasta la IA en el desarrollo.",
+              "url": "https://www.estuscode.com/blog/tendencias-desarrollo-web-2024",
+              "datePublished": "2024-01-15",
+              "author": {
+                "@type": "Organization",
+                "name": "EstusCode"
+              },
+              "publisher": {
+                "@type": "Organization",
+                "name": "EstusCode"
+              },
+              "keywords": ["Desarrollo Web", "Tendencias", "2024", "Tecnología"]
+            },
+            {
+              "@type": "BlogPosting",
+              "headline": "Guía Completa de SEO para Empresas Colombianas",
+              "description": "Estrategias probadas para mejorar el posicionamiento de tu sitio web en Colombia. Aprende técnicas locales de SEO que funcionan.",
+              "url": "https://www.estuscode.com/blog/optimizacion-seo-colombia",
+              "datePublished": "2024-01-10",
+              "author": {
+                "@type": "Organization",
+                "name": "EstusCode"
+              },
+              "publisher": {
+                "@type": "Organization",
+                "name": "EstusCode"
+              },
+              "keywords": ["SEO", "Marketing Digital", "Colombia", "Posicionamiento"]
+            },
+            {
+              "@type": "BlogPosting",
+              "headline": "Soluciones Web Efectivas para PyMEs",
+              "description": "Cómo implementar soluciones web económicas pero poderosas para pequeñas y medianas empresas. Casos de éxito en el Valle del Cauca.",
+              "url": "https://www.estuscode.com/blog/desarrollo-web-pymes",
+              "datePublished": "2024-01-05",
+              "author": {
+                "@type": "Organization",
+                "name": "EstusCode"
+              },
+              "publisher": {
+                "@type": "Organization",
+                "name": "EstusCode"
+              },
+              "keywords": ["PyMEs", "Desarrollo Web", "Empresas", "Economía"]
+            },
+            {
+              "@type": "BlogPosting",
+              "headline": "Astro + React: La Combinación Perfecta",
+              "description": "Aprende a crear sitios web ultra rápidos combinando la potencia de Astro con la flexibilidad de React. Tutorial paso a paso.",
+              "url": "https://www.estuscode.com/blog/astro-react-desarrollo",
+              "datePublished": "2024-01-01",
+              "author": {
+                "@type": "Organization",
+                "name": "EstusCode"
+              },
+              "publisher": {
+                "@type": "Organization",
+                "name": "EstusCode"
+              },
+              "keywords": ["Astro", "React", "JavaScript", "Desarrollo"]
+            }
+          ]
+        }
+        </script>
     </section>
 </Layout>

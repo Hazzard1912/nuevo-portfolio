@@ -4,117 +4,208 @@ import Button from "../ui/Button.astro";
 const services = [
     {
         title: "Desarrollo Web",
-        description: "Creamos sitios web y aplicaciones web personalizadas que destacan tu marca y aumentan tus conversiones.",
+        description:
+            "Creamos sitios web y aplicaciones web personalizadas que destacan tu marca y aumentan tus conversiones.",
         icon: "code",
         features: ["Landing Pages", "E-commerce", "Blogs", "Aplicaciones Web"],
         ariaLabel: "Servicios de desarrollo web",
-        link: "/servicios/desarrollo-web"
+        link: "/servicios/desarrollo-web",
     },
     {
         title: "Aplicaciones Móviles",
-        description: "Desarrollo de apps nativas y multiplataforma que conectan con tus usuarios donde estén.",
+        description:
+            "Desarrollo de apps nativas y multiplataforma que conectan con tus usuarios donde estén.",
         icon: "mobile",
-        features: ["Apps iOS y Android", "Apps Multiplataforma", "PWAs", "Apps Híbridas"],
+        features: [
+            "Apps iOS y Android",
+            "Apps Multiplataforma",
+            "PWAs",
+            "Apps Híbridas",
+        ],
         ariaLabel: "Servicios de desarrollo móvil",
-        link: "/servicios/aplicaciones-moviles"
+        link: "/servicios/aplicaciones-moviles",
     },
     {
         title: "Software Empresarial",
-        description: "Soluciones a medida para optimizar y automatizar los procesos de tu empresa.",
+        description:
+            "Soluciones a medida para optimizar y automatizar los procesos de tu empresa.",
         icon: "building",
-        features: ["ERPs y CRMs", "Automatización", "Integraciones", "Analytics"],
+        features: [
+            "ERPs y CRMs",
+            "Automatización",
+            "Integraciones",
+            "Analytics",
+        ],
         ariaLabel: "Servicios de software empresarial",
-        link: "/servicios/software-empresarial"
-    }
+        link: "/servicios/software-empresarial",
+    },
 ];
 
 // Simplified icons object with optimized SVG paths
 const icons = {
     code: '<path d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" stroke-width="2"/>',
     mobile: '<path d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" stroke-width="2"/>',
-    building: '<path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" stroke-width="2"/>'
+    building:
+        '<path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" stroke-width="2"/>',
 };
 ---
 
 <section id="servicios" class="py-24 relative">
     <div class="container mx-auto px-4 max-w-7xl">
         <div class="text-center mb-24" data-aos="fade-up">
-            <span class="text-blue-600 font-medium mb-4 block tracking-wider uppercase text-sm">NUESTROS SERVICIOS</span>
-            <h2 class="text-4xl md:text-6xl font-bold text-gray-900 mb-6 tracking-tight">
-                Soluciones Digitales que <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 animate-gradient">Impulsan tu Éxito</span>
+            <span
+                class="text-blue-600 font-medium mb-4 block tracking-wider uppercase text-sm"
+                >NUESTROS SERVICIOS</span
+            >
+            <h2
+                class="text-4xl md:text-6xl font-bold text-gray-900 mb-6 tracking-tight"
+            >
+                Soluciones Digitales que <span
+                    class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 animate-gradient"
+                    >Impulsan tu Éxito</span
+                >
             </h2>
-            <p class="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                Transformamos ideas en experiencias digitales excepcionales, combinando diseño innovador con tecnología de vanguardia.
+            <p
+                class="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed"
+            >
+                Transformamos ideas en experiencias digitales excepcionales,
+                combinando diseño innovador con tecnología de vanguardia.
             </p>
         </div>
 
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8" role="list">
-            {services.map((service, index) => (
-                <div 
-                    class="group relative bg-white p-8 rounded-2xl border border-gray-100
+            {
+                services.map((service, index) => (
+                    <div
+                        class="group relative bg-white p-8 rounded-2xl border border-gray-100
                         transition-all duration-500 hover:bg-gray-50
                         hover:border-blue-100 hover:shadow-xl 
                         hover:-translate-y-2"
-                    data-aos="fade-up"
-                    data-aos-delay={index * 100}
-                    role="listitem"
-                    aria-label={service.ariaLabel}
-                >
-                    <div class="relative">
-                        <div class="w-16 h-16 mb-6 rounded-2xl flex items-center justify-center 
+                        data-aos="fade-up"
+                        data-aos-delay={index * 100}
+                        role="listitem"
+                        aria-label={service.ariaLabel}
+                    >
+                        <div class="relative">
+                            <div
+                                class="w-16 h-16 mb-6 rounded-2xl flex items-center justify-center 
                             bg-gradient-to-br from-blue-50 to-purple-50 transition-colors duration-300 
-                            group-hover:from-blue-100 group-hover:to-purple-100">
-                            <svg
-                                class="w-8 h-8 text-blue-600 transition-all duration-300 
+                            group-hover:from-blue-100 group-hover:to-purple-100"
+                            >
+                                <svg
+                                    class="w-8 h-8 text-blue-600 transition-all duration-300 
                                 group-hover:scale-110"
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24"
-                                set:html={icons[service.icon]}
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                    set:html={icons[service.icon]}
+                                />
+                            </div>
+
+                            <h3
+                                class="text-2xl font-bold text-gray-900 mb-4 transition-colors 
+                            duration-300 group-hover:text-blue-600"
+                            >
+                                <a href={service.link} class="hover:underline">
+                                    {service.title}
+                                </a>
+                            </h3>
+                            <p class="text-gray-600 text-lg mb-6 leading-relaxed">
+                                {service.description}
+                            </p>
+
+                            <ul class="space-y-3 mb-6">
+                                {service.features.map((feature) => (
+                                    <li
+                                        class="flex items-center text-gray-600 
+                                    transition-colors duration-300 hover:text-gray-900"
+                                    >
+                                        <svg
+                                            class="w-5 h-5 mr-3 text-blue-600"
+                                            viewBox="0 0 20 20"
+                                            fill="currentColor"
+                                        >
+                                            <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" />
+                                        </svg>
+                                        {feature}
+                                    </li>
+                                ))}
+                            </ul>
+
+                            <Button
+                                text="Ver más"
+                                href={service.link}
+                                className="w-full text-sm"
+                                ariaLabel={`Ver más sobre ${service.title}`}
                             />
                         </div>
-
-                        <h3 class="text-2xl font-bold text-gray-900 mb-4 transition-colors 
-                            duration-300 group-hover:text-blue-600">
-                            <a href={service.link} class="hover:underline">
-                                {service.title}
-                            </a>
-                        </h3>
-                        <p class="text-gray-600 text-lg mb-6 leading-relaxed">
-                            {service.description}
-                        </p>
-
-                        <ul class="space-y-3 mb-6">
-                            {service.features.map(feature => (
-                                <li class="flex items-center text-gray-600 
-                                    transition-colors duration-300 hover:text-gray-900">
-                                    <svg class="w-5 h-5 mr-3 text-blue-600" viewBox="0 0 20 20" fill="currentColor">
-                                        <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
-                                    </svg>
-                                    {feature}
-                                </li>
-                            ))}
-                        </ul>
-
-                        <Button 
-                            text="Ver más" 
-                            href={service.link} 
-                            className="w-full text-sm"
-                            ariaLabel={`Ver más sobre ${service.title}`}
-                        />
                     </div>
-                </div>
-            ))}
+                ))
+            }
         </div>
 
         <div class="mt-16 text-center" data-aos="fade-up" data-aos-delay="200">
-            <Button 
-                text="Comienza tu Proyecto" 
-                href="#contacto" 
-                hasIcon 
+            <Button
+                text="Comienza tu Proyecto"
+                href="#contacto"
+                hasIcon
                 className="text-base px-8 py-3 shadow-lg shadow-blue-500/20"
                 ariaLabel="Iniciar nuevo proyecto"
             />
         </div>
     </div>
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "ItemList",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "item": {
+                        "@type": "Service",
+                        "name": "Desarrollo Web",
+                        "url": "https://www.estuscode.com/servicios/desarrollo-web",
+                        "description": "Creamos sitios web y aplicaciones web personalizadas que destacan tu marca y aumentan tus conversiones.",
+                        "provider": {
+                            "@type": "Organization",
+                            "name": "EstusCode"
+                        },
+                        "areaServed": ["Cali", "Colombia"]
+                    }
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "item": {
+                        "@type": "Service",
+                        "name": "Aplicaciones Móviles",
+                        "url": "https://www.estuscode.com/servicios/aplicaciones-moviles",
+                        "description": "Desarrollo de apps nativas y multiplataforma que conectan con tus usuarios donde estén.",
+                        "provider": {
+                            "@type": "Organization",
+                            "name": "EstusCode"
+                        },
+                        "areaServed": ["Cali", "Colombia"]
+                    }
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "item": {
+                        "@type": "Service",
+                        "name": "Software Empresarial",
+                        "url": "https://www.estuscode.com/servicios/software-empresarial",
+                        "description": "Soluciones a medida para optimizar y automatizar los procesos de tu empresa.",
+                        "provider": {
+                            "@type": "Organization",
+                            "name": "EstusCode"
+                        },
+                        "areaServed": ["Cali", "Colombia"]
+                    }
+                }
+            ]
+        }
+    </script>
 </section>

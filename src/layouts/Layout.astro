@@ -14,49 +14,21 @@ interface Props {
 	keywords: string[];
 }
 
-const { 
+const {
 	title = "EstusCode",
 	metaTitle = "EstusCode | Servicios Profesionales de Desarrollo Web",
-	description = "Servicios profesionales de desarrollo. Sitios web personalizados, aplicaciones web, soluciones e-commerce y diseño responsive.", 
+	description = "Servicios profesionales de desarrollo. Sitios web personalizados, aplicaciones web, soluciones e-commerce y diseño responsive.",
 	url = "https://www.estuscode.com",
 	canonical = "https://www.estuscode.com",
-	keywords
+	keywords,
 } = Astro.props;
 
 const baseKeywords = [
 	"EstusCode",
 	"desarrollo web Colombia",
 	"diseño web Cali",
-	"programación web Cali",
-	"desarrollo web Valle del Cauca",
-	"diseño web Bogotá",
-	"programación web personalizada",
-	"desarrollo web freelance",
-	"diseño responsivo",
-	"desarrollo full stack",
-	"landing pages efectivas",
-	"páginas web para negocios",
-	"diseño web profesional",
-	"desarrollo web económico",
-	"servicios web pymes",
-	"creación sitios web",
-	"desarrollo JavaScript",
-	"desarrollo React",
-	"desarrollo Astro",
-	"optimización web",
-	"portafolio digital",
-	"soluciones web pequeñas empresas",
-	"desarrollo web escalable",
-	"servicios SEO Colombia",
-	"diseño UX/UI accesible",
-	"programación frontend",
-	"desarrollo backend Node.js",
-	"aplicaciones web modernas",
-	"tecnologías web 2024",
-	"desarrollo web rápido",
-	"mantenimiento web",
-	"consultoría desarrollo web",
-	"agencia desarrollo web Cali",
+	"servicios desarrollo web",
+	"agencia desarrollo web Valle del Cauca",
 ];
 
 const allKeywords = [...new Set([...baseKeywords, ...keywords])];
@@ -79,7 +51,7 @@ const allKeywords = [...new Set([...baseKeywords, ...keywords])];
 
 			gtag("config", "G-REBSYB0JMZ");
 		</script>
-		
+
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
