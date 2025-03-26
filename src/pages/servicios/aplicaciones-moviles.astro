@@ -1,111 +1,131 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import Image from "astro/components/Image.astro";
+import Button from "../../ui/Button.astro";
 
 const serviceDetails = {
-    title: "Aplicaciones Móviles",
+    title: "Desarrollo de Aplicaciones Móviles en Colombia",
     description:
-        "Desarrollamos aplicaciones móviles nativas y multiplataforma que conectan con tus usuarios donde estén.",
+        "Creamos aplicaciones móviles para iOS y Android que conectan con tus clientes en Colombia. Expertos en React Native, Flutter y soluciones nativas.",
     image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&q=80",
     sections: [
         {
-            title: "Desarrollo Móvil Profesional",
+            title: "Desarrollo Móvil para Empresas Colombianas",
             content:
-                "Creamos aplicaciones móviles intuitivas y potentes que transforman tu visión en realidad. Utilizamos tecnologías modernas para garantizar el mejor rendimiento y experiencia de usuario.",
+                "Creamos aplicaciones móviles que conectan tu marca con usuarios en Cali, Bogotá y toda Colombia. Nuestro equipo desarrolla soluciones adaptadas al mercado local, considerando la infraestructura móvil colombiana y los hábitos de uso específicos.",
             features: [
-                "Apps iOS nativas",
-                "Apps Android nativas",
-                "Aplicaciones híbridas",
-                "PWAs",
+                "Apps nativas para iOS optimizadas para el mercado colombiano",
+                "Aplicaciones Android adaptadas a los dispositivos más usados en Colombia",
+                "Soluciones híbridas costo-efectivas para startups y PyMEs",
+                "PWAs para mejor accesibilidad con conexiones limitadas",
             ],
         },
         {
-            title: "Stack Tecnológico",
+            title: "Tecnologías Móviles de Vanguardia",
             content:
-                "Utilizamos las mejores tecnologías del mercado para desarrollar aplicaciones móviles de alta calidad:",
+                "Utilizamos las mejores tecnologías del mercado para desarrollar aplicaciones móviles confiables y de alto rendimiento para el usuario colombiano:",
             technologies: [
                 {
                     name: "React Native",
                     description:
-                        "Desarrollo multiplataforma eficiente con rendimiento nativo",
+                        "Desarrollo multiplataforma eficiente que reduce costos sin sacrificar calidad",
                 },
                 {
                     name: "Flutter",
                     description:
-                        "Interfaces fluidas y consistentes en todas las plataformas",
+                        "Interfaces fluidas con alta aceptación en el mercado colombiano",
                 },
                 {
                     name: "Swift",
-                    description: "Desarrollo nativo iOS de alto rendimiento",
+                    description:
+                        "Desarrollo iOS nativo para usuarios premium en Colombia",
                 },
                 {
                     name: "Kotlin",
-                    description: "Apps Android robustas y modernas",
+                    description:
+                        "Apps Android robustas para el mercado mayoritario colombiano",
                 },
             ],
         },
     ],
     benefits: [
         {
-            title: "Rendimiento Nativo",
+            title: "Rendimiento Optimizado",
             description:
-                "Aplicaciones optimizadas que aprovechan al máximo el hardware del dispositivo",
+                "Aplicaciones rápidas incluso en dispositivos de gama media populares en Colombia",
         },
         {
-            title: "Experiencia Fluida",
+            title: "Experiencia de Usuario Local",
             description:
-                "Interfaces intuitivas y animaciones suaves para mejor engagement",
+                "Diseño adaptado a preferencias y necesidades del usuario colombiano",
         },
         {
-            title: "Multiplataforma",
+            title: "Cobertura Nacional",
             description:
-                "Alcanza a usuarios de iOS y Android con una única base de código",
+                "Soluciones que funcionan en todo el territorio colombiano, incluso con conexión limitada",
         },
         {
-            title: "Actualizaciones OTA",
+            title: "Actualizaciones Remotas",
             description:
-                "Implementa mejoras y correcciones sin pasar por las tiendas de apps",
+                "Mejoras y correcciones sin depender de tiendas de aplicaciones",
         },
     ],
     features: [
         {
-            title: "Integración con APIs",
+            title: "Integración con APIs Locales",
             description:
-                "Conexión perfecta con servicios backend y APIs de terceros",
+                "Conexión con servicios de pago colombianos (PSE, Nequi, Daviplata) y APIs gubernamentales",
         },
         {
-            title: "Modo Offline",
-            description: "Funcionalidad básica sin conexión a internet",
-        },
-        {
-            title: "Notificaciones Push",
+            title: "Funcionalidad Offline",
             description:
-                "Mantén a tus usuarios enganchados con notificaciones relevantes",
+                "Operación básica sin conexión, ideal para zonas con cobertura limitada en Colombia",
         },
         {
-            title: "Analytics Integrado",
-            description: "Métricas detalladas del comportamiento de usuarios",
+            title: "Notificaciones Contextuales",
+            description:
+                "Sistema de notificaciones adaptado al comportamiento del usuario colombiano",
+        },
+        {
+            title: "Analytics Localizado",
+            description:
+                "Métricas detalladas específicas para el mercado colombiano",
+        },
+    ],
+    casosExito: [
+        {
+            industria: "Retail",
+            resultado:
+                "Incremento del 75% en ventas móviles con app de e-commerce optimizada para Colombia",
+        },
+        {
+            industria: "Servicios",
+            resultado:
+                "Plataforma de servicios a domicilio con 50.000+ descargas en Cali y Valle del Cauca",
+        },
+        {
+            industria: "Fintech",
+            resultado:
+                "App de pagos móviles con más de 25.000 transacciones mensuales en Colombia",
         },
     ],
 };
 
-const title = "EstusCode | " + serviceDetails.title;
-const metaTitle =
-    "EstusCode | Desarrollo de Aplicaciones Móviles Profesionales";
-const description = serviceDetails.description;
+// Metadatos optimizados
+const title = "Desarrollo de Aplicaciones Móviles en Colombia | EstusCode";
+const metaTitle = "Aplicaciones Móviles para Empresas Colombianas | EstusCode";
+const description =
+    "Desarrollamos apps iOS y Android personalizadas para el mercado colombiano. Expertos en React Native y Flutter con casos de éxito en Cali y toda Colombia.";
 const url = "https://www.estuscode.com/servicios/aplicaciones-moviles";
 const canonical = "https://www.estuscode.com/servicios/aplicaciones-moviles";
+// Keywords optimizadas
 const keywords = [
-    "Desarrollo Apps Móviles",
-    "Aplicaciones iOS",
-    "Aplicaciones Android",
-    "React Native",
-    "Flutter",
-    "Swift",
-    "Kotlin",
-    "PWA",
-    "Desarrollo Multiplataforma",
-    "Apps Empresariales",
+    "aplicaciones móviles Colombia",
+    "desarrollo apps Cali",
+    "React Native Colombia",
+    "Flutter desarrollo Colombia",
+    "apps empresariales Valle del Cauca",
+    "desarrollo iOS Android Colombia",
 ];
 ---
 
@@ -117,22 +137,68 @@ const keywords = [
     canonical={canonical}
     keywords={keywords}
 >
-    <article class="bg-white">
-        <!-- Hero Section -->
-        <div class="py-24">
-            <Image
-                src={serviceDetails.image}
-                width={800}
-                height={400}
-                loading="eager"
-                decoding="async"
-                alt="Desarrollo de aplicaciones móviles profesionales"
-                class="rounded-xl object-cover mx-auto"
-            />
-        </div>
+    <article class="bg-white" itemscope itemtype="https://schema.org/Service">
+        <meta
+            itemprop="serviceType"
+            content="Desarrollo de Aplicaciones Móviles"
+        />
+        <meta itemprop="provider" content="EstusCode" />
+        <meta itemprop="areaServed" content="Colombia" />
+
+        <!-- Hero Section Mejorada -->
+        <section
+            class="relative py-24 bg-gradient-to-r from-purple-50 to-indigo-50"
+        >
+            <div class="container mx-auto px-4">
+                <div class="max-w-6xl mx-auto">
+                    <div class="grid md:grid-cols-2 gap-12 items-center">
+                        <div data-aos="fade-right">
+                            <h1
+                                class="text-4xl md:text-5xl font-bold text-gray-900 mb-6"
+                                itemprop="name"
+                            >
+                                Aplicaciones Móviles para <span
+                                    class="text-purple-600">Colombia</span
+                                >
+                            </h1>
+                            <p
+                                class="text-xl text-gray-700 mb-8 leading-relaxed"
+                                itemprop="description"
+                            >
+                                Desarrollamos apps nativas y multiplataforma
+                                adaptadas al mercado colombiano. Desde <strong
+                                    >Cali</strong
+                                > para todo el país, creamos experiencias móviles
+                                que conectan con tus usuarios.
+                            </p>
+                            <Button
+                                text="Cotizar Mi Aplicación"
+                                href="/#contacto"
+                                isPrimary
+                                hasIcon
+                                ariaLabel="Cotizar desarrollo de aplicación móvil"
+                                className="text-lg"
+                            />
+                        </div>
+                        <div data-aos="fade-left">
+                            <Image
+                                src={serviceDetails.image}
+                                width={600}
+                                height={400}
+                                loading="eager"
+                                decoding="async"
+                                alt="Desarrollo de aplicaciones móviles en Colombia"
+                                class="rounded-xl object-cover shadow-xl"
+                                itemprop="image"
+                            />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <!-- Content -->
-        <main class="container mx-auto px-4">
+        <main class="container mx-auto px-4 py-16">
             <div class="max-w-4xl mx-auto">
                 {
                     serviceDetails.sections.map((section) => (
@@ -146,13 +212,13 @@ const keywords = [
 
                             {section.features && (
                                 <ul
-                                    class="grid sm:grid-cols-2 gap-6"
+                                    class="grid sm:grid-cols-2 gap-6 mb-8"
                                     role="list"
                                 >
                                     {section.features.map((feature) => (
                                         <li class="flex items-start space-x-4">
                                             <span
-                                                class="flex-shrink-0 text-blue-600"
+                                                class="flex-shrink-0 text-purple-600"
                                                 aria-hidden="true"
                                             >
                                                 <svg
@@ -198,14 +264,15 @@ const keywords = [
                 <!-- Características Destacadas -->
                 <section class="mb-16" data-aos="fade-up">
                     <h2 class="text-3xl font-bold text-gray-900 mb-8">
-                        Características Destacadas
+                        Características Adaptadas al Mercado Colombiano
                     </h2>
                     <div class="grid sm:grid-cols-2 gap-6">
                         {
                             serviceDetails.features.map((feature) => (
                                 <div
                                     class="p-6 rounded-xl bg-white border border-gray-100 
-                                hover:shadow-xl hover:shadow-blue-500/10 transition-all duration-300"
+                                    hover:shadow-xl hover:shadow-purple-500/10 transition-all duration-300"
+                                    itemprop="serviceOutput"
                                 >
                                     <h3 class="font-semibold text-xl text-gray-900 mb-3">
                                         {feature.title}
@@ -229,7 +296,7 @@ const keywords = [
                             serviceDetails.benefits.map((benefit) => (
                                 <div
                                     class="p-6 rounded-xl bg-white border border-gray-100 
-                                hover:shadow-xl hover:shadow-blue-500/10 transition-all duration-300"
+                                    hover:shadow-xl hover:shadow-purple-500/10 transition-all duration-300"
                                 >
                                     <h3 class="font-semibold text-xl text-gray-900 mb-3">
                                         {benefit.title}
@@ -242,7 +309,103 @@ const keywords = [
                         }
                     </div>
                 </section>
+
+                <!-- Nueva sección: Casos de éxito en Colombia -->
+                <section
+                    class="mb-16 p-8 bg-purple-50 rounded-2xl"
+                    data-aos="fade-up"
+                >
+                    <h2 class="text-3xl font-bold text-gray-900 mb-8">
+                        Casos de Éxito en Colombia
+                    </h2>
+                    <div class="space-y-6">
+                        {
+                            serviceDetails.casosExito.map((caso) => (
+                                <div class="bg-white p-6 rounded-xl shadow-sm">
+                                    <div class="flex items-start">
+                                        <div class="flex-shrink-0 mr-4">
+                                            <svg
+                                                class="w-8 h-8 text-purple-500"
+                                                fill="none"
+                                                viewBox="0 0 24 24"
+                                                stroke="currentColor"
+                                            >
+                                                <path
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"
+                                                    stroke-width="2"
+                                                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                                                />
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <h3 class="font-bold text-lg text-gray-900 mb-2">
+                                                Industria: {caso.industria}
+                                            </h3>
+                                            <p class="text-gray-700">
+                                                {caso.resultado}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            ))
+                        }
+                    </div>
+                </section>
+
+                <!-- CTA -->
+                <section
+                    class="text-center p-8 mb-16 bg-gradient-to-r from-purple-500 to-indigo-600 rounded-2xl text-white"
+                    data-aos="fade-up"
+                >
+                    <h2 class="text-3xl font-bold mb-4">
+                        ¿Listo para conectar con tus usuarios en Colombia?
+                    </h2>
+                    <p class="text-xl mb-8 max-w-3xl mx-auto opacity-90">
+                        Contáctanos hoy para una consultoría gratuita sobre cómo
+                        una aplicación móvil puede transformar tu negocio en el
+                        mercado colombiano.
+                    </p>
+                    <Button
+                        text="Solicitar Información"
+                        href="/#contacto"
+                        isPrimary={false}
+                        className="bg-white text-purple-600 hover:bg-purple-50 shadow-xl text-lg"
+                        ariaLabel="Solicitar información sobre apps móviles"
+                    />
+                </section>
             </div>
         </main>
+
+        <!-- Schema.org adicional -->
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "Service",
+                "name": "Desarrollo de Aplicaciones Móviles en Colombia",
+                "description": "Creamos aplicaciones móviles para iOS y Android que conectan con tus clientes en Colombia. Expertos en React Native, Flutter y soluciones nativas.",
+                "provider": {
+                    "@type": "Organization",
+                    "name": "EstusCode",
+                    "url": "https://www.estuscode.com"
+                },
+                "areaServed": ["Cali", "Valle del Cauca", "Bogotá", "Colombia"],
+                "serviceType": "Desarrollo de Aplicaciones Móviles",
+                "offers": {
+                    "@type": "Offer",
+                    "price": "15000000",
+                    "priceCurrency": "COP",
+                    "availability": "https://schema.org/InStock"
+                },
+                "serviceOutput": [
+                    "Aplicaciones iOS Nativas",
+                    "Aplicaciones Android Nativas",
+                    "Aplicaciones Multiplataforma",
+                    "Progressive Web Apps"
+                ],
+                "hoursAvailable": "Mo,Tu,We,Th,Fr 08:00-18:00",
+                "availableLanguage": ["Spanish", "English"]
+            }
+        </script>
     </article>
 </Layout>

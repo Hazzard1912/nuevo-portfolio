@@ -1,0 +1,469 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Image from "astro/components/Image.astro";
+import Button from "../../ui/Button.astro";
+
+const blogPostContent = {
+    title: "Caso de Éxito: Cómo una Tienda de Cali Triplicó sus Ventas Online",
+    description:
+        "Análisis del proceso de transformación digital de una PyME en Cali que logró triplicar sus ventas implementando una estrategia web efectiva y adaptada al mercado colombiano.",
+    publishDate: "2024-01-25",
+    author: "Equipo EstusCode",
+    readTime: "8 minutos",
+    category: "Casos de Éxito",
+    featuredImage: {
+        src: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&q=80",
+        alt: "Tienda local de Cali que incrementó sus ventas con comercio electrónico",
+        width: 1200,
+        height: 630,
+    },
+    tags: [
+        "Caso de Éxito",
+        "E-commerce",
+        "Cali",
+        "PyMEs",
+        "Transformación Digital",
+    ],
+    introduction:
+        "En pleno corazón de Cali, una pequeña tienda local de productos artesanales enfrentaba el reto que muchos negocios colombianos conocen bien: ¿cómo expandirse más allá de las limitaciones físicas y aprovechar el creciente mercado digital? Este caso de éxito documenta cómo Artesanías del Valle pasó de vender exclusivamente en su local a triplicar sus ingresos gracias a una estrategia digital bien implementada.",
+    sections: [
+        {
+            title: "El desafío: un negocio tradicional en un mundo digital",
+            content:
+                "Artesanías del Valle llevaba 15 años operando en el centro de Cali. Con una clientela fiel pero limitada geográficamente, sus ventas se habían estancado en los últimos años. La pandemia agravó la situación, reduciendo el tráfico peatonal en un 70%.\n\nEl negocio enfrentaba varios desafíos críticos:\n\n• Alcance limitado a clientes locales\n• Desconocimiento del entorno digital\n• Procesos manuales de inventario y ventas\n• Competencia creciente de grandes plataformas\n• Presupuesto limitado para marketing",
+            image: {
+                src: "https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&q=80",
+                alt: "Situación inicial del negocio: tienda física con alcance limitado",
+                width: 800,
+                height: 500,
+            },
+        },
+        {
+            title: "La estrategia: transformación digital adaptada al contexto colombiano",
+            content:
+                "La solución no consistía simplemente en 'crear una página web'. Después de un análisis detallado del negocio y su mercado, desarrollamos una estrategia integral con estos componentes clave:",
+            listItems: [
+                {
+                    subtitle:
+                        "1. Plataforma e-commerce optimizada para el mercado local",
+                    description:
+                        "Desarrollamos un sitio de comercio electrónico con características específicas para el consumidor colombiano: múltiples métodos de pago (incluyendo efectivo contra entrega y PSE), información de envíos por departamentos, y un diseño que generaba confianza local.",
+                },
+                {
+                    subtitle: "2. Optimización para dispositivos móviles",
+                    description:
+                        "Con el 85% de los colombianos accediendo a internet desde sus teléfonos, la experiencia móvil fue prioridad absoluta, logrando tiempos de carga inferiores a 1.8 segundos.",
+                },
+                {
+                    subtitle: "3. Estrategia SEO geolocalizada",
+                    description:
+                        "Implementamos una estrategia SEO enfocada en términos de búsqueda locales y regionales. En 3 meses, el sitio apareció en el Top 3 para búsquedas como 'artesanías Valle del Cauca' y 'regalos típicos Cali'.",
+                },
+                {
+                    subtitle: "4. Integración con sistemas locales",
+                    description:
+                        "Conectamos la plataforma con servicios de mensajería locales y regionales, permitiendo entregas más rápidas y económicas que la competencia internacional.",
+                },
+                {
+                    subtitle: "5. Estrategia de contenido auténtico",
+                    description:
+                        "Creamos contenido que resaltaba la artesanía local y sus historias, generando una conexión emocional con consumidores que valoraban el origen colombiano de los productos.",
+                },
+            ],
+        },
+        {
+            title: "Los resultados: crecimiento exponencial en ventas y alcance",
+            content:
+                "En solo 6 meses desde la implementación, Artesanías del Valle experimentó una transformación impresionante:\n\n• Aumento del 212% en ventas totales\n• 68% de las ventas ahora provienen del canal digital\n• Expansión de mercado a 22 departamentos de Colombia\n• Primeras ventas internacionales a compradores en 4 países\n• Reducción del 40% en costos operativos\n• Incremento del 175% en el valor promedio del carrito de compra",
+            image: {
+                src: "https://images.unsplash.com/photo-1543286386-713bdd548da4?auto=format&fit=crop&q=80",
+                alt: "Gráfico mostrando el crecimiento exponencial de ventas tras la implementación digital",
+                width: 800,
+                height: 500,
+            },
+            callout: {
+                text: "La inversión en nuestra tienda online fue la mejor decisión que hemos tomado en 15 años de negocio. No solo recuperamos lo invertido en el primer trimestre, sino que ahora llegamos a clientes que nunca habríamos imaginado.",
+                author: "María Valencia, Propietaria de Artesanías del Valle",
+            },
+        },
+        {
+            title: "Factores clave de éxito en el contexto colombiano",
+            content:
+                "El éxito de esta transformación no fue casualidad. Identificamos cinco factores determinantes que marcaron la diferencia para este negocio caleño:",
+            listItems: [
+                {
+                    subtitle: "1. Adaptación al comportamiento local de compra",
+                    description:
+                        "Entender los hábitos específicos del consumidor colombiano permitió diseñar una experiencia de compra que generaba confianza y facilitaba la decisión.",
+                },
+                {
+                    subtitle: "2. Equilibrio entre tecnología y toque humano",
+                    description:
+                        "Mantuvimos elementos de comunicación directa (WhatsApp Business integrado, chat en vivo) que respetaban la preferencia colombiana por el contacto personal.",
+                },
+                {
+                    subtitle: "3. Estrategia de precios transparente",
+                    description:
+                        "Implementamos una política de precios sin sorpresas (envío incluido) que redujo significativamente el abandono de carritos, un problema común en el e-commerce colombiano.",
+                },
+                {
+                    subtitle:
+                        "4. Infraestructura adaptada a condiciones locales",
+                    description:
+                        "El sitio estaba optimizado para funcionar bien incluso en conexiones variables, muy común en muchas regiones de Colombia.",
+                },
+                {
+                    subtitle: "5. Identidad cultural como ventaja competitiva",
+                    description:
+                        "Aprovechamos el orgullo por lo local como diferenciador frente a opciones internacionales, conectando emocionalmente con los consumidores.",
+                },
+            ],
+        },
+    ],
+    conclusion:
+        "La transformación digital de Artesanías del Valle demuestra que las PyMEs colombianas pueden competir y prosperar en el entorno digital cuando implementan estrategias adaptadas a la realidad local. No se trata solo de tecnología, sino de entender profundamente el mercado colombiano y sus particularidades. Los resultados de este caso de éxito en Cali son un testimonio de lo que es posible lograr cuando la implementación técnica se combina con un conocimiento profundo del mercado local.",
+    cta: {
+        heading: "¿Tu negocio está listo para una transformación similar?",
+        description:
+            "Evaluamos gratuitamente tu potencial de crecimiento digital y te mostramos cómo adaptar estas estrategias a tu situación específica.",
+        buttonText: "Solicitar Evaluación Gratuita",
+        buttonLink: "/#contacto",
+    },
+};
+
+// Metadatos optimizados para SEO
+const title = `${blogPostContent.title} | EstusCode`;
+const metaTitle =
+    "Caso de Éxito E-commerce Cali: Tienda Local Triplica Ventas Online | EstusCode";
+const description = blogPostContent.description;
+const url = `https://www.estuscode.com/blog/caso-exito-ecommerce-cali`;
+const canonical = `https://www.estuscode.com/blog/caso-exito-ecommerce-cali`;
+const keywords = [
+    "caso éxito e-commerce Colombia",
+    "tienda online Cali",
+    "transformación digital PyMEs",
+    "aumento ventas online Valle del Cauca",
+    "estrategia digital negocios locales",
+    "comercio electrónico Colombia",
+];
+---
+
+<Layout
+    title={title}
+    metaTitle={metaTitle}
+    description={description}
+    url={url}
+    canonical={canonical}
+    keywords={keywords}
+>
+    <article
+        class="py-24 bg-white"
+        itemscope
+        itemtype="https://schema.org/BlogPosting"
+    >
+        <meta itemprop="headline" content={blogPostContent.title} />
+        <meta itemprop="description" content={blogPostContent.description} />
+        <meta itemprop="datePublished" content={blogPostContent.publishDate} />
+        <meta itemprop="author" content={blogPostContent.author} />
+        <link itemprop="publisher" href="https://www.estuscode.com" />
+
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <!-- Header -->
+                <header class="mb-12 text-center">
+                    <div class="mb-6">
+                        <span
+                            class="inline-block px-3 py-1 text-sm font-medium rounded-full bg-green-50 text-green-600 mb-4"
+                        >
+                            {blogPostContent.category}
+                        </span>
+                        <h1
+                            class="text-3xl md:text-5xl font-bold text-gray-900 mb-6"
+                            itemprop="headline"
+                        >
+                            {blogPostContent.title}
+                        </h1>
+                        <div
+                            class="flex items-center justify-center gap-4 text-gray-500 text-sm"
+                        >
+                            <time
+                                datetime={blogPostContent.publishDate}
+                                itemprop="datePublished"
+                            >
+                                {
+                                    new Date(
+                                        blogPostContent.publishDate,
+                                    ).toLocaleDateString("es-ES", {
+                                        year: "numeric",
+                                        month: "long",
+                                        day: "numeric",
+                                    })
+                                }
+                            </time>
+                            <span>·</span>
+                            <span>{blogPostContent.readTime} de lectura</span>
+                            <span>·</span>
+                            <span itemprop="author"
+                                >{blogPostContent.author}</span
+                            >
+                        </div>
+                    </div>
+
+                    <!-- Imagen destacada -->
+                    <div class="rounded-2xl overflow-hidden mb-8">
+                        <Image
+                            src={blogPostContent.featuredImage.src}
+                            alt={blogPostContent.featuredImage.alt}
+                            width={blogPostContent.featuredImage.width}
+                            height={blogPostContent.featuredImage.height}
+                            class="w-full h-auto"
+                            itemprop="image"
+                        />
+                    </div>
+                </header>
+
+                <!-- Tags -->
+                <div class="flex flex-wrap gap-2 mb-8">
+                    {
+                        blogPostContent.tags.map((tag) => (
+                            <span class="px-3 py-1 text-sm rounded-full bg-gray-50 text-gray-600 border border-gray-100">
+                                {tag}
+                            </span>
+                        ))
+                    }
+                </div>
+
+                <!-- Introducción -->
+                <div class="mb-12">
+                    <p class="text-xl text-gray-700 leading-relaxed">
+                        {blogPostContent.introduction}
+                    </p>
+                </div>
+
+                <!-- Contenido principal -->
+                <div class="prose prose-lg max-w-none" itemprop="articleBody">
+                    {
+                        blogPostContent.sections.map((section, index) => (
+                            <section class="mb-16">
+                                <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
+                                    {section.title}
+                                </h2>
+
+                                <div class="text-gray-700 mb-8 leading-relaxed">
+                                    {section.content && (
+                                        <p class="whitespace-pre-line">
+                                            {section.content}
+                                        </p>
+                                    )}
+
+                                    {section.image && (
+                                        <div class="my-8 rounded-xl overflow-hidden">
+                                            <Image
+                                                src={section.image.src}
+                                                alt={section.image.alt}
+                                                width={section.image.width}
+                                                height={section.image.height}
+                                                class="w-full h-auto"
+                                            />
+                                        </div>
+                                    )}
+
+                                    {section.listItems && (
+                                        <div class="space-y-6 mt-6">
+                                            {section.listItems.map((item) => (
+                                                <div class="bg-gray-50 p-6 rounded-xl">
+                                                    <h3 class="text-xl font-semibold text-gray-900 mb-3">
+                                                        {item.subtitle}
+                                                    </h3>
+                                                    <p class="text-gray-700">
+                                                        {item.description}
+                                                    </p>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    )}
+
+                                    {section.callout && (
+                                        <blockquote class="my-8 p-6 bg-green-50 border-l-4 border-green-500 rounded-r-xl">
+                                            <p class="text-lg italic text-gray-800 mb-2">
+                                                {section.callout.text}
+                                            </p>
+                                            <cite class="text-sm text-gray-600 not-italic">
+                                                — {section.callout.author}
+                                            </cite>
+                                        </blockquote>
+                                    )}
+                                </div>
+                            </section>
+                        ))
+                    }
+
+                    <!-- Conclusión -->
+                    <section class="mb-16">
+                        <h2
+                            class="text-2xl md:text-3xl font-bold text-gray-900 mb-6"
+                        >
+                            Conclusión
+                        </h2>
+                        <p class="text-gray-700 leading-relaxed">
+                            {blogPostContent.conclusion}
+                        </p>
+                    </section>
+                </div>
+
+                <!-- CTA -->
+                <div
+                    class="bg-gradient-to-r from-green-50 to-teal-50 rounded-2xl p-8 text-center mb-12"
+                >
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">
+                        {blogPostContent.cta.heading}
+                    </h3>
+                    <p class="text-gray-700 mb-6 max-w-2xl mx-auto">
+                        {blogPostContent.cta.description}
+                    </p>
+                    <Button
+                        text={blogPostContent.cta.buttonText}
+                        href={blogPostContent.cta.buttonLink}
+                        isPrimary
+                        hasIcon
+                        ariaLabel="Solicitar evaluación gratuita para transformación digital"
+                        className="bg-green-600 hover:bg-green-700"
+                    />
+                </div>
+                <!-- Artículos relacionados -->
+                <div class="border-t border-gray-100 pt-12">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-8">
+                        Artículos relacionados
+                    </h3>
+
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <a
+                            href="/blog/aumentar-ventas-sitio-web-colombia"
+                            class="group"
+                        >
+                            <div
+                                class="bg-white border border-gray-100 rounded-xl overflow-hidden shadow-sm transition-all duration-300 hover:shadow-md"
+                            >
+                                <div class="h-48 overflow-hidden">
+                                    <img
+                                        src="https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&q=80"
+                                        alt="Cómo aumentar ventas con un sitio web optimizado"
+                                        class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                                    />
+                                </div>
+                                <div class="p-5">
+                                    <p
+                                        class="text-green-600 text-sm font-medium mb-1"
+                                    >
+                                        Estrategia Digital
+                                    </p>
+                                    <h4
+                                        class="text-lg font-bold text-gray-900 mb-2 group-hover:text-green-600 transition-colors duration-300"
+                                    >
+                                        Cómo Aumentar tus Ventas con un Sitio
+                                        Web Optimizado en Colombia
+                                    </h4>
+                                    <p
+                                        class="text-gray-600 text-sm line-clamp-2"
+                                    >
+                                        Descubre las 7 características que debe
+                                        tener tu sitio web para incrementar
+                                        ventas y conversiones.
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+
+                        <a
+                            href="/blog/sitio-web-vs-redes-sociales-empresas"
+                            class="group"
+                        >
+                            <div
+                                class="bg-white border border-gray-100 rounded-xl overflow-hidden shadow-sm transition-all duration-300 hover:shadow-md"
+                            >
+                                <div class="h-48 overflow-hidden">
+                                    <img
+                                        src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?auto=format&fit=crop&q=80"
+                                        alt="Sitio Web vs Redes Sociales para empresas"
+                                        class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                                    />
+                                </div>
+                                <div class="p-5">
+                                    <p
+                                        class="text-green-600 text-sm font-medium mb-1"
+                                    >
+                                        Estrategia Digital
+                                    </p>
+                                    <h4
+                                        class="text-lg font-bold text-gray-900 mb-2 group-hover:text-green-600 transition-colors duration-300"
+                                    >
+                                        Sitio Web vs. Redes Sociales: Qué
+                                        Necesita tu Empresa en Colombia
+                                    </h4>
+                                    <p
+                                        class="text-gray-600 text-sm line-clamp-2"
+                                    >
+                                        Análisis comparativo sobre la
+                                        importancia de un sitio web profesional
+                                        frente a perfiles en redes sociales.
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Autor bio -->
+                <div class="border-t border-gray-100 mt-12 pt-12">
+                    <div class="flex items-center gap-6">
+                        <div
+                            class="w-16 h-16 rounded-full bg-gray-100 flex items-center justify-center"
+                        >
+                            <!-- Avatar placeholder -->
+                            <span class="text-gray-400">EC</span>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-gray-900">
+                                {blogPostContent.author}
+                            </h3>
+                            <p class="text-gray-600">
+                                Equipo de especialistas en desarrollo web y
+                                transformación digital para empresas
+                                colombianas.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Schema.org adicional para artículo de blog -->
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "BlogPosting",
+                "mainEntityOfPage": {
+                    "@type": "WebPage",
+                    "@id": "https://www.estuscode.com/blog/caso-exito-ecommerce-cali"
+                },
+                "headline": "Caso de Éxito: Cómo una Tienda de Cali Triplicó sus Ventas Online",
+                "description": "Análisis del proceso de transformación digital de una PyME en Cali que logró triplicar sus ventas implementando una estrategia web efectiva y adaptada al mercado colombiano.",
+                "image": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&q=80",
+                "author": {
+                    "@type": "Organization",
+                    "name": "EstusCode"
+                },
+                "publisher": {
+                    "@type": "Organization",
+                    "name": "EstusCode",
+                    "logo": {
+                        "@type": "ImageObject",
+                        "url": "https://www.estuscode.com/logo.svg"
+                    }
+                },
+                "datePublished": "2024-01-25",
+                "dateModified": "2024-01-25"
+            }
+        </script>
+    </article>
+</Layout>

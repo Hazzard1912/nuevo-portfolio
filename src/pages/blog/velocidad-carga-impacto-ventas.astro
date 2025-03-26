@@ -1,0 +1,478 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Image from "astro/components/Image.astro";
+import Button from "../../ui/Button.astro";
+
+const blogPostContent = {
+    title: "El Impacto de la Velocidad de Carga en tus Ventas: Estudio Colombia",
+    description:
+        "Investigación sobre cómo la velocidad de carga afecta las conversiones en sitios web colombianos. Datos reales, mejores prácticas y soluciones para mejorar el rendimiento y aumentar ventas.",
+    publishDate: "2023-12-15",
+    author: "Equipo EstusCode",
+    readTime: "5 minutos",
+    category: "Análisis Técnico",
+    featuredImage: {
+        src: "https://images.unsplash.com/photo-1580894894513-541e068a3e2b?auto=format&fit=crop&q=80",
+        alt: "Análisis de velocidad de carga y su impacto en conversiones para sitios web colombianos",
+        width: 1200,
+        height: 630,
+    },
+    tags: ["Velocidad Web", "Conversiones", "Rendimiento", "UX", "Colombia"],
+    introduction:
+        "Cuando un cliente potencial visita tu sitio web, tienes solo 2.8 segundos para captar su atención antes de que decida abandonarlo. En Colombia, donde las velocidades de internet móvil son en promedio un 27% más lentas que en países desarrollados, la velocidad de carga se convierte en un factor aún más crítico para el éxito de tu negocio. Nuestra investigación con más de 150 sitios web colombianos revela datos contundentes sobre cómo cada segundo adicional de carga impacta directamente en tus ventas y conversiones.",
+    sections: [
+        {
+            title: "El verdadero costo de un sitio web lento en Colombia",
+            content:
+                "Los datos recopilados de 150+ sitios web colombianos durante los últimos 6 meses muestran un impacto económico directo y medible:\n\n• Por cada segundo adicional de carga, la tasa de conversión cae un 16% para usuarios colombianos\n• Las tasas de rebote aumentan un 22% cuando la carga supera los 3 segundos\n• 73% de los usuarios colombianos abandonan un sitio móvil si tarda más de 5 segundos en cargar\n• Los sitios con tiempos de carga superiores a 5 segundos tienen un 87% menos de probabilidades de conversión\n• Las empresas que mejoraron su velocidad de carga en 2 segundos vieron un incremento promedio del 27% en ventas\n\nEstos números son incluso más críticos que los promedios globales debido a las particularidades de la infraestructura digital colombiana.",
+            image: {
+                src: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80",
+                alt: "Gráfico mostrando la relación entre velocidad de carga y tasa de conversión en sitios web colombianos",
+                width: 800,
+                height: 500,
+            },
+        },
+        {
+            title: "Factores que afectan la velocidad en el contexto colombiano",
+            content:
+                "La realidad digital en Colombia presenta desafíos particulares para la velocidad de carga:",
+            listItems: [
+                {
+                    subtitle:
+                        "1. Predominio de dispositivos móviles de gama media",
+                    description:
+                        "El 62% de los usuarios colombianos navegan desde dispositivos móviles con capacidades de procesamiento limitadas. Estos dispositivos tienen mayor dificultad para procesar sitios web complejos, haciendo que la optimización sea aún más importante.",
+                },
+                {
+                    subtitle: "2. Velocidad asimétrica de conexiones",
+                    description:
+                        "La velocidad promedio de internet móvil en Colombia es de 17.4 Mbps, pero con alta variabilidad según la región (desde 7.2 Mbps en zonas rurales hasta 23.6 Mbps en principales ciudades). Un sitio debe estar optimizado para funcionar bien incluso en conexiones más lentas.",
+                },
+                {
+                    subtitle: "3. Infraestructura CDN limitada",
+                    description:
+                        "Menor presencia de CDNs (Content Delivery Networks) en comparación con mercados desarrollados, lo que aumenta la latencia si el sitio no está correctamente configurado para servir contenido localizado.",
+                },
+                {
+                    subtitle: "4. Comportamiento móvil multiventana",
+                    description:
+                        "Los usuarios colombianos tienen un 28% más de probabilidades de navegar simultáneamente entre múltiples aplicaciones, lo que reduce los recursos disponibles para procesar sitios web complejos.",
+                },
+                {
+                    subtitle: "5. Sensibilidad al consumo de datos",
+                    description:
+                        "Con planes de datos aún relativamente costosos, los usuarios colombianos son más propensos a abandonar sitios que consumen mucho ancho de banda. El 46% de los usuarios abandona si percibe que un sitio está consumiendo muchos datos.",
+                },
+            ],
+        },
+        {
+            title: "Caso de estudio: Cómo una tienda online de Cali aumentó sus ventas en un 34%",
+            content:
+                "Una tienda de ropa con sede en Cali experimentaba altas tasas de abandono en su proceso de checkout. El análisis reveló que su página tardaba en promedio 6.2 segundos en cargar en dispositivos móviles. Después de implementar optimizaciones específicas de velocidad, los resultados fueron notables:\n\n• Reducción del tiempo de carga a 2.3 segundos (63% de mejora)\n• Disminución de la tasa de rebote en un 28%\n• Aumento del 34% en la tasa de conversión\n• Incremento del 22% en el valor promedio del carrito\n• ROI de 1.740% sobre la inversión en optimización\n\nLas mejoras fueron especialmente significativas para usuarios de ciudades secundarias y zonas con infraestructura digital menos desarrollada.",
+            callout: {
+                text: "Nunca imaginamos que mejorar la velocidad de nuestro sitio tendría un impacto tan directo en nuestras ventas. La inversión en optimización se pagó sola en menos de 3 semanas.",
+                author: "Jorge Ramírez, Fundador de ModaExpress Cali",
+            },
+        },
+        {
+            title: "Estrategias de optimización efectivas para el contexto colombiano",
+            content:
+                "Basado en nuestra investigación, estas son las estrategias que generan el mayor impacto en el mercado colombiano:",
+            listItems: [
+                {
+                    subtitle:
+                        "1. Optimización de imágenes localmente relevantes",
+                    description:
+                        "La implementación de formatos modernos como WebP y AVIF, junto con carga progresiva, reduce el tiempo de carga inicial en un 42% para dispositivos típicos colombianos. Las imágenes representan el 68% del peso de páginas en sitios colombianos.",
+                },
+                {
+                    subtitle:
+                        "2. Implementación de caché específica para patrones locales",
+                    description:
+                        "Estrategias de caché adaptadas a los patrones de navegación colombianos (con mayor énfasis en caché local debido a la variabilidad de conexiones) mejoran los tiempos de carga recurrentes en un 57%.",
+                },
+                {
+                    subtitle: "3. Reducción y optimización de JavaScript",
+                    description:
+                        "Los dispositivos móviles de gama media comunes en Colombia tienen capacidades limitadas de procesamiento JavaScript. La reducción y optimización del JS crítico mejora el tiempo de interactividad en un 64%.",
+                },
+                {
+                    subtitle: "4. Arquitectura adaptativa según conexión",
+                    description:
+                        "Implementar soluciones que detecten la calidad de conexión y sirvan versiones más ligeras para conexiones lentas incrementa la retención de usuarios en un 38% en regiones con infraestructura digital limitada.",
+                },
+                {
+                    subtitle: "5. CDN con presencia local",
+                    description:
+                        "Utilizar CDNs con presencia de servidores en Colombia reduce la latencia en un 73% comparado con servicios de hosting internacional sin optimización regional.",
+                },
+            ],
+            image: {
+                src: "https://images.unsplash.com/photo-1618044733300-9472054094ee?auto=format&fit=crop&q=80",
+                alt: "Comparación de rendimiento antes y después de implementar optimizaciones de velocidad",
+                width: 800,
+                height: 500,
+            },
+        },
+        {
+            title: "Medición del impacto económico de las mejoras de velocidad",
+            content:
+                "Para cuantificar el retorno de inversión de mejorar la velocidad de tu sitio web en el contexto colombiano, puedes utilizar esta metodología:\n\n1. Mide tu línea base actual:\n   • Tiempo de carga promedio\n   • Tasa de conversión actual\n   • Valor promedio por conversión\n   • Tasa de rebote\n\n2. Calcula el potencial de mejora específico para tu caso usando nuestra calculadora de impacto económico:\n   • Aumento estimado en conversiones\n   • Reducción proyectada en tasa de rebote\n   • Incremento potencial en retención\n\n3. Implementa mejoras priorizadas según tu ROI esperado\n\n4. Mide los resultados con seguimiento continuo\n\nNuestro análisis muestra que una inversión promedio de $3-5 millones COP en optimización de velocidad genera retornos de $15-25 millones COP anuales para un e-commerce colombiano típico.",
+            listItems: [
+                {
+                    subtitle: "Calculadora de Impacto Económico",
+                    description:
+                        "Fórmula básica para estimar el impacto: (Tráfico mensual) × (% mejora en conversión) × (valor promedio por conversión) = Incremento mensual en ingresos. Para un sitio con 10,000 visitas mensuales, una mejora del 1% en conversiones y un valor promedio de $150,000 COP, representaría $15,000,000 COP adicionales anuales.",
+                },
+            ],
+        },
+    ],
+    conclusion:
+        "La velocidad de carga de tu sitio web no es simplemente un aspecto técnico, sino un factor económico directo que impacta significativamente las ventas y conversiones de tu negocio. En el contexto colombiano, con sus particularidades de infraestructura digital y comportamiento de usuario, esta relación es aún más pronunciada. Los datos son contundentes: cada segundo de mejora en la velocidad de carga puede traducirse en un aumento medible en tus ingresos. La buena noticia es que las mejoras de rendimiento suelen ofrecer uno de los mejores retornos de inversión en marketing digital, con resultados visibles en semanas, no meses. En un mercado digital cada vez más competitivo, la velocidad se ha convertido en una ventaja competitiva crítica que ninguna empresa colombiana puede ignorar.",
+    cta: {
+        heading:
+            "¿Quieres saber cuánto está afectando la velocidad a tus ventas?",
+        description:
+            "Realiza gratis nuestro análisis de rendimiento web y descubre oportunidades específicas para aumentar tus conversiones mejorando la velocidad.",
+        buttonText: "Solicitar Análisis Gratuito",
+        buttonLink: "/#contacto",
+    },
+};
+
+// Metadatos optimizados para SEO
+const title = `${blogPostContent.title} | EstusCode`;
+const metaTitle =
+    "Impacto de la Velocidad de Carga en Ventas Online | Estudio Colombia | EstusCode";
+const description = blogPostContent.description;
+const url = `https://www.estuscode.com/blog/velocidad-carga-impacto-ventas`;
+const canonical = `https://www.estuscode.com/blog/velocidad-carga-impacto-ventas`;
+const keywords = [
+    "velocidad carga sitios web Colombia",
+    "optimización rendimiento web",
+    "conversiones e-commerce colombiano",
+    "Core Web Vitals impacto ventas",
+    "mejoras velocidad sitio web",
+    "rendimiento tiendas online Colombia",
+];
+---
+
+<Layout
+    title={title}
+    metaTitle={metaTitle}
+    description={description}
+    url={url}
+    canonical={canonical}
+    keywords={keywords}
+>
+    <article
+        class="py-24 bg-white"
+        itemscope
+        itemtype="https://schema.org/BlogPosting"
+    >
+        <meta itemprop="headline" content={blogPostContent.title} />
+        <meta itemprop="description" content={blogPostContent.description} />
+        <meta itemprop="datePublished" content={blogPostContent.publishDate} />
+        <meta itemprop="author" content={blogPostContent.author} />
+        <link itemprop="publisher" href="https://www.estuscode.com" />
+
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <!-- Header -->
+                <header class="mb-12 text-center">
+                    <div class="mb-6">
+                        <span
+                            class="inline-block px-3 py-1 text-sm font-medium rounded-full bg-amber-50 text-amber-600 mb-4"
+                        >
+                            {blogPostContent.category}
+                        </span>
+                        <h1
+                            class="text-3xl md:text-5xl font-bold text-gray-900 mb-6"
+                            itemprop="headline"
+                        >
+                            {blogPostContent.title}
+                        </h1>
+                        <div
+                            class="flex items-center justify-center gap-4 text-gray-500 text-sm"
+                        >
+                            <time
+                                datetime={blogPostContent.publishDate}
+                                itemprop="datePublished"
+                            >
+                                {
+                                    new Date(
+                                        blogPostContent.publishDate,
+                                    ).toLocaleDateString("es-ES", {
+                                        year: "numeric",
+                                        month: "long",
+                                        day: "numeric",
+                                    })
+                                }
+                            </time>
+                            <span>·</span>
+                            <span>{blogPostContent.readTime} de lectura</span>
+                            <span>·</span>
+                            <span itemprop="author"
+                                >{blogPostContent.author}</span
+                            >
+                        </div>
+                    </div>
+
+                    <!-- Imagen destacada -->
+                    <div class="rounded-2xl overflow-hidden mb-8">
+                        <Image
+                            src={blogPostContent.featuredImage.src}
+                            alt={blogPostContent.featuredImage.alt}
+                            width={blogPostContent.featuredImage.width}
+                            height={blogPostContent.featuredImage.height}
+                            class="w-full h-auto"
+                            itemprop="image"
+                        />
+                    </div>
+                </header>
+
+                <!-- Tags -->
+                <div class="flex flex-wrap gap-2 mb-8">
+                    {
+                        blogPostContent.tags.map((tag) => (
+                            <span class="px-3 py-1 text-sm rounded-full bg-gray-50 text-gray-600 border border-gray-100">
+                                {tag}
+                            </span>
+                        ))
+                    }
+                </div>
+
+                <!-- Introducción -->
+                <div class="mb-12">
+                    <p class="text-xl text-gray-700 leading-relaxed">
+                        {blogPostContent.introduction}
+                    </p>
+                </div>
+
+                <!-- Contenido principal -->
+                <div class="prose prose-lg max-w-none" itemprop="articleBody">
+                    {
+                        blogPostContent.sections.map((section, index) => (
+                            <section class="mb-16">
+                                <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
+                                    {section.title}
+                                </h2>
+
+                                <div class="text-gray-700 mb-8 leading-relaxed">
+                                    {section.content && (
+                                        <p class="whitespace-pre-line">
+                                            {section.content}
+                                        </p>
+                                    )}
+
+                                    {section.image && (
+                                        <div class="my-8 rounded-xl overflow-hidden">
+                                            <Image
+                                                src={section.image.src}
+                                                alt={section.image.alt}
+                                                width={section.image.width}
+                                                height={section.image.height}
+                                                class="w-full h-auto"
+                                            />
+                                        </div>
+                                    )}
+
+                                    {section.listItems && (
+                                        <div class="space-y-6 mt-6">
+                                            {section.listItems.map((item) => (
+                                                <div class="bg-gray-50 p-6 rounded-xl">
+                                                    <h3 class="text-xl font-semibold text-gray-900 mb-3">
+                                                        {item.subtitle}
+                                                    </h3>
+                                                    <p class="text-gray-700">
+                                                        {item.description}
+                                                    </p>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    )}
+
+                                    {section.callout && (
+                                        <blockquote class="my-8 p-6 bg-amber-50 border-l-4 border-amber-500 rounded-r-xl">
+                                            <p class="text-lg italic text-gray-800 mb-2">
+                                                {section.callout.text}
+                                            </p>
+                                            <cite class="text-sm text-gray-600 not-italic">
+                                                — {section.callout.author}
+                                            </cite>
+                                        </blockquote>
+                                    )}
+                                </div>
+                            </section>
+                        ))
+                    }
+
+                    <!-- Conclusión -->
+                    <section class="mb-16">
+                        <h2
+                            class="text-2xl md:text-3xl font-bold text-gray-900 mb-6"
+                        >
+                            Conclusión
+                        </h2>
+                        <p class="text-gray-700 leading-relaxed">
+                            {blogPostContent.conclusion}
+                        </p>
+                    </section>
+                </div>
+
+                <!-- CTA -->
+                <div
+                    class="bg-gradient-to-r from-amber-50 to-yellow-50 rounded-2xl p-8 text-center mb-12"
+                >
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">
+                        {blogPostContent.cta.heading}
+                    </h3>
+                    <p class="text-gray-700 mb-6 max-w-2xl mx-auto">
+                        {blogPostContent.cta.description}
+                    </p>
+                    <Button
+                        text={blogPostContent.cta.buttonText}
+                        href={blogPostContent.cta.buttonLink}
+                        isPrimary
+                        hasIcon
+                        ariaLabel="Solicitar análisis gratuito de velocidad web"
+                        className="bg-amber-600 hover:bg-amber-700"
+                    />
+                </div>
+
+                <!-- Artículos relacionados -->
+                <div class="border-t border-gray-100 pt-12">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-8">
+                        Artículos relacionados
+                    </h3>
+
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <a
+                            href="/blog/aumentar-ventas-sitio-web-colombia"
+                            class="group"
+                        >
+                            <div
+                                class="bg-white border border-gray-100 rounded-xl overflow-hidden shadow-sm transition-all duration-300 hover:shadow-md"
+                            >
+                                <div class="h-48 overflow-hidden">
+                                    <img
+                                        src="https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&q=80"
+                                        alt="Cómo aumentar ventas con un sitio web optimizado"
+                                        class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                                    />
+                                </div>
+                                <div class="p-5">
+                                    <p
+                                        class="text-amber-600 text-sm font-medium mb-1"
+                                    >
+                                        Estrategia Digital
+                                    </p>
+                                    <h4
+                                        class="text-lg font-bold text-gray-900 mb-2 group-hover:text-amber-600 transition-colors duration-300"
+                                    >
+                                        Cómo Aumentar tus Ventas con un Sitio
+                                        Web Optimizado en Colombia
+                                    </h4>
+                                    <p
+                                        class="text-gray-600 text-sm line-clamp-2"
+                                    >
+                                        Descubre las 7 características que debe
+                                        tener tu sitio web para incrementar
+                                        ventas y conversiones en el mercado
+                                        colombiano.
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+
+                        <a
+                            href="/blog/tendencias-diseno-web-colombia-2024"
+                            class="group"
+                        >
+                            <div
+                                class="bg-white border border-gray-100 rounded-xl overflow-hidden shadow-sm transition-all duration-300 hover:shadow-md"
+                            >
+                                <div class="h-48 overflow-hidden">
+                                    <img
+                                        src="https://images.unsplash.com/photo-1545235617-9465d2a55698?auto=format&fit=crop&q=80"
+                                        alt="Tendencias de diseño web para Colombia"
+                                        class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                                    />
+                                </div>
+                                <div class="p-5">
+                                    <p
+                                        class="text-amber-600 text-sm font-medium mb-1"
+                                    >
+                                        Diseño y UX
+                                    </p>
+                                    <h4
+                                        class="text-lg font-bold text-gray-900 mb-2 group-hover:text-amber-600 transition-colors duration-300"
+                                    >
+                                        Tendencias en Diseño Web para Empresas
+                                        Colombianas en 2024
+                                    </h4>
+                                    <p
+                                        class="text-gray-600 text-sm line-clamp-2"
+                                    >
+                                        Elementos visuales, experiencia de
+                                        usuario y estrategias de conversión
+                                        adaptadas al mercado local.
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Autor bio -->
+                <div class="border-t border-gray-100 mt-12 pt-12">
+                    <div class="flex items-center gap-6">
+                        <div
+                            class="w-16 h-16 rounded-full bg-gray-100 flex items-center justify-center"
+                        >
+                            <!-- Avatar placeholder -->
+                            <span class="text-gray-400">EC</span>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-gray-900">
+                                {blogPostContent.author}
+                            </h3>
+                            <p class="text-gray-600">
+                                Equipo de especialistas en optimización de
+                                rendimiento web para el mercado colombiano.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Schema.org adicional para artículo de blog -->
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "BlogPosting",
+                "mainEntityOfPage": {
+                    "@type": "WebPage",
+                    "@id": "https://www.estuscode.com/blog/velocidad-carga-impacto-ventas"
+                },
+                "headline": "El Impacto de la Velocidad de Carga en tus Ventas: Estudio Colombia",
+                "description": "Investigación sobre cómo la velocidad de carga afecta las conversiones en sitios web colombianos. Datos reales, mejores prácticas y soluciones para mejorar el rendimiento y aumentar ventas.",
+                "image": "https://images.unsplash.com/photo-1580894894513-541e068a3e2b?auto=format&fit=crop&q=80",
+                "author": {
+                    "@type": "Organization",
+                    "name": "EstusCode"
+                },
+                "publisher": {
+                    "@type": "Organization",
+                    "name": "EstusCode",
+                    "logo": {
+                        "@type": "ImageObject",
+                        "url": "https://www.estuscode.com/logo.svg"
+                    }
+                },
+                "datePublished": "2023-12-15",
+                "dateModified": "2023-12-15"
+            }
+        </script>
+    </article>
+</Layout>

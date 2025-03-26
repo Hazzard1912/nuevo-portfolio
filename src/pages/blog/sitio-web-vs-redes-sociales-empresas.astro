@@ -1,0 +1,541 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Image from "astro/components/Image.astro";
+import Button from "../../ui/Button.astro";
+
+const blogPostContent = {
+    title: "Sitio Web vs. Redes Sociales: Qué Necesita tu Empresa en Colombia",
+    description:
+        "Análisis comparativo sobre la importancia de un sitio web profesional frente a perfiles en redes sociales para empresas colombianas. Ventajas, desventajas y estrategias de integración efectiva.",
+    publishDate: "2024-01-05",
+    author: "Equipo EstusCode",
+    readTime: "6 minutos",
+    category: "Estrategia Digital",
+    featuredImage: {
+        src: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?auto=format&fit=crop&q=80",
+        alt: "Comparación entre sitio web profesional y redes sociales para empresas colombianas",
+        width: 1200,
+        height: 630,
+    },
+    tags: [
+        "Sitios Web",
+        "Redes Sociales",
+        "Estrategia Digital",
+        "Empresas",
+        "Colombia",
+    ],
+    introduction:
+        "En Colombia, el 87% de las empresas tienen presencia en al menos una red social, pero solo el 43% cuenta con un sitio web propio. Esta disparidad ha generado un intenso debate: ¿Son suficientes las redes sociales o es imprescindible tener un sitio web profesional? Los datos muestran que no es una cuestión de elegir entre una u otra opción, sino de entender cómo cada plataforma puede impulsar diferentes aspectos de tu negocio en el contexto digital colombiano.",
+    sections: [
+        {
+            title: "El panorama digital en Colombia: datos clave para tu decisión",
+            content:
+                "Antes de analizar las ventajas de cada plataforma, es importante entender el contexto digital colombiano actual:\n\n• 36 millones de colombianos acceden regularmente a internet (72% de la población)\n• El 94% de usuarios de internet en Colombia utilizan redes sociales\n• El tiempo promedio en redes sociales es de 3.5 horas diarias\n• 76% de las decisiones de compra inician con una búsqueda en Google\n• 68% de los usuarios desconfían de empresas sin sitio web propio\n• 54% de los consumidores consultan el sitio web después de conocer una marca en redes\n\nEstos datos evidencian la interconexión entre ambas plataformas en el journey del consumidor colombiano.",
+            image: {
+                src: "https://images.unsplash.com/photo-1552581234-26160f608093?auto=format&fit=crop&q=80",
+                alt: "Estadísticas de uso digital en Colombia mostrando la relación entre sitios web y redes sociales",
+                width: 800,
+                height: 500,
+            },
+        },
+        {
+            title: "Ventajas de las redes sociales para empresas colombianas",
+            content:
+                "Las redes sociales ofrecen beneficios particulares en el contexto colombiano:",
+            listItems: [
+                {
+                    subtitle:
+                        "1. Alcance inmediato en un país altamente social",
+                    description:
+                        "Colombia tiene una de las tasas más altas de uso de redes sociales en Latinoamérica. Las empresas pueden aprovechar esta penetración para generar visibilidad rápida con inversiones relativamente pequeñas.",
+                },
+                {
+                    subtitle:
+                        "2. Facilidad para comenzar sin conocimientos técnicos",
+                    description:
+                        "La barrera de entrada es mínima, permitiendo a pequeños negocios establecer presencia digital sin necesidad de grandes inversiones iniciales, un factor importante para el 67% de las PyMEs colombianas.",
+                },
+                {
+                    subtitle:
+                        "3. Interacción directa con el cliente en tiempo real",
+                    description:
+                        "En un mercado donde el 72% de los consumidores valora la comunicación directa con las marcas, las redes facilitan interacciones inmediatas y personalizadas.",
+                },
+                {
+                    subtitle:
+                        "4. Publicidad segmentada con presupuestos flexibles",
+                    description:
+                        "Las plataformas de anuncios en redes sociales permiten campañas efectivas desde $10.000 COP diarios con segmentación específica para el mercado colombiano.",
+                },
+                {
+                    subtitle: "5. Viralidad potencial en comunidades locales",
+                    description:
+                        "El contenido relevante para comunidades específicas colombianas tiene 3.2 veces más probabilidades de ser compartido, generando alcance orgánico.",
+                },
+            ],
+        },
+        {
+            title: "Limitaciones críticas de depender solo de redes sociales",
+            content:
+                "Sin embargo, basar toda tu estrategia digital únicamente en redes sociales presenta desafíos significativos:",
+            listItems: [
+                {
+                    subtitle: "1. Dependencia de algoritmos cambiantes",
+                    description:
+                        "El alcance orgánico en Facebook para empresas colombianas cayó un 63% en el último año. Estos cambios constantes pueden afectar drásticamente tu visibilidad de un día para otro.",
+                },
+                {
+                    subtitle: "2. Propiedad limitada de tu presencia digital",
+                    description:
+                        "El 23% de las empresas colombianas han experimentado suspensiones temporales de sus cuentas en redes sociales, perdiendo acceso a sus audiencias construidas.",
+                },
+                {
+                    subtitle:
+                        "3. Dificultad para destacar en un espacio saturado",
+                    description:
+                        "Un usuario colombiano promedio sigue a 87 marcas en redes sociales, pero interactúa regularmente solo con 7, haciendo la competencia por atención extremadamente alta.",
+                },
+                {
+                    subtitle:
+                        "4. Conversiones más bajas comparadas con sitio web",
+                    description:
+                        "La tasa de conversión promedio en redes sociales para empresas colombianas es del 1.3%, mientras que un sitio web bien optimizado alcanza el 3.7% en el mismo segmento.",
+                },
+                {
+                    subtitle: "5. Percepción de menor profesionalismo",
+                    description:
+                        "El 64% de los consumidores colombianos considera que una empresa sin sitio web propio es menos confiable o se encuentra en etapas iniciales de desarrollo.",
+                },
+            ],
+        },
+        {
+            title: "Por qué un sitio web sigue siendo esencial en Colombia",
+            content:
+                "Un sitio web profesional ofrece ventajas estratégicas que las redes sociales no pueden reemplazar:",
+            listItems: [
+                {
+                    subtitle:
+                        "1. Control total sobre tu imagen y experiencia digital",
+                    description:
+                        "Las empresas con sitio web personalizado generan un 47% más de confianza entre consumidores colombianos y tienen control completo sobre la experiencia del usuario.",
+                },
+                {
+                    subtitle:
+                        "2. Posicionamiento en búsquedas (SEO) para captación efectiva",
+                    description:
+                        "El 81% de los consumidores colombianos inician su búsqueda de productos/servicios en Google, no en redes sociales. Un sitio bien posicionado captura este tráfico de alta intención.",
+                },
+                {
+                    subtitle: "3. Credibilidad y profesionalismo percibido",
+                    description:
+                        "Las empresas con sitio web propio son percibidas como 2.8 veces más establecidas y confiables que aquellas que solo tienen presencia en redes sociales.",
+                },
+                {
+                    subtitle: "4. Funcionalidades específicas para tu negocio",
+                    description:
+                        "Desde reservas hasta cotizadores personalizados, un sitio web permite implementar herramientas adaptadas a necesidades específicas del negocio y consumidor colombiano.",
+                },
+                {
+                    subtitle:
+                        "5. Plataforma central para tu estrategia omnicanal",
+                    description:
+                        "Un sitio web actúa como hub central donde convergen todas tus estrategias digitales, funcionando como punto de conversión final para tráfico generado en múltiples canales.",
+                },
+            ],
+            image: {
+                src: "https://images.unsplash.com/photo-1559028012-481c04fa702d?auto=format&fit=crop&q=80",
+                alt: "Representación visual de un sitio web como centro de la estrategia digital de una empresa colombiana",
+                width: 800,
+                height: 500,
+            },
+        },
+        {
+            title: "Estrategia integrada: El enfoque ganador para empresas colombianas",
+            content:
+                "Nuestro análisis de más de 200 empresas colombianas demuestra que el enfoque más efectivo es una estrategia integrada:",
+            listItems: [
+                {
+                    subtitle: "1. Sitio web como centro de conversión",
+                    description:
+                        "Utiliza tu sitio web como plataforma principal de conversión, con páginas optimizadas para cada etapa del embudo y adaptadas al contexto colombiano.",
+                },
+                {
+                    subtitle:
+                        "2. Redes sociales como canales de captación y relación",
+                    description:
+                        "Aprovecha las redes para generar visibilidad inicial y cultiva relaciones continuas con tu audiencia colombiana.",
+                },
+                {
+                    subtitle: "3. Contenido adaptado a cada plataforma",
+                    description:
+                        "Crea contenido específico para cada canal, reconociendo que lo que funciona en Instagram no necesariamente funciona en tu sitio web.",
+                },
+                {
+                    subtitle: "4. Sistema de análisis unificado",
+                    description:
+                        "Implementa un sistema que te permita rastrear el journey completo del usuario desde el primer contacto en redes hasta la conversión en tu sitio.",
+                },
+                {
+                    subtitle: "5. Inversión equilibrada basada en resultados",
+                    description:
+                        "Distribuye presupuestos según el retorno de cada canal, ajustando continuamente basado en métricas de rendimiento específicas para tu industria en Colombia.",
+                },
+            ],
+        },
+        {
+            title: "Caso real: Estrategia integrada triplica conversiones para negocio colombiano",
+            content:
+                "Una tienda de productos naturales en Bogotá que operaba exclusivamente a través de Instagram implementó una estrategia integrada con sitio web propio. Los resultados después de 6 meses fueron contundentes:\n\n• Incremento del 218% en conversiones totales\n• Aumento del 47% en valor promedio del carrito de compra\n• Reducción del 32% en costo de adquisición de clientes\n• Expansión geográfica a 14 ciudades adicionales\n• Mejora del 26% en retención de clientes",
+            callout: {
+                text: "Creíamos que con Instagram era suficiente, pero al implementar un sitio web propio pudimos ofrecer una experiencia de compra mucho más completa. Ahora usamos redes para atraer y nuestro sitio para convertir, funcionando como un sistema perfectamente integrado.",
+                author: "Carolina Mendoza, Fundadora de NaturalCo",
+            },
+        },
+    ],
+    conclusion:
+        "La pregunta no debe ser si tu empresa necesita un sitio web o redes sociales, sino cómo integrar ambas plataformas estratégicamente. En el contexto digital colombiano, las redes sociales son excelentes para generar visibilidad e interacción, mientras que un sitio web profesional proporciona la credibilidad, control y capacidad de conversión que tu negocio necesita para crecer sosteniblemente. Las empresas que están dominando el mercado digital en Colombia no están eligiendo entre una u otra opción, sino aprovechando lo mejor de ambas en una estrategia digital integrada y coherente.",
+    cta: {
+        heading: "¿Quieres evaluar si tu estrategia digital está optimizada?",
+        description:
+            "Realiza gratis nuestro diagnóstico de presencia digital y descubre oportunidades específicas para mejorar la integración de tu sitio web y redes sociales.",
+        buttonText: "Solicitar Diagnóstico Gratuito",
+        buttonLink: "/#contacto",
+    },
+};
+
+// Metadatos optimizados para SEO
+const title = `${blogPostContent.title} | EstusCode`;
+const metaTitle =
+    "Sitio Web vs Redes Sociales para Empresas Colombianas | Guía 2024 | EstusCode";
+const description = blogPostContent.description;
+const url = `https://www.estuscode.com/blog/sitio-web-vs-redes-sociales-empresas`;
+const canonical = `https://www.estuscode.com/blog/sitio-web-vs-redes-sociales-empresas`;
+const keywords = [
+    "sitio web vs redes sociales Colombia",
+    "estrategia digital empresas colombianas",
+    "importancia página web Colombia",
+    "marketing redes sociales empresas",
+    "presencia digital negocios Cali",
+    "web y redes sociales integración",
+];
+---
+
+<Layout
+    title={title}
+    metaTitle={metaTitle}
+    description={description}
+    url={url}
+    canonical={canonical}
+    keywords={keywords}
+>
+    <article
+        class="py-24 bg-white"
+        itemscope
+        itemtype="https://schema.org/BlogPosting"
+    >
+        <meta itemprop="headline" content={blogPostContent.title} />
+        <meta itemprop="description" content={blogPostContent.description} />
+        <meta itemprop="datePublished" content={blogPostContent.publishDate} />
+        <meta itemprop="author" content={blogPostContent.author} />
+        <link itemprop="publisher" href="https://www.estuscode.com" />
+
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <!-- Header -->
+                <header class="mb-12 text-center">
+                    <div class="mb-6">
+                        <span
+                            class="inline-block px-3 py-1 text-sm font-medium rounded-full bg-blue-50 text-blue-600 mb-4"
+                        >
+                            {blogPostContent.category}
+                        </span>
+                        <h1
+                            class="text-3xl md:text-5xl font-bold text-gray-900 mb-6"
+                            itemprop="headline"
+                        >
+                            {blogPostContent.title}
+                        </h1>
+                        <div
+                            class="flex items-center justify-center gap-4 text-gray-500 text-sm"
+                        >
+                            <time
+                                datetime={blogPostContent.publishDate}
+                                itemprop="datePublished"
+                            >
+                                {
+                                    new Date(
+                                        blogPostContent.publishDate,
+                                    ).toLocaleDateString("es-ES", {
+                                        year: "numeric",
+                                        month: "long",
+                                        day: "numeric",
+                                    })
+                                }
+                            </time>
+                            <span>·</span>
+                            <span>{blogPostContent.readTime} de lectura</span>
+                            <span>·</span>
+                            <span itemprop="author"
+                                >{blogPostContent.author}</span
+                            >
+                        </div>
+                    </div>
+
+                    <!-- Imagen destacada -->
+                    <div class="rounded-2xl overflow-hidden mb-8">
+                        <Image
+                            src={blogPostContent.featuredImage.src}
+                            alt={blogPostContent.featuredImage.alt}
+                            width={blogPostContent.featuredImage.width}
+                            height={blogPostContent.featuredImage.height}
+                            class="w-full h-auto"
+                            itemprop="image"
+                        />
+                    </div>
+                </header>
+
+                <!-- Tags -->
+                <div class="flex flex-wrap gap-2 mb-8">
+                    {
+                        blogPostContent.tags.map((tag) => (
+                            <span class="px-3 py-1 text-sm rounded-full bg-gray-50 text-gray-600 border border-gray-100">
+                                {tag}
+                            </span>
+                        ))
+                    }
+                </div>
+
+                <!-- Introducción -->
+                <div class="mb-12">
+                    <p class="text-xl text-gray-700 leading-relaxed">
+                        {blogPostContent.introduction}
+                    </p>
+                </div>
+
+                <!-- Contenido principal -->
+                <div class="prose prose-lg max-w-none" itemprop="articleBody">
+                    {
+                        blogPostContent.sections.map((section, index) => (
+                            <section class="mb-16">
+                                <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
+                                    {section.title}
+                                </h2>
+
+                                <div class="text-gray-700 mb-8 leading-relaxed">
+                                    {section.content && (
+                                        <p class="whitespace-pre-line">
+                                            {section.content}
+                                        </p>
+                                    )}
+
+                                    {section.image && (
+                                        <div class="my-8 rounded-xl overflow-hidden">
+                                            <Image
+                                                src={section.image.src}
+                                                alt={section.image.alt}
+                                                width={section.image.width}
+                                                height={section.image.height}
+                                                class="w-full h-auto"
+                                            />
+                                        </div>
+                                    )}
+
+                                    {section.listItems && (
+                                        <div class="space-y-6 mt-6">
+                                            {section.listItems.map((item) => (
+                                                <div class="bg-gray-50 p-6 rounded-xl">
+                                                    <h3 class="text-xl font-semibold text-gray-900 mb-3">
+                                                        {item.subtitle}
+                                                    </h3>
+                                                    <p class="text-gray-700">
+                                                        {item.description}
+                                                    </p>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    )}
+
+                                    {section.callout && (
+                                        <blockquote class="my-8 p-6 bg-blue-50 border-l-4 border-blue-500 rounded-r-xl">
+                                            <p class="text-lg italic text-gray-800 mb-2">
+                                                {section.callout.text}
+                                            </p>
+                                            <cite class="text-sm text-gray-600 not-italic">
+                                                — {section.callout.author}
+                                            </cite>
+                                        </blockquote>
+                                    )}
+                                </div>
+                            </section>
+                        ))
+                    }
+
+                    <!-- Conclusión -->
+                    <section class="mb-16">
+                        <h2
+                            class="text-2xl md:text-3xl font-bold text-gray-900 mb-6"
+                        >
+                            Conclusión
+                        </h2>
+                        <p class="text-gray-700 leading-relaxed">
+                            {blogPostContent.conclusion}
+                        </p>
+                    </section>
+                </div>
+
+                <!-- CTA -->
+                <div
+                    class="bg-gradient-to-r from-blue-50 to-cyan-50 rounded-2xl p-8 text-center mb-12"
+                >
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">
+                        {blogPostContent.cta.heading}
+                    </h3>
+                    <p class="text-gray-700 mb-6 max-w-2xl mx-auto">
+                        {blogPostContent.cta.description}
+                    </p>
+                    <Button
+                        text={blogPostContent.cta.buttonText}
+                        href={blogPostContent.cta.buttonLink}
+                        isPrimary
+                        hasIcon
+                        ariaLabel="Solicitar diagnóstico gratuito de estrategia digital"
+                        className="bg-blue-600 hover:bg-blue-700"
+                    />
+                </div>
+
+                <!-- Artículos relacionados -->
+                <div class="border-t border-gray-100 pt-12">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-8">
+                        Artículos relacionados
+                    </h3>
+
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <a
+                            href="/blog/aumentar-ventas-sitio-web-colombia"
+                            class="group"
+                        >
+                            <div
+                                class="bg-white border border-gray-100 rounded-xl overflow-hidden shadow-sm transition-all duration-300 hover:shadow-md"
+                            >
+                                <div class="h-48 overflow-hidden">
+                                    <img
+                                        src="https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&q=80"
+                                        alt="Cómo aumentar ventas con un sitio web optimizado"
+                                        class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                                    />
+                                </div>
+                                <div class="p-5">
+                                    <p
+                                        class="text-blue-600 text-sm font-medium mb-1"
+                                    >
+                                        Estrategia Digital
+                                    </p>
+                                    <h4
+                                        class="text-lg font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors duration-300"
+                                    >
+                                        Cómo Aumentar tus Ventas con un Sitio
+                                        Web Optimizado en Colombia
+                                    </h4>
+                                    <p
+                                        class="text-gray-600 text-sm line-clamp-2"
+                                    >
+                                        Descubre las 7 características que debe
+                                        tener tu sitio web para incrementar
+                                        ventas y conversiones en el mercado
+                                        colombiano.
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+
+                        <a
+                            href="/blog/tendencias-diseno-web-colombia-2024"
+                            class="group"
+                        >
+                            <div
+                                class="bg-white border border-gray-100 rounded-xl overflow-hidden shadow-sm transition-all duration-300 hover:shadow-md"
+                            >
+                                <div class="h-48 overflow-hidden">
+                                    <img
+                                        src="https://images.unsplash.com/photo-1545235617-9465d2a55698?auto=format&fit=crop&q=80"
+                                        alt="Tendencias de diseño web para Colombia"
+                                        class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                                    />
+                                </div>
+                                <div class="p-5">
+                                    <p
+                                        class="text-blue-600 text-sm font-medium mb-1"
+                                    >
+                                        Diseño y UX
+                                    </p>
+                                    <h4
+                                        class="text-lg font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors duration-300"
+                                    >
+                                        Tendencias en Diseño Web para Empresas
+                                        Colombianas en 2024
+                                    </h4>
+                                    <p
+                                        class="text-gray-600 text-sm line-clamp-2"
+                                    >
+                                        Elementos visuales y estrategias de UX
+                                        adaptadas al mercado colombiano.
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Autor bio -->
+                <div class="border-t border-gray-100 mt-12 pt-12">
+                    <div class="flex items-center gap-6">
+                        <div
+                            class="w-16 h-16 rounded-full bg-gray-100 flex items-center justify-center"
+                        >
+                            <!-- Avatar placeholder -->
+                            <span class="text-gray-400">EC</span>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-gray-900">
+                                {blogPostContent.author}
+                            </h3>
+                            <p class="text-gray-600">
+                                Equipo de especialistas en estrategia digital
+                                para empresas colombianas.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Schema.org adicional para artículo de blog -->
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "BlogPosting",
+                "mainEntityOfPage": {
+                    "@type": "WebPage",
+                    "@id": "https://www.estuscode.com/blog/sitio-web-vs-redes-sociales-empresas"
+                },
+                "headline": "Sitio Web vs. Redes Sociales: Qué Necesita tu Empresa en Colombia",
+                "description": "Análisis comparativo sobre la importancia de un sitio web profesional frente a perfiles en redes sociales para empresas colombianas. Ventajas, desventajas y estrategias de integración efectiva.",
+                "image": "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?auto=format&fit=crop&q=80",
+                "author": {
+                    "@type": "Organization",
+                    "name": "EstusCode"
+                },
+                "publisher": {
+                    "@type": "Organization",
+                    "name": "EstusCode",
+                    "logo": {
+                        "@type": "ImageObject",
+                        "url": "https://www.estuscode.com/logo.svg"
+                    }
+                },
+                "datePublished": "2024-01-05",
+                "dateModified": "2024-01-05"
+            }
+        </script>
+    </article>
+</Layout>

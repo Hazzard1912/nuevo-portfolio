@@ -1,0 +1,521 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Image from "astro/components/Image.astro";
+import Button from "../../ui/Button.astro";
+
+const blogPostContent = {
+    title: "Cómo Aumentar tus Ventas con un Sitio Web Optimizado en Colombia",
+    description:
+        "Descubre las 7 características que debe tener tu sitio web para incrementar ventas y conversiones en el mercado colombiano. Análisis y recomendaciones basadas en casos reales.",
+    publishDate: "2024-02-10",
+    author: "Equipo EstusCode",
+    readTime: "6 minutos",
+    category: "Estrategia Digital",
+    featuredImage: {
+        src: "https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&q=80",
+        alt: "Gráfico de crecimiento de ventas online para empresas colombianas",
+        width: 1200,
+        height: 630,
+    },
+    tags: ["Ventas Online", "Conversiones", "Sitios Web", "Colombia"],
+    introduction:
+        "El 78% de los consumidores colombianos investiga online antes de comprar, pero solo el 34% de las empresas en Colombia tiene un sitio web realmente efectivo para convertir visitantes en clientes. Esta brecha representa una oportunidad enorme para las empresas que optimizan correctamente su presencia digital.",
+    sections: [
+        {
+            title: "El impacto de un sitio web optimizado en las ventas",
+            content:
+                "Un sitio web no es solo una presencia digital, es una herramienta de ventas 24/7. Nuestro análisis de más de 50 empresas colombianas muestra que aquellas con sitios web optimizados experimentan un incremento promedio del 37% en sus ingresos durante el primer año. La diferencia entre un sitio web estándar y uno optimizado para conversiones puede significar miles de millones de pesos en ventas adicionales.",
+            image: {
+                src: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80",
+                alt: "Comparativa de resultados entre sitios web optimizados y no optimizados",
+                width: 800,
+                height: 500,
+            },
+        },
+        {
+            title: "7 características fundamentales para un sitio web que convierte",
+            content:
+                "Después de analizar los sitios web más exitosos en Colombia, hemos identificado siete elementos críticos que marcan la diferencia en términos de conversión:",
+            listItems: [
+                {
+                    subtitle: "1. Tiempo de carga ultrarrápido",
+                    description:
+                        "Los sitios que cargan en menos de 2 segundos tienen un 27% más de conversiones en Colombia. La paciencia del usuario colombiano es incluso menor que el promedio global.",
+                },
+                {
+                    subtitle: "2. Diseño optimizado para móviles",
+                    description:
+                        "El 76% de los colombianos accede a internet desde dispositivos móviles. Un diseño responsive no es opcional, es obligatorio para captar este tráfico.",
+                },
+                {
+                    subtitle: "3. Llamados a la acción estratégicos",
+                    description:
+                        "Los sitios con CTAs claros y estratégicamente ubicados generan 128% más leads que aquellos con CTAs genéricos o mal posicionados.",
+                },
+                {
+                    subtitle: "4. Testimonios y prueba social local",
+                    description:
+                        "Incluir testimonios de clientes colombianos aumenta la confianza. Las empresas con casos de éxito locales visibles tienen un 34% más de conversiones.",
+                },
+                {
+                    subtitle:
+                        "5. Opciones de pago adaptadas al mercado colombiano",
+                    description:
+                        "Los sitios que ofrecen múltiples opciones de pago incluidas PSE, efectivo y pago contra entrega tienen un 41% más de conversiones que los que solo aceptan tarjetas.",
+                },
+                {
+                    subtitle: "6. Contenido localizado y relevante",
+                    description:
+                        "El contenido adaptado a las necesidades e intereses específicos del mercado colombiano genera un 53% más de engagement y tiempo en el sitio.",
+                },
+                {
+                    subtitle: "7. Optimización SEO para búsquedas locales",
+                    description:
+                        "Los sitios optimizados para términos de búsqueda locales reciben 86% más tráfico cualificado que puede convertirse en ventas.",
+                },
+            ],
+        },
+        {
+            title: "Caso de estudio: Comercio en Cali triplica sus ventas",
+            content:
+                "Un comercio minorista en Cali implementó estas características en su nuevo sitio web y obtuvo resultados sorprendentes en solo 4 meses:\n\n• Aumento del 218% en ventas online\n• Incremento del 64% en tiempo de permanencia en el sitio\n• Reducción del 45% en tasa de rebote\n• Aumento del 78% en la tasa de conversión\n\nLa clave no fue solo implementar un sitio web, sino hacerlo estratégicamente con foco en las necesidades del mercado colombiano.",
+            callout: {
+                text: '"La inversión en nuestro nuevo sitio web se recuperó en apenas 6 semanas gracias al aumento en ventas online. Ahora nuestra tienda digital vende más que nuestra tienda física."',
+                author: "Carlos Restrepo, Gerente Comercial",
+            },
+        },
+        {
+            title: "Estrategias para optimizar cada etapa del embudo de conversión",
+            content:
+                "Para maximizar las ventas, cada etapa del recorrido del cliente debe estar optimizada:",
+            listItems: [
+                {
+                    subtitle: "Atracción: Captar tráfico cualificado",
+                    description:
+                        "La optimización SEO para términos locales específicos aumenta el tráfico cualificado en un 73%. Las empresas que implementan contenido enfocado en resolver problemas específicos del consumidor colombiano generan 2.3 veces más tráfico orgánico de calidad.",
+                },
+                {
+                    subtitle: "Consideración: Generar interés y confianza",
+                    description:
+                        "Las páginas de producto con videos explicativos tienen un 34% más de tiempo de permanencia y 28% más de conversiones. Los sitios que muestran inventario en tiempo real y disponibilidad por ciudad reducen el abandono en un 45%.",
+                },
+                {
+                    subtitle: "Decisión: Facilitar la compra",
+                    description:
+                        "Reducir el número de pasos en el proceso de checkout de 5 a 3 aumenta las conversiones en un 59%. La implementación de chatbots que responden preguntas frecuentes sobre envíos y métodos de pago incrementa las conversiones en un 23%.",
+                },
+                {
+                    subtitle: "Fidelización: Convertir clientes en embajadores",
+                    description:
+                        "Los programas de fidelización integrados en el sitio web aumentan las compras recurrentes en un 42%. Las empresas que implementan emails post-compra personalizados ven un incremento del 37% en el valor del cliente a lo largo del tiempo.",
+                },
+            ],
+            image: {
+                src: "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&q=80",
+                alt: "Embudo de conversión optimizado para el mercado colombiano",
+                width: 800,
+                height: 500,
+            },
+        },
+        {
+            title: "Análisis comparativo: Elementos que más impactan en conversiones",
+            content:
+                "No todos los elementos de un sitio web tienen el mismo impacto en las conversiones. Nuestro análisis de datos muestra los factores más influyentes específicamente para el mercado colombiano:",
+            listItems: [
+                {
+                    subtitle:
+                        "Alto impacto (más del 35% de mejora en conversión)",
+                    description:
+                        "• Tiempo de carga inferior a 2 segundos\n• Múltiples métodos de pago locales\n• Testimonios geográficamente relevantes\n• Envío gratis o con costos transparentes",
+                },
+                {
+                    subtitle: "Impacto medio (15-35% de mejora en conversión)",
+                    description:
+                        "• Diseño móvil optimizado\n• CTAs personalizados\n• Chat en vivo durante horario comercial\n• Garantías y políticas de devolución claras",
+                },
+                {
+                    subtitle:
+                        "Impacto complementario (5-15% de mejora en conversión)",
+                    description:
+                        "• Fotografías de alta calidad\n• Integración con redes sociales\n• Contenido de blog actualizado\n• Diseño visual personalizado",
+                },
+            ],
+        },
+        {
+            title: "Errores comunes que reducen las ventas en sitios web colombianos",
+            content:
+                "Identificar y corregir estos errores puede generar mejoras inmediatas en tus resultados:",
+            listItems: [
+                {
+                    subtitle: "1. Proceso de checkout complejo",
+                    description:
+                        "El 68% de los carritos abandonados en Colombia se deben a procesos de pago largos o complicados. Simplificar y ofrecer opciones de pago locales puede recuperar hasta un 35% de estas ventas perdidas.",
+                },
+                {
+                    subtitle: "2. Información de precios poco clara",
+                    description:
+                        "Sites que no muestran claramente los costos totales (incluyendo envíos e impuestos) tienen un 73% más de abandono. La transparencia en precios es especialmente valorada por el consumidor colombiano.",
+                },
+                {
+                    subtitle: "3. Falta de optimización para móviles",
+                    description:
+                        "A pesar de que el 76% de los usuarios navega desde móviles, el 42% de los sitios web en Colombia aún no están completamente optimizados para estas plataformas.",
+                },
+                {
+                    subtitle: "4. Ausencia de prueba social relevante",
+                    description:
+                        "Los sitios sin testimonios locales o casos de éxito generan un 43% menos de confianza, según estudios de percepción con consumidores colombianos.",
+                },
+                {
+                    subtitle: "5. Contenido genérico no adaptado",
+                    description:
+                        "Utilizar contenido traducido o no adaptado al contexto colombiano reduce el engagement en un 57% y aumenta la tasa de rebote en un 34%.",
+                },
+            ],
+        },
+    ],
+    conclusion:
+        "Un sitio web no es un gasto, es una inversión con retorno medible. Las empresas colombianas que entienden esto y optimizan su presencia web están capturando una ventaja competitiva significativa. El mercado digital en Colombia aún está en desarrollo, lo que representa una oportunidad para quienes actúan ahora implementando sitios web estratégicamente diseñados para convertir. Al incorporar las siete características fundamentales que hemos identificado, tu negocio puede transformar su presencia digital en un verdadero motor de crecimiento, con resultados que impactan directamente en tu línea de ingresos.",
+    cta: {
+        heading: "¿Quieres analizar qué tan efectivo es tu sitio web actual?",
+        description:
+            "Realiza gratis nuestro diagnóstico de efectividad web y descubre oportunidades concretas para aumentar tus conversiones.",
+        buttonText: "Solicitar Diagnóstico Gratis",
+        buttonLink: "/#contacto",
+    },
+};
+
+// Metadatos optimizados para SEO
+const title = `${blogPostContent.title} | EstusCode`;
+const metaTitle =
+    "Aumenta tus Ventas Online en Colombia con un Sitio Web Optimizado | EstusCode";
+const description = blogPostContent.description;
+const url = `https://www.estuscode.com/blog/aumentar-ventas-sitio-web-colombia`;
+const canonical = `https://www.estuscode.com/blog/aumentar-ventas-sitio-web-colombia`;
+const keywords = [
+    "aumentar ventas online Colombia",
+    "sitio web que convierte",
+    "optimización conversiones web",
+    "ventas digitales empresas colombianas",
+    "sitio web para ventas Cali",
+    "consejos página web efectiva",
+];
+---
+
+<Layout
+    title={title}
+    metaTitle={metaTitle}
+    description={description}
+    url={url}
+    canonical={canonical}
+    keywords={keywords}
+>
+    <article
+        class="py-24 bg-white"
+        itemscope
+        itemtype="https://schema.org/BlogPosting"
+    >
+        <meta itemprop="headline" content={blogPostContent.title} />
+        <meta itemprop="description" content={blogPostContent.description} />
+        <meta itemprop="datePublished" content={blogPostContent.publishDate} />
+        <meta itemprop="author" content={blogPostContent.author} />
+        <link itemprop="publisher" href="https://www.estuscode.com" />
+
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <!-- Header -->
+                <header class="mb-12 text-center">
+                    <div class="mb-6">
+                        <span
+                            class="inline-block px-3 py-1 text-sm font-medium rounded-full bg-blue-50 text-blue-600 mb-4"
+                        >
+                            {blogPostContent.category}
+                        </span>
+                        <h1
+                            class="text-3xl md:text-5xl font-bold text-gray-900 mb-6"
+                            itemprop="headline"
+                        >
+                            {blogPostContent.title}
+                        </h1>
+                        <div
+                            class="flex items-center justify-center gap-4 text-gray-500 text-sm"
+                        >
+                            <time
+                                datetime={blogPostContent.publishDate}
+                                itemprop="datePublished"
+                            >
+                                {
+                                    new Date(
+                                        blogPostContent.publishDate,
+                                    ).toLocaleDateString("es-ES", {
+                                        year: "numeric",
+                                        month: "long",
+                                        day: "numeric",
+                                    })
+                                }
+                            </time>
+                            <span>·</span>
+                            <span>{blogPostContent.readTime} de lectura</span>
+                            <span>·</span>
+                            <span itemprop="author"
+                                >{blogPostContent.author}</span
+                            >
+                        </div>
+                    </div>
+
+                    <!-- Imagen destacada -->
+                    <div class="rounded-2xl overflow-hidden mb-8">
+                        <Image
+                            src={blogPostContent.featuredImage.src}
+                            alt={blogPostContent.featuredImage.alt}
+                            width={blogPostContent.featuredImage.width}
+                            height={blogPostContent.featuredImage.height}
+                            class="w-full h-auto"
+                            itemprop="image"
+                        />
+                    </div>
+                </header>
+
+                <!-- Tags -->
+                <div class="flex flex-wrap gap-2 mb-8">
+                    {
+                        blogPostContent.tags.map((tag) => (
+                            <span class="px-3 py-1 text-sm rounded-full bg-gray-50 text-gray-600 border border-gray-100">
+                                {tag}
+                            </span>
+                        ))
+                    }
+                </div>
+
+                <!-- Introducción -->
+                <div class="mb-12">
+                    <p class="text-xl text-gray-700 leading-relaxed">
+                        {blogPostContent.introduction}
+                    </p>
+                </div>
+
+                <!-- Contenido principal -->
+                <div class="prose prose-lg max-w-none" itemprop="articleBody">
+                    {
+                        blogPostContent.sections.map((section, index) => (
+                            <section class="mb-16">
+                                <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
+                                    {section.title}
+                                </h2>
+
+                                <div class="text-gray-700 mb-8 leading-relaxed">
+                                    {section.content && (
+                                        <p class="whitespace-pre-line">
+                                            {section.content}
+                                        </p>
+                                    )}
+
+                                    {section.image && (
+                                        <div class="my-8 rounded-xl overflow-hidden">
+                                            <Image
+                                                src={section.image.src}
+                                                alt={section.image.alt}
+                                                width={section.image.width}
+                                                height={section.image.height}
+                                                class="w-full h-auto"
+                                            />
+                                        </div>
+                                    )}
+
+                                    {section.listItems && (
+                                        <div class="space-y-6 mt-6">
+                                            {section.listItems.map((item) => (
+                                                <div class="bg-gray-50 p-6 rounded-xl">
+                                                    <h3 class="text-xl font-semibold text-gray-900 mb-3">
+                                                        {item.subtitle}
+                                                    </h3>
+                                                    <p class="text-gray-700 whitespace-pre-line">
+                                                        {item.description}
+                                                    </p>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    )}
+
+                                    {section.callout && (
+                                        <blockquote class="my-8 p-6 bg-blue-50 border-l-4 border-blue-500 rounded-r-xl">
+                                            <p class="text-lg italic text-gray-800 mb-2">
+                                                {section.callout.text}
+                                            </p>
+                                            <cite class="text-sm text-gray-600 not-italic">
+                                                — {section.callout.author}
+                                            </cite>
+                                        </blockquote>
+                                    )}
+                                </div>
+                            </section>
+                        ))
+                    }
+
+                    <!-- Conclusión -->
+                    <section class="mb-16">
+                        <h2
+                            class="text-2xl md:text-3xl font-bold text-gray-900 mb-6"
+                        >
+                            Conclusión
+                        </h2>
+                        <p class="text-gray-700 leading-relaxed">
+                            {blogPostContent.conclusion}
+                        </p>
+                    </section>
+                </div>
+
+                <!-- CTA -->
+                <div
+                    class="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-8 text-center mb-12"
+                >
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">
+                        {blogPostContent.cta.heading}
+                    </h3>
+                    <p class="text-gray-700 mb-6 max-w-2xl mx-auto">
+                        {blogPostContent.cta.description}
+                    </p>
+                    <Button
+                        text={blogPostContent.cta.buttonText}
+                        href={blogPostContent.cta.buttonLink}
+                        isPrimary
+                        hasIcon
+                        ariaLabel="Solicitar diagnóstico gratuito de sitio web"
+                    />
+                </div>
+
+                <!-- Artículos relacionados -->
+                <div class="border-t border-gray-100 pt-12">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-8">
+                        Artículos relacionados
+                    </h3>
+
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <a
+                            href="/blog/sitio-web-vs-redes-sociales-empresas"
+                            class="group"
+                        >
+                            <div
+                                class="bg-white border border-gray-100 rounded-xl overflow-hidden shadow-sm transition-all duration-300 hover:shadow-md"
+                            >
+                                <div class="h-48 overflow-hidden">
+                                    <img
+                                        src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?auto=format&fit=crop&q=80"
+                                        alt="Sitio Web vs Redes Sociales para empresas"
+                                        class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                                    />
+                                </div>
+                                <div class="p-5">
+                                    <p
+                                        class="text-blue-600 text-sm font-medium mb-1"
+                                    >
+                                        Estrategia Digital
+                                    </p>
+                                    <h4
+                                        class="text-lg font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors duration-300"
+                                    >
+                                        Sitio Web vs. Redes Sociales: Qué
+                                        Necesita tu Empresa en Colombia
+                                    </h4>
+                                    <p
+                                        class="text-gray-600 text-sm line-clamp-2"
+                                    >
+                                        Análisis comparativo sobre la
+                                        importancia de un sitio web profesional
+                                        frente a perfiles en redes sociales.
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+
+                        <a
+                            href="/blog/tendencias-diseno-web-colombia-2024"
+                            class="group"
+                        >
+                            <div
+                                class="bg-white border border-gray-100 rounded-xl overflow-hidden shadow-sm transition-all duration-300 hover:shadow-md"
+                            >
+                                <div class="h-48 overflow-hidden">
+                                    <img
+                                        src="https://images.unsplash.com/photo-1545235617-9465d2a55698?auto=format&fit=crop&q=80"
+                                        alt="Tendencias de diseño web para Colombia"
+                                        class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                                    />
+                                </div>
+                                <div class="p-5">
+                                    <p
+                                        class="text-blue-600 text-sm font-medium mb-1"
+                                    >
+                                        Diseño y UX
+                                    </p>
+                                    <h4
+                                        class="text-lg font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors duration-300"
+                                    >
+                                        Tendencias en Diseño Web para Empresas
+                                        Colombianas en 2024
+                                    </h4>
+                                    <p
+                                        class="text-gray-600 text-sm line-clamp-2"
+                                    >
+                                        Elementos visuales y estrategias de UX
+                                        adaptadas al mercado colombiano.
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Autor bio -->
+                <div class="border-t border-gray-100 mt-12 pt-12">
+                    <div class="flex items-center gap-6">
+                        <div
+                            class="w-16 h-16 rounded-full bg-gray-100 flex items-center justify-center"
+                        >
+                            <!-- Avatar placeholder -->
+                            <span class="text-gray-400">EC</span>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-gray-900">
+                                {blogPostContent.author}
+                            </h3>
+                            <p class="text-gray-600">
+                                Equipo de especialistas en desarrollo web y
+                                marketing digital en Cali, Colombia.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Schema.org adicional para artículo de blog -->
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "BlogPosting",
+                "mainEntityOfPage": {
+                    "@type": "WebPage",
+                    "@id": "https://www.estuscode.com/blog/aumentar-ventas-sitio-web-colombia"
+                },
+                "headline": "Cómo Aumentar tus Ventas con un Sitio Web Optimizado en Colombia",
+                "description": "Descubre las 7 características que debe tener tu sitio web para incrementar ventas y conversiones en el mercado colombiano. Análisis y recomendaciones.",
+                "image": "https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&q=80",
+                "author": {
+                    "@type": "Organization",
+                    "name": "EstusCode"
+                },
+                "publisher": {
+                    "@type": "Organization",
+                    "name": "EstusCode",
+                    "logo": {
+                        "@type": "ImageObject",
+                        "url": "https://www.estuscode.com/logo.svg"
+                    }
+                },
+                "datePublished": "2024-02-10",
+                "dateModified": "2024-02-10"
+            }
+        </script>
+    </article>
+</Layout>

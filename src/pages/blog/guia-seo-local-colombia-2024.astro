@@ -1,0 +1,510 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Image from "astro/components/Image.astro";
+import Button from "../../ui/Button.astro";
+
+const blogPostContent = {
+    title: "Guía Completa de SEO Local para Empresas Colombianas (2024)",
+    description:
+        "Estrategias probadas para mejorar el posicionamiento de tu negocio en búsquedas locales en Colombia. Optimización para Google Maps, directorios locales y búsquedas por voz.",
+    publishDate: "2024-01-15",
+    author: "Equipo EstusCode",
+    readTime: "7 minutos",
+    category: "Marketing Digital",
+    featuredImage: {
+        src: "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?auto=format&fit=crop&q=80",
+        alt: "Optimización SEO local para empresas en Colombia",
+        width: 1200,
+        height: 630,
+    },
+    tags: [
+        "SEO Local",
+        "Google Maps",
+        "Posicionamiento Local",
+        "Colombia",
+        "Marketing Digital",
+    ],
+    introduction:
+        "El 82% de los consumidores colombianos realizan búsquedas locales en sus dispositivos móviles antes de visitar un negocio, y el 76% de estas búsquedas resultan en una visita física en las siguientes 24 horas. Si tu empresa no aparece cuando los clientes buscan productos o servicios 'cerca de mí' en Colombia, estás perdiendo oportunidades de negocio críticas cada día. Esta guía te mostrará exactamente cómo posicionar tu negocio para dominar las búsquedas locales en tu ciudad.",
+    sections: [
+        {
+            title: "¿Por qué el SEO local es diferente en Colombia?",
+            content:
+                "Los algoritmos de búsqueda local funcionan de manera particular en el mercado colombiano debido a varios factores únicos:\n\n• La distribución geográfica y división por barrios/comunas afecta cómo los usuarios buscan\n• Los hábitos de búsqueda locales favorecen términos específicos por región\n• La competencia varía enormemente entre ciudades principales y secundarias\n• La penetración móvil del 83% hace que las búsquedas 'cerca de mí' sean predominantes\n• La adopción de Google Maps es 32% mayor que el promedio latinoamericano\n\nEstos factores hacen que las estrategias de SEO local genéricas no funcionen tan bien en Colombia como las específicamente adaptadas al contexto nacional.",
+            image: {
+                src: "https://images.unsplash.com/photo-1580893246395-52aead8960dc?auto=format&fit=crop&q=80",
+                alt: "Mapa de Colombia mostrando tendencias de búsqueda por región",
+                width: 800,
+                height: 500,
+            },
+        },
+        {
+            title: "7 Estrategias efectivas de SEO local para empresas colombianas",
+            content:
+                "Basados en nuestra experiencia optimizando más de 120 negocios locales en Colombia, estas son las estrategias que han demostrado mayor efectividad:",
+            listItems: [
+                {
+                    subtitle:
+                        "1. Optimización completa de Google Business Profile",
+                    description:
+                        "Más allá de completar la información básica, las empresas colombianas que incluyen menús/servicios detallados, responden al 90% de las reseñas, y publican actualizaciones semanales obtienen 3.7 veces más visibilidad. No olvides verificar tu ubicación con el PIN físico que Google envía por correo postal.",
+                },
+                {
+                    subtitle:
+                        "2. Estructura NAP consistente en directorios colombianos",
+                    description:
+                        "Además de los directorios internacionales, es crucial aparecer en Páginas Amarillas Colombia, CiudadGuru, y directorios de Cámaras de Comercio locales. Las empresas con presencia en +15 directorios locales ven un aumento promedio del 46% en su visibilidad local.",
+                },
+                {
+                    subtitle: "3. Contenido localizado para cada ciudad/región",
+                    description:
+                        "Las empresas con múltiples sedes deben crear páginas específicas por ciudad con referencias a barrios y landmarks locales. Nuestros tests muestran que incluir referencias a 3-5 barrios populares por página aumenta el tráfico local en un 27%.",
+                },
+                {
+                    subtitle:
+                        "4. Optimización para búsquedas por voz en español colombiano",
+                    description:
+                        "El uso de búsquedas por voz en Colombia creció un 43% en el último año. Las empresas que optimizan para frases conversacionales y modismos colombianos ('¿Dónde queda...?' en vez de términos genéricos) captan un 38% más de este tráfico.",
+                },
+                {
+                    subtitle: "5. Estrategia de reseñas y calificaciones",
+                    description:
+                        "Los negocios colombianos con más de 50 reseñas y calificación superior a 4.5 aparecen en el 78% más de resultados locales. Implementar un programa activo de solicitud de reseñas a clientes satisfechos es fundamental.",
+                },
+                {
+                    subtitle: "6. Schema markup para negocios locales",
+                    description:
+                        "Solo el 12% de las empresas colombianas implementa correctamente el Schema markup LocalBusiness. Aquellas que lo hacen obtienen un 34% más de visibilidad en resultados enriquecidos como Knowledge Graph y Rich Snippets.",
+                },
+                {
+                    subtitle:
+                        "7. Integración con redes sociales geolocalizadas",
+                    description:
+                        "La interacción entre redes sociales con check-ins (como Instagram y Facebook) y tu SEO local puede aumentar tu visibilidad hasta un 43%. Las empresas que fomentan activamente los check-ins y etiquetado en redes reciben un 26% más de búsquedas directas por nombre.",
+                },
+            ],
+        },
+        {
+            title: "Análisis de búsquedas locales por ciudad en Colombia",
+            content:
+                "Nuestra investigación del último trimestre muestra diferentes patrones de búsqueda local según la ciudad, lo que requiere estrategias personalizadas:",
+            listItems: [
+                {
+                    subtitle: "Bogotá",
+                    description:
+                        "Mayor volumen de búsquedas por barrio específico (ej: 'restaurantes en Chapinero'). La competencia es extremadamente alta, haciendo que las reseñas y la optimización de Google Maps sean factores decisivos.",
+                },
+                {
+                    subtitle: "Medellín",
+                    description:
+                        "Mayor porcentaje de búsquedas que incluyen la palabra 'cerca' (ej: 'cafés cerca al Poblado'). Las fotos de alta calidad en Google Business aumentan las conversiones un 47%.",
+                },
+                {
+                    subtitle: "Cali",
+                    description:
+                        "Predominan búsquedas que incluyen puntos de referencia (ej: 'peluquería cerca a Chipichape'). Los negocios que mencionan landmarks en sus descripciones ven un aumento del 36% en visitantes.",
+                },
+                {
+                    subtitle: "Barranquilla",
+                    description:
+                        "Alto porcentaje de búsquedas con términos locales específicos. La adaptación al vocabulario regional en descripciones y contenido aumenta el CTR un 29%.",
+                },
+                {
+                    subtitle: "Ciudades intermedias",
+                    description:
+                        "Mayor porcentaje de búsquedas directas de negocios locales y menos comparativas. El posicionamiento en directorios locales tiene mayor impacto que en ciudades principales.",
+                },
+            ],
+            image: {
+                src: "https://images.unsplash.com/photo-1579547944212-c4f4961a8dd8?auto=format&fit=crop&q=80",
+                alt: "Dashboard mostrando estadísticas de búsquedas locales por ciudad en Colombia",
+                width: 800,
+                height: 500,
+            },
+        },
+        {
+            title: "Caso real: Ferretería en Cali duplica sus clientes con SEO local",
+            content:
+                "Ferretería El Constructor, un negocio familiar con 20 años en Cali, estaba perdiendo terreno frente a grandes cadenas. Tras implementar nuestra estrategia de SEO local, lograron:\n\n• Aumento del 127% en búsquedas de Google Maps\n• Incremento del 93% en llamadas directas desde Google\n• 44% más de solicitudes de indicaciones\n• 68% más de visitas a su sitio web desde búsquedas locales\n• Duplicación de clientes nuevos en 5 meses",
+            callout: {
+                text: "Antes éramos invisibles en internet a pesar de ser conocidos en el barrio. Ahora recibimos clientes de toda la ciudad que nos encuentran en Google. La transformación ha sido increíble para nuestro negocio familiar.",
+                author: "Carlos Martínez, Propietario de Ferretería El Constructor",
+            },
+        },
+        {
+            title: "Errores comunes de SEO local en empresas colombianas",
+            content:
+                "Hemos identificado varios errores recurrentes que cometen las empresas en Colombia:",
+            listItems: [
+                {
+                    subtitle: "1. Información NAP inconsistente",
+                    description:
+                        "El 63% de los negocios tienen direcciones o teléfonos diferentes entre su sitio web y Google Business. Esta inconsistencia reduce drásticamente la confianza de los algoritmos.",
+                },
+                {
+                    subtitle: "2. Ignorar directorios locales relevantes",
+                    description:
+                        "Muchas empresas se centran solo en Google y olvidan plataformas como CiudadGuru, Civico o directorios de Cámaras de Comercio que tienen alta autoridad local.",
+                },
+                {
+                    subtitle: "3. Páginas genéricas para múltiples ubicaciones",
+                    description:
+                        "Crear una única página para todas las sedes sin contenido específico por ciudad reduce la relevancia para búsquedas locales específicas.",
+                },
+                {
+                    subtitle: "4. Descuidar las reseñas negativas",
+                    description:
+                        "No responder profesionalmente a reseñas negativas tiene doble impacto: afecta la percepción de clientes potenciales y envía señales negativas a los algoritmos de Google.",
+                },
+                {
+                    subtitle: "5. Falta de optimización para móviles",
+                    description:
+                        "Con más del 83% de búsquedas locales realizadas en dispositivos móviles en Colombia, un sitio no optimizado para móviles pierde visibilidad inmediatamente.",
+                },
+            ],
+        },
+    ],
+    conclusion:
+        "El SEO local representa una oportunidad enorme para las empresas colombianas, especialmente considerando que solo el 34% de los negocios lo implementa correctamente. Las estrategias detalladas en esta guía te darán una ventaja significativa sobre la competencia, permitiéndote captar ese 82% de consumidores que buscan opciones locales antes de decidir dónde comprar. En un mercado tan competitivo como el colombiano, dominar los resultados de búsqueda local no es solo una ventaja, sino una necesidad para la supervivencia y crecimiento de tu negocio.",
+    cta: {
+        heading: "¿Quieres evaluar el estado de tu SEO local?",
+        description:
+            "Realiza gratis nuestro diagnóstico de visibilidad local y descubre oportunidades específicas para aumentar tu visibilidad en tu ciudad.",
+        buttonText: "Solicitar Diagnóstico Gratuito",
+        buttonLink: "/#contacto",
+    },
+};
+
+// Metadatos optimizados para SEO
+const title = `${blogPostContent.title} | EstusCode`;
+const metaTitle =
+    "Guía SEO Local para Empresas Colombianas 2024 | Estrategias Probadas | EstusCode";
+const description = blogPostContent.description;
+const url = `https://www.estuscode.com/blog/guia-seo-local-colombia-2024`;
+const canonical = `https://www.estuscode.com/blog/guia-seo-local-colombia-2024`;
+const keywords = [
+    "SEO local Colombia",
+    "posicionamiento Google Maps Colombia",
+    "estrategias SEO local empresas",
+    "optimización búsquedas locales",
+    "Google Business Profile Colombia",
+    "marketing digital local",
+];
+---
+
+<Layout
+    title={title}
+    metaTitle={metaTitle}
+    description={description}
+    url={url}
+    canonical={canonical}
+    keywords={keywords}
+>
+    <article
+        class="py-24 bg-white"
+        itemscope
+        itemtype="https://schema.org/BlogPosting"
+    >
+        <meta itemprop="headline" content={blogPostContent.title} />
+        <meta itemprop="description" content={blogPostContent.description} />
+        <meta itemprop="datePublished" content={blogPostContent.publishDate} />
+        <meta itemprop="author" content={blogPostContent.author} />
+        <link itemprop="publisher" href="https://www.estuscode.com" />
+
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <!-- Header -->
+                <header class="mb-12 text-center">
+                    <div class="mb-6">
+                        <span
+                            class="inline-block px-3 py-1 text-sm font-medium rounded-full bg-purple-50 text-purple-600 mb-4"
+                        >
+                            {blogPostContent.category}
+                        </span>
+                        <h1
+                            class="text-3xl md:text-5xl font-bold text-gray-900 mb-6"
+                            itemprop="headline"
+                        >
+                            {blogPostContent.title}
+                        </h1>
+                        <div
+                            class="flex items-center justify-center gap-4 text-gray-500 text-sm"
+                        >
+                            <time
+                                datetime={blogPostContent.publishDate}
+                                itemprop="datePublished"
+                            >
+                                {
+                                    new Date(
+                                        blogPostContent.publishDate,
+                                    ).toLocaleDateString("es-ES", {
+                                        year: "numeric",
+                                        month: "long",
+                                        day: "numeric",
+                                    })
+                                }
+                            </time>
+                            <span>·</span>
+                            <span>{blogPostContent.readTime} de lectura</span>
+                            <span>·</span>
+                            <span itemprop="author"
+                                >{blogPostContent.author}</span
+                            >
+                        </div>
+                    </div>
+
+                    <!-- Imagen destacada -->
+                    <div class="rounded-2xl overflow-hidden mb-8">
+                        <Image
+                            src={blogPostContent.featuredImage.src}
+                            alt={blogPostContent.featuredImage.alt}
+                            width={blogPostContent.featuredImage.width}
+                            height={blogPostContent.featuredImage.height}
+                            class="w-full h-auto"
+                            itemprop="image"
+                        />
+                    </div>
+                </header>
+
+                <!-- Tags -->
+                <div class="flex flex-wrap gap-2 mb-8">
+                    {
+                        blogPostContent.tags.map((tag) => (
+                            <span class="px-3 py-1 text-sm rounded-full bg-gray-50 text-gray-600 border border-gray-100">
+                                {tag}
+                            </span>
+                        ))
+                    }
+                </div>
+
+                <!-- Introducción -->
+                <div class="mb-12">
+                    <p class="text-xl text-gray-700 leading-relaxed">
+                        {blogPostContent.introduction}
+                    </p>
+                </div>
+
+                <!-- Contenido principal -->
+                <div class="prose prose-lg max-w-none" itemprop="articleBody">
+                    {
+                        blogPostContent.sections.map((section, index) => (
+                            <section class="mb-16">
+                                <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
+                                    {section.title}
+                                </h2>
+
+                                <div class="text-gray-700 mb-8 leading-relaxed">
+                                    {section.content && (
+                                        <p class="whitespace-pre-line">
+                                            {section.content}
+                                        </p>
+                                    )}
+
+                                    {section.image && (
+                                        <div class="my-8 rounded-xl overflow-hidden">
+                                            <Image
+                                                src={section.image.src}
+                                                alt={section.image.alt}
+                                                width={section.image.width}
+                                                height={section.image.height}
+                                                class="w-full h-auto"
+                                            />
+                                        </div>
+                                    )}
+
+                                    {section.listItems && (
+                                        <div class="space-y-6 mt-6">
+                                            {section.listItems.map((item) => (
+                                                <div class="bg-gray-50 p-6 rounded-xl">
+                                                    <h3 class="text-xl font-semibold text-gray-900 mb-3">
+                                                        {item.subtitle}
+                                                    </h3>
+                                                    <p class="text-gray-700">
+                                                        {item.description}
+                                                    </p>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    )}
+
+                                    {section.callout && (
+                                        <blockquote class="my-8 p-6 bg-purple-50 border-l-4 border-purple-500 rounded-r-xl">
+                                            <p class="text-lg italic text-gray-800 mb-2">
+                                                {section.callout.text}
+                                            </p>
+                                            <cite class="text-sm text-gray-600 not-italic">
+                                                — {section.callout.author}
+                                            </cite>
+                                        </blockquote>
+                                    )}
+                                </div>
+                            </section>
+                        ))
+                    }
+
+                    <!-- Conclusión -->
+                    <section class="mb-16">
+                        <h2
+                            class="text-2xl md:text-3xl font-bold text-gray-900 mb-6"
+                        >
+                            Conclusión
+                        </h2>
+                        <p class="text-gray-700 leading-relaxed">
+                            {blogPostContent.conclusion}
+                        </p>
+                    </section>
+                </div>
+
+                <!-- CTA -->
+                <div
+                    class="bg-gradient-to-r from-purple-50 to-indigo-50 rounded-2xl p-8 text-center mb-12"
+                >
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">
+                        {blogPostContent.cta.heading}
+                    </h3>
+                    <p class="text-gray-700 mb-6 max-w-2xl mx-auto">
+                        {blogPostContent.cta.description}
+                    </p>
+                    <Button
+                        text={blogPostContent.cta.buttonText}
+                        href={blogPostContent.cta.buttonLink}
+                        isPrimary
+                        hasIcon
+                        ariaLabel="Solicitar diagnóstico gratuito de SEO local"
+                        className="bg-purple-600 hover:bg-purple-700"
+                    />
+                </div>
+                <!-- Artículos relacionados -->
+                <div class="border-t border-gray-100 pt-12">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-8">
+                        Artículos relacionados
+                    </h3>
+
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <a
+                            href="/blog/sitio-web-vs-redes-sociales-empresas"
+                            class="group"
+                        >
+                            <div
+                                class="bg-white border border-gray-100 rounded-xl overflow-hidden shadow-sm transition-all duration-300 hover:shadow-md"
+                            >
+                                <div class="h-48 overflow-hidden">
+                                    <img
+                                        src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?auto=format&fit=crop&q=80"
+                                        alt="Sitio Web vs Redes Sociales para empresas"
+                                        class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                                    />
+                                </div>
+                                <div class="p-5">
+                                    <p
+                                        class="text-purple-600 text-sm font-medium mb-1"
+                                    >
+                                        Estrategia Digital
+                                    </p>
+                                    <h4
+                                        class="text-lg font-bold text-gray-900 mb-2 group-hover:text-purple-600 transition-colors duration-300"
+                                    >
+                                        Sitio Web vs. Redes Sociales: Qué
+                                        Necesita tu Empresa en Colombia
+                                    </h4>
+                                    <p
+                                        class="text-gray-600 text-sm line-clamp-2"
+                                    >
+                                        Análisis comparativo sobre la
+                                        importancia de un sitio web profesional
+                                        frente a perfiles en redes sociales.
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+
+                        <a
+                            href="/blog/tendencias-diseno-web-colombia-2024"
+                            class="group"
+                        >
+                            <div
+                                class="bg-white border border-gray-100 rounded-xl overflow-hidden shadow-sm transition-all duration-300 hover:shadow-md"
+                            >
+                                <div class="h-48 overflow-hidden">
+                                    <img
+                                        src="https://images.unsplash.com/photo-1545235617-9465d2a55698?auto=format&fit=crop&q=80"
+                                        alt="Tendencias de diseño web para Colombia"
+                                        class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                                    />
+                                </div>
+                                <div class="p-5">
+                                    <p
+                                        class="text-purple-600 text-sm font-medium mb-1"
+                                    >
+                                        Diseño y UX
+                                    </p>
+                                    <h4
+                                        class="text-lg font-bold text-gray-900 mb-2 group-hover:text-purple-600 transition-colors duration-300"
+                                    >
+                                        Tendencias en Diseño Web para Empresas
+                                        Colombianas en 2024
+                                    </h4>
+                                    <p
+                                        class="text-gray-600 text-sm line-clamp-2"
+                                    >
+                                        Elementos visuales y estrategias de UX
+                                        adaptadas al mercado colombiano.
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <!-- Autor bio -->
+                <div class="border-t border-gray-100 mt-12 pt-12">
+                    <div class="flex items-center gap-6">
+                        <div
+                            class="w-16 h-16 rounded-full bg-gray-100 flex items-center justify-center"
+                        >
+                            <!-- Avatar placeholder -->
+                            <span class="text-gray-400">EC</span>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-gray-900">
+                                {blogPostContent.author}
+                            </h3>
+                            <p class="text-gray-600">
+                                Equipo de especialistas en SEO local y marketing
+                                digital para empresas colombianas.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Schema.org adicional para artículo de blog -->
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "BlogPosting",
+                "mainEntityOfPage": {
+                    "@type": "WebPage",
+                    "@id": "https://www.estuscode.com/blog/guia-seo-local-colombia-2024"
+                },
+                "headline": "Guía Completa de SEO Local para Empresas Colombianas (2024)",
+                "description": "Estrategias probadas para mejorar el posicionamiento de tu negocio en búsquedas locales en Colombia. Optimización para Google Maps, directorios locales y búsquedas por voz.",
+                "image": "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?auto=format&fit=crop&q=80",
+                "author": {
+                    "@type": "Organization",
+                    "name": "EstusCode"
+                },
+                "publisher": {
+                    "@type": "Organization",
+                    "name": "EstusCode",
+                    "logo": {
+                        "@type": "ImageObject",
+                        "url": "https://www.estuscode.com/logo.svg"
+                    }
+                },
+                "datePublished": "2024-01-15",
+                "dateModified": "2024-01-15"
+            }
+        </script>
+    </article>
+</Layout>

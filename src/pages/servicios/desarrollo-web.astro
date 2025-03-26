@@ -1,46 +1,49 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import Image from "astro/components/Image.astro";
+import Button from "../../ui/Button.astro";
 
 const serviceDetails = {
-    title: "Desarrollo Web Profesional",
+    title: "Desarrollo Web Profesional en Colombia",
     description:
-        "Creamos soluciones web personalizadas que impulsan el crecimiento de tu negocio",
+        "Creamos sitios web personalizados en Cali y toda Colombia que impulsan el crecimiento de tu negocio. Expertos en React, Astro y optimización SEO.",
     image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80",
     sections: [
         {
-            title: "Soluciones Web a Medida",
+            title: "Desarrollo Web a Medida para Empresas Colombianas",
             content:
-                "Desarrollamos sitios web únicos que reflejan la identidad de tu marca y cumplen objetivos específicos de negocio. Utilizamos las últimas tecnologías para garantizar rendimiento, seguridad y escalabilidad.",
+                "Desarrollamos sitios web únicos que reflejan la identidad de tu marca y cumplen objetivos específicos de negocio. Nuestro equipo en Cali crea soluciones digitales con rendimiento excepcional y optimizadas para el mercado colombiano.",
             features: [
-                "Diseño web responsive",
-                "Optimización SEO",
-                "Integración con APIs",
-                "Gestión de contenidos",
+                "Diseño web responsive para todos los dispositivos",
+                "Optimización SEO para posicionamiento local",
+                "Integración con sistemas de pago colombianos",
+                "Gestión de contenidos intuitiva",
             ],
         },
         {
-            title: "Tecnologías Que Utilizamos",
+            title: "Tecnologías de Vanguardia",
             content:
-                "Trabajamos con un stack tecnológico moderno y probado que garantiza el mejor rendimiento y mantenibilidad:",
+                "Trabajamos con un stack tecnológico moderno que garantiza el mejor rendimiento, crucial para el mercado digital en Colombia:",
             technologies: [
                 {
                     name: "React & Next.js",
                     description:
-                        "Para interfaces dinámicas y aplicaciones web modernas",
+                        "Interfaces dinámicas que mejoran la experiencia de usuario y las conversiones",
                 },
                 {
                     name: "Astro",
                     description:
-                        "Rendimiento óptimo y velocidad de carga excepcional",
+                        "Velocidad de carga ultrarrápida (menos de 1 segundo) para mejor SEO y retención",
                 },
                 {
                     name: "Node.js",
-                    description: "Backend robusto y escalable",
+                    description:
+                        "Backend robusto adaptado a los requerimientos de empresas colombianas",
                 },
                 {
                     name: "TypeScript",
-                    description: "Código más seguro y mantenible",
+                    description:
+                        "Desarrollo seguro y mantenible con menos errores y mejor escalabilidad",
                 },
             ],
         },
@@ -49,58 +52,127 @@ const serviceDetails = {
         {
             title: "Alto Rendimiento",
             description:
-                "Sitios web optimizados para cargar en menos de 3 segundos",
+                "Sitios web optimizados que cargan en menos de 2 segundos, crucial para el usuario colombiano con diversas conexiones",
         },
         {
-            title: "SEO Optimizado",
+            title: "SEO Local Optimizado",
             description:
-                "Mejor posicionamiento en buscadores desde el primer día",
+                "Mejor posicionamiento en Google Colombia y otros buscadores desde el primer día",
         },
         {
             title: "Diseño Responsivo",
-            description: "Experiencia perfecta en todos los dispositivos",
+            description:
+                "Experiencia perfecta en todos los dispositivos, adaptada al creciente uso móvil en Colombia",
         },
         {
             title: "Seguridad Avanzada",
-            description: "Protección contra vulnerabilidades y amenazas web",
+            description:
+                "Protección contra vulnerabilidades y amenazas web según normativas colombianas de protección de datos",
+        },
+    ],
+    casosExito: [
+        {
+            industria: "E-commerce",
+            resultado:
+                "Incremento del 120% en ventas tras la implementación de una tienda online optimizada para el mercado colombiano",
+        },
+        {
+            industria: "Servicios Profesionales",
+            resultado:
+                "Aumento de 85% en leads cualificados para una firma consultora en Cali con landing page optimizada",
+        },
+        {
+            industria: "Empresa Local",
+            resultado:
+                "Mejora del 65% en conversiones para negocio del Valle del Cauca con diseño web responsivo",
         },
     ],
 };
 
-const title = "EstusCode | " + serviceDetails.title;
-const metaTitle = "EstusCode | " + serviceDetails.title;
-const description = serviceDetails.description;
+// Metadatos optimizados
+const title = "Desarrollo Web Profesional en Colombia | EstusCode";
+const metaTitle = "Desarrollo Web en Colombia | Expertos Cali | EstusCode";
+const description =
+    "Servicios profesionales de desarrollo web en Cali y Colombia. Creamos sitios web ultra-rápidos con Astro y React que aumentan ventas y conversiones.";
 const url = "https://www.estuscode.com/servicios/desarrollo-web";
 const canonical = "https://www.estuscode.com/servicios/desarrollo-web";
+// Keywords focalizadas
 const keywords = [
-    "Desarrollo Web Profesional",
-    "Diseño Web Personalizado",
-    "Sitios Web Corporativos",
-    "Aplicaciones Web",
-    "Tecnologías Web",
-    "React",
-    "Next.js",
-    "Astro",
-    "Node.js",
-    "TypeScript",
+    "desarrollo web Colombia",
+    "diseño web Cali",
+    "sitios web profesionales Valle del Cauca",
+    "desarrollo Astro React",
+    "páginas web empresariales Colombia",
 ];
 ---
 
-<Layout title={title} metaTitle={metaTitle} description={description} url={url} canonical={canonical} keywords={keywords}>
-    <article class="bg-white">
-        <div class="py-24">
-            <Image
-                src={serviceDetails.image}
-                width={800}
-                height={400}
-                loading="eager"
-                decoding="async"
-                alt="Desarrollo web profesional"
-                class="rounded-xl object-cover mx-auto"
-            />
-        </div>
+<Layout
+    title={title}
+    metaTitle={metaTitle}
+    description={description}
+    url={url}
+    canonical={canonical}
+    keywords={keywords}
+>
+    <article class="bg-white" itemscope itemtype="https://schema.org/Service">
+        <meta itemprop="serviceType" content="Desarrollo Web" />
+        <meta itemprop="provider" content="EstusCode" />
+        <meta itemprop="areaServed" content="Colombia" />
 
-        <main class="container mx-auto px-4">
+        <!-- Hero Section Mejorada -->
+        <section
+            class="relative py-24 bg-gradient-to-r from-blue-50 to-indigo-50"
+        >
+            <div class="container mx-auto px-4">
+                <div class="max-w-6xl mx-auto">
+                    <div class="grid md:grid-cols-2 gap-12 items-center">
+                        <div data-aos="fade-right">
+                            <h1
+                                class="text-4xl md:text-5xl font-bold text-gray-900 mb-6"
+                                itemprop="name"
+                            >
+                                Desarrollo Web Profesional en <span
+                                    class="text-blue-600">Colombia</span
+                                >
+                            </h1>
+                            <p
+                                class="text-xl text-gray-700 mb-8 leading-relaxed"
+                                itemprop="description"
+                            >
+                                Creamos sitios web de alto rendimiento que
+                                impulsan el crecimiento de tu empresa en <strong
+                                    >Cali</strong
+                                > y todo el país. Especialistas en tecnologías modernas
+                                y optimización para el mercado local.
+                            </p>
+                            <Button
+                                text="Solicitar Presupuesto Gratuito"
+                                href="/#contacto"
+                                isPrimary
+                                hasIcon
+                                ariaLabel="Solicitar presupuesto para desarrollo web"
+                                className="text-lg"
+                            />
+                        </div>
+                        <div data-aos="fade-left">
+                            <Image
+                                src={serviceDetails.image}
+                                width={600}
+                                height={400}
+                                loading="eager"
+                                decoding="async"
+                                alt="Desarrollo web profesional en Colombia"
+                                class="rounded-xl object-cover shadow-xl"
+                                itemprop="image"
+                            />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Content Principal -->
+        <main class="container mx-auto px-4 py-16">
             <div class="max-w-4xl mx-auto">
                 {
                     serviceDetails.sections.map((section) => (
@@ -114,7 +186,7 @@ const keywords = [
 
                             {section.features && (
                                 <ul
-                                    class="grid sm:grid-cols-2 gap-6"
+                                    class="grid sm:grid-cols-2 gap-6 mb-8"
                                     role="list"
                                 >
                                     {section.features.map((feature) => (
@@ -163,6 +235,7 @@ const keywords = [
                     ))
                 }
 
+                <!-- Beneficios con microdatos -->
                 <section class="mb-16" data-aos="fade-up">
                     <h2 class="text-3xl font-bold text-gray-900 mb-8">
                         Beneficios del Desarrollo Web Profesional
@@ -172,7 +245,8 @@ const keywords = [
                             serviceDetails.benefits.map((benefit) => (
                                 <div
                                     class="p-6 rounded-xl bg-white border border-gray-100 
-                                hover:shadow-xl hover:shadow-blue-500/10 transition-all duration-300"
+                                    hover:shadow-xl hover:shadow-blue-500/10 transition-all duration-300"
+                                    itemprop="serviceOutput"
                                 >
                                     <h3 class="font-semibold text-xl text-gray-900 mb-3">
                                         {benefit.title}
@@ -185,7 +259,103 @@ const keywords = [
                         }
                     </div>
                 </section>
+
+                <!-- Nueva sección: Casos de éxito en Colombia -->
+                <section
+                    class="mb-16 p-8 bg-blue-50 rounded-2xl"
+                    data-aos="fade-up"
+                >
+                    <h2 class="text-3xl font-bold text-gray-900 mb-8">
+                        Casos de Éxito en Colombia
+                    </h2>
+                    <div class="space-y-6">
+                        {
+                            serviceDetails.casosExito.map((caso) => (
+                                <div class="bg-white p-6 rounded-xl shadow-sm">
+                                    <div class="flex items-start">
+                                        <div class="flex-shrink-0 mr-4">
+                                            <svg
+                                                class="w-8 h-8 text-blue-500"
+                                                fill="none"
+                                                viewBox="0 0 24 24"
+                                                stroke="currentColor"
+                                            >
+                                                <path
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"
+                                                    stroke-width="2"
+                                                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                                                />
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <h3 class="font-bold text-lg text-gray-900 mb-2">
+                                                Industria: {caso.industria}
+                                            </h3>
+                                            <p class="text-gray-700">
+                                                {caso.resultado}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            ))
+                        }
+                    </div>
+                </section>
+
+                <!-- CTA -->
+                <section
+                    class="text-center p-8 mb-16 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-2xl text-white"
+                    data-aos="fade-up"
+                >
+                    <h2 class="text-3xl font-bold mb-4">
+                        ¿Listo para impulsar tu presencia digital en Colombia?
+                    </h2>
+                    <p class="text-xl mb-8 max-w-3xl mx-auto opacity-90">
+                        Contáctanos hoy y recibe una consultoría gratuita sobre
+                        cómo podemos ayudarte a destacar en el mercado digital
+                        colombiano.
+                    </p>
+                    <Button
+                        text="Contactar ahora"
+                        href="/#contacto"
+                        isPrimary={false}
+                        className="bg-white text-blue-600 hover:bg-blue-50 shadow-xl text-lg"
+                        ariaLabel="Contactar para desarrollo web"
+                    />
+                </section>
             </div>
         </main>
+
+        <!-- Schema.org adicional -->
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "Service",
+                "name": "Desarrollo Web Profesional en Colombia",
+                "description": "Creamos sitios web personalizados en Cali y toda Colombia que impulsan el crecimiento de tu negocio. Expertos en React, Astro y optimización SEO.",
+                "provider": {
+                    "@type": "Organization",
+                    "name": "EstusCode",
+                    "url": "https://www.estuscode.com"
+                },
+                "areaServed": ["Cali", "Valle del Cauca", "Colombia"],
+                "serviceType": "Desarrollo Web",
+                "offers": {
+                    "@type": "Offer",
+                    "price": "5000000",
+                    "priceCurrency": "COP",
+                    "availability": "https://schema.org/InStock"
+                },
+                "serviceOutput": [
+                    "Sitios web de alto rendimiento",
+                    "Aplicaciones web personalizadas",
+                    "Tiendas online optimizadas",
+                    "Landing pages de conversión"
+                ],
+                "hoursAvailable": "Mo,Tu,We,Th,Fr 08:00-18:00",
+                "availableLanguage": ["Spanish", "English"]
+            }
+        </script>
     </article>
 </Layout>

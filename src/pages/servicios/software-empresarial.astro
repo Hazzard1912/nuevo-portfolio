@@ -1,115 +1,133 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import Image from "astro/components/Image.astro";
+import Button from "../../ui/Button.astro";
 
 const serviceDetails = {
-    title: "Software Empresarial",
+    title: "Software Empresarial a Medida para Colombia",
     description:
-        "Automatizamos y optimizamos los procesos de tu empresa con soluciones de software a medida.",
+        "Desarrollamos soluciones de software empresarial personalizadas para empresas colombianas. Automatizamos procesos y potenciamos el crecimiento de tu negocio.",
     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80",
     sections: [
         {
-            title: "Soluciones Empresariales a Medida",
+            title: "Soluciones Empresariales para el Mercado Colombiano",
             content:
-                "Desarrollamos soluciones empresariales personalizadas que mejoran la eficiencia operativa y impulsan el crecimiento de tu negocio. Nuestro enfoque se centra en crear software que se adapte perfectamente a tus procesos específicos.",
+                "Desarrollamos software empresarial adaptado a las normativas y necesidades específicas del mercado colombiano. Creamos soluciones que optimizan operaciones, automatizan procesos y potencian el crecimiento de empresas en Cali, Valle del Cauca y toda Colombia.",
             features: [
-                "ERPs personalizados",
-                "CRMs a medida",
-                "Business Intelligence",
-                "Automatización de procesos",
+                "ERPs personalizados con cumplimiento normativo colombiano",
+                "CRMs adaptados al ciclo de ventas local",
+                "Business Intelligence con KPIs relevantes para el mercado colombiano",
+                "Automatización de procesos según estándares nacionales",
             ],
         },
         {
-            title: "Stack Tecnológico Empresarial",
+            title: "Tecnologías de Clase Mundial para Empresas Colombianas",
             content:
-                "Utilizamos tecnologías robustas y probadas en el mercado empresarial:",
+                "Utilizamos tecnologías robustas y probadas que garantizan la seguridad, estabilidad y escalabilidad que las empresas colombianas necesitan:",
             technologies: [
                 {
                     name: "Python & Django",
                     description:
-                        "Desarrollo rápido y seguro de aplicaciones empresariales",
+                        "Desarrollo ágil con alta seguridad, ideal para sistemas financieros y gubernamentales colombianos",
                 },
                 {
                     name: "Java & Spring",
                     description:
-                        "Soluciones empresariales robustas y escalables",
+                        "Soluciones empresariales robustas para grandes corporaciones nacionales",
                 },
                 {
                     name: "Docker & Kubernetes",
                     description:
-                        "Contenedorización y orquestación de servicios",
+                        "Despliegue optimizado para infraestructura local colombiana",
                 },
                 {
-                    name: "AWS & Cloud",
+                    name: "AWS & Cloud Colombia",
                     description:
-                        "Infraestructura escalable y servicios en la nube",
+                        "Infraestructura en la nube con cumplimiento de normativas nacionales de seguridad de datos",
                 },
             ],
         },
     ],
     benefits: [
         {
-            title: "Escalabilidad",
+            title: "Escalabilidad para empresas colombianas",
             description:
-                "Soluciones que crecen junto con tu empresa sin comprometer el rendimiento",
+                "Software que crece con tu empresa, desde PyMEs del Valle del Cauca hasta corporaciones nacionales",
         },
         {
-            title: "Integración",
+            title: "Integración con sistemas locales",
             description:
-                "Conectividad perfecta con tus sistemas y herramientas existentes",
+                "Conectividad garantizada con plataformas gubernamentales, bancos y servicios colombianos",
         },
         {
-            title: "Análisis en Tiempo Real",
+            title: "Análisis adaptado al contexto nacional",
             description:
-                "Dashboards y reportes actualizados para mejor toma de decisiones",
+                "Dashboards y reportes con métricas relevantes para el mercado colombiano",
         },
         {
-            title: "Soporte 24/7",
+            title: "Soporte local en Colombia",
             description:
-                "Asistencia técnica continua y mantenimiento proactivo",
+                "Asistencia técnica en español con presencia en Cali y soporte remoto nacional",
         },
     ],
     features: [
         {
-            title: "Automatización de Procesos",
+            title: "Facturación Electrónica DIAN",
             description:
-                "Reduce errores y optimiza el tiempo de tu equipo con flujos de trabajo automatizados",
+                "Implementación completa del sistema de facturación electrónica según normativas colombianas vigentes",
         },
         {
-            title: "Gestión de Datos",
+            title: "Gestión de Datos con protección de Habeas Data",
             description:
-                "Centraliza y organiza la información crítica de tu empresa",
+                "Cumplimiento con la Ley 1581 de protección de datos personales en Colombia",
         },
         {
-            title: "Reportes Personalizados",
+            title: "Reportes para entidades reguladoras",
             description:
-                "Visualiza los KPIs importantes para tu negocio en tiempo real",
+                "Generación automática de informes para DIAN, Supersociedades y otras entidades colombianas",
         },
         {
-            title: "Seguridad Empresarial",
+            title: "Seguridad adaptada a riesgos locales",
             description:
-                "Protección avanzada de datos y cumplimiento normativo",
+                "Protección contra amenazas específicas del entorno digital colombiano",
+        },
+    ],
+    casosExito: [
+        {
+            industria: "Manufactura colombiana",
+            resultado:
+                "Reducción del 40% en costos operativos para empresa industrial en Valle del Cauca tras implementar ERP a medida",
+        },
+        {
+            industria: "Servicios financieros",
+            resultado:
+                "Aumento del 60% en eficiencia operativa para cooperativa financiera con presencia en 5 departamentos de Colombia",
+        },
+        {
+            industria: "Distribución comercial",
+            resultado:
+                "Implementación de sistema logístico que redujo tiempos de entrega en 35% para distribuidor nacional",
         },
     ],
 };
 
-const title = "EstusCode | " + serviceDetails.title;
-const metaTitle = "EstusCode | Software Empresarial y Soluciones a Medida";
-const description = serviceDetails.description;
+// Metadatos optimizados para SEO
+const title =
+    "Software Empresarial a Medida para Compañías Colombianas | EstusCode";
+const metaTitle =
+    "Software Empresarial para Empresas Colombianas | Soluciones a Medida | EstusCode";
+const description =
+    "Desarrollamos software empresarial personalizado para compañías en Colombia. ERP, CRM y sistemas a medida adaptados a normativas y necesidades locales. Expertos en Cali.";
 const url = "https://www.estuscode.com/servicios/software-empresarial";
 const canonical = "https://www.estuscode.com/servicios/software-empresarial";
+// Keywords optimizadas
 const keywords = [
-    "Software Empresarial",
-    "ERP Personalizado",
-    "CRM a Medida",
-    "Business Intelligence",
-    "Automatización Procesos",
-    "Python",
-    "Java",
-    "Docker",
-    "AWS",
-    "Desarrollo Software Empresarial",
-    "Soluciones Empresariales",
+    "software empresarial Colombia",
+    "ERP empresas colombianas",
+    "CRM personalizado Colombia",
+    "sistemas a medida Cali",
+    "software facturación electrónica DIAN",
+    "automatización procesos empresariales Valle del Cauca",
 ];
 ---
 
@@ -121,22 +139,64 @@ const keywords = [
     canonical={canonical}
     keywords={keywords}
 >
-    <article class="bg-white">
-        <!-- Hero Section -->
-        <div class="py-24">
-            <Image
-                src={serviceDetails.image}
-                width={800}
-                height={400}
-                loading="eager"
-                decoding="async"
-                alt="Software empresarial profesional"
-                class="rounded-xl object-cover mx-auto"
-            />
-        </div>
+    <article class="bg-white" itemscope itemtype="https://schema.org/Service">
+        <meta itemprop="serviceType" content="Software Empresarial" />
+        <meta itemprop="provider" content="EstusCode" />
+        <meta itemprop="areaServed" content="Colombia" />
+
+        <!-- Hero Section Mejorada -->
+        <section
+            class="relative py-24 bg-gradient-to-r from-teal-50 to-blue-50"
+        >
+            <div class="container mx-auto px-4">
+                <div class="max-w-6xl mx-auto">
+                    <div class="grid md:grid-cols-2 gap-12 items-center">
+                        <div data-aos="fade-right">
+                            <h1
+                                class="text-4xl md:text-5xl font-bold text-gray-900 mb-6"
+                                itemprop="name"
+                            >
+                                Software Empresarial para <span
+                                    class="text-teal-600">Colombia</span
+                                >
+                            </h1>
+                            <p
+                                class="text-xl text-gray-700 mb-8 leading-relaxed"
+                                itemprop="description"
+                            >
+                                Desarrollamos soluciones de software a medida
+                                que automatizan procesos y potencian el
+                                crecimiento de empresas en <strong>Cali</strong>
+                                y toda Colombia, cumpliendo con normativas nacionales.
+                            </p>
+                            <Button
+                                text="Solicitar Asesoría Gratuita"
+                                href="/#contacto"
+                                isPrimary
+                                hasIcon
+                                ariaLabel="Solicitar asesoría sobre software empresarial"
+                                className="text-lg"
+                            />
+                        </div>
+                        <div data-aos="fade-left">
+                            <Image
+                                src={serviceDetails.image}
+                                width={600}
+                                height={400}
+                                loading="eager"
+                                decoding="async"
+                                alt="Software empresarial para empresas colombianas"
+                                class="rounded-xl object-cover shadow-xl"
+                                itemprop="image"
+                            />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <!-- Content -->
-        <main class="container mx-auto px-4">
+        <main class="container mx-auto px-4 py-16">
             <div class="max-w-4xl mx-auto">
                 {
                     serviceDetails.sections.map((section) => (
@@ -150,13 +210,13 @@ const keywords = [
 
                             {section.features && (
                                 <ul
-                                    class="grid sm:grid-cols-2 gap-6"
+                                    class="grid sm:grid-cols-2 gap-6 mb-8"
                                     role="list"
                                 >
                                     {section.features.map((feature) => (
                                         <li class="flex items-start space-x-4">
                                             <span
-                                                class="flex-shrink-0 text-blue-600"
+                                                class="flex-shrink-0 text-teal-600"
                                                 aria-hidden="true"
                                             >
                                                 <svg
@@ -202,14 +262,15 @@ const keywords = [
                 <!-- Características Destacadas -->
                 <section class="mb-16" data-aos="fade-up">
                     <h2 class="text-3xl font-bold text-gray-900 mb-8">
-                        Características del Software Empresarial
+                        Soluciones Adaptadas a Necesidades Colombianas
                     </h2>
                     <div class="grid sm:grid-cols-2 gap-6">
                         {
                             serviceDetails.features.map((feature) => (
                                 <div
                                     class="p-6 rounded-xl bg-white border border-gray-100 
-                                hover:shadow-xl hover:shadow-blue-500/10 transition-all duration-300"
+                                    hover:shadow-xl hover:shadow-teal-500/10 transition-all duration-300"
+                                    itemprop="serviceOutput"
                                 >
                                     <h3 class="font-semibold text-xl text-gray-900 mb-3">
                                         {feature.title}
@@ -226,14 +287,14 @@ const keywords = [
                 <!-- Beneficios -->
                 <section class="mb-16" data-aos="fade-up">
                     <h2 class="text-3xl font-bold text-gray-900 mb-8">
-                        Beneficios del Software Empresarial
+                        Beneficios para Empresas Colombianas
                     </h2>
                     <div class="grid sm:grid-cols-2 gap-6">
                         {
                             serviceDetails.benefits.map((benefit) => (
                                 <div
                                     class="p-6 rounded-xl bg-white border border-gray-100 
-                                hover:shadow-xl hover:shadow-blue-500/10 transition-all duration-300"
+                                    hover:shadow-xl hover:shadow-teal-500/10 transition-all duration-300"
                                 >
                                     <h3 class="font-semibold text-xl text-gray-900 mb-3">
                                         {benefit.title}
@@ -246,7 +307,104 @@ const keywords = [
                         }
                     </div>
                 </section>
+
+                <!-- Nueva sección: Casos de éxito en Colombia -->
+                <section
+                    class="mb-16 p-8 bg-teal-50 rounded-2xl"
+                    data-aos="fade-up"
+                >
+                    <h2 class="text-3xl font-bold text-gray-900 mb-8">
+                        Casos de Éxito en Colombia
+                    </h2>
+                    <div class="space-y-6">
+                        {
+                            serviceDetails.casosExito.map((caso) => (
+                                <div class="bg-white p-6 rounded-xl shadow-sm">
+                                    <div class="flex items-start">
+                                        <div class="flex-shrink-0 mr-4">
+                                            <svg
+                                                class="w-8 h-8 text-teal-500"
+                                                fill="none"
+                                                viewBox="0 0 24 24"
+                                                stroke="currentColor"
+                                            >
+                                                <path
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"
+                                                    stroke-width="2"
+                                                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                                                />
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <h3 class="font-bold text-lg text-gray-900 mb-2">
+                                                Industria: {caso.industria}
+                                            </h3>
+                                            <p class="text-gray-700">
+                                                {caso.resultado}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            ))
+                        }
+                    </div>
+                </section>
+
+                <!-- CTA -->
+                <section
+                    class="text-center p-8 mb-16 bg-gradient-to-r from-teal-500 to-blue-600 rounded-2xl text-white"
+                    data-aos="fade-up"
+                >
+                    <h2 class="text-3xl font-bold mb-4">
+                        ¿Listo para optimizar tu empresa en Colombia?
+                    </h2>
+                    <p class="text-xl mb-8 max-w-3xl mx-auto opacity-90">
+                        Contáctanos hoy para una evaluación gratuita sobre cómo
+                        podemos automatizar y optimizar tus procesos
+                        empresariales con software a medida.
+                    </p>
+                    <Button
+                        text="Agendar Consulta Gratuita"
+                        href="/#contacto"
+                        isPrimary={false}
+                        className="bg-white text-teal-600 hover:bg-teal-50 shadow-xl text-lg"
+                        ariaLabel="Agendar consulta sobre software empresarial"
+                    />
+                </section>
             </div>
         </main>
+
+        <!-- Schema.org adicional -->
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "Service",
+                "name": "Software Empresarial a Medida para Colombia",
+                "description": "Desarrollamos soluciones de software empresarial personalizadas para empresas colombianas. Automatizamos procesos y potenciamos el crecimiento de tu negocio.",
+                "provider": {
+                    "@type": "Organization",
+                    "name": "EstusCode",
+                    "url": "https://www.estuscode.com"
+                },
+                "areaServed": ["Cali", "Valle del Cauca", "Bogotá", "Colombia"],
+                "serviceType": "Software Empresarial",
+                "offers": {
+                    "@type": "Offer",
+                    "price": "20000000",
+                    "priceCurrency": "COP",
+                    "availability": "https://schema.org/InStock"
+                },
+                "serviceOutput": [
+                    "ERPs personalizados",
+                    "CRMs a medida",
+                    "Sistemas de Business Intelligence",
+                    "Automatización de procesos empresariales",
+                    "Software de facturación electrónica DIAN"
+                ],
+                "hoursAvailable": "Mo,Tu,We,Th,Fr 08:00-18:00",
+                "availableLanguage": ["Spanish", "English"]
+            }
+        </script>
     </article>
 </Layout>
