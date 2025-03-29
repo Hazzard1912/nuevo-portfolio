@@ -1,40 +1,50 @@
 ---
 import { Image } from "astro:assets";
 
+import sistemaInventario from "../assets/sistema_inventario.png";
+
 const projectData = {
     meta: {
         tag: "Proyecto Destacado",
-        year: "2024",
-        title: "E-commerce de Nueva Generación",
-        subtitle: "Transformación digital completa con tecnologías modernas y enfoque en la experiencia de usuario"
+        year: "2025",
+        title: "Sistema de Gestión de Inventario moderno y escalable",
+        subtitle:
+            "Solución empresarial en Next.js y TailwindCSS para gestión de inventario en tiempo real. Diseño intuitivo con arquitectura serverless que facilita la integración y escalabilidad inmediata.",
+        demoUrl: "https://inventory-system-demo.vercel.app/",
     },
     image: {
-        src: "https://images.unsplash.com/photo-1600267185393-e158a98703de?auto=format&fit=crop&w=2070&q=80",
+        src: sistemaInventario,
         width: 2070,
         height: 1380,
-        alt: "Interfaz de E-commerce moderno y responsive"
+        alt: "Sistema de gestión de inventario",
     },
     solution: {
         features: [
-            "Arquitectura serverless escalable",
-            "Sistema de pago multi-moneda",
-            "Panel de administración personalizado",
-            "Análisis en tiempo real"
+            "Interfaz de usuario intuitiva y responsiva",
+            "Automatización de procesos de inventario",
+            "Escalabilidad y rendimiento optimizado",
         ],
-        technologies: ["Next.js", "TailwindCSS", "Stripe", "Vercel"]
+        technologies: ["Next.js", "TailwindCSS", "Vercel"],
     },
     results: {
         stats: [
-            { value: "300%", label: "Incremento en ventas", sublabel: "en primeros 6 meses" },
-            { value: "2.5s", label: "Tiempo de carga", sublabel: "reducción del 60%" },
-            { value: "98%", label: "Satisfacción", sublabel: "usuarios finales" }
+            {
+                value: "50%",
+                label: "Reducción de costos",
+                sublabel: "Operativos",
+            },
+            {
+                value: "30%",
+                label: "Aumento de eficiencia",
+                sublabel: "En procesos de inventario",
+            },
         ],
         improvements: [
             "Automatización completa de procesos",
-            "Integración con sistemas legacy",
-            "Expansión a mercados internacionales"
-        ]
-    }
+            "Integración con sistemas de terceros",
+            "Interfaz de usuario optimizada",
+        ],
+    },
 };
 ---
 
@@ -42,9 +52,13 @@ const projectData = {
     <div class="container mx-auto px-4 relative">
         <!-- Header Section -->
         <div class="text-center mb-16" data-aos="fade-up">
-            <div class="inline-flex items-center gap-3 px-4 py-2 rounded-full 
-                bg-blue-50 border border-blue-100 mb-6">
-                <span class="text-blue-600 font-medium">{projectData.meta.tag}</span>
+            <div
+                class="inline-flex items-center gap-3 px-4 py-2 rounded-full
+                bg-blue-50 border border-blue-100 mb-6"
+            >
+                <span class="text-blue-600 font-medium"
+                    >{projectData.meta.tag}</span
+                >
                 <span class="w-1 h-1 rounded-full bg-blue-200"></span>
                 <span class="text-blue-600">{projectData.meta.year}</span>
             </div>
@@ -57,11 +71,39 @@ const projectData = {
         </div>
 
         <div class="max-w-6xl mx-auto">
-            <!-- Project Image with Material Design elevation -->
-            <div class="rounded-3xl overflow-hidden mb-16 shadow-2xl shadow-blue-500/5 
-                border border-gray-100 transition-transform duration-500 hover:scale-[1.02]"
+            <!-- Project Image as clickable element -->
+            <a
+                href={projectData.meta.demoUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="block rounded-3xl overflow-hidden mb-4 shadow-2xl shadow-blue-500/5
+                  border border-gray-100 transition-all duration-500
+                  hover:scale-[1.02] hover:shadow-blue-500/20 group relative"
                 data-aos="fade-up"
             >
+                <div
+                    class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent
+                        opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center"
+                >
+                    <div
+                        class="flex items-center gap-2 p-6 text-white font-medium"
+                    >
+                        <span>Ver proyecto en vivo</span>
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            class="h-5 w-5 group-hover:translate-x-1 transition-transform"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                        </svg>
+                    </div>
+                </div>
                 <Image
                     src={projectData.image.src}
                     width={projectData.image.width}
@@ -71,72 +113,150 @@ const projectData = {
                     loading="eager"
                     decoding="async"
                 />
+            </a>
+
+            <!-- Demo button -->
+            <div class="flex justify-center mb-16">
+                <a
+                    href={projectData.meta.demoUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-blue-600 text-white
+                          font-medium transition-all duration-300 hover:bg-blue-700 hover:scale-105
+                          hover:shadow-lg hover:shadow-blue-500/25"
+                >
+                    <span>Ver Demo</span>
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="h-5 w-5"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                        ></path>
+                    </svg>
+                </a>
             </div>
 
             <!-- Project Details Grid -->
             <div class="grid md:grid-cols-2 gap-8">
                 <!-- Solution Column -->
                 <div class="space-y-8" data-aos="fade-up" data-aos-delay="100">
-                    <div class="inline-block px-4 py-2 rounded-xl bg-blue-50 border border-blue-100">
-                        <span class="text-blue-600 font-medium">Solución Implementada</span>
+                    <div
+                        class="inline-block px-4 py-2 rounded-xl bg-blue-50 border border-blue-100"
+                    >
+                        <span class="text-blue-600 font-medium"
+                            >Solución Implementada</span
+                        >
                     </div>
 
                     <ul class="space-y-4">
-                        {projectData.solution.features.map(feature => (
-                            <li class="flex items-center gap-3 text-gray-700 group">
-                                <div class="w-8 h-8 rounded-lg bg-blue-50 flex items-center justify-center
-                                    transition-colors duration-300 group-hover:bg-blue-100">
-                                    <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
-                                            d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                                    </svg>
-                                </div>
-                                <span class="text-lg">{feature}</span>
-                            </li>
-                        ))}
+                        {
+                            projectData.solution.features.map((feature) => (
+                                <li class="flex items-center gap-3 text-gray-700 group">
+                                    <div
+                                        class="w-8 h-8 rounded-lg bg-blue-50 flex items-center justify-center
+                                    transition-colors duration-300 group-hover:bg-blue-100"
+                                    >
+                                        <svg
+                                            class="w-5 h-5 text-blue-600"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            viewBox="0 0 24 24"
+                                        >
+                                            <path
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                stroke-width="2"
+                                                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                                            />
+                                        </svg>
+                                    </div>
+                                    <span class="text-lg">{feature}</span>
+                                </li>
+                            ))
+                        }
                     </ul>
 
                     <div class="flex flex-wrap gap-2 pt-4">
-                        {projectData.solution.technologies.map(tech => (
-                            <span class="px-4 py-2 bg-gray-50 text-gray-700 rounded-lg text-sm 
-                                border border-gray-100 transition-colors duration-300 hover:bg-gray-100">
-                                {tech}
-                            </span>
-                        ))}
+                        {
+                            projectData.solution.technologies.map((tech) => (
+                                <span
+                                    class="px-4 py-2 bg-gray-50 text-gray-700 rounded-lg text-sm 
+                                border border-gray-100 transition-colors duration-300 hover:bg-gray-100"
+                                >
+                                    {tech}
+                                </span>
+                            ))
+                        }
                     </div>
                 </div>
 
                 <!-- Results Column -->
                 <div class="space-y-8" data-aos="fade-up" data-aos-delay="200">
-                    <div class="inline-block px-4 py-2 rounded-xl bg-purple-50 border border-purple-100">
-                        <span class="text-purple-600 font-medium">Resultados</span>
+                    <div
+                        class="inline-block px-4 py-2 rounded-xl bg-purple-50 border border-purple-100"
+                    >
+                        <span class="text-purple-600 font-medium"
+                            >Resultados</span
+                        >
                     </div>
 
                     <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                        {projectData.results.stats.map(stat => (
-                            <div class="p-6 bg-gradient-to-br from-gray-50 to-white rounded-2xl
+                        {
+                            projectData.results.stats.map((stat) => (
+                                <div
+                                    class="p-6 bg-gradient-to-br from-gray-50 to-white rounded-2xl
                                 border border-gray-100 transition-all duration-300
-                                hover:shadow-lg hover:shadow-blue-500/5 hover:-translate-y-1">
-                                <div class="text-3xl font-bold text-gray-900 mb-1">{stat.value}</div>
-                                <p class="text-gray-600">{stat.label}</p>
-                                <p class="text-gray-400 text-sm">{stat.sublabel}</p>
-                            </div>
-                        ))}
+                                hover:shadow-lg hover:shadow-blue-500/5 hover:-translate-y-1"
+                                >
+                                    <div class="text-3xl font-bold text-gray-900 mb-1">
+                                        {stat.value}
+                                    </div>
+                                    <p class="text-gray-600">{stat.label}</p>
+                                    <p class="text-gray-400 text-sm">
+                                        {stat.sublabel}
+                                    </p>
+                                </div>
+                            ))
+                        }
                     </div>
 
                     <ul class="space-y-4">
-                        {projectData.results.improvements.map(improvement => (
-                            <li class="flex items-center gap-3 text-gray-700 group">
-                                <div class="w-8 h-8 rounded-lg bg-purple-50 flex items-center justify-center
-                                    transition-colors duration-300 group-hover:bg-purple-100">
-                                    <svg class="w-5 h-5 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
-                                            d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
-                                    </svg>
-                                </div>
-                                <span class="text-lg">{improvement}</span>
-                            </li>
-                        ))}
+                        {
+                            projectData.results.improvements.map(
+                                (improvement) => (
+                                    <li class="flex items-center gap-3 text-gray-700 group">
+                                        <div
+                                            class="w-8 h-8 rounded-lg bg-purple-50 flex items-center justify-center
+                                    transition-colors duration-300 group-hover:bg-purple-100"
+                                        >
+                                            <svg
+                                                class="w-5 h-5 text-purple-600"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                viewBox="0 0 24 24"
+                                            >
+                                                <path
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"
+                                                    stroke-width="2"
+                                                    d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"
+                                                />
+                                            </svg>
+                                        </div>
+                                        <span class="text-lg">
+                                            {improvement}
+                                        </span>
+                                    </li>
+                                ),
+                            )
+                        }
                     </ul>
                 </div>
             </div>
