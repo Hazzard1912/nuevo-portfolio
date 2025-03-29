@@ -12,12 +12,6 @@ const projectData = {
             "Solución empresarial en Next.js y TailwindCSS para gestión de inventario en tiempo real. Diseño intuitivo con arquitectura serverless que facilita la integración y escalabilidad inmediata.",
         demoUrl: "https://inventory-system-demo.vercel.app/",
     },
-    image: {
-        src: sistemaInventario,
-        width: 2070,
-        height: 1380,
-        alt: "Sistema de gestión de inventario",
-    },
     solution: {
         features: [
             "Interfaz de usuario intuitiva y responsiva",
@@ -105,12 +99,13 @@ const projectData = {
                     </div>
                 </div>
                 <Image
-                    src={projectData.image.src}
-                    width={projectData.image.width}
-                    height={projectData.image.height}
-                    alt={projectData.image.alt}
-                    class="w-full object-cover"
-                    loading="eager"
+                    src={sistemaInventario}
+                    format="webp"
+                    alt="Sistema de Gestión de Inventario"
+                    class="w-full h-auto rounded-3xl transition-transform duration-500 group-hover:scale-105"
+                    width={1200}
+                    height={800}
+                    loading="lazy"
                     decoding="async"
                 />
             </a>
