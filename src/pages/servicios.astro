@@ -119,21 +119,21 @@ const keywords = [
 ];
 ---
 <Layout title={title} metaTitle={metaTitle} description={description} url={url} canonical={canonical} keywords={keywords}>
-    <section class="py-24 bg-white relative">
+    <section class="py-24 bg-[#E0E1DD] relative">
         <div class="container mx-auto px-4">
             <div class="max-w-7xl mx-auto">
                 <!-- Header Section mejorado con keywords prioritarias -->
                 <div class="text-center mb-16" data-aos="fade-up">
-                    <span class="text-blue-600 font-medium mb-4 block tracking-wider uppercase text-sm">
+                    <span class="text-[#415A77] font-medium mb-4 block tracking-wider uppercase text-sm">
                         SERVICIOS DE DESARROLLO
                     </span>
-                    <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+                    <h1 class="text-4xl md:text-5xl font-bold text-[#0D1B2A] mb-6">
                         Desarrollo Web y Tecnológico en
-                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#415A77] to-[#1B263B]">
                             Colombia
                         </span>
                     </h1>
-                    <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                    <p class="text-xl text-[#1B263B] max-w-3xl mx-auto leading-relaxed">
                         Soluciones digitales personalizadas para empresas en <strong>Cali</strong> y todo el <strong>Valle del Cauca</strong>. 
                         Impulsamos tu crecimiento con tecnologías modernas y optimización SEO.
                     </p>
@@ -150,9 +150,9 @@ const keywords = [
                     {services.map((service, index) => (
                         <a 
                             href={`/servicios/${service.id}`}
-                            class="group relative bg-white rounded-2xl overflow-hidden border border-gray-100
+                            class="group relative bg-white rounded-2xl overflow-hidden border border-[#778DA9]/20
                                 transition-all duration-500 hover:-translate-y-2 hover:shadow-xl 
-                                hover:shadow-blue-500/10"
+                                hover:shadow-[#415A77]/10"
                             data-aos="fade-up"
                             data-aos-delay={index * 100}
                             itemprop="itemListElement"
@@ -184,23 +184,23 @@ const keywords = [
                                 </div>
 
                                 <div class="p-8">
-                                    <h2 class="text-2xl font-bold text-gray-900 mb-4 
-                                        transition-colors duration-300 group-hover:text-blue-600"
+                                    <h2 class="text-2xl font-bold text-[#0D1B2A] mb-4 
+                                        transition-colors duration-300 group-hover:text-[#415A77]"
                                         itemprop="headline"
                                     >
                                         {service.title}
                                     </h2>
-                                    <p class="text-gray-600 mb-6 line-clamp-3">
+                                    <p class="text-[#1B263B] mb-6 line-clamp-3">
                                         {service.shortDescription}
                                     </p>
 
                                     <!-- Features Preview -->
                                     <div class="flex flex-wrap gap-2 mb-6">
                                         {service.features.slice(0, 3).map(feature => (
-                                            <span class="text-sm px-3 py-1 rounded-full bg-gray-50 
-                                                text-gray-600 border border-gray-100
-                                                transition-colors duration-300 group-hover:bg-blue-50
-                                                group-hover:text-blue-600 group-hover:border-blue-100"
+                                            <span class="text-sm px-3 py-1 rounded-full bg-[#E0E1DD] 
+                                                text-[#1B263B] border border-[#778DA9]/20
+                                                transition-colors duration-300 group-hover:bg-[#415A77]/10
+                                                group-hover:text-[#415A77] group-hover:border-[#415A77]/30"
                                                 itemprop="serviceType"
                                             >
                                                 {feature}
@@ -208,7 +208,11 @@ const keywords = [
                                         ))}
                                     </div>
 
-                                    <Button text="Explorar Servicio" isPrimary hasIcon ariaLabel={`Explorar servicio de ${service.title}`} className="group-hover:bg-blue-600 group-hover:text-white" />
+                                    <Button text="Explorar Servicio" 
+                                        className="bg-[#415A77] hover:bg-[#1B263B] text-[#E0E1DD] border-0" 
+                                        hasIcon 
+                                        ariaLabel={`Explorar servicio de ${service.title}`} 
+                                    />
                                 </div>
                             </div>
                         </a>
@@ -252,3 +256,4 @@ const keywords = [
         }
         </script>
     </section>
+</Layout>

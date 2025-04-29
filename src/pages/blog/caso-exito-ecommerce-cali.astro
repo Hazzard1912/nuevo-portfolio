@@ -157,7 +157,7 @@ const keywords = [
     keywords={keywords}
 >
     <article
-        class="py-24 bg-white"
+        class="py-24 bg-[#E0E1DD]"
         itemscope
         itemtype="https://schema.org/BlogPosting"
     >
@@ -173,18 +173,18 @@ const keywords = [
                 <header class="mb-12 text-center">
                     <div class="mb-6">
                         <span
-                            class="inline-block px-3 py-1 text-sm font-medium rounded-full bg-green-50 text-green-600 mb-4"
+                            class="inline-block px-3 py-1 text-sm font-medium rounded-full bg-[#415A77]/20 text-[#415A77] mb-4"
                         >
                             {blogPostContent.category}
                         </span>
                         <h1
-                            class="text-3xl md:text-5xl font-bold text-gray-900 mb-6"
+                            class="text-3xl md:text-5xl font-bold text-[#0D1B2A] mb-6"
                             itemprop="headline"
                         >
                             {blogPostContent.title}
                         </h1>
                         <div
-                            class="flex items-center justify-center gap-4 text-gray-500 text-sm"
+                            class="flex items-center justify-center gap-4 text-[#1B263B]/70 text-sm"
                         >
                             <time
                                 datetime={blogPostContent.publishDate}
@@ -210,7 +210,9 @@ const keywords = [
                     </div>
 
                     <!-- Imagen destacada -->
-                    <div class="rounded-2xl overflow-hidden mb-8">
+                    <div
+                        class="rounded-2xl overflow-hidden mb-8 shadow-xl shadow-[#0D1B2A]/5"
+                    >
                         <Image
                             src={blogPostContent.featuredImage.src}
                             alt={blogPostContent.featuredImage.alt}
@@ -226,7 +228,7 @@ const keywords = [
                 <div class="flex flex-wrap gap-2 mb-8">
                     {
                         blogPostContent.tags.map((tag) => (
-                            <span class="px-3 py-1 text-sm rounded-full bg-gray-50 text-gray-600 border border-gray-100">
+                            <span class="px-3 py-1 text-sm rounded-full bg-[#778DA9]/10 text-[#1B263B] border border-[#778DA9]/20">
                                 {tag}
                             </span>
                         ))
@@ -235,21 +237,24 @@ const keywords = [
 
                 <!-- Introducción -->
                 <div class="mb-12">
-                    <p class="text-xl text-gray-700 leading-relaxed">
+                    <p class="text-xl text-[#1B263B] leading-relaxed">
                         {blogPostContent.introduction}
                     </p>
                 </div>
 
                 <!-- Contenido principal -->
-                <div class="prose prose-lg max-w-none" itemprop="articleBody">
+                <div
+                    class="prose prose-lg max-w-none prose-headings:text-[#0D1B2A] prose-p:text-[#1B263B] prose-strong:text-[#1B263B]"
+                    itemprop="articleBody"
+                >
                     {
                         blogPostContent.sections.map((section, index) => (
                             <section class="mb-16">
-                                <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
+                                <h2 class="text-2xl md:text-3xl font-bold text-[#0D1B2A] mb-6">
                                     {section.title}
                                 </h2>
 
-                                <div class="text-gray-700 mb-8 leading-relaxed">
+                                <div class="text-[#1B263B] mb-8 leading-relaxed">
                                     {section.content && (
                                         <p class="whitespace-pre-line">
                                             {section.content}
@@ -257,7 +262,7 @@ const keywords = [
                                     )}
 
                                     {section.image && (
-                                        <div class="my-8 rounded-xl overflow-hidden">
+                                        <div class="my-8 rounded-xl overflow-hidden shadow-lg shadow-[#0D1B2A]/5">
                                             <Image
                                                 src={section.image.src}
                                                 alt={section.image.alt}
@@ -271,11 +276,11 @@ const keywords = [
                                     {section.listItems && (
                                         <div class="space-y-6 mt-6">
                                             {section.listItems.map((item) => (
-                                                <div class="bg-gray-50 p-6 rounded-xl">
-                                                    <h3 class="text-xl font-semibold text-gray-900 mb-3">
+                                                <div class="bg-white p-6 rounded-xl border border-[#778DA9]/10 shadow-sm">
+                                                    <h3 class="text-xl font-semibold text-[#0D1B2A] mb-3">
                                                         {item.subtitle}
                                                     </h3>
-                                                    <p class="text-gray-700">
+                                                    <p class="text-[#1B263B]">
                                                         {item.description}
                                                     </p>
                                                 </div>
@@ -284,11 +289,11 @@ const keywords = [
                                     )}
 
                                     {section.callout && (
-                                        <blockquote class="my-8 p-6 bg-green-50 border-l-4 border-green-500 rounded-r-xl">
-                                            <p class="text-lg italic text-gray-800 mb-2">
+                                        <blockquote class="my-8 p-6 bg-[#778DA9]/10 border-l-4 border-[#415A77] rounded-r-xl">
+                                            <p class="text-lg italic text-[#1B263B] mb-2">
                                                 {section.callout.text}
                                             </p>
-                                            <cite class="text-sm text-gray-600 not-italic">
+                                            <cite class="text-sm text-[#1B263B]/70 not-italic">
                                                 — {section.callout.author}
                                             </cite>
                                         </blockquote>
@@ -301,11 +306,11 @@ const keywords = [
                     <!-- Conclusión -->
                     <section class="mb-16">
                         <h2
-                            class="text-2xl md:text-3xl font-bold text-gray-900 mb-6"
+                            class="text-2xl md:text-3xl font-bold text-[#0D1B2A] mb-6"
                         >
                             Conclusión
                         </h2>
-                        <p class="text-gray-700 leading-relaxed">
+                        <p class="text-[#1B263B] leading-relaxed">
                             {blogPostContent.conclusion}
                         </p>
                     </section>
@@ -313,26 +318,26 @@ const keywords = [
 
                 <!-- CTA -->
                 <div
-                    class="bg-gradient-to-r from-green-50 to-teal-50 rounded-2xl p-8 text-center mb-12"
+                    class="bg-gradient-to-r from-[#415A77]/20 to-[#778DA9]/20 rounded-2xl p-8 text-center mb-12 border border-[#415A77]/20"
                 >
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4">
+                    <h3 class="text-2xl font-bold text-[#0D1B2A] mb-4">
                         {blogPostContent.cta.heading}
                     </h3>
-                    <p class="text-gray-700 mb-6 max-w-2xl mx-auto">
+                    <p class="text-[#1B263B] mb-6 max-w-2xl mx-auto">
                         {blogPostContent.cta.description}
                     </p>
                     <Button
                         text={blogPostContent.cta.buttonText}
                         href={blogPostContent.cta.buttonLink}
-                        isPrimary
+                        className="bg-[#415A77] hover:bg-[#1B263B] text-[#E0E1DD] border-0"
                         hasIcon
                         ariaLabel="Solicitar evaluación gratuita para transformación digital"
-                        className="bg-green-600 hover:bg-green-700"
                     />
                 </div>
+
                 <!-- Artículos relacionados -->
-                <div class="border-t border-gray-100 pt-12">
-                    <h3 class="text-2xl font-bold text-gray-900 mb-8">
+                <div class="border-t border-[#778DA9]/20 pt-12">
+                    <h3 class="text-2xl font-bold text-[#0D1B2A] mb-8">
                         Artículos relacionados
                     </h3>
 
@@ -342,7 +347,7 @@ const keywords = [
                             class="group"
                         >
                             <div
-                                class="bg-white border border-gray-100 rounded-xl overflow-hidden shadow-sm transition-all duration-300 hover:shadow-md"
+                                class="bg-white border border-[#778DA9]/10 rounded-xl overflow-hidden shadow-sm transition-all duration-300 hover:shadow-md hover:shadow-[#415A77]/5 hover:-translate-y-1"
                             >
                                 <div class="h-48 overflow-hidden">
                                     <img
@@ -353,18 +358,18 @@ const keywords = [
                                 </div>
                                 <div class="p-5">
                                     <p
-                                        class="text-green-600 text-sm font-medium mb-1"
+                                        class="text-[#415A77] text-sm font-medium mb-1"
                                     >
                                         Estrategia Digital
                                     </p>
                                     <h4
-                                        class="text-lg font-bold text-gray-900 mb-2 group-hover:text-green-600 transition-colors duration-300"
+                                        class="text-lg font-bold text-[#0D1B2A] mb-2 group-hover:text-[#415A77] transition-colors duration-300"
                                     >
                                         Cómo Aumentar tus Ventas con un Sitio
                                         Web Optimizado en Colombia
                                     </h4>
                                     <p
-                                        class="text-gray-600 text-sm line-clamp-2"
+                                        class="text-[#1B263B]/70 text-sm line-clamp-2"
                                     >
                                         Descubre las 7 características que debe
                                         tener tu sitio web para incrementar
@@ -379,7 +384,7 @@ const keywords = [
                             class="group"
                         >
                             <div
-                                class="bg-white border border-gray-100 rounded-xl overflow-hidden shadow-sm transition-all duration-300 hover:shadow-md"
+                                class="bg-white border border-[#778DA9]/10 rounded-xl overflow-hidden shadow-sm transition-all duration-300 hover:shadow-md hover:shadow-[#415A77]/5 hover:-translate-y-1"
                             >
                                 <div class="h-48 overflow-hidden">
                                     <img
@@ -390,18 +395,18 @@ const keywords = [
                                 </div>
                                 <div class="p-5">
                                     <p
-                                        class="text-green-600 text-sm font-medium mb-1"
+                                        class="text-[#415A77] text-sm font-medium mb-1"
                                     >
                                         Estrategia Digital
                                     </p>
                                     <h4
-                                        class="text-lg font-bold text-gray-900 mb-2 group-hover:text-green-600 transition-colors duration-300"
+                                        class="text-lg font-bold text-[#0D1B2A] mb-2 group-hover:text-[#415A77] transition-colors duration-300"
                                     >
                                         Sitio Web vs. Redes Sociales: Qué
                                         Necesita tu Empresa en Colombia
                                     </h4>
                                     <p
-                                        class="text-gray-600 text-sm line-clamp-2"
+                                        class="text-[#1B263B]/70 text-sm line-clamp-2"
                                     >
                                         Análisis comparativo sobre la
                                         importancia de un sitio web profesional
@@ -414,19 +419,19 @@ const keywords = [
                 </div>
 
                 <!-- Autor bio -->
-                <div class="border-t border-gray-100 mt-12 pt-12">
+                <div class="border-t border-[#778DA9]/20 mt-12 pt-12">
                     <div class="flex items-center gap-6">
                         <div
-                            class="w-16 h-16 rounded-full bg-gray-100 flex items-center justify-center"
+                            class="w-16 h-16 rounded-full bg-[#415A77]/10 flex items-center justify-center"
                         >
                             <!-- Avatar placeholder -->
-                            <span class="text-gray-400">EC</span>
+                            <span class="text-[#415A77]">EC</span>
                         </div>
                         <div>
-                            <h3 class="text-lg font-bold text-gray-900">
+                            <h3 class="text-lg font-bold text-[#0D1B2A]">
                                 {blogPostContent.author}
                             </h3>
-                            <p class="text-gray-600">
+                            <p class="text-[#1B263B]/80">
                                 Equipo de especialistas en desarrollo web y
                                 transformación digital para empresas
                                 colombianas.

@@ -125,28 +125,28 @@ const keywords = [
 ---
 
 <Layout title={title} metaTitle={metaTitle} description={description} url={url} canonical={canonical} keywords={keywords}>
-    <section class="py-24 bg-white">
+    <section class="py-24 bg-[#E0E1DD]">
         <div class="container mx-auto px-4">
             <div class="max-w-7xl mx-auto">
                 <!-- Header optimizado con enfoque empresarial -->
                 <div class="text-center mb-16" data-aos="fade-up">
                     <span
-                        class="text-blue-600 font-medium mb-4 block tracking-wider uppercase text-sm"
+                        class="text-[#415A77] font-medium mb-4 block tracking-wider uppercase text-sm"
                     >
                         RECURSOS PARA EMPRESAS
                     </span>
                     <h1
-                        class="text-4xl md:text-5xl font-bold text-gray-900 mb-6"
+                        class="text-4xl md:text-5xl font-bold text-[#0D1B2A] mb-6"
                     >
                         Estrategias Digitales para
                         <span
-                            class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600"
+                            class="text-transparent bg-clip-text bg-gradient-to-r from-[#415A77] to-[#1B263B]"
                         >
                             Empresas Colombianas
                         </span>
                     </h1>
                     <p
-                        class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed"
+                        class="text-xl text-[#1B263B] max-w-3xl mx-auto leading-relaxed"
                     >
                         Casos de éxito, guías y estrategias para aumentar las ventas
                         y visibilidad de tu negocio en <strong>Colombia</strong>
@@ -156,7 +156,7 @@ const keywords = [
                 <!-- Filtro por categorías -->
                 <div class="flex flex-wrap justify-center gap-3 mb-12" data-aos="fade-up">
                     <button 
-                        class="px-4 py-2 rounded-full bg-blue-50 text-blue-600 font-medium border border-blue-100 hover:bg-blue-100 transition-colors"
+                        class="px-4 py-2 rounded-full bg-[#415A77] text-[#E0E1DD] font-medium border border-[#415A77] hover:bg-[#1B263B] transition-colors"
                         data-category="all"
                     >
                         Todos los artículos
@@ -164,7 +164,7 @@ const keywords = [
                     
                     {categories.map(category => (
                         <button 
-                            class="px-4 py-2 rounded-full bg-gray-50 text-gray-600 font-medium border border-gray-100 hover:bg-gray-100 transition-colors"
+                            class="px-4 py-2 rounded-full bg-[#E0E1DD] text-[#1B263B] font-medium border border-[#778DA9]/20 hover:bg-[#778DA9]/20 transition-colors"
                             data-category={category}
                         >
                             {category}
@@ -181,9 +181,9 @@ const keywords = [
                     {
                         blogPosts.map((post, index) => (
                             <article
-                                class="group bg-white rounded-2xl overflow-hidden border border-gray-100
+                                class="group bg-white rounded-2xl overflow-hidden border border-[#778DA9]/20
                                 transition-all duration-500 hover:-translate-y-2 hover:shadow-xl 
-                                hover:shadow-blue-500/10"
+                                hover:shadow-[#415A77]/10"
                                 data-aos="fade-up"
                                 data-aos-delay={index * 100}
                                 data-category={post.category}
@@ -215,7 +215,7 @@ const keywords = [
                                         />
                                         
                                         <!-- Etiqueta de categoría -->
-                                        <span class="absolute top-4 right-4 px-3 py-1 text-xs font-medium rounded-full bg-blue-600/90 text-white">
+                                        <span class="absolute top-4 right-4 px-3 py-1 text-xs font-medium rounded-full bg-[#415A77]/90 text-[#E0E1DD]">
                                             {post.category}
                                         </span>
                                     </div>
@@ -224,7 +224,7 @@ const keywords = [
                                         <div class="flex items-center gap-4 mb-4">
                                             <time
                                                 datetime={post.publishDate}
-                                                class="text-sm text-gray-500"
+                                                class="text-sm text-[#1B263B]/70"
                                                 itemprop="datePublished"
                                             >
                                                 {new Date(
@@ -235,23 +235,23 @@ const keywords = [
                                                     day: "numeric",
                                                 })}
                                             </time>
-                                            <span class="text-sm text-gray-500">
+                                            <span class="text-sm text-[#1B263B]/70">
                                                 ·
                                             </span>
-                                            <span class="text-sm text-gray-500">
+                                            <span class="text-sm text-[#1B263B]/70">
                                                 {post.readTime} lectura
                                             </span>
                                         </div>
 
                                         <h2
-                                            class="text-xl font-bold text-gray-900 mb-3 
-                                            transition-colors duration-300 group-hover:text-blue-600"
+                                            class="text-xl font-bold text-[#0D1B2A] mb-3 
+                                            transition-colors duration-300 group-hover:text-[#415A77]"
                                             itemprop="headline"
                                         >
                                             {post.title}
                                         </h2>
 
-                                        <p class="text-gray-600 mb-6 line-clamp-3 text-sm" itemprop="abstract">
+                                        <p class="text-[#1B263B] mb-6 line-clamp-3 text-sm" itemprop="abstract">
                                             {post.description}
                                         </p>
 
@@ -260,8 +260,8 @@ const keywords = [
                                                 .slice(0, 3)
                                                 .map((tag) => (
                                                     <span
-                                                        class="text-xs px-3 py-1 rounded-full bg-gray-50 
-                                                        text-gray-600 border border-gray-100"
+                                                        class="text-xs px-3 py-1 rounded-full bg-[#E0E1DD] 
+                                                        text-[#1B263B] border border-[#778DA9]/20"
                                                     >
                                                         {tag}
                                                     </span>
@@ -287,12 +287,12 @@ const keywords = [
                     button.addEventListener('click', () => {
                         // Resaltar botón activo
                         filterButtons.forEach(btn => {
-                            btn.classList.remove('bg-blue-50', 'text-blue-600', 'border-blue-100');
-                            btn.classList.add('bg-gray-50', 'text-gray-600', 'border-gray-100');
+                            btn.classList.remove('bg-[#415A77]', 'text-[#E0E1DD]', 'border-[#415A77]');
+                            btn.classList.add('bg-[#E0E1DD]', 'text-[#1B263B]', 'border-[#778DA9]/20');
                         });
                         
-                        button.classList.remove('bg-gray-50', 'text-gray-600', 'border-gray-100');
-                        button.classList.add('bg-blue-50', 'text-blue-600', 'border-blue-100');
+                        button.classList.remove('bg-[#E0E1DD]', 'text-[#1B263B]', 'border-[#778DA9]/20');
+                        button.classList.add('bg-[#415A77]', 'text-[#E0E1DD]', 'border-[#415A77]');
                         
                         const category = button.getAttribute('data-category');
                         
