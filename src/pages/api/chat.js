@@ -1,12 +1,12 @@
 export const prerender = false;
 
 export async function POST({ request }) {
-  // Obtiene mensajes del cliente
   const { messages } = await request.json();
-  
-  // Usa la variable de entorno (sin prefijo PUBLIC_)
+
   const apiKey = import.meta.env.OPENAI_API_KEY;
-  
+  console.log("API Key:", apiKey); // Debugging line to check if the API key is being read correctly
+  console.log(import.meta.env); // Debugging line to check the environment variables
+
   try {
     const response = await fetch("https://api.openai.com/v1/chat/completions", {
       method: "POST",
@@ -19,7 +19,7 @@ export async function POST({ request }) {
         messages: messages,
       }),
     });
-    
+
     const data = await response.json();
     return new Response(JSON.stringify(data), {
       status: response.status,
