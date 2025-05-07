@@ -1,8 +1,12 @@
 ---
 import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
+import ChatOpenAI from '../components/ChatOpenAI.jsx';
 ---
 
 <Layout keywords={[]}>
 	<Welcome />
+	<div style="position:relative; min-height:500px;">
+		<ChatOpenAI client:load />
+	</div>
 </Layout>
