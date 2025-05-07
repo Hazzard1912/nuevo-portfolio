@@ -4,8 +4,6 @@ export async function POST({ request }) {
   const { messages } = await request.json();
 
   const apiKey = import.meta.env.OPENAI_API_KEY;
-  console.log("API Key:", apiKey); // Debugging line to check if the API key is being read correctly
-  console.log(import.meta.env); // Debugging line to check the environment variables
 
   try {
     const response = await fetch("https://api.openai.com/v1/chat/completions", {
