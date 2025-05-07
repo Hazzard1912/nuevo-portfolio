@@ -1,6 +1,5 @@
 import { useState, useRef, useEffect } from "react";
 import ReactMarkdown from "react-markdown";
-import { config } from "../config/config";
 
 const SYSTEM_PROMPT = `Eres EstusCode S.A.S., una empresa colombiana que ofrece desarrollo web, apps móviles y soluciones digitales. Tu única función es brindar cotizaciones y asesoría básica sobre nuestros servicios. Siempre das los precios en pesos colombianos (COP), nunca en dólares ni otra moneda.
 
@@ -43,12 +42,7 @@ export default function ChatOpenAI() {
   const [showTooltip, setShowTooltip] = useState(false);
   const endRef = useRef(null);
 
-  const apiKey = config.openaiApiKey;
-
   async function sendMessage(e) {
-
-    console.log(import.meta.env);
-
     e.preventDefault();
     if (!input.trim()) return;
     const newMessages = [
@@ -58,38 +52,45 @@ export default function ChatOpenAI() {
     setMessages(newMessages);
     setInput("");
     setLoading(true);
-
-    const res = await fetch("https://api.openai.com/v1/chat/completions", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${apiKey}`,
-      },
-      body: JSON.stringify({
-        model: "gpt-4o",
-        messages: newMessages,
-      }),
-    });
-
-    if (!res.ok) {
-      // Intenta leer el error de la respuesta
-      const errorData = await res.json().catch(() => ({}));
-      const errorMsg = errorData.error?.message || res.statusText || "Error desconocido";
+  
+    try {
+      // Ahora llamamos a nuestro endpoint seguro
+      const res = await fetch("/api/chat", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          messages: newMessages,
+        }),
+      });
+  
+      if (!res.ok) {
+        const errorData = await res.json().catch(() => ({}));
+        const errorMsg = errorData.error?.message || res.statusText || "Error desconocido";
+        setMessages([
+          ...newMessages,
+          { role: "assistant", content: `❌ Error: ${errorMsg}` },
+        ]);
+        console.error("API error:", errorMsg);
+        setLoading(false);
+        return;
+      }
+  
+      const data = await res.json();
       setMessages([
         ...newMessages,
-        { role: "assistant", content: `❌ Error: ${errorMsg}` },
+        { role: "assistant", content: data.choices[0].message.content },
       ]);
-      console.error("OpenAI API error:", errorMsg);
+    } catch (error) {
+      setMessages([
+        ...newMessages,
+        { role: "assistant", content: `❌ Error: ${error.message}` },
+      ]);
+      console.error("Fetch error:", error);
+    } finally {
       setLoading(false);
-      return;
     }
-
-    const data = await res.json();
-    setMessages([
-      ...newMessages,
-      { role: "assistant", content: data.choices[0].message.content },
-    ]);
-    setLoading(false);
   }
 
   // Scroll automático al último mensaje

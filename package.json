@@ -12,6 +12,7 @@
     "@astrojs/react": "^4.2.7",
     "@astrojs/sitemap": "^3.2.1",
     "@astrojs/tailwind": "^5.1.5",
+    "@astrojs/vercel": "^8.1.4",
     "aos": "^2.3.4",
     "astro": "^5.1.10",
     "react": "^19.1.0",
