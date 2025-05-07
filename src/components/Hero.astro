@@ -86,13 +86,13 @@ import Button from "../ui/Button.astro";
                     ariaLabel="Iniciar un nuevo proyecto de desarrollo web"
                     className="bg-[#415A77] hover:bg-[#778DA9] text-[#E0E1DD] border-0 hover:scale-105 transition-transform shadow-lg shadow-[#415A77]/20"
                 />
-                <Button
-                    text="Explorar Servicios"
+                <a
                     href="/servicios"
-                    isPrimary={false}
-                    ariaLabel="Ver nuestros servicios de desarrollo web"
-                    className="bg-[#1B263B]/60 hover:bg-[#1B263B] text-[#E0E1DD] hover:text-[#E0E1DD] border-[#415A77]/30 hover:border-[#415A77]/60 hover:scale-105 transition-transform"
-                />
+                    class="inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-full font-medium text-sm transition-all duration-200 hover:scale-[1.05] active:scale-[0.95] focus:outline-none focus:ring-2 focus:ring-offset-2 will-change-transform bg-[#778DA9]/40 hover:bg-[#778DA9]/60 text-[#E0E1DD] border-2 border-[#E0E1DD]/40 hover:border-[#E0E1DD]/60 shadow-lg shadow-[#778DA9]/20"
+                    aria-label="Ver nuestros servicios de desarrollo web"
+                >
+                    Explorar Servicios
+                </a>
             </div>
         </div>
     </div>
