@@ -8,7 +8,7 @@ import vercel from '@astrojs/vercel';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://www.estuscode.com',
+  site: 'https://www.nexen.com.co',
   output: 'server',
   adapter: vercel({
   }),
