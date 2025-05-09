@@ -132,55 +132,83 @@ const regularProjects = projects.filter((project) => !project.featured);
         >
             {
                 regularProjects.map((project) => (
-                    <div class="group relative bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col h-full">
+                    <div class="group relative bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col transition-all duration-300 hover:z-10 hover:shadow-2xl">
                         <div class="relative">
                             <Image
                                 src={project.image}
                                 alt={project.title}
-                                class="w-full h-48 object-cover"
+                                class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
                                 width={600}
                                 height={200}
                                 loading="lazy"
                             />
-                            <div class="absolute inset-0 bg-[#415A77] opacity-0 group-hover:opacity-20 transition-opacity duration-300" />
                         </div>
-                        <div class="p-6 flex flex-col flex-1">
+                        <div class="p-6 flex flex-col flex-1 transition-all duration-300">
                             <h3 class="text-xl font-bold text-[#0D1B2A] mb-2 group-hover:text-[#415A77] transition-colors duration-300">
                                 {project.title}
                             </h3>
-                            <p class="text-[#1B263B] mb-4">
+                            <p class="text-[#1B263B] mb-4 line-clamp-3 group-hover:line-clamp-none group-hover:mb-6 transition-all duration-300">
                                 {project.description}
                             </p>
                             <div class="flex flex-wrap gap-2 mb-4">
                                 {project.tags.map((tag) => (
-                                    <span class="px-3 py-1 bg-[#E0E1DD] text-[#1B263B] text-xs rounded-md">
+                                    <span class="px-3 py-1 bg-gradient-to-r from-[#E0E1DD] to-[#778DA9]/10 text-[#1B263B] text-xs rounded-md shadow-sm">
                                         {tag}
                                     </span>
                                 ))}
                             </div>
-                            <div class="mt-auto">
+                            <div class="mt-auto project-button">
                                 <a
                                     href={project.demoUrl}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    class="block w-full"
                                 >
                                     <Button
                                         text="Ver proyecto"
                                         hasIcon
-                                        className="bg-[#415A77] hover:bg-[#1B263B] text-[#E0E1DD] border-0 w-full"
+                                        className="bg-[#415A77] hover:bg-[#1B263B] text-[#E0E1DD] border-0 w-full transition-transform duration-300 hover:scale-105"
                                     />
                                 </a>
                             </div>
                         </div>
+                        <div class="absolute inset-0 pointer-events-none rounded-2xl border-2 border-transparent group-hover:border-[#415A77] transition-all duration-300" />
                     </div>
                 ))
             }
+        </div>
+
+        <!-- View All Projects Button -->
+        <div class="mt-16 text-center" data-aos="fade-up">
+            <Button
+                text="Ver todos los proyectos"
+                href="/portfolio"
+                className="bg-[#415A77] hover:bg-[#1B263B] text-[#E0E1DD] shadow-lg shadow-[#415A77]/10 border-0"
+            />
         </div>
     </div>
 </section>
 
 <style>
+    .line-clamp-3 {
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    /* On desktop, hide buttons until hover */
+    @media (min-width: 768px) {
+        .project-button {
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .group:hover .project-button {
+            opacity: 1;
+        }
+    }
+
+    /* On mobile, always show buttons */
     @media (max-width: 767px) {
         .project-button {
             opacity: 1;
