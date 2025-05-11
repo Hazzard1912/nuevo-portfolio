@@ -10,6 +10,7 @@ import vercel from '@astrojs/vercel';
 export default defineConfig({
   site: 'https://www.nexen.com.co',
   output: 'server',
+  trailingSlash: 'always',
   adapter: vercel({
   }),
   integrations: [

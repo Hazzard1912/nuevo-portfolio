@@ -234,6 +234,8 @@ const keywords = [
                             height={blogPostContent.featuredImage.height}
                             loading="eager"
                             decoding="async"
+                            format="webp"
+                            quality={85}
                             class="w-full h-auto"
                             itemprop="image"
                         />
@@ -287,7 +289,8 @@ const keywords = [
                                                 class="w-full h-auto"
                                                 loading="lazy"
                                                 decoding="async"
-                                                
+                                                format="webp"
+                                                quality={80}
                                             />
                                         </div>
                                     )}
@@ -412,6 +415,8 @@ const keywords = [
                                     class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                                     loading="lazy"
                                     decoding="async"
+                                    format="webp"
+                                    quality={80}
                                 />
                             </div>
                             <div class="p-5">
@@ -467,7 +472,7 @@ const keywords = [
                 "@type": "BlogPosting",
                 "mainEntityOfPage": {
                     "@type": "WebPage",
-                    "@id": "https://www.nexen.com.co/blog/velocidad-carga-impacto-ventas"
+                    "@id": "https://www.nexen.com.co/blog/velocidad-carga-impacto-ventas/"
                 },
                 "headline": "El Impacto de la Velocidad de Carga en tus Ventas: Estudio Colombia",
                 "description": "Investigación sobre cómo la velocidad de carga afecta las conversiones en sitios web colombianos. Datos reales, mejores prácticas y soluciones para mejorar el rendimiento y aumentar ventas.",

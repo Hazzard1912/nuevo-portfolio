@@ -280,6 +280,8 @@ const keywords = [
                             height={blogPostContent.featuredImage.height}
                             loading="eager"
                             decoding="async"
+                            format="webp"
+                            quality={85}
                             class="w-full h-auto"
                             itemprop="image"
                         />
@@ -331,6 +333,10 @@ const keywords = [
                                                 width={section.image.width}
                                                 height={section.image.height}
                                                 class="w-full h-auto"
+                                                loading="lazy"
+                                                decoding="async"
+                                                format="webp"
+                                                quality={80}
                                             />
                                         </div>
                                     )}
@@ -399,7 +405,7 @@ const keywords = [
 
                 <!-- Artículos relacionados -->
                 <div class="grid md:grid-cols-2 gap-8">
-                    <a href="/blog/caso-exito-ecommerce-cali/"  class="group">
+                    <a href="/blog/caso-exito-ecommerce-cali/" class="group">
                         <div
                             class="bg-white border border-[#778DA9]/10 rounded-xl overflow-hidden shadow-sm transition-all duration-300 hover:shadow-md hover:shadow-[#415A77]/5 hover:-translate-y-1"
                         >
@@ -507,7 +513,7 @@ const keywords = [
                 "@type": "BlogPosting",
                 "mainEntityOfPage": {
                     "@type": "WebPage",
-                    "@id": "https://www.nexen.com.co/blog/aumentar-ventas-sitio-web-colombia"
+                    "@id": "https://www.nexen.com.co/blog/aumentar-ventas-sitio-web-colombia/"
                 },
                 "headline": "Cómo Aumentar tus Ventas con un Sitio Web Optimizado en Colombia",
                 "description": "Descubre las 7 características que debe tener tu sitio web para incrementar ventas y conversiones en el mercado colombiano. Análisis y recomendaciones.",

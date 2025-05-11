@@ -178,13 +178,14 @@ const keywords = [
                                 <div class="aspect-video overflow-hidden">
                                     <Image
                                         src={service.image.src}
-                                        alt={service.image.alt}
+                                        alt={service.title}
+                                        width={800}
+                                        height={400}
+                                        class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                                         loading="eager"
                                         decoding="async"
-                                        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                                        width="600"
-                                        height="400"
-                                        itemprop="image"
+                                        format="webp"
+                                        quality={85}
                                     />
                                 </div>
 
@@ -233,12 +234,12 @@ const keywords = [
           "@type": "WebPage",
           "name": "Servicios de Desarrollo Web en Colombia",
           "description": "Servicios profesionales de desarrollo web en Cali y toda Colombia. Creamos sitios web personalizados, aplicaciones móviles y software empresarial optimizados para SEO.",
-          "url": "https://www.nexen.com.co/servicios",
+          "url": "https://www.nexen.com.co/servicios/",
           "provider": {
             "@type": "Organization",
             "name": "Nexen",
             "description": "Agencia de desarrollo web profesional en Colombia",
-            "url": "https://www.nexen.com.co",
+            "url": "https://www.nexen.com.co/",
             "address": {
               "@type": "PostalAddress",
               "addressLocality": "Cali",

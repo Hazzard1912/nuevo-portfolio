@@ -204,6 +204,8 @@ const keywords = [
                             height={blogPostContent.featuredImage.height}
                             loading="eager"
                             decoding="async"
+                            format="webp"
+                            quality={85}
                             class="w-full h-auto"
                             itemprop="image"
                         />
@@ -343,9 +345,11 @@ const keywords = [
                                         alt="Cómo aumentar ventas con un sitio web optimizado"
                                         width={800}
                                         height={400}
+                                        class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                                         loading="lazy"
                                         decoding="async"
-                                        class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                                        format="webp"
+                                        quality={80}
                                     />
                                 </div>
                                 <div class="p-5">
@@ -445,7 +449,7 @@ const keywords = [
                 "@type": "BlogPosting",
                 "mainEntityOfPage": {
                     "@type": "WebPage",
-                    "@id": "https://www.nexen.com.co/blog/caso-exito-ecommerce-cali"
+                    "@id": "https://www.nexen.com.co/blog/caso-exito-ecommerce-cali/"
                 },
                 "headline": "Caso de Éxito: Cómo una Tienda de Cali Triplicó sus Ventas Online",
                 "description": "Análisis del proceso de transformación digital de una PyME en Cali que logró triplicar sus ventas implementando una estrategia web efectiva y adaptada al mercado colombiano.",

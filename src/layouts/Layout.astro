@@ -22,6 +22,10 @@ const {
 	keywords,
 } = Astro.props;
 
+// Asegurar que las URLs terminen con /
+const ensureTrailingSlash = (url: string) =>
+	url.endsWith("/") ? url : `${url}/`;
+
 const baseKeywords = [
 	"Nexen",
 	"desarrollo web Colombia",
@@ -31,6 +35,10 @@ const baseKeywords = [
 ];
 
 const allKeywords = [...new Set([...baseKeywords, ...keywords])];
+
+// Aplicar trailing slash a las URLs
+const finalUrl = ensureTrailingSlash(url);
+const finalCanonical = ensureTrailingSlash(canonical);
 ---
 
 <!doctype html>
@@ -42,10 +50,14 @@ const allKeywords = [...new Set([...baseKeywords, ...keywords])];
 			src="https://www.googletagmanager.com/gtag/js?id=G-3X1XX9YXRW"
 		></script>
 		<script>
+			// @ts-ignore
 			window.dataLayer = window.dataLayer || [];
-			function gtag() {
-				dataLayer.push(arguments);
+			// @ts-ignore
+			function gtag(...args: any[]) {
+				// @ts-ignore
+				dataLayer.push(args);
 			}
+			// @ts-ignore
 			gtag("js", new Date());
 
 			gtag("config", "G-3X1XX9YXRW");
@@ -69,20 +81,20 @@ const allKeywords = [...new Set([...baseKeywords, ...keywords])];
 
 		<!-- Open Graph / Facebook -->
 		<meta property="og:type" content="website" />
-		<meta property="og:url" content={url} />
+		<meta property="og:url" content={finalUrl} />
 		<meta property="og:title" content={metaTitle} />
 		<meta property="og:description" content={description} />
 		<meta property="og:image" content="/og-image.jpg" />
 
 		<!-- Twitter -->
 		<meta property="twitter:card" content="summary_large_image" />
-		<meta property="twitter:url" content={url} />
+		<meta property="twitter:url" content={finalUrl} />
 		<meta property="twitter:title" content={metaTitle} />
 		<meta property="twitter:description" content={description} />
 		<meta property="twitter:image" content="/og-image.jpg" />
 
 		<!-- Canonical URL -->
-		<link rel="canonical" href={canonical} />
+		<link rel="canonical" href={finalCanonical} />
 	</head>
 	<body class="antialiased bg-gray-50">
 		<Navbar />

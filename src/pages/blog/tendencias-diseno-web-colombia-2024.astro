@@ -294,6 +294,8 @@ const keywords = [
                             height={blogPostContent.featuredImage.height}
                             loading="eager"
                             decoding="async"
+                            format="webp"
+                            quality={85}
                             class="w-full h-auto"
                             itemprop="image"
                         />
@@ -345,6 +347,10 @@ const keywords = [
                                                 width={section.image.width}
                                                 height={section.image.height}
                                                 class="w-full h-auto"
+                                                loading="lazy"
+                                                decoding="async"
+                                                format="webp"
+                                                quality={80}
                                             />
                                         </div>
                                     )}
@@ -429,6 +435,8 @@ const keywords = [
                                     class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                                     loading="lazy"
                                     decoding="async"
+                                    format="webp"
+                                    quality={80}
                                 />
                             </div>
                             <div class="p-5">
@@ -469,6 +477,8 @@ const keywords = [
                                     class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                                     loading="lazy"
                                     decoding="async"
+                                    format="webp"
+                                    quality={80}
                                 />
                             </div>
                             <div class="p-5">
@@ -525,7 +535,7 @@ const keywords = [
                 "@type": "BlogPosting",
                 "mainEntityOfPage": {
                     "@type": "WebPage",
-                    "@id": "https://www.nexen.com.co/blog/tendencias-diseno-web-colombia-2024"
+                    "@id": "https://www.nexen.com.co/blog/tendencias-diseno-web-colombia-2024/"
                 },
                 "headline": "Tendencias en Diseño Web para Empresas Colombianas en 2024",
                 "description": "Descubre las tendencias de diseño web más efectivas para conectar con el público colombiano en 2024. Elementos visuales, UX y estrategias de conversión actualizadas para potenciar tu presencia digital.",

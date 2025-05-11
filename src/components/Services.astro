@@ -9,7 +9,7 @@ const services = [
         icon: "code",
         features: ["Landing Pages", "E-commerce", "Blogs", "Aplicaciones Web"],
         ariaLabel: "Servicios de desarrollo web",
-        link: "/servicios/desarrollo-web",
+        link: "/servicios/desarrollo-web/",
     },
     {
         title: "Aplicaciones Móviles",
@@ -23,7 +23,7 @@ const services = [
             "Apps Híbridas",
         ],
         ariaLabel: "Servicios de desarrollo móvil",
-        link: "/servicios/aplicaciones-moviles",
+        link: "/servicios/aplicaciones-moviles/",
     },
     {
         title: "Software Empresarial",
@@ -37,7 +37,7 @@ const services = [
             "Analytics",
         ],
         ariaLabel: "Servicios de software empresarial",
-        link: "/servicios/software-empresarial",
+        link: "/servicios/software-empresarial/",
     },
 ];
 
@@ -101,7 +101,11 @@ const icons = {
                                     fill="none"
                                     stroke="currentColor"
                                     viewBox="0 0 24 24"
-                                    set:html={icons[service.icon]}
+                                    set:html={
+                                        icons[
+                                            service.icon as keyof typeof icons
+                                        ]
+                                    }
                                 />
                             </div>
 
@@ -169,7 +173,7 @@ const icons = {
                     "item": {
                         "@type": "Service",
                         "name": "Desarrollo Web",
-                        "url": "https://www.nexen.com.co/servicios/desarrollo-web",
+                        "url": "https://www.nexen.com.co/servicios/desarrollo-web/",
                         "description": "Creamos sitios web y aplicaciones web personalizadas que destacan tu marca y aumentan tus conversiones.",
                         "provider": {
                             "@type": "Organization",
@@ -184,7 +188,7 @@ const icons = {
                     "item": {
                         "@type": "Service",
                         "name": "Aplicaciones Móviles",
-                        "url": "https://www.nexen.com.co/servicios/aplicaciones-moviles",
+                        "url": "https://www.nexen.com.co/servicios/aplicaciones-moviles/",
                         "description": "Desarrollo de apps nativas y multiplataforma que conectan con tus usuarios donde estén.",
                         "provider": {
                             "@type": "Organization",
@@ -199,7 +203,7 @@ const icons = {
                     "item": {
                         "@type": "Service",
                         "name": "Software Empresarial",
-                        "url": "https://www.nexen.com.co/servicios/software-empresarial",
+                        "url": "https://www.nexen.com.co/servicios/software-empresarial/",
                         "description": "Soluciones a medida para optimizar y automatizar los procesos de tu empresa.",
                         "provider": {
                             "@type": "Organization",
