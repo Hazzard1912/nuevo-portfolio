@@ -1,7 +1,15 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import Image from "astro/components/Image.astro";
+import { Image } from "astro:assets";
 import Button from "../../ui/Button.astro";
+
+// Importar imágenes locales
+import blogImage1 from "../../assets/images/blog/caso-exito-ecommerce.avif";
+import dashboardVentas from "../../assets/images/blog/dashboard-ventas.avif";
+import estrategiaMarketing from "../../assets/images/blog/estrategia-marketing.avif";
+import sitioWebRedes from "../../assets/images/blog/sitio-web-redes.avif";
+import aumentarVentas from "../../assets/images/blog/ventas-sitio-web.avif";
+import crecimientoVentas from "../../assets/images/blog/crecimiento-ventas.avif";
 
 const blogPostContent = {
     title: "Caso de Éxito: Cómo una Tienda de Cali Triplicó sus Ventas Online",
@@ -12,7 +20,7 @@ const blogPostContent = {
     readTime: "8 minutos",
     category: "Casos de Éxito",
     featuredImage: {
-        src: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&q=80",
+        src: blogImage1,
         alt: "Tienda local de Cali que incrementó sus ventas con comercio electrónico",
         width: 1200,
         height: 630,
@@ -28,55 +36,31 @@ const blogPostContent = {
         "En pleno corazón de Cali, una pequeña tienda local de productos artesanales enfrentaba el reto que muchos negocios colombianos conocen bien: ¿cómo expandirse más allá de las limitaciones físicas y aprovechar el creciente mercado digital? Este caso de éxito documenta cómo Artesanías del Valle pasó de vender exclusivamente en su local a triplicar sus ingresos gracias a una estrategia digital bien implementada.",
     sections: [
         {
-            title: "El desafío: un negocio tradicional en un mundo digital",
-            content:
-                "Artesanías del Valle llevaba 15 años operando en el centro de Cali. Con una clientela fiel pero limitada geográficamente, sus ventas se habían estancado en los últimos años. La pandemia agravó la situación, reduciendo el tráfico peatonal en un 70%.\n\nEl negocio enfrentaba varios desafíos críticos:\n\n• Alcance limitado a clientes locales\n• Desconocimiento del entorno digital\n• Procesos manuales de inventario y ventas\n• Competencia creciente de grandes plataformas\n• Presupuesto limitado para marketing",
+            title: "El desafío inicial",
+            content: "La tienda enfrentaba varios desafíos críticos:",
             image: {
-                src: "https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&q=80",
-                alt: "Situación inicial del negocio: tienda física con alcance limitado",
+                src: dashboardVentas,
+                alt: "Dashboard de ventas mostrando el crecimiento",
                 width: 800,
                 height: 500,
             },
         },
         {
-            title: "La estrategia: transformación digital adaptada al contexto colombiano",
-            content:
-                "La solución no consistía simplemente en 'crear una página web'. Después de un análisis detallado del negocio y su mercado, desarrollamos una estrategia integral con estos componentes clave:",
-            listItems: [
-                {
-                    subtitle:
-                        "1. Plataforma e-commerce optimizada para el mercado local",
-                    description:
-                        "Desarrollamos un sitio de comercio electrónico con características específicas para el consumidor colombiano: múltiples métodos de pago (incluyendo efectivo contra entrega y PSE), información de envíos por departamentos, y un diseño que generaba confianza local.",
-                },
-                {
-                    subtitle: "2. Optimización para dispositivos móviles",
-                    description:
-                        "Con el 85% de los colombianos accediendo a internet desde sus teléfonos, la experiencia móvil fue prioridad absoluta, logrando tiempos de carga inferiores a 1.8 segundos.",
-                },
-                {
-                    subtitle: "3. Estrategia SEO geolocalizada",
-                    description:
-                        "Implementamos una estrategia SEO enfocada en términos de búsqueda locales y regionales. En 3 meses, el sitio apareció en el Top 3 para búsquedas como 'artesanías Valle del Cauca' y 'regalos típicos Cali'.",
-                },
-                {
-                    subtitle: "4. Integración con sistemas locales",
-                    description:
-                        "Conectamos la plataforma con servicios de mensajería locales y regionales, permitiendo entregas más rápidas y económicas que la competencia internacional.",
-                },
-                {
-                    subtitle: "5. Estrategia de contenido auténtico",
-                    description:
-                        "Creamos contenido que resaltaba la artesanía local y sus historias, generando una conexión emocional con consumidores que valoraban el origen colombiano de los productos.",
-                },
-            ],
+            title: "La estrategia implementada",
+            content: "Desarrollamos una estrategia integral que incluía:",
+            image: {
+                src: estrategiaMarketing,
+                alt: "Estrategia de marketing digital implementada",
+                width: 800,
+                height: 500,
+            },
         },
         {
             title: "Los resultados: crecimiento exponencial en ventas y alcance",
             content:
                 "En solo 6 meses desde la implementación, Artesanías del Valle experimentó una transformación impresionante:\n\n• Aumento del 212% en ventas totales\n• 68% de las ventas ahora provienen del canal digital\n• Expansión de mercado a 22 departamentos de Colombia\n• Primeras ventas internacionales a compradores en 4 países\n• Reducción del 40% en costos operativos\n• Incremento del 175% en el valor promedio del carrito de compra",
             image: {
-                src: "https://images.unsplash.com/photo-1543286386-713bdd548da4?auto=format&fit=crop&q=80",
+                src: crecimientoVentas,
                 alt: "Gráfico mostrando el crecimiento exponencial de ventas tras la implementación digital",
                 width: 800,
                 height: 500,
@@ -218,6 +202,8 @@ const keywords = [
                             alt={blogPostContent.featuredImage.alt}
                             width={blogPostContent.featuredImage.width}
                             height={blogPostContent.featuredImage.height}
+                            loading="eager"
+                            decoding="async"
                             class="w-full h-auto"
                             itemprop="image"
                         />
@@ -268,6 +254,8 @@ const keywords = [
                                                 alt={section.image.alt}
                                                 width={section.image.width}
                                                 height={section.image.height}
+                                                loading="lazy"
+                                                decoding="async"
                                                 class="w-full h-auto"
                                             />
                                         </div>
@@ -343,16 +331,20 @@ const keywords = [
 
                     <div class="grid md:grid-cols-2 gap-8">
                         <a
-                            href="/blog/aumentar-ventas-sitio-web-colombia"
+                            href="/blog/aumentar-ventas-sitio-web-colombia/"
                             class="group"
                         >
                             <div
                                 class="bg-white border border-[#778DA9]/10 rounded-xl overflow-hidden shadow-sm transition-all duration-300 hover:shadow-md hover:shadow-[#415A77]/5 hover:-translate-y-1"
                             >
                                 <div class="h-48 overflow-hidden">
-                                    <img
-                                        src="https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&q=80"
+                                    <Image
+                                        src={aumentarVentas}
                                         alt="Cómo aumentar ventas con un sitio web optimizado"
+                                        width={800}
+                                        height={400}
+                                        loading="lazy"
+                                        decoding="async"
                                         class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                                     />
                                 </div>
@@ -380,16 +372,20 @@ const keywords = [
                         </a>
 
                         <a
-                            href="/blog/sitio-web-vs-redes-sociales-empresas"
+                            href="/blog/sitio-web-vs-redes-sociales-empresas/"
                             class="group"
                         >
                             <div
                                 class="bg-white border border-[#778DA9]/10 rounded-xl overflow-hidden shadow-sm transition-all duration-300 hover:shadow-md hover:shadow-[#415A77]/5 hover:-translate-y-1"
                             >
                                 <div class="h-48 overflow-hidden">
-                                    <img
-                                        src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?auto=format&fit=crop&q=80"
+                                    <Image
+                                        src={sitioWebRedes}
                                         alt="Sitio Web vs Redes Sociales para empresas"
+                                        width={800}
+                                        height={400}
+                                        loading="lazy"
+                                        decoding="async"
                                         class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                                     />
                                 </div>

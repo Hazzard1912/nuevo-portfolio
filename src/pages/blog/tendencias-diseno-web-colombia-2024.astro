@@ -1,7 +1,13 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import Image from "astro/components/Image.astro";
+import { Image } from "astro:assets";
 import Button from "../../ui/Button.astro";
+
+import blogImage1 from "../../assets/images/blog/tendencias-diseno.avif";
+import minimalismoFuncional from "../../assets/images/blog/minimalismo-funcional.avif";
+import elementosVisuales from "../../assets/images/blog/elementos-visuales.avif";
+import velocidadCarga from "../../assets/images/blog/velocidad-carga.avif";
+import aumentarVentas from "../../assets/images/blog/ventas-sitio-web.avif";
 
 const blogPostContent = {
     title: "Tendencias en Diseño Web para Empresas Colombianas en 2024",
@@ -12,7 +18,7 @@ const blogPostContent = {
     readTime: "7 minutos",
     category: "Diseño y UX",
     featuredImage: {
-        src: "https://images.unsplash.com/photo-1545235617-9465d2a55698?auto=format&fit=crop&q=80",
+        src: blogImage1,
         alt: "Tendencias de diseño web para el mercado colombiano en 2024",
         width: 1200,
         height: 630,
@@ -43,7 +49,7 @@ const blogPostContent = {
                 },
             ],
             image: {
-                src: "https://images.unsplash.com/photo-1558655146-364adaf1fcc9?auto=format&fit=crop&q=80",
+                src: minimalismoFuncional,
                 alt: "Ejemplo de diseño minimalista funcional con elementos culturales colombianos",
                 width: 800,
                 height: 500,
@@ -133,7 +139,7 @@ const blogPostContent = {
                 },
             ],
             image: {
-                src: "https://images.unsplash.com/photo-1567095761054-7a02e69e5c43?auto=format&fit=crop&q=80",
+                src: elementosVisuales,
                 alt: "Elementos visuales con identidad colombiana aplicados al diseño web",
                 width: 800,
                 height: 500,
@@ -202,8 +208,7 @@ const blogPostContent = {
 
 // Metadatos optimizados para SEO
 const title = `${blogPostContent.title} | Nexen`;
-const metaTitle =
-    "Tendencias Diseño Web Colombia 2024 | UX Adaptado | Nexen";
+const metaTitle = "Tendencias Diseño Web Colombia 2024 | UX Adaptado | Nexen";
 const description = blogPostContent.description;
 const url = `https://www.nexen.com.co/blog/tendencias-diseno-web-colombia-2024`;
 const canonical = `https://www.nexen.com.co/blog/tendencias-diseno-web-colombia-2024`;
@@ -287,6 +292,8 @@ const keywords = [
                             alt={blogPostContent.featuredImage.alt}
                             width={blogPostContent.featuredImage.width}
                             height={blogPostContent.featuredImage.height}
+                            loading="eager"
+                            decoding="async"
                             class="w-full h-auto"
                             itemprop="image"
                         />
@@ -407,17 +414,21 @@ const keywords = [
                 <!-- Artículos relacionados -->
                 <div class="grid md:grid-cols-2 gap-8">
                     <a
-                        href="/blog/velocidad-carga-impacto-ventas"
+                        href="/blog/velocidad-carga-impacto-ventas/"
                         class="group"
                     >
                         <div
                             class="bg-white border border-[#778DA9]/10 rounded-xl overflow-hidden shadow-sm transition-all duration-300 hover:shadow-md hover:shadow-[#415A77]/5 hover:-translate-y-1"
                         >
                             <div class="h-48 overflow-hidden">
-                                <img
-                                    src="https://images.unsplash.com/photo-1580894894513-541e068a3e2b?auto=format&fit=crop&q=80"
+                                <Image
+                                    src={velocidadCarga}
                                     alt="Impacto de la velocidad de carga en ventas"
+                                    width={800}
+                                    height={400}
                                     class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                                    loading="lazy"
+                                    decoding="async"
                                 />
                             </div>
                             <div class="p-5">
@@ -443,17 +454,21 @@ const keywords = [
                     </a>
 
                     <a
-                        href="/blog/aumentar-ventas-sitio-web-colombia"
+                        href="/blog/aumentar-ventas-sitio-web-colombia/"
                         class="group"
                     >
                         <div
                             class="bg-white border border-[#778DA9]/10 rounded-xl overflow-hidden shadow-sm transition-all duration-300 hover:shadow-md hover:shadow-[#415A77]/5 hover:-translate-y-1"
                         >
                             <div class="h-48 overflow-hidden">
-                                <img
-                                    src="https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&q=80"
+                                <Image
+                                    src={aumentarVentas}
                                     alt="Cómo aumentar ventas con un sitio web optimizado"
+                                    width={800}
+                                    height={400}
                                     class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                                    loading="lazy"
+                                    decoding="async"
                                 />
                             </div>
                             <div class="p-5">

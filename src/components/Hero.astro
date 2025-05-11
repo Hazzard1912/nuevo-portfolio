@@ -1,5 +1,7 @@
 ---
 import Button from "../ui/Button.astro";
+import { Image } from "astro:assets";
+import fondoHero from "../assets/images/hero.avif";
 ---
 
 <section
@@ -8,13 +10,15 @@ import Button from "../ui/Button.astro";
 >
     <!-- Imagen de fondo -->
     <div class="absolute inset-0 z-0">
-        <img
-            src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=1920"
-            loading="eager"
-            fetchpriority="high"
-            decoding="async"
+        <Image
+            src={fondoHero}
             alt="Desarrollo web profesional - fondo abstracto de código"
             class="w-full h-full object-cover"
+            width={1920}
+            height={1080}
+            loading="eager"
+            decoding="async"
+            fetchpriority="high"
         />
         <!-- Overlay para mejorar legibilidad -->
         <div
@@ -87,7 +91,7 @@ import Button from "../ui/Button.astro";
                     className="bg-[#415A77] hover:bg-[#778DA9] text-[#E0E1DD] border-0 hover:scale-105 transition-transform shadow-lg shadow-[#415A77]/20"
                 />
                 <a
-                    href="/servicios"
+                    href="servicios/"
                     class="inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-full font-medium text-sm transition-all duration-200 hover:scale-[1.05] active:scale-[0.95] focus:outline-none focus:ring-2 focus:ring-offset-2 will-change-transform bg-[#778DA9]/40 hover:bg-[#778DA9]/60 text-[#E0E1DD] border-2 border-[#E0E1DD]/40 hover:border-[#E0E1DD]/60 shadow-lg shadow-[#778DA9]/20"
                     aria-label="Ver nuestros servicios de desarrollo web"
                 >

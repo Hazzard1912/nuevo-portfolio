@@ -1,7 +1,13 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import Image from "astro/components/Image.astro";
+import { Image } from "astro:assets";
 import Button from "../../ui/Button.astro";
+
+import blogImage1 from "../../assets/images/blog/ventas-sitio-web.avif";
+import comparativaResultados from "../../assets/images/blog/comparativa-resultados.jpg";
+import embudoConversion from "../../assets/images/blog/embudo-conversion.jpg";
+import casoExito from "../../assets/images/blog/caso-exito-ecommerce.avif";
+import velocidadCarga from "../../assets/images/blog/velocidad-carga.avif";
 
 const blogPostContent = {
     title: "Cómo Aumentar tus Ventas con un Sitio Web Optimizado en Colombia",
@@ -12,7 +18,7 @@ const blogPostContent = {
     readTime: "6 minutos",
     category: "Estrategia Digital",
     featuredImage: {
-        src: "https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&q=80",
+        src: blogImage1,
         alt: "Gráfico de crecimiento de ventas online para empresas colombianas",
         width: 1200,
         height: 630,
@@ -26,7 +32,7 @@ const blogPostContent = {
             content:
                 "Un sitio web no es solo una presencia digital, es una herramienta de ventas 24/7. Nuestro análisis de más de 50 empresas colombianas muestra que aquellas con sitios web optimizados experimentan un incremento promedio del 37% en sus ingresos durante el primer año. La diferencia entre un sitio web estándar y uno optimizado para conversiones puede significar miles de millones de pesos en ventas adicionales.",
             image: {
-                src: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80",
+                src: comparativaResultados,
                 alt: "Comparativa de resultados entre sitios web optimizados y no optimizados",
                 width: 800,
                 height: 500,
@@ -111,7 +117,7 @@ const blogPostContent = {
                 },
             ],
             image: {
-                src: "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&q=80",
+                src: embudoConversion,
                 alt: "Embudo de conversión optimizado para el mercado colombiano",
                 width: 800,
                 height: 500,
@@ -190,8 +196,8 @@ const title = `${blogPostContent.title} | Nexen`;
 const metaTitle =
     "Aumenta tus Ventas Online en Colombia con un Sitio Web Optimizado | Nexen";
 const description = blogPostContent.description;
-const url = `https://www.nexen.com.co/blog/aumentar-ventas-sitio-web-colombia`;
-const canonical = `https://www.nexen.com.co/blog/aumentar-ventas-sitio-web-colombia`;
+const url = `https://www.nexen.com.co/blog/aumentar-ventas-sitio-web-colombia/`;
+const canonical = `https://www.nexen.com.co/blog/aumentar-ventas-sitio-web-colombia/`;
 const keywords = [
     "aumentar ventas online Colombia",
     "sitio web que convierte",
@@ -272,6 +278,8 @@ const keywords = [
                             alt={blogPostContent.featuredImage.alt}
                             width={blogPostContent.featuredImage.width}
                             height={blogPostContent.featuredImage.height}
+                            loading="eager"
+                            decoding="async"
                             class="w-full h-auto"
                             itemprop="image"
                         />
@@ -391,14 +399,18 @@ const keywords = [
 
                 <!-- Artículos relacionados -->
                 <div class="grid md:grid-cols-2 gap-8">
-                    <a href="/blog/caso-exito-ecommerce-cali" class="group">
+                    <a href="/blog/caso-exito-ecommerce-cali/"  class="group">
                         <div
                             class="bg-white border border-[#778DA9]/10 rounded-xl overflow-hidden shadow-sm transition-all duration-300 hover:shadow-md hover:shadow-[#415A77]/5 hover:-translate-y-1"
                         >
                             <div class="h-48 overflow-hidden">
-                                <img
-                                    src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&q=80"
+                                <Image
+                                    src={casoExito}
                                     alt="Caso de éxito: Tienda de Cali triplica ventas online"
+                                    width={800}
+                                    height={400}
+                                    loading="lazy"
+                                    decoding="async"
                                     class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                                 />
                             </div>
@@ -425,16 +437,20 @@ const keywords = [
                     </a>
 
                     <a
-                        href="/blog/velocidad-carga-impacto-ventas"
+                        href="/blog/velocidad-carga-impacto-ventas/"
                         class="group"
                     >
                         <div
                             class="bg-white border border-[#778DA9]/10 rounded-xl overflow-hidden shadow-sm transition-all duration-300 hover:shadow-md hover:shadow-[#415A77]/5 hover:-translate-y-1"
                         >
                             <div class="h-48 overflow-hidden">
-                                <img
-                                    src="https://images.unsplash.com/photo-1580894894513-541e068a3e2b?auto=format&fit=crop&q=80"
+                                <Image
+                                    src={velocidadCarga}
                                     alt="Impacto de la velocidad de carga en ventas"
+                                    width={800}
+                                    height={400}
+                                    loading="lazy"
+                                    decoding="async"
                                     class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                                 />
                             </div>

@@ -3,13 +3,18 @@ import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
 import Button from "../ui/Button.astro";
 
+// Importar imágenes locales
+import webDevImage from "../assets/images/services/web-development.avif";
+import mobileAppImage from "../assets/images/services/mobile-apps.avif";
+import enterpriseImage from "../assets/images/services/enterprise-software.avif";
+
 interface Service {
     id: string;
     title: string;
     shortDescription: string;
     fullDescription: string;
     image: {
-        src: string;
+        src: ImageMetadata; // Cambiado a ImageMetadata para imágenes locales
         alt: string;
     };
     features: string[];
@@ -24,7 +29,7 @@ const services: Service[] = [
         shortDescription: "Creamos sitios web y aplicaciones web personalizadas que destacan tu marca y aumentan tus conversiones.",
         fullDescription: "Desarrollamos soluciones web a medida utilizando las últimas tecnologías y mejores prácticas del mercado. Nos especializamos en crear experiencias digitales que impulsan el crecimiento de tu negocio.",
         image: {
-            src: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80",
+            src: webDevImage,
             alt: "Desarrollo web profesional - Código en pantalla con diseño moderno"
         },
         features: [
@@ -52,7 +57,7 @@ const services: Service[] = [
         shortDescription: "Desarrollamos aplicaciones móviles nativas y multiplataforma que conectan con tus usuarios donde estén.",
         fullDescription: "Creamos aplicaciones móviles intuitivas y potentes que transforman tu visión en realidad. Utilizamos tecnologías modernas para garantizar el mejor rendimiento y experiencia de usuario.",
         image: {
-            src: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&q=80",
+            src: mobileAppImage,
             alt: "Desarrollo de aplicaciones móviles - Dispositivos móviles mostrando apps modernas"
         },
         features: [
@@ -80,7 +85,7 @@ const services: Service[] = [
         shortDescription: "Automatizamos y optimizamos los procesos de tu empresa con soluciones de software a medida.",
         fullDescription: "Desarrollamos soluciones empresariales personalizadas que mejoran la eficiencia operativa y impulsan el crecimiento de tu negocio.",
         image: {
-            src: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80",
+            src: enterpriseImage,
             alt: "Software empresarial - Dashboard moderno mostrando análisis de datos"
         },
         features: [
@@ -107,8 +112,8 @@ const services: Service[] = [
 const title = "Servicios de Desarrollo Web en Colombia | Nexen";
 const metaTitle = "Servicios de Desarrollo Web en Colombia | Nexen";
 const description = "Servicios profesionales de desarrollo web en Cali y toda Colombia. Creamos sitios web personalizados, aplicaciones móviles y software empresarial optimizados para SEO.";
-const url = "https://www.nexen.com.co/servicios";
-const canonical = "https://www.nexen.com.co/servicios";
+const url = "https://www.nexen.com.co/servicios/";
+const canonical = "https://www.nexen.com.co/servicios/";
 // Keywords optimizadas y reducidas
 const keywords = [
     "servicios desarrollo web Colombia",
@@ -149,7 +154,7 @@ const keywords = [
                     
                     {services.map((service, index) => (
                         <a 
-                            href={`/servicios/${service.id}`}
+                            href={`/servicios/${service.id}/`}
                             class="group relative bg-white rounded-2xl overflow-hidden border border-[#778DA9]/20
                                 transition-all duration-500 hover:-translate-y-2 hover:shadow-xl 
                                 hover:shadow-[#415A77]/10"
@@ -168,13 +173,13 @@ const keywords = [
                             >
                                 <meta itemprop="name" content={service.title} />
                                 <meta itemprop="description" content={service.shortDescription} />
-                                <link itemprop="url" href={`https://www.nexen.com.co/servicios/${service.id}`} />
+                                <link itemprop="url" href={`https://www.nexen.com.co/servicios/${service.id}/`} />
                                 
                                 <div class="aspect-video overflow-hidden">
                                     <Image
                                         src={service.image.src}
                                         alt={service.image.alt}
-                                        loading="lazy"
+                                        loading="eager"
                                         decoding="async"
                                         class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                                         width="600"

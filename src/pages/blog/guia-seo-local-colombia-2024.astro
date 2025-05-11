@@ -1,7 +1,12 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import Image from "astro/components/Image.astro";
+import { Image } from "astro:assets";
 import Button from "../../ui/Button.astro";
+
+import blogImage1 from "../../assets/images/blog/seo-local.avif";
+import tendenciasColombia from "../../assets/images/blog/tendencias-colombia.avif";
+import sitioWebRedes from "../../assets/images/blog/sitio-web-redes.avif";
+import tendenciasDiseno from "../../assets/images/blog/tendencias-diseno.avif";
 
 const blogPostContent = {
     title: "Guía Completa de SEO Local para Empresas Colombianas (2024)",
@@ -12,7 +17,7 @@ const blogPostContent = {
     readTime: "7 minutos",
     category: "Marketing Digital",
     featuredImage: {
-        src: "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?auto=format&fit=crop&q=80",
+        src: blogImage1,
         alt: "Optimización SEO local para empresas en Colombia",
         width: 1200,
         height: 630,
@@ -32,7 +37,7 @@ const blogPostContent = {
             content:
                 "Los algoritmos de búsqueda local funcionan de manera particular en el mercado colombiano debido a varios factores únicos:\n\n• La distribución geográfica y división por barrios/comunas afecta cómo los usuarios buscan\n• Los hábitos de búsqueda locales favorecen términos específicos por región\n• La competencia varía enormemente entre ciudades principales y secundarias\n• La penetración móvil del 83% hace que las búsquedas 'cerca de mí' sean predominantes\n• La adopción de Google Maps es 32% mayor que el promedio latinoamericano\n\nEstos factores hacen que las estrategias de SEO local genéricas no funcionen tan bien en Colombia como las específicamente adaptadas al contexto nacional.",
             image: {
-                src: "https://images.unsplash.com/photo-1580893246395-52aead8960dc?auto=format&fit=crop&q=80",
+                src: tendenciasColombia,
                 alt: "Mapa de Colombia mostrando tendencias de búsqueda por región",
                 width: 800,
                 height: 500,
@@ -225,6 +230,8 @@ const keywords = [
                             alt={blogPostContent.featuredImage.alt}
                             width={blogPostContent.featuredImage.width}
                             height={blogPostContent.featuredImage.height}
+                            loading="eager"
+                            decoding="async"
                             class="w-full h-auto"
                             itemprop="image"
                         />
@@ -276,6 +283,8 @@ const keywords = [
                                                 width={section.image.width}
                                                 height={section.image.height}
                                                 class="w-full h-auto"
+                                                loading="lazy"
+                                                decoding="async"
                                             />
                                         </div>
                                     )}
@@ -345,17 +354,21 @@ const keywords = [
                 <!-- Artículos relacionados -->
                 <div class="grid md:grid-cols-2 gap-8">
                     <a
-                        href="/blog/sitio-web-vs-redes-sociales-empresas"
+                        href="/blog/sitio-web-vs-redes-sociales-empresas/"
                         class="group"
                     >
                         <div
                             class="bg-white border border-[#778DA9]/10 rounded-xl overflow-hidden shadow-sm transition-all duration-300 hover:shadow-md hover:shadow-[#415A77]/5 hover:-translate-y-1"
                         >
                             <div class="h-48 overflow-hidden">
-                                <img
-                                    src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?auto=format&fit=crop&q=80"
+                                <Image
+                                    src={sitioWebRedes}
                                     alt="Sitio Web vs Redes Sociales para empresas"
+                                    width={800}
+                                    height={400}
                                     class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                                    loading="lazy"
+                                    decoding="async"
                                 />
                             </div>
                             <div class="p-5">
@@ -381,17 +394,21 @@ const keywords = [
                     </a>
 
                     <a
-                        href="/blog/tendencias-diseno-web-colombia-2024"
+                        href="/blog/tendencias-diseno-web-colombia-2024/"
                         class="group"
                     >
                         <div
                             class="bg-white border border-[#778DA9]/10 rounded-xl overflow-hidden shadow-sm transition-all duration-300 hover:shadow-md hover:shadow-[#415A77]/5 hover:-translate-y-1"
                         >
                             <div class="h-48 overflow-hidden">
-                                <img
-                                    src="https://images.unsplash.com/photo-1545235617-9465d2a55698?auto=format&fit=crop&q=80"
+                                <Image
+                                    src={tendenciasDiseno}
                                     alt="Tendencias diseño web para Colombia 2024"
+                                    width={800}
+                                    height={400}
                                     class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                                    loading="lazy"
+                                    decoding="async"
                                 />
                             </div>
                             <div class="p-5">

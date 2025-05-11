@@ -1,7 +1,16 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import Image from "astro/components/Image.astro";
+import { Image } from "astro:assets";
 import Button from "../../ui/Button.astro";
+
+import blogImage1 from "../../assets/images/blog/sitio-web-redes.avif";
+import sitioWebRedes from "../../assets/images/blog/sitio-web-redes.avif";
+import estrategiaNegocio from "../../assets/images/blog/estrategia-negocio.avif";
+import estrategiaDigital from "../../assets/images/blog/estrategia-digital.avif";
+import aumentarVentas from "../../assets/images/blog/ventas-sitio-web.avif";
+import seoLocal from "../../assets/images/blog/seo-local.avif";
+
+// import guiaSeoLocal from "../../assets/images/blog/guia-seo-local.avif";
 
 const blogPostContent = {
     title: "Sitio Web vs. Redes Sociales: Qué Necesita tu Empresa en Colombia",
@@ -12,7 +21,7 @@ const blogPostContent = {
     readTime: "6 minutos",
     category: "Estrategia Digital",
     featuredImage: {
-        src: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?auto=format&fit=crop&q=80",
+        src: blogImage1,
         alt: "Comparación entre sitio web profesional y redes sociales para empresas colombianas",
         width: 1200,
         height: 630,
@@ -32,7 +41,7 @@ const blogPostContent = {
             content:
                 "El principal error es plantear la estrategia digital como una elección excluyente. Los datos muestran que las empresas colombianas más exitosas utilizan ambos canales de forma complementaria, aprovechando las fortalezas de cada uno:\n\n• Las empresas con sitio web profesional + redes sociales gestionadas estratégicamente reportan un 127% más de leads cualificados\n• La tasa de conversión promedio aumenta un 43% cuando las redes sociales dirigen tráfico a un sitio web optimizado\n• La percepción de profesionalismo y confianza aumenta un 67% cuando existe un sitio web además de perfiles en redes sociales\n\nLa estrategia óptima no es elegir entre uno u otro, sino entender cómo cada plataforma cumple un rol específico en tu estrategia digital integral.",
             image: {
-                src: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?auto=format&fit=crop&q=80",
+                src: estrategiaDigital,
                 alt: "Estrategia digital integrada mostrando sitio web y redes sociales",
                 width: 800,
                 height: 500,
@@ -141,7 +150,7 @@ const blogPostContent = {
                 },
             ],
             image: {
-                src: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?auto=format&fit=crop&q=80",
+                src: estrategiaNegocio,
                 alt: "Estrategia digital personalizada según tipo de negocio colombiano",
                 width: 800,
                 height: 500,
@@ -246,6 +255,8 @@ const keywords = [
                             alt={blogPostContent.featuredImage.alt}
                             width={blogPostContent.featuredImage.width}
                             height={blogPostContent.featuredImage.height}
+                            loading="eager"
+                            decoding="async"
                             class="w-full h-auto"
                             itemprop="image"
                         />
@@ -297,6 +308,8 @@ const keywords = [
                                                 width={section.image.width}
                                                 height={section.image.height}
                                                 class="w-full h-auto"
+                                                loading="lazy"
+                                                decoding="async"
                                             />
                                         </div>
                                     )}
@@ -365,14 +378,18 @@ const keywords = [
 
                 <!-- Artículos relacionados -->
                 <div class="grid md:grid-cols-2 gap-8">
-                    <a href="/blog/guia-seo-local-colombia-2024" class="group">
+                    <a href="/blog/guia-seo-local-colombia-2024/" class="group">
                         <div
                             class="bg-white border border-[#778DA9]/10 rounded-xl overflow-hidden shadow-sm transition-all duration-300 hover:shadow-md hover:shadow-[#415A77]/5 hover:-translate-y-1"
                         >
                             <div class="h-48 overflow-hidden">
-                                <img
-                                    src="https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?auto=format&fit=crop&q=80"
+                                <Image
+                                    src={seoLocal}
                                     alt="Guía SEO Local para Empresas Colombianas"
+                                    width={800}
+                                    height={400}
+                                    loading="lazy"
+                                    decoding="async"
                                     class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                                 />
                             </div>
@@ -400,16 +417,20 @@ const keywords = [
                     </a>
 
                     <a
-                        href="/blog/aumentar-ventas-sitio-web-colombia"
+                        href="/blog/aumentar-ventas-sitio-web-colombia/"
                         class="group"
                     >
                         <div
                             class="bg-white border border-[#778DA9]/10 rounded-xl overflow-hidden shadow-sm transition-all duration-300 hover:shadow-md hover:shadow-[#415A77]/5 hover:-translate-y-1"
                         >
                             <div class="h-48 overflow-hidden">
-                                <img
-                                    src="https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&q=80"
+                                <Image
+                                    src={aumentarVentas}
                                     alt="Cómo aumentar ventas con un sitio web optimizado"
+                                    width={800}
+                                    height={400}
+                                    loading="lazy"
+                                    decoding="async"
                                     class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                                 />
                             </div>

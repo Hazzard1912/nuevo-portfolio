@@ -1,7 +1,13 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import Image from "astro/components/Image.astro";
+import { Image } from "astro:assets";
 import Button from "../../ui/Button.astro";
+
+import velocidadCarga from "../../assets/images/blog/velocidad-carga.avif";
+import graficoVelocidad from "../../assets/images/blog/grafico-velocidad.avif";
+import optimizacionRendimiento from "../../assets/images/blog/optimizacion-rendimiento.avif";
+import aumentarVentas from "../../assets/images/blog/ventas-sitio-web.avif";
+import tendenciasDiseno from "../../assets/images/blog/tendencias-diseno.avif";
 
 const blogPostContent = {
     title: "El Impacto de la Velocidad de Carga en tus Ventas: Estudio Colombia",
@@ -12,7 +18,7 @@ const blogPostContent = {
     readTime: "5 minutos",
     category: "Análisis Técnico",
     featuredImage: {
-        src: "https://images.unsplash.com/photo-1580894894513-541e068a3e2b?auto=format&fit=crop&q=80",
+        src: velocidadCarga,
         alt: "Análisis de velocidad de carga y su impacto en conversiones para sitios web colombianos",
         width: 1200,
         height: 630,
@@ -26,7 +32,7 @@ const blogPostContent = {
             content:
                 "Los datos recopilados de 150+ sitios web colombianos durante los últimos 6 meses muestran un impacto económico directo y medible:\n\n• Por cada segundo adicional de carga, la tasa de conversión cae un 16% para usuarios colombianos\n• Las tasas de rebote aumentan un 22% cuando la carga supera los 3 segundos\n• 73% de los usuarios colombianos abandonan un sitio móvil si tarda más de 5 segundos en cargar\n• Los sitios con tiempos de carga superiores a 5 segundos tienen un 87% menos de probabilidades de conversión\n• Las empresas que mejoraron su velocidad de carga en 2 segundos vieron un incremento promedio del 27% en ventas\n\nEstos números son incluso más críticos que los promedios globales debido a las particularidades de la infraestructura digital colombiana.",
             image: {
-                src: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80",
+                src: graficoVelocidad,
                 alt: "Gráfico mostrando la relación entre velocidad de carga y tasa de conversión en sitios web colombianos",
                 width: 800,
                 height: 500,
@@ -108,7 +114,7 @@ const blogPostContent = {
                 },
             ],
             image: {
-                src: "https://images.unsplash.com/photo-1618044733300-9472054094ee?auto=format&fit=crop&q=80",
+                src: optimizacionRendimiento,
                 alt: "Comparación de rendimiento antes y después de implementar optimizaciones de velocidad",
                 width: 800,
                 height: 500,
@@ -226,6 +232,8 @@ const keywords = [
                             alt={blogPostContent.featuredImage.alt}
                             width={blogPostContent.featuredImage.width}
                             height={blogPostContent.featuredImage.height}
+                            loading="eager"
+                            decoding="async"
                             class="w-full h-auto"
                             itemprop="image"
                         />
@@ -277,6 +285,9 @@ const keywords = [
                                                 width={section.image.width}
                                                 height={section.image.height}
                                                 class="w-full h-auto"
+                                                loading="lazy"
+                                                decoding="async"
+                                                
                                             />
                                         </div>
                                     )}
@@ -346,17 +357,21 @@ const keywords = [
                 <!-- Artículos relacionados -->
                 <div class="grid md:grid-cols-2 gap-8">
                     <a
-                        href="/blog/aumentar-ventas-sitio-web-colombia"
+                        href="/blog/aumentar-ventas-sitio-web-colombia/"
                         class="group"
                     >
                         <div
                             class="bg-white border border-[#778DA9]/10 rounded-xl overflow-hidden shadow-sm transition-all duration-300 hover:shadow-md hover:shadow-[#415A77]/5 hover:-translate-y-1"
                         >
                             <div class="h-48 overflow-hidden">
-                                <img
-                                    src="https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&q=80"
+                                <Image
+                                    src={aumentarVentas}
                                     alt="Cómo aumentar ventas con un sitio web optimizado"
+                                    width={800}
+                                    height={400}
                                     class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                                    loading="lazy"
+                                    decoding="async"
                                 />
                             </div>
                             <div class="p-5">
@@ -382,17 +397,21 @@ const keywords = [
                     </a>
 
                     <a
-                        href="/blog/tendencias-diseno-web-colombia-2024"
+                        href="/blog/tendencias-diseno-web-colombia-2024/"
                         class="group"
                     >
                         <div
                             class="bg-white border border-[#778DA9]/10 rounded-xl overflow-hidden shadow-sm transition-all duration-300 hover:shadow-md hover:shadow-[#415A77]/5 hover:-translate-y-1"
                         >
                             <div class="h-48 overflow-hidden">
-                                <img
-                                    src="https://images.unsplash.com/photo-1545235617-9465d2a55698?auto=format&fit=crop&q=80"
+                                <Image
+                                    src={tendenciasDiseno}
                                     alt="Tendencias diseño web para Colombia 2024"
+                                    width={800}
+                                    height={400}
                                     class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                                    loading="lazy"
+                                    decoding="async"
                                 />
                             </div>
                             <div class="p-5">

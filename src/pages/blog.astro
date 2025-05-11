@@ -1,7 +1,14 @@
 ---
 import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
-import Button from "../ui/Button.astro";
+
+// Importar imágenes locales
+import blogImage1 from "../assets/images/blog/ventas-sitio-web.avif";
+import blogImage2 from "../assets/images/blog/caso-exito-ecommerce.avif";
+import blogImage3 from "../assets/images/blog/seo-local.avif";
+import blogImage4 from "../assets/images/blog/sitio-web-redes.avif";
+import blogImage5 from "../assets/images/blog/velocidad-carga.avif";
+import blogImage6 from "../assets/images/blog/tendencias-diseno.avif";
 
 interface BlogPost {
     id: string;
@@ -9,7 +16,7 @@ interface BlogPost {
     description: string;
     publishDate: string;
     image: {
-        src: string;
+        src: ImageMetadata; // Cambiado a ImageMetadata para imágenes locales
         alt: string;
     };
     tags: string[];
@@ -26,7 +33,7 @@ const blogPosts: BlogPost[] = [
             "Descubre las 7 características que debe tener tu sitio web para incrementar ventas y conversiones en el mercado colombiano. Análisis y recomendaciones.",
         publishDate: "2024-02-10",
         image: {
-            src: "https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&q=80",
+            src: blogImage1,
             alt: "Gráfico de crecimiento de ventas online para empresas colombianas",
         },
         tags: ["Ventas Online", "Conversiones", "Sitios Web", "Colombia"],
@@ -40,7 +47,7 @@ const blogPosts: BlogPost[] = [
             "Análisis del proceso de transformación digital de una PyME en Cali que logró triplicar sus ventas implementando una estrategia web efectiva.",
         publishDate: "2024-01-25",
         image: {
-            src: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&q=80",
+            src: blogImage2,
             alt: "Tienda local de Cali que incrementó sus ventas con comercio electrónico",
         },
         tags: ["Caso de Éxito", "E-commerce", "Cali", "PyMEs"],
@@ -54,7 +61,7 @@ const blogPosts: BlogPost[] = [
             "Estrategias probadas para mejorar el posicionamiento de tu negocio en búsquedas locales. Optimización para Google Colombia y directorios locales.",
         publishDate: "2024-01-15",
         image: {
-            src: "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?auto=format&fit=crop&q=80",
+            src: blogImage3,
             alt: "Optimización SEO local para empresas en Colombia",
         },
         tags: ["SEO Local", "Google Maps", "Posicionamiento Local", "Colombia"],
@@ -68,7 +75,7 @@ const blogPosts: BlogPost[] = [
             "Análisis comparativo sobre la importancia de un sitio web profesional frente a perfiles en redes sociales para empresas colombianas. Ventajas y estrategias.",
         publishDate: "2024-01-05",
         image: {
-            src: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?auto=format&fit=crop&q=80",
+            src: blogImage4,
             alt: "Comparación entre sitio web profesional y redes sociales para empresas",
         },
         tags: ["Sitios Web", "Redes Sociales", "Estrategia Digital", "Empresas"],
@@ -82,7 +89,7 @@ const blogPosts: BlogPost[] = [
             "Investigación sobre cómo la velocidad de carga afecta las conversiones en sitios web colombianos. Datos reales y soluciones para mejorar el rendimiento.",
         publishDate: "2023-12-15",
         image: {
-            src: "https://images.unsplash.com/photo-1580894894513-541e068a3e2b?auto=format&fit=crop&q=80",
+            src: blogImage5,
             alt: "Análisis de velocidad de carga y su impacto en conversiones",
         },
         tags: ["Velocidad Web", "Conversiones", "Rendimiento", "UX"],
@@ -96,7 +103,7 @@ const blogPosts: BlogPost[] = [
             "Descubre las tendencias de diseño web más efectivas para conectar con el público colombiano. Elementos visuales, UX y estrategias de conversión actualizadas.",
         publishDate: "2023-12-01",
         image: {
-            src: "https://images.unsplash.com/photo-1545235617-9465d2a55698?auto=format&fit=crop&q=80",
+            src: blogImage6,
             alt: "Tendencias de diseño web para el mercado colombiano en 2024",
         },
         tags: ["Diseño Web", "Tendencias", "UX/UI", "2024"],
@@ -113,8 +120,8 @@ const title = "Blog de Marketing Digital y Desarrollo Web | Nexen";
 const metaTitle = "Blog sobre Marketing Digital para Empresas Colombianas | Nexen";
 const description =
     "Artículos, casos de éxito y estrategias de marketing digital y desarrollo web para empresas en Colombia. Aprende a incrementar ventas y posicionamiento.";
-const url = "https://www.nexen.com.co/blog";
-const canonical = "https://www.nexen.com.co/blog";
+const url = "https://www.nexen.com.co/blog/";
+const canonical = "https://www.nexen.com.co/blog/";
 const keywords = [
     "blog marketing digital Colombia",
     "estrategias SEO empresas colombianas",
@@ -154,10 +161,10 @@ const keywords = [
                 </div>
 
                 <!-- Filtro por categorías -->
-                <div class="flex flex-wrap justify-center gap-3 mb-12" data-aos="fade-up">
+                <div class="flex flex-wrap justify-center gap-3 mb-12">
                     <button 
                         class="px-4 py-2 rounded-full bg-[#415A77] text-[#E0E1DD] font-medium border border-[#415A77] hover:bg-[#1B263B] transition-colors"
-                        data-category="all"
+                        data-filter="all"
                     >
                         Todos los artículos
                     </button>
@@ -165,7 +172,7 @@ const keywords = [
                     {categories.map(category => (
                         <button 
                             class="px-4 py-2 rounded-full bg-[#E0E1DD] text-[#1B263B] font-medium border border-[#778DA9]/20 hover:bg-[#778DA9]/20 transition-colors"
-                            data-category={category}
+                            data-filter={category}
                         >
                             {category}
                         </button>
@@ -190,7 +197,7 @@ const keywords = [
                                 itemscope
                                 itemtype="https://schema.org/BlogPosting"
                             >
-                                <link itemprop="url" href={`https://www.nexen.com.co/blog/${post.id}`} />
+                                <link itemprop="url" href={`https://www.nexen.com.co/blog/${post.id}/`} />
                                 <meta itemprop="headline" content={post.title} />
                                 <meta itemprop="description" content={post.description} />
                                 <meta itemprop="datePublished" content={post.publishDate} />
@@ -200,12 +207,12 @@ const keywords = [
                                     <meta itemprop="keywords" content={tag} />
                                 ))}
                                 
-                                <a href={`/blog/${post.id}`} class="block">
+                                <a href={`/blog/${post.id}/`} class="block">
                                     <div class="relative aspect-video overflow-hidden">
                                         <Image
                                             src={post.image.src}
                                             alt={post.image.alt}
-                                            loading="lazy"
+                                            loading="eager"
                                             decoding="async"
                                             quality={80}
                                             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
@@ -276,32 +283,25 @@ const keywords = [
             </div>
         </div>
         
-        <!-- Script para filtrado de categorías -->
+        <!-- Script simplificado para filtrado de categorías -->
         <script>
-            // Simple filtrado de categorías
             document.addEventListener('DOMContentLoaded', () => {
-                const filterButtons = document.querySelectorAll('[data-category]');
+                const filterButtons = document.querySelectorAll('[data-filter]');
                 const articles = document.querySelectorAll('article[data-category]');
                 
                 filterButtons.forEach(button => {
                     button.addEventListener('click', () => {
-                        // Resaltar botón activo
+                        const filter = button.getAttribute('data-filter');
+                        
+                        // Actualizar estado de los botones
                         filterButtons.forEach(btn => {
-                            btn.classList.remove('bg-[#415A77]', 'text-[#E0E1DD]', 'border-[#415A77]');
-                            btn.classList.add('bg-[#E0E1DD]', 'text-[#1B263B]', 'border-[#778DA9]/20');
+                            btn.className = btn.className.replace('bg-[#415A77] text-[#E0E1DD] border-[#415A77]', 'bg-[#E0E1DD] text-[#1B263B] border-[#778DA9]/20');
                         });
+                        button.className = button.className.replace('bg-[#E0E1DD] text-[#1B263B] border-[#778DA9]/20', 'bg-[#415A77] text-[#E0E1DD] border-[#415A77]');
                         
-                        button.classList.remove('bg-[#E0E1DD]', 'text-[#1B263B]', 'border-[#778DA9]/20');
-                        button.classList.add('bg-[#415A77]', 'text-[#E0E1DD]', 'border-[#415A77]');
-                        
-                        const category = button.getAttribute('data-category');
-                        
+                        // Filtrar artículos
                         articles.forEach(article => {
-                            if (category === 'all' || article.getAttribute('data-category') === category) {
-                                (article as HTMLElement).style.display = '';
-                            } else {
-                                (article as HTMLElement).style.display = 'none';
-                            }
+                            (article as HTMLElement).style.display = filter === 'all' || article.getAttribute('data-category') === filter ? 'block' : 'none';
                         });
                     });
                 });
