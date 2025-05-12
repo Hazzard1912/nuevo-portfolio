@@ -1,9 +1,9 @@
 ---
 import Button from "../ui/Button.astro";
 import { Image } from "astro:assets";
-import sistemaInventario from "../assets/sistema_inventario.png";
-import carnivorousLogo from "../assets/carnivourusland.png";
-import multimueblesLogo from "../assets/galeriamultimuebles.png";
+import sistemaInventario from "../assets/sistema_inventario.avif";
+import carnivorousLogo from "../assets/carnivourusland.avif";
+import multimueblesLogo from "../assets/galeriamultimuebles.avif";
 import crmLogo from "../assets/crmdemo.png";
 
 // Sample projects data with reused image and details (as requested)
@@ -88,6 +88,7 @@ const regularProjects = projects.filter((project) => !project.featured);
                                 decoding="async"
                                 format="webp"
                                 quality={85}
+                                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                             />
                         </div>
                         <div class="p-6 md:p-8 flex flex-col flex-1 justify-center">
@@ -147,6 +148,7 @@ const regularProjects = projects.filter((project) => !project.featured);
                                 decoding="async"
                                 format="webp"
                                 quality={80}
+                                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                             />
                         </div>
                         <div class="p-6 flex flex-col flex-1 transition-all duration-300">
@@ -234,7 +236,7 @@ const regularProjects = projects.filter((project) => !project.featured);
 
         function updateSlider() {
             if (!track) return;
-            track.style.transform = `translateX(-${currentIndex * 100}%)`;
+            (track as HTMLElement).style.transform = `translateX(-${currentIndex * 100}%)`;
             dots.forEach((dot, index) => {
                 if (dot) {
                     dot.classList.toggle(

@@ -232,10 +232,12 @@ const keywords = [
                             height={blogPostContent.featuredImage.height}
                             loading="eager"
                             decoding="async"
+                            fetchpriority="high"
                             format="webp"
                             quality={85}
                             class="w-full h-auto"
                             itemprop="image"
+                            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                         />
                     </div>
                 </header>
@@ -280,6 +282,7 @@ const keywords = [
                                     {section.image && (
                                         <div class="my-8 rounded-xl overflow-hidden shadow-lg shadow-[#0D1B2A]/5">
                                             <Image
+                                                format="webp"
                                                 src={section.image.src}
                                                 alt={section.image.alt}
                                                 width={section.image.width}
@@ -287,6 +290,7 @@ const keywords = [
                                                 class="w-full h-auto"
                                                 loading="lazy"
                                                 decoding="async"
+                                                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                                             />
                                         </div>
                                     )}
@@ -364,6 +368,7 @@ const keywords = [
                         >
                             <div class="h-48 overflow-hidden">
                                 <Image
+                                    format="webp"
                                     src={sitioWebRedes}
                                     alt="Sitio Web vs Redes Sociales para empresas"
                                     width={800}
@@ -371,6 +376,7 @@ const keywords = [
                                     class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                                     loading="lazy"
                                     decoding="async"
+                                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                                 />
                             </div>
                             <div class="p-5">
@@ -413,6 +419,7 @@ const keywords = [
                                     decoding="async"
                                     format="webp"
                                     quality={80}
+                                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                                 />
                             </div>
                             <div class="p-5">

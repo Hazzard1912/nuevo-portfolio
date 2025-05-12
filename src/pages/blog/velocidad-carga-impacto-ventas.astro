@@ -233,11 +233,13 @@ const keywords = [
                             width={blogPostContent.featuredImage.width}
                             height={blogPostContent.featuredImage.height}
                             loading="eager"
+                            fetchpriority="high"
                             decoding="async"
                             format="webp"
                             quality={85}
                             class="w-full h-auto"
                             itemprop="image"
+                            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                         />
                     </div>
                 </header>
@@ -291,6 +293,7 @@ const keywords = [
                                                 decoding="async"
                                                 format="webp"
                                                 quality={80}
+                                                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                                             />
                                         </div>
                                     )}
@@ -375,6 +378,9 @@ const keywords = [
                                     class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                                     loading="lazy"
                                     decoding="async"
+                                    format="webp"
+                                    quality={80}
+                                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                                 />
                             </div>
                             <div class="p-5">
@@ -417,6 +423,7 @@ const keywords = [
                                     decoding="async"
                                     format="webp"
                                     quality={80}
+                                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                                 />
                             </div>
                             <div class="p-5">
