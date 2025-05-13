@@ -97,6 +97,17 @@ const finalCanonical = ensureTrailingSlash(canonical);
 		<link rel="canonical" href={finalCanonical} />
 
 		<link rel="preload" href="/logo.svg" as="image" type="image/svg+xml" />
+
+		<!-- Schema.org structured data -->
+		<script type="application/ld+json">
+			{
+				"@context": "https://schema.org",
+				"@type": "Organization",
+				"name": "Nexen",
+				"url": "https://www.nexen.com.co",
+				"logo": "https://www.nexen.com.co/logo.svg"
+			}
+		</script>
 	</head>
 	<body class="antialiased bg-gray-50">
 		<Navbar />
