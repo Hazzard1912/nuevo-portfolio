@@ -119,9 +119,9 @@ const socialLinks = [
             {
                 navigationSections.map((section) => (
                     <div class="space-y-6">
-                        <h4 class="text-lg font-semibold text-[#E0E1DD]">
+                        <h2 class="text-lg font-semibold text-[#E0E1DD]">
                             {section.title}
-                        </h4>
+                        </h2>
                         <ul class="space-y-4">
                             {section.links.map(({ href, label, ariaLabel }) => (
                                 <li>
@@ -129,6 +129,7 @@ const socialLinks = [
                                         href={href}
                                         class="text-[#E0E1DD]/80 hover:text-[#778DA9] transition-colors duration-300 flex items-center gap-2"
                                         aria-label={ariaLabel}
+                                        data-astro-prefetch
                                     >
                                         <span class="h-1 w-1 rounded-full bg-[#778DA9]" />
                                         {label}
@@ -142,7 +143,7 @@ const socialLinks = [
 
             <!-- Contact Information -->
             <div class="space-y-6">
-                <h4 class="text-lg font-semibold text-[#E0E1DD]">Contacto</h4>
+                <h2 class="text-lg font-semibold text-[#E0E1DD]">Contacto</h2>
                 <ul class="space-y-4">
                     {
                         contactInfo.map(({ title, text, icon, href }) => (

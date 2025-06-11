@@ -10,12 +10,12 @@
     "optimize": "svgo public/fa"
   },
   "dependencies": {
-    "@astrojs/react": "^4.2.7",
-    "@astrojs/sitemap": "^3.2.1",
-    "@astrojs/tailwind": "^5.1.5",
-    "@astrojs/vercel": "^8.1.4",
+    "@astrojs/react": "^4.3.0",
+    "@astrojs/sitemap": "^3.4.1",
+    "@astrojs/tailwind": "^6.0.2",
+    "@astrojs/vercel": "^8.1.5",
     "aos": "^2.3.4",
-    "astro": "^5.1.10",
+    "astro": "^5.9.2",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-markdown": "^10.1.0",

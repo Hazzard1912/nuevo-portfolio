@@ -192,7 +192,7 @@ const keywords = [
                             {blogPostContent.category}
                         </span>
                         <h1
-                            class="text-3xl md:text-5xl font-bold text-[#0D1B2A] mb-6"
+                            class="text-3xl md:text-5xl font-bold text-[#0D1B2A] mb-6 text-[1.875rem] md:text-[3rem]"
                             itemprop="headline"
                         >
                             {blogPostContent.title}
@@ -234,8 +234,6 @@ const keywords = [
                             height={blogPostContent.featuredImage.height}
                             loading="eager"
                             fetchpriority="high"
-                            decoding="async"
-                            format="webp"
                             quality={85}
                             class="w-full h-auto"
                             itemprop="image"
@@ -289,9 +287,6 @@ const keywords = [
                                                 width={section.image.width}
                                                 height={section.image.height}
                                                 class="w-full h-auto"
-                                                loading="lazy"
-                                                decoding="async"
-                                                format="webp"
                                                 quality={80}
                                                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                                             />
@@ -365,6 +360,7 @@ const keywords = [
                     <a
                         href="/blog/aumentar-ventas-sitio-web-colombia/"
                         class="group"
+                        data-astro-prefetch
                     >
                         <div
                             class="bg-white border border-[#778DA9]/10 rounded-xl overflow-hidden shadow-sm transition-all duration-300 hover:shadow-md hover:shadow-[#415A77]/5 hover:-translate-y-1"
@@ -376,9 +372,6 @@ const keywords = [
                                     width={800}
                                     height={400}
                                     class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                                    loading="lazy"
-                                    decoding="async"
-                                    format="webp"
                                     quality={80}
                                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                                 />
@@ -408,6 +401,7 @@ const keywords = [
                     <a
                         href="/blog/tendencias-diseno-web-colombia-2024/"
                         class="group"
+                        data-astro-prefetch
                     >
                         <div
                             class="bg-white border border-[#778DA9]/10 rounded-xl overflow-hidden shadow-sm transition-all duration-300 hover:shadow-md hover:shadow-[#415A77]/5 hover:-translate-y-1"
@@ -419,9 +413,6 @@ const keywords = [
                                     width={800}
                                     height={400}
                                     class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                                    loading="lazy"
-                                    decoding="async"
-                                    format="webp"
                                     quality={80}
                                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                                 />

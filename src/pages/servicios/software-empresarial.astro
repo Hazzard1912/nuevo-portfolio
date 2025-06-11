@@ -8,24 +8,26 @@ import enterpriseImage from "../../assets/images/services/enterprise-software.av
 const serviceDetails = {
     title: "Software Empresarial a Medida para Colombia",
     description:
-        "Desarrollamos soluciones de software empresarial personalizadas para empresas colombianas. Automatizamos procesos y potenciamos el crecimiento de tu negocio.",
+        "Desarrollamos soluciones de software empresarial personalizadas para empresas colombianas. Automatizamos procesos y potenciamos el crecimiento de tu negocio con tecnologías modernas y escalables.",
     image: enterpriseImage,
     sections: [
         {
             title: "Soluciones Empresariales para el Mercado Colombiano",
             content:
-                "Desarrollamos software empresarial adaptado a las normativas y necesidades específicas del mercado colombiano. Creamos soluciones que optimizan operaciones, automatizan procesos y potencian el crecimiento de empresas en Cali, Valle del Cauca y toda Colombia.",
+                "Desarrollamos software empresarial adaptado a las normativas y necesidades específicas del mercado colombiano. Nuestras soluciones están construidas con las últimas tecnologías y mejores prácticas de la industria, garantizando un software robusto, seguro y escalable para tu empresa.",
             features: [
                 "ERPs personalizados con cumplimiento normativo colombiano",
                 "CRMs adaptados al ciclo de ventas local",
                 "Business Intelligence con KPIs relevantes para el mercado colombiano",
                 "Automatización de procesos según estándares nacionales",
+                "Integración con sistemas gubernamentales y bancarios",
+                "Soporte técnico local en español",
             ],
         },
         {
-            title: "Tecnologías de Clase Mundial para Empresas Colombianas",
+            title: "Tecnologías de Vanguardia para Empresas Colombianas",
             content:
-                "Utilizamos tecnologías robustas y probadas que garantizan la seguridad, estabilidad y escalabilidad que las empresas colombianas necesitan:",
+                "Utilizamos un stack tecnológico moderno y robusto que garantiza la seguridad, estabilidad y escalabilidad que las empresas colombianas necesitan:",
             technologies: [
                 {
                     name: "Python & Django",
@@ -33,14 +35,23 @@ const serviceDetails = {
                         "Desarrollo ágil con alta seguridad, ideal para sistemas financieros y gubernamentales colombianos",
                 },
                 {
-                    name: "Java & Spring",
+                    name: "React & Next.js",
                     description:
-                        "Soluciones empresariales robustas para grandes corporaciones nacionales",
+                        "Interfaces modernas y responsivas con excelente rendimiento y SEO",
+                },
+                {
+                    name: "Node.js & Express",
+                    description:
+                        "APIs robustas y escalables para integración con sistemas existentes",
+                },
+                {
+                    name: "PostgreSQL & MongoDB",
+                    description:
+                        "Bases de datos relacionales y NoSQL para diferentes necesidades de almacenamiento",
                 },
                 {
                     name: "Docker & Kubernetes",
-                    description:
-                        "Despliegue optimizado para infraestructura local colombiana",
+                    description: "Despliegue optimizado y escalable en la nube",
                 },
                 {
                     name: "AWS & Cloud Colombia",
@@ -94,21 +105,26 @@ const serviceDetails = {
                 "Protección contra amenazas específicas del entorno digital colombiano",
         },
     ],
-    casosExito: [
+    metodologia: [
         {
-            industria: "Manufactura colombiana",
-            resultado:
-                "Reducción del 40% en costos operativos para empresa industrial en Valle del Cauca tras implementar ERP a medida",
+            fase: "Análisis y Planificación",
+            descripcion:
+                "Evaluación detallada de necesidades, procesos y objetivos de negocio para diseñar la solución óptima",
         },
         {
-            industria: "Servicios financieros",
-            resultado:
-                "Aumento del 60% en eficiencia operativa para cooperativa financiera con presencia en 5 departamentos de Colombia",
+            fase: "Desarrollo Ágil",
+            descripcion:
+                "Implementación iterativa con sprints semanales y entregas incrementales para feedback constante",
         },
         {
-            industria: "Distribución comercial",
-            resultado:
-                "Implementación de sistema logístico que redujo tiempos de entrega en 35% para distribuidor nacional",
+            fase: "Pruebas y Calidad",
+            descripcion:
+                "Rigurosos procesos de testing y aseguramiento de calidad para garantizar un software robusto",
+        },
+        {
+            fase: "Implementación y Soporte",
+            descripcion:
+                "Despliegue controlado y soporte continuo para asegurar el éxito del proyecto",
         },
     ],
 };
@@ -119,7 +135,7 @@ const title =
 const metaTitle =
     "Software Empresarial para Empresas Colombianas | Soluciones a Medida | Nexen";
 const description =
-    "Desarrollamos software empresarial personalizado para compañías en Colombia. ERP, CRM y sistemas a medida adaptados a normativas y necesidades locales. Expertos en Cali.";
+    "Desarrollamos software empresarial personalizado para compañías en Colombia. ERP, CRM y sistemas a medida adaptados a normativas y necesidades locales. Expertos en Cali con tecnologías modernas.";
 const url = "https://www.nexen.com.co/servicios/software-empresarial/";
 const canonical = "https://www.nexen.com.co/servicios/software-empresarial/";
 // Keywords optimizadas
@@ -130,6 +146,12 @@ const keywords = [
     "sistemas a medida Cali",
     "software facturación electrónica DIAN",
     "automatización procesos empresariales Valle del Cauca",
+    "desarrollo software empresarial",
+    "sistemas empresariales Colombia",
+    "software a medida Cali",
+    "desarrollo web empresarial",
+    "aplicaciones empresariales Colombia",
+    "integración sistemas empresariales",
 ];
 ---
 
@@ -191,10 +213,11 @@ const keywords = [
                                 format="webp"
                                 src={serviceDetails.image}
                                 width={600}
-                                height={400}
+                                height={300}
                                 loading="eager"
                                 decoding="async"
                                 fetchpriority="high"
+                                quality={75}
                                 sizes="(max-width: 768px) 100vw, 50vw"
                                 alt="Software empresarial para empresas colombianas"
                                 class="rounded-xl object-cover shadow-xl w-full h-auto"
@@ -319,17 +342,17 @@ const keywords = [
                     </div>
                 </section>
 
-                <!-- Nueva sección: Casos de éxito en Colombia -->
+                <!-- Reemplazar sección de casos de éxito por metodología -->
                 <section
                     class="mb-16 p-8 bg-[#778DA9]/10 rounded-2xl border border-[#778DA9]/20"
                     data-aos="fade-up"
                 >
                     <h2 class="text-3xl font-bold text-[#0D1B2A] mb-8">
-                        Casos de Éxito en Colombia
+                        Nuestra Metodología de Desarrollo
                     </h2>
                     <div class="space-y-6">
                         {
-                            serviceDetails.casosExito.map((caso) => (
+                            serviceDetails.metodologia.map((fase) => (
                                 <div class="bg-white p-6 rounded-xl shadow-sm border border-[#778DA9]/10">
                                     <div class="flex items-start">
                                         <div class="flex-shrink-0 mr-4">
@@ -343,16 +366,16 @@ const keywords = [
                                                     stroke-linecap="round"
                                                     stroke-linejoin="round"
                                                     stroke-width="2"
-                                                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                                                    d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
                                                 />
                                             </svg>
                                         </div>
                                         <div>
                                             <h3 class="font-bold text-lg text-[#0D1B2A] mb-2">
-                                                Industria: {caso.industria}
+                                                {fase.fase}
                                             </h3>
                                             <p class="text-[#1B263B]">
-                                                {caso.resultado}
+                                                {fase.descripcion}
                                             </p>
                                         </div>
                                     </div>

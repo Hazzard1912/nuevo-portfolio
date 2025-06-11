@@ -207,7 +207,7 @@ const keywords = [
                                     <meta itemprop="keywords" content={tag} />
                                 ))}
                                 
-                                <a href={`/blog/${post.id}/`} class="block">
+                                <a href={`/blog/${post.id}/`} class="block" data-astro-prefetch>
                                     <div class="relative aspect-video overflow-hidden">
                                         <Image
                                             format="webp"
@@ -215,10 +215,10 @@ const keywords = [
                                             alt={post.image.alt}
                                             loading="eager"
                                             decoding="async"
-                                            quality={85}
+                                            quality={75}
                                             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                                            width={800}
-                                            height={400}
+                                            width={600}
+                                            height={300}
                                             itemprop="image"
                                             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                                         />

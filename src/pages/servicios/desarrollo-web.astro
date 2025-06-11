@@ -20,6 +20,8 @@ const serviceDetails = {
                 "Optimización SEO para posicionamiento local",
                 "Integración con sistemas de pago colombianos",
                 "Gestión de contenidos intuitiva",
+                "Soporte técnico continuo",
+                "Hosting y dominio incluidos",
             ],
         },
         {
@@ -72,21 +74,21 @@ const serviceDetails = {
                 "Protección contra vulnerabilidades y amenazas web según normativas colombianas de protección de datos",
         },
     ],
-    casosExito: [
+    preguntasFrecuentes: [
         {
-            industria: "E-commerce",
-            resultado:
-                "Incremento del 120% en ventas tras la implementación de una tienda online optimizada para el mercado colombiano",
+            pregunta: "¿Cuánto tiempo toma desarrollar un sitio web?",
+            respuesta:
+                "El tiempo de desarrollo varía según la complejidad del proyecto. Un sitio web básico puede tomar 4-6 semanas, mientras que proyectos más complejos pueden extenderse a 2-3 meses.",
         },
         {
-            industria: "Servicios Profesionales",
-            resultado:
-                "Aumento de 85% en leads cualificados para una firma consultora en Cali con landing page optimizada",
+            pregunta: "¿Qué incluye el servicio de desarrollo web?",
+            respuesta:
+                "Nuestro servicio incluye diseño personalizado, desarrollo responsive, optimización SEO, integración de sistemas de pago, capacitación en el uso del CMS, hosting y dominio por el primer año, y soporte técnico continuo.",
         },
         {
-            industria: "Empresa Local",
-            resultado:
-                "Mejora del 65% en conversiones para negocio del Valle del Cauca con diseño web responsivo",
+            pregunta: "¿Ofrecen mantenimiento después del lanzamiento?",
+            respuesta:
+                "Sí, ofrecemos planes de mantenimiento mensual que incluyen actualizaciones de seguridad, respaldos, monitoreo de rendimiento y soporte técnico prioritario.",
         },
     ],
 };
@@ -95,7 +97,7 @@ const serviceDetails = {
 const title = "Desarrollo Web Profesional en Colombia | Nexen";
 const metaTitle = "Desarrollo Web en Colombia | Expertos Cali | Nexen";
 const description =
-    "Servicios profesionales de desarrollo web en Cali y Colombia. Creamos sitios web ultra-rápidos con Astro y React que aumentan ventas y conversiones.";
+    "Servicios profesionales de desarrollo web en Cali y Colombia. Creamos sitios web ultra-rápidos con Astro y React que aumentan ventas y conversiones. ¡Cotiza gratis!";
 const url = "https://www.nexen.com.co/servicios/desarrollo-web/";
 const canonical = "https://www.nexen.com.co/servicios/desarrollo-web/";
 // Keywords focalizadas
@@ -105,6 +107,11 @@ const keywords = [
     "sitios web profesionales Valle del Cauca",
     "desarrollo Astro React",
     "páginas web empresariales Colombia",
+    "desarrollo web responsive",
+    "creación de sitios web",
+    "desarrollo web a medida",
+    "desarrollo web Cali",
+    "empresa desarrollo web Colombia",
 ];
 ---
 
@@ -136,7 +143,7 @@ const keywords = [
                     >
                         <div>
                             <h1
-                                class="text-3xl md:text-5xl font-bold text-[#E0E1DD] mb-4 md:mb-6"
+                                class="text-3xl md:text-5xl font-bold text-[#E0E1DD] mb-4 md:mb-6 text-[1.875rem] md:text-[3rem]"
                                 itemprop="name"
                             >
                                 Desarrollo Web Profesional en <span
@@ -166,10 +173,11 @@ const keywords = [
                                 format="webp"
                                 src={serviceDetails.image}
                                 width={600}
-                                height={400}
+                                height={300}
                                 loading="eager"
                                 decoding="async"
                                 fetchpriority="high"
+                                quality={75}
                                 sizes="(max-width: 768px) 100vw, 50vw"
                                 alt="Desarrollo web profesional en Colombia"
                                 class="rounded-xl object-cover shadow-xl w-full h-auto"
@@ -270,17 +278,17 @@ const keywords = [
                     </div>
                 </section>
 
-                <!-- Nueva sección: Casos de éxito en Colombia -->
+                <!-- Reemplazamos la sección de casos de éxito por Preguntas Frecuentes -->
                 <section
                     class="mb-16 p-8 bg-[#778DA9]/10 rounded-2xl border border-[#778DA9]/20"
                     data-aos="fade-up"
                 >
                     <h2 class="text-3xl font-bold text-[#0D1B2A] mb-8">
-                        Casos de Éxito en Colombia
+                        Preguntas Frecuentes sobre Desarrollo Web
                     </h2>
                     <div class="space-y-6">
                         {
-                            serviceDetails.casosExito.map((caso) => (
+                            serviceDetails.preguntasFrecuentes.map((faq) => (
                                 <div class="bg-white p-6 rounded-xl shadow-sm border border-[#778DA9]/10">
                                     <div class="flex items-start">
                                         <div class="flex-shrink-0 mr-4">
@@ -294,16 +302,16 @@ const keywords = [
                                                     stroke-linecap="round"
                                                     stroke-linejoin="round"
                                                     stroke-width="2"
-                                                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                                                    d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
                                                 />
                                             </svg>
                                         </div>
                                         <div>
                                             <h3 class="font-bold text-lg text-[#0D1B2A] mb-2">
-                                                Industria: {caso.industria}
+                                                {faq.pregunta}
                                             </h3>
                                             <p class="text-[#1B263B]">
-                                                {caso.resultado}
+                                                {faq.respuesta}
                                             </p>
                                         </div>
                                     </div>
@@ -313,25 +321,33 @@ const keywords = [
                     </div>
                 </section>
 
-                <!-- CTA -->
+                <!-- CTA mejorado -->
                 <section
                     class="text-center p-8 mb-16 bg-gradient-to-r from-[#0D1B2A] to-[#1B263B] rounded-2xl text-[#E0E1DD]"
                     data-aos="fade-up"
                 >
                     <h2 class="text-3xl font-bold mb-4">
-                        ¿Listo para impulsar tu presencia digital en Colombia?
+                        ¿Listo para transformar tu presencia digital?
                     </h2>
                     <p class="text-xl mb-8 max-w-3xl mx-auto opacity-90">
-                        Contáctanos hoy y recibe una consultoría gratuita sobre
-                        cómo podemos ayudarte a destacar en el mercado digital
-                        colombiano.
+                        Agenda una consultoría gratuita y descubre cómo podemos
+                        ayudarte a crear un sitio web que impulse tu negocio en
+                        el mercado digital colombiano.
                     </p>
-                    <Button
-                        text="Contactar ahora"
-                        href="/#contacto"
-                        className="bg-[#E0E1DD] text-[#0D1B2A] hover:bg-[#778DA9]/90 hover:text-[#0D1B2A] shadow-xl border-0"
-                        ariaLabel="Contactar para desarrollo web"
-                    />
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <Button
+                            text="Solicitar Consultoría Gratuita"
+                            href="/#contacto"
+                            className="bg-[#E0E1DD] text-[#0D1B2A] hover:bg-[#778DA9]/90 hover:text-[#0D1B2A] shadow-xl border-0"
+                            ariaLabel="Solicitar consultoría gratuita para desarrollo web"
+                        />
+                        <Button
+                            text="Ver Portafolio"
+                            href="/#portfolio"
+                            className="bg-transparent border-2 border-[#E0E1DD] text-[#E0E1DD] hover:bg-[#E0E1DD]/10"
+                            ariaLabel="Ver portafolio de desarrollo web"
+                        />
+                    </div>
                 </section>
             </div>
         </main>

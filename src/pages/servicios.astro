@@ -163,6 +163,7 @@ const keywords = [
                             itemprop="itemListElement"
                             itemscope
                             itemtype="https://schema.org/ListItem"
+                            data-astro-prefetch
                         >
                             <meta itemprop="position" content={(index + 1).toString()} />
                             
@@ -179,13 +180,11 @@ const keywords = [
                                     <Image
                                         src={service.image.src}
                                         alt={service.title}
-                                        width={800}
-                                        height={400}
+                                        width={600}
+                                        height={300}
                                         class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                                         loading="eager"
-                                        decoding="async"
-                                        format="webp"
-                                        quality={85}
+                                        quality={75}
                                         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                                     />
                                 </div>
@@ -201,7 +200,6 @@ const keywords = [
                                         {service.shortDescription}
                                     </p>
 
-                                    <!-- Features Preview -->
                                     <div class="flex flex-wrap gap-2 mb-6">
                                         {service.features.slice(0, 3).map(feature => (
                                             <span class="text-sm px-3 py-1 rounded-full bg-[#E0E1DD] 
