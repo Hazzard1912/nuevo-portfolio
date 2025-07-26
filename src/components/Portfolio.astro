@@ -5,16 +5,26 @@ import sistemaInventario from "../assets/sistema_inventario.avif";
 import carnivorousLogo from "../assets/carnivourusland.avif";
 import multimueblesLogo from "../assets/galeriamultimuebles.avif";
 import crmLogo from "../assets/crmdemo.png";
+import fundacion from "../assets/fundacionparaiso.jpg";
 
 // Sample projects data with reused image and details (as requested)
 const projects = [
+    {
+        title: "Fundación Paraíso de la Mascota",
+        description:
+            "Mejora integral de la página web con listados dinámicos, formularios de solicitudes y panel administrativo para gestión de contenido y solicitudes, optimizando la experiencia de usuario.",
+        image: fundacion,
+        tags: ["Astro", "Panel Admin", "UX/UI", "Gestión"],
+        featured: true,
+        demoUrl: "https://paraisodelamascota.org",
+    },
     {
         title: "Sistema de Gestión de Inventario",
         description:
             "Solución empresarial para gestión de inventarios en tiempo real con arquitectura serverless.",
         image: sistemaInventario,
         tags: ["Next.js", "TailwindCSS", "Vercel"],
-        featured: true,
+        featured: false,
         demoUrl: "https://inventory-system-demo.vercel.app/",
     },
     {
