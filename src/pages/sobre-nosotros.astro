@@ -1,0 +1,130 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const principles = [
+    {
+        title: "Integridad Estructural",
+        description: "Nos oponemos activamente a la degradación de código. Implementamos arquitecturas de responsabilidad única y convenciones estrictas que garantizan que nuestros sistemas no solo funcionen hoy, sino que evolucionen de forma orgánica mañana. Una solución mediocre no es una solución."
+    },
+    {
+        title: "Eficiencia como Requisito",
+        description: "El rendimiento no es un ajuste posterior: es un requisito de arquitectura desde el día uno. Cada ciclo de CPU ahorrado es una victoria para el usuario y un gesto de respeto hacia la infraestructura global. Diseñamos con economía de recursos."
+    },
+    {
+        title: "Código como Comunicación",
+        description: "Abrazamos el fail-first y la transparencia algorítmica. Escribimos código prolijo, trazable y legible, donde la lógica de negocio destaca por su claridad, no por su complejidad. Nuestro estándar: funciones atómicas y pruebas automatizadas que garantizan estabilidad."
+    },
+    {
+        title: "Sostenibilidad Computacional",
+        description: "Reconocemos el impacto ambiental de nuestra industria. Optimizamos el consumo energético de cada aplicación para reducir la huella de carbono digital. La eficiencia técnica es responsabilidad climática."
+    }
+];
+
+const metaTitle = "Sobre Nosotros | Nexen - Ingeniería de Software de Alto Rendimiento";
+const description = "Conoce la misión, visión y los principios fundamentales de Nexen. Desarrollamos soluciones web de alto rendimiento y software sostenible en Colombia.";
+---
+
+<Layout 
+    title="Sobre Nosotros" 
+    metaTitle={metaTitle}
+    description={description}
+    keywords={["misión", "visión", "manifiesto", "ingeniería de software", "software sostenible", "alto rendimiento"]}
+>
+    <main class="bg-[#0D1B2A] text-[#E0E1DD] pt-32 pb-32 font-sans selection:bg-[#778DA9]/30">
+        <!-- Document Header -->
+        <article class="container mx-auto px-6 max-w-4xl">
+            <header class="mb-20 border-b border-[#415A77]/30 pb-12" data-aos="fade-in">
+                <h1 class="text-xs md:text-sm uppercase tracking-[0.3em] text-[#778DA9] mb-6 font-semibold">
+                    Documento de Identidad Corporativa
+                </h1>
+                <h2 class="text-4xl md:text-5xl font-bold tracking-tight mb-8 font-serif leading-tight">
+                    Nuestra Filosofía de Ingeniería
+                </h2>
+                <div class="max-w-3xl">
+                    <p class="text-xl md:text-2xl text-[#E0E1DD]/70 font-serif italic leading-relaxed">
+                        "En un mundo saturado de software inflado y soluciones efímeras, elegimos un camino distinto. Creemos que la ingeniería de software es un arte que exige rigor, respeto por el hardware y responsabilidad ética con los recursos del planeta."
+                    </p>
+                </div>
+            </header>
+
+            <!-- Mission & Vision Section -->
+            <section class="grid md:grid-cols-2 gap-16 mb-24" data-aos="fade-up">
+                <div class="space-y-6 text-pretty">
+                    <h3 class="text-2xl font-bold border-l-2 border-[#778DA9] pl-6 py-1">Misión</h3>
+                    <p class="text-[#E0E1DD]/80 leading-relaxed text-lg">
+                        Desarrollamos soluciones web de alto rendimiento y productos SaaS escalables para startups y empresas en crecimiento, aplicando ingeniería rigurosa, arquitecturas eficientes y código sostenible que transforma sistemas lentos y costosos en plataformas modernas, rápidas y económicamente viables.
+                    </p>
+                </div>
+                <div class="space-y-6 text-pretty">
+                    <h3 class="text-2xl font-bold border-l-2 border-[#778DA9] pl-6 py-1">Visión</h3>
+                    <p class="text-[#E0E1DD]/80 leading-relaxed text-lg">
+                        Ser reconocidos en Latinoamérica como referentes en desarrollo de software sostenible y de alto rendimiento, demostrando con nuestros productos propios que la excelencia técnica, la eficiencia computacional y la responsabilidad ambiental no son aspiraciones, sino estándares alcanzables en cada línea de código.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Manifesto Section -->
+            <section class="mt-32 pt-20 border-t border-[#415A77]/30">
+                <div class="mb-16" data-aos="fade-up">
+                    <h3 class="text-3xl md:text-4xl font-bold mb-6 font-serif">Nuestro Manifiesto</h3>
+                    <p class="text-lg text-[#E0E1DD]/60 max-w-2xl">
+                        Nuestros principios guían cada decisión técnica que tomamos, desde la concepción del sistema hasta el despliegue final.
+                    </p>
+                </div>
+
+                <div class="space-y-20">
+                    {principles.map((principle, index) => (
+                        <div 
+                            class="group relative"
+                            data-aos="fade-up"
+                            data-aos-delay={index * 50}
+                        >
+                            <div class="grid md:grid-cols-[1fr_2fr] gap-8 md:gap-16">
+                                <div class="relative">
+                                    <span class="text-5xl font-bold text-[#415A77]/10 absolute -top-6 -left-2 select-none group-hover:text-[#778DA9]/20 transition-colors">
+                                        0{index + 1}
+                                    </span>
+                                    <h4 class="text-xl font-bold relative z-10 pt-2 tracking-wide uppercase text-[#778DA9]">
+                                        {principle.title}
+                                    </h4>
+                                </div>
+                                <div class="border-b border-[#415A77]/10 pb-12">
+                                    <p class="text-lg md:text-xl text-[#E0E1DD]/80 leading-relaxed font-serif text-pretty">
+                                        {principle.description}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </section>
+
+            <!-- Final Commitment -->
+            <footer class="mt-32 py-16 px-8 bg-[#1B263B]/20 border border-[#415A77]/30 rounded-sm text-center" data-aos="zoom-in">
+                <div class="max-w-2xl mx-auto text-pretty">
+                    <h3 class="text-sm uppercase tracking-[0.4em] text-[#778DA9] mb-8 font-semibold">Nuestro Compromiso</h3>
+                    <p class="text-2xl md:text-3xl font-serif italic text-[#E0E1DD] leading-relaxed">
+                        "No construimos software desechable. Construimos sistemas que respetan a quien los usa, a quien los mantiene y al planeta que los ejecuta."
+                    </p>
+                </div>
+            </footer>
+        </article>
+    </main>
+</Layout>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;600;700&display=swap');
+
+    .font-serif {
+        font-family: 'Libre Baskerville', serif;
+    }
+
+    .font-sans {
+        font-family: 'Inter', sans-serif;
+    }
+
+    p {
+        text-wrap: pretty;
+    }
+</style>
+
